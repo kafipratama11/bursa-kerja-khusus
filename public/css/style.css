@@ -1,0 +1,107 @@
+:root {
+  --primary: #070f2b;
+  --secondary: rgb(71, 71, 71);
+  --dark-blue: #1b1a55;
+  --smoke-white: rgb(231, 231, 231);
+  --light-blue: rgb(167, 164, 233);
+}
+
+body {
+  height: 2000px;
+}
+
+nav {
+  background-color: var(--primary);
+}
+
+.btn-search {
+  background-color: var(--primary);
+}
+.btn-search:hover {
+  background-color: #0e183b;
+}
+
+.box-icon {
+  background-color: var(--primary);
+  width: 30px;
+  height: 30px;
+}
+
+.card-header {
+  background-color: var(--primary);
+}
+
+.card-loker {
+  color: var(--secondary);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.box-rekrutment {
+  height: 250px;
+  background-color: var(--primary);
+  color: white;
+}
+
+.number-bg {
+  background-color: pink;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: var(--primary);
+}
+
+.detail-proses-rekrut {
+  color: var(--smoke-white);
+}
+
+.btn-regis-perusahaan {
+  background-color: pink;
+}
+
+.btn-regis-perusahaan:hover {
+  background-color: rgb(241, 165, 178);
+}
+
+.btn-signup {
+  background-color: var(--dark-blue);
+  color: var(--smoke-white);
+}
+
+.btn-signup:hover {
+  background-color: var(--dark-blue);
+  color: var(--smoke-white);
+}
+
+.subtitle-signup {
+  margin-top: -10px;
+  color: var(--secondary);
+}
+
+.title-signup {
+  color: var(--dark-blue);
+}
+
+.btn-apply-loker {
+  background-color: var(--dark-blue);
+  color: var(--smoke-white);
+}
+
+.btn-apply-loker:hover {
+  background-color: var(--dark-blue);
+  color: var(--smoke-white);
+}
+
+.modal-post-day-loker {
+  color: var(--secondary);
+}
+
+.btn-login-cancel{
+  border: 1px solid var(--dark-blue);
+}
+
+.btn-login-cancel:hover{
+  border: 1px solid var(--dark-blue);
+  background-color: var(--dark-blue)!important;
+  color: var(--smoke-white)!important;
+}
