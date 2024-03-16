@@ -7,7 +7,7 @@
                   <div class="col">
                         <div class="d-flex gap-4">
                               <div class="card card-profile-perusahaan d-flex justify-content-center">
-                                    <img src="img/bca.png" alt="">
+                                    <img src="../img/bca.png" alt="">
                               </div>
                               <div class="">
                                     <div class="fw-medium text-body-tertiary">Melamar untuk</div>

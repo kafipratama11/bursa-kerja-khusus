@@ -2,47 +2,19 @@
 @section('content')
 
 @section('nav')
-<form class="d-flex" role="search">
-      <button class="btn btn-outline-light me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Login
-      </button>
-      <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-medium" type="button">
-            Employer Site
+<div class="dropdown">
+      <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Halo nama-user
       </a>
-</form>
+      <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+</div>
 @endsection
 
 <div class="container">
-      <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                        <div class="modal-header">
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form action="{{ route('login-proses')}}" method="POST">
-                              @csrf
-                              <div class="modal-body px-5">
-                                    <div class="mb-3">
-                                          <div class="title-signup fw-bolder fs-3 text-center">Login</div>
-                                    </div>
-                                    <div class="mb-3">
-                                          <label for="exampleFormControlInput1" class="form-label">NISN</label>
-                                          <input type="text" name="nisn" class="form-control" id="exampleFormControlInput1">
-                                    </div>
-                                    <div class="mb-4">
-                                          <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                                          <input type="password" name="password" class="form-control" id="inputPassword">
-                                    </div>
-                                    <div class="mb-5">
-                                          <button type="submit" class="btn btn-signup w-100 fw-medium mb-2">Login</button>
-                                          <button type="button" class="btn btn-login-cancel w-100 fw-medium bg-light" data-bs-dismiss="modal">Cancel</button>
-                                    </div>
-                              </div>
-                        </form>
-                  </div>
-            </div>
-      </div>
       <div class="row mt-5 d-flex justify-content-center">
             <div class="col-xl-4 col-md-4 col-sm-12">
                   <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>
@@ -76,23 +48,11 @@
             <div class="col-xl-4 col-md-4 col-sm-12">
                   <div class="card pt-2 px-3 fw-bold">
                         <div class="d-flex gap-2 justify-content-center">
-                              <i class="bi bi-journal-text"></i>
+                              <i class="bi bi-buildings-fill"></i>
                               <p>LOWONGAN PEKERJAAN</p>
                         </div>
                         <div class="text-center">
-                              <h2>56</h2>
-                        </div>
-                        <hr />
-                  </div>
-            </div>
-            <div class="col-xl-4 col-md-4 col-sm-12">
-                  <div class="card pt-2 px-3 fw-bold">
-                        <div class="d-flex gap-2 justify-content-center">
-                              <i class="bi bi-person-fill"></i>
-                              <p>ALUMNI</p>
-                        </div>
-                        <div class="text-center">
-                              <h2>1208</h2>
+                              <h2>890</h2>
                         </div>
                         <hr />
                   </div>
@@ -104,7 +64,19 @@
                               <p>PERUSAHAAN</p>
                         </div>
                         <div class="text-center">
-                              <h2>27</h2>
+                              <h2>230</h2>
+                        </div>
+                        <hr />
+                  </div>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-12">
+                  <div class="card pt-2 px-3 fw-bold">
+                        <div class="d-flex gap-2 justify-content-center">
+                              <i class="bi bi-buildings-fill"></i>
+                              <p>ALUMNI</p>
+                        </div>
+                        <div class="text-center">
+                              <h2>2900</h2>
                         </div>
                         <hr />
                   </div>
@@ -142,7 +114,7 @@
                                     </div>
                               </div>
                               <div class="card-footer">
-                                    <div class="loker-post-day text-center">Dibuka sampai tanggal 10/09/2021</div>
+                                    <div class="loker-post-day text-center">1 hari yang lalu</div>
                               </div>
                         </div>
                   </a>
@@ -229,7 +201,7 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                          <a type="button" href="apply" class="btn btn-apply-loker px-5 fw-bolder" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                          <a type="button" href="apply" class="btn btn-apply-loker px-5">
                                                 Lamaran Cepat
                                           </a>
                                     </div>
