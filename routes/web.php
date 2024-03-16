@@ -23,4 +23,5 @@ Route::get('/employer-site', [HomeController::class, 'employe'])->name('employer
 
 Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], function(){
     Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
+    Route::get('/user', [HomeController::class, 'user'])->name('user');
 });
