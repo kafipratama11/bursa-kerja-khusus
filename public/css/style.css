@@ -118,3 +118,13 @@ nav {
 .card-profile-perusahaan img{
   width: 140px;
 }
+
+.quote{
+  font-size: 15px;
+}
+
+/* .footer{
+  background-color: var(--dark-blue);
+  height: 400px;
+  margin-top: 4rem;
+} */

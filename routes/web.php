@@ -26,3 +26,21 @@ Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], f
 
     
 });
+<<<<<<< HEAD
+=======
+Route::get('/employer', function () {
+    return view('employer-site');
+});
+Route::get('/signup', function () {
+    return view('employer-signup');
+});
+Route::get('/apply', function () {
+    return view('apply');
+});
+Route::get('/admin', function () {
+    return view('dashboard-admin');
+});
+Route::get('/employer-site', function () {
+    return view('employer-dashboard');
+});
+>>>>>>> 514067c6137a12c83e5152ee1b3333df7f776c04
