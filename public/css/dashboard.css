@@ -1,10 +1,25 @@
+:root {
+  --primary: #070f2b;
+  --secondary: rgb(71, 71, 71);
+  --dark-blue: #1b1a55;
+  --smoke-white: rgb(231, 231, 231);
+  --light-blue: rgb(167, 164, 233);
+  --light-yellow: rgb(251, 255, 132);
+  --yellow: rgb(255, 238, 0);
+}
+
 body{
   font-family: "Roboto", sans-serif;
 }
 
+.dashboard-content{
+  display: flex;
+}
+
 .kiri {
   height: 100vh;
-  position: sticky;
+  position: fixed;
+  width: 300px;
 }
 
 .nav-link-sidebar:hover {
@@ -42,7 +57,7 @@ body{
 
 .box p {
   font-weight: 700;
-  color: rgb(123, 123, 123);
+  color:var(--primary);
 }
 
 .total {
@@ -50,17 +65,18 @@ body{
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e3edff;
+  background-color: var(--primary);
+  
 }
 
 .total p {
-  color: rgb(64, 64, 234);
-  font-weight: 500;
-  padding-top: 6.5px;
+  color: var(--yellow);
+  font-weight: 600;
+  padding-top: 9px;
 }
 
 .box i {
-  color: rgb(64, 64, 234);
+  color: var(--primary);
 }
 
 .title-form p {
@@ -77,7 +93,7 @@ body{
 }
 
 .card-header {
-  background-color: rgb(64, 64, 234) !important;
+  background-color: var(--primary) !important;
   font-weight: 600;
   color: #e3edff;
 }

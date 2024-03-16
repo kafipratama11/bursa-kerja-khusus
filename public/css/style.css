@@ -4,6 +4,8 @@
   --dark-blue: #1b1a55;
   --smoke-white: rgb(231, 231, 231);
   --light-blue: rgb(167, 164, 233);
+  --light-yellow: rgb(251, 255, 132);
+  --yellow: rgb(255, 238, 0);
 }
 
 /* body {
@@ -44,7 +46,6 @@ nav {
 }
 
 .number-bg {
-  background-color: pink;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -55,13 +56,6 @@ nav {
   color: var(--smoke-white);
 }
 
-.btn-regis-perusahaan {
-  background-color: pink;
-}
-
-.btn-regis-perusahaan:hover {
-  background-color: rgb(241, 165, 178);
-}
 
 .btn-signup {
   background-color: var(--dark-blue);

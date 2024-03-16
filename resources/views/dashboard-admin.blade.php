@@ -2,11 +2,13 @@
       @section('content-admin')
 
       @include('partials.navbar-dashboard-admin')
-      <div class="d-flex mt-5">
-            <div class="kiri w-25 sticky-top h-100">
-                  @include('partials.sidebar-dashboard-admin')
+      <div class="d-flex dashboard-content">
+            <div class="left w-25 h-100 mt-5">
+                  <div class="kiri">
+                        @include('partials.sidebar-dashboard-admin')
+                  </div>
             </div>
-            <div class="kanan w-75">
+            <div class="kanan w-75 mt-5">
                   <div class="container content-body" style="width: 1000px">
                         <div class="d-flex mb-4">
                               <div class="d-flex justify-content-start gap-3">
@@ -62,6 +64,230 @@
                                                       </tr>
                                                 </thead>
                                                 <tbody>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th>
+                                                                  1
+                                                            </th>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td> 1</td>
+                                                            <td>
+                                                                  <div class="dropdown text-center">
+                                                                        <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li>
+                                                                                    <a class="dropdown-item gap-3 d-flex" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                                                                          <i class="bi bi-pencil-square"></i>Edit
+                                                                                    </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                    <a class="dropdown-item delete-btn gap-3 d-flex text-danger" type="button" id="btnHapus">
+                                                                                          <i class="bi bi-trash"></i>Delete
+                                                                                    </a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
                                                       <tr>
                                                             <th>
                                                                   1
