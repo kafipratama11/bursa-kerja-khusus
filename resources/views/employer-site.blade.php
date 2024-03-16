@@ -61,7 +61,7 @@
             </div>
       </div>
       <div class="text-center mt-3">
-            <a href="signup" type="button" class="btn btn-regis-perusahaan px-5 fw-medium">Buat Akun</a>
+            <a href="signup" type="button" class="btn btn-regis-perusahaan px-5 fw-bolder">Buat Akun</a>
       </div>
       <hr class="mt-5">
 </div>
