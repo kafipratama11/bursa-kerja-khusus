@@ -22,3 +22,9 @@ Route::get('/employer', function () {
 Route::get('/signup', function () {
     return view('employer-signup');
 });
+Route::get('/apply', function () {
+    return view('apply');
+});
+Route::get('/admin', function () {
+    return view('dashboard-admin');
+});

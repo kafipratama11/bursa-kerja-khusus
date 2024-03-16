@@ -173,7 +173,7 @@
                     Rp. 4,500,000 - Rp. 5,000,000
                   </div>
                 </div>
-                <div class="modal-post-day-loker mb-3">
+                <div class="modal-post-day-loker mb-3 text-body-tertiary">
                   Diposting 1 hari yang lalu
                 </div>
                 <div class="modal-jobdesc mb-4">
@@ -220,9 +220,9 @@
                     </div>
                   </div>
                 </div>
-                <button type="button" class="btn btn-apply-loker px-5">
+                <a type="button" href="apply" class="btn btn-apply-loker px-5">
                   Lamaran Cepat
-                </button>
+                </a>
               </div>
             </div>
           </div>
