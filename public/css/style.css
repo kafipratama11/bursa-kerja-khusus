@@ -6,9 +6,9 @@
   --light-blue: rgb(167, 164, 233);
 }
 
-body {
+/* body {
   height: 2000px;
-}
+} */
 
 nav {
   background-color: var(--primary);
@@ -105,3 +105,26 @@ nav {
   background-color: var(--dark-blue)!important;
   color: var(--smoke-white)!important;
 }
+
+.card-profile-perusahaan{
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.card-profile-perusahaan img{
+  width: 140px;
+}
+
+.quote{
+  font-size: 15px;
+}
+
+/* .footer{
+  background-color: var(--dark-blue);
+  height: 400px;
+  margin-top: 4rem;
+} */
