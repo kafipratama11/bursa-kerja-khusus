@@ -1,7 +1,6 @@
-<nav class="navbar sticky-top bg-white pe-3">
-      <ul class="nav justify-content-end nav-underline gap-5 container sticky-top">
-            <li class="nav-item">
-                  <a class="nav-link" href="index.php">Logout</a>
-            </li>
-      </ul>
+<nav class="navbar sticky-top p-3">
+      <div class="container">
+            <a class="navbar-brand text-light fw-bold" href="/">Bursa Kerja</a>
+            @yield('nav')
+      </div>
 </nav>

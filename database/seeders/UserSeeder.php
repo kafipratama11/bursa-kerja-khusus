@@ -24,8 +24,4 @@ class UserSeeder extends Seeder
             'password'  => 'user',
         ]);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 514067c6137a12c83e5152ee1b3333df7f776c04

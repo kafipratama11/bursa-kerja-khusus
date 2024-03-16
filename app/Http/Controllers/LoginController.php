@@ -10,6 +10,10 @@ class LoginController extends Controller
     public function index(){
         return view('index');
     }
+    
+    public function apply(){
+        return view('apply');
+    }
 
     public function login_proses(Request $request){
         $request->validate([

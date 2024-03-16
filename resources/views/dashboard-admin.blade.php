@@ -1,12 +1,12 @@
-      @extends('layouts.app')
-      @section('content')
+      @extends('layouts.admin')
+      @section('content-admin')
 
       @include('partials.navbar-dashboard-admin')
-      <div class="d-flex">
+      <div class="d-flex mt-5">
             <div class="kiri w-25 sticky-top h-100">
                   @include('partials.sidebar-dashboard-admin')
             </div>
-            <div class="kanan w-75 bg-body-tertiary">
+            <div class="kanan w-75">
                   <div class="container content-body" style="width: 1000px">
                         <div class="d-flex mb-4">
                               <div class="d-flex justify-content-start gap-3">
