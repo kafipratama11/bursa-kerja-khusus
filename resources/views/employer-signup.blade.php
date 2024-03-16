@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@include('partials.navbar-tiga')
 <div class="container d-flex justify-content-center mt-4">
       <div class="card w-50 shadow">
             <div class="card-body px-5">

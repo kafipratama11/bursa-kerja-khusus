@@ -17,7 +17,7 @@
                               <input type="password" class="form-control" id="inputPassword">
                         </div>
                         <div class="mb-5">
-                              <button type="button" class="btn btn-signup w-100 fw-medium mb-2">Login</button>
+                              <a href="/employer-site" type="button" class="btn btn-signup w-100 fw-medium mb-2">Login</a>
                               <button type="button" class="btn btn-login-cancel w-100 fw-medium bg-light" data-bs-dismiss="modal">Cancel</button>
                         </div>
                   </div>

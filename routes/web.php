@@ -28,3 +28,6 @@ Route::get('/apply', function () {
 Route::get('/admin', function () {
     return view('dashboard-admin');
 });
+Route::get('/employer-site', function () {
+    return view('employer-dashboard');
+});

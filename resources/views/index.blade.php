@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('content')
-@include('partials.navbar-satu')
+
+@section('nav')
+<form class="d-flex" role="search">
+      <button class="btn btn-outline-light me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Login
+      </button>
+      <a href="employer" class="btn btn-light me-2 fw-bolder">
+            Employer Site
+      </a>
+</form>
+@endsection
+
 <div class="container">
       <!-- Modal -->
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -128,7 +139,7 @@
                                     </div>
                               </div>
                               <div class="card-footer">
-                                    <div class="loker-post-day text-center">1 hari yang lalu</div>
+                                    <div class="loker-post-day text-center">Dibuka sampai tanggal 10/09/2021</div>
                               </div>
                         </div>
                   </a>
@@ -222,6 +233,37 @@
                               </div>
                         </div>
                   </div>
+            </div>
+      </div>
+      <hr class="mt-5">
+      <div class="row py-4">
+            <div class="col">
+                  <div class="title-footer fw-bold fs-3 text-dark">J4bSeeker</div>
+            </div>
+            <div class="col">
+                  <div class="title-footer fw-bolder text-dark mb-3">CONTACT</div>
+                  <div class="vstack gap-2">
+                        <div class="isi-footer">E-Mail</div>
+                        <div class="isi-footer">No. Telp</div>
+                        <div class="isi-footer">Instagram</div>
+                        <div class="isi-footer">Jl. Veteran, Kota Tangerang</div>
+                  </div>
+            </div>
+            <div class="col">
+                  <div class="title-footer fw-bolder text-dark mb-3">SOSIAL MEDIA</div>
+                  <div class="vstack gap-2">
+                        <div class="isi-footer">Instagram</div>
+                        <div class="isi-footer">Facebook</div>
+                        <div class="isi-footer">Linkedin</div>
+                        <div class="isi-footer">Twiter</div>
+                  </div>
+            </div>
+            <div class="col">
+                  <div class="title-footer fw-bolder text-dark mb-3">KUTIPAN ACAK</div>
+                  <p class="quote">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat cupiditate eveniet expedita mollitia, voluptatem consequuntur earum doloremque explicabo natus dolor a perspiciatis dicta ea consequatur illo atque necessitatibus voluptas. Totam?</p>
+                  <figcaption class="blockquote-footer">
+                        Someone famous in <cite title="Source Title">Source Title</cite>
+                  </figcaption>
             </div>
       </div>
 </div>

@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('content')
-@include('partials.navbar-dua')
+
+@section('nav')
+<form class="d-flex" role="search">
+      <button class="btn btn-outline-light me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Login
+      </button>
+      <a class="btn btn-light me-2 px-3 fw-semibold" type="button" href="/signup">
+            Sign Up
+      </a>
+</form>
+@endsection
+
 <div class="container">
       @include('partials.modal-login-perusahaan')
       <div class="title-proses-rekrut fw-bold text-center mt-5 fs-2">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@include('partials.navbar-tiga')
+
 <div class="container">
       <div class="mt-5 px-5">
             <div class="row">
