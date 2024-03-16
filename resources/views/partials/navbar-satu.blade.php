@@ -5,7 +5,7 @@
                   <button class="btn btn-outline-light me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Login
                   </button>
-                  <a href="employer" class="btn btn-light me-2 fw-medium" type="button">
+                  <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-medium" type="button">
                         Employer Site
                   </a>
             </form>

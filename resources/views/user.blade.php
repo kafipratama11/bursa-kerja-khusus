@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@include('partials.navbar-satu')
+@include('partials.navbar-tiga')
   <div class="container">
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
