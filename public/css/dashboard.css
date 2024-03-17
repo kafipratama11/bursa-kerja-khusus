@@ -6,6 +6,8 @@
   --light-blue: rgb(167, 164, 233);
   --light-yellow: rgb(251, 255, 132);
   --yellow: rgb(255, 238, 0);
+  --light-gray : rgb(244, 244, 244);
+  --light-red: rgb(254, 215, 215);
 }
 
 body{
@@ -16,6 +18,10 @@ body{
   display: flex;
 }
 
+.menu-sidebar{
+  font-size: 14px;
+}
+
 .kiri {
   height: 100vh;
   position: fixed;
@@ -23,8 +29,12 @@ body{
 }
 
 .nav-link-sidebar:hover {
-  background-color: #e3edff;
+  background-color: var(--light-gray);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.sidebar-admin-logout:hover{
+  background-color: var(--light-red);
 }
 
 #colorLink.clicked {
@@ -52,7 +62,7 @@ body{
 }
 
 .box:hover{
-  background-color: #e3edff!important;
+  background-color: var(--light-yellow)!important;
 }
 
 .box p {
