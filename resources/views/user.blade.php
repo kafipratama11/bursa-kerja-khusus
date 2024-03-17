@@ -11,9 +11,6 @@
       <ul class="dropdown-menu">
             <li><a class="dropdown-item text-danger" href="{{ route('logout')}}">Log Out</a></li>
       </ul>
-      <ul class="dropdown-menu">
-
-      </ul>
 </div>
 @endsection
 
