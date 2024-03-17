@@ -126,3 +126,7 @@ nav {
 .scroll-nav{
   position: fixed;
 }
+
+.navbar-nav a:hover{
+  color: var(--light-yellow)!important;
+}

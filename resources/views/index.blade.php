@@ -2,14 +2,15 @@
 @section('content')
 
 @section('nav')
-<form class="d-flex" role="search">
-      <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Login
-      </button>
-      <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
-            Employer Site
-      </a>
-</form>
+      <form class="d-flex justify-content-end" role="search">
+            <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  Login
+            </button>
+            <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
+                  Employer Site
+            </a>
+      </form>
+
 @endsection
 
 <div class="container">
