@@ -38,10 +38,10 @@ Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], f
     Route::get('/user', [HomeController::class, 'user'])->name('user');
 });
 
-Route::get('/signup', function () {
-    return view('employer-signup');
-});
 
 Route::get('/profile-perusahaan', function () {
     return view('profile-perusahaan');
+});
+Route::get('/perusahaan-list', function () {
+    return view('company-list');
 });
