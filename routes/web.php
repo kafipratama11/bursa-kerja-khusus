@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,12 @@ Route::get('/employer-site', [HomeController::class, 'employe'])->name('employer
 Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], function(){
     Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
     Route::get('/user', [HomeController::class, 'user'])->name('user');
+});
+
+Route::get('/signup', function () {
+    return view('employer-signup');
+});
+
+Route::get('/profile-perusahaan', function () {
+    return view('profile-perusahaan');
 });

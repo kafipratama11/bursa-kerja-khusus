@@ -50,5 +50,6 @@
             <a href="signup" type="button" class="btn btn-regis-perusahaan px-5 fw-bolder btn-warning">Buat Akun</a>
       </div>
       <hr class="mt-5">
+      @include('partials.footer')
 </div>
 @endsection

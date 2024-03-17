@@ -19,7 +19,7 @@
                         <input type="password" class="form-control" id="inputPassword">
                   </div>
                   <div class="">
-                        <button type="button" class="btn btn-signup w-100 mb-2 fw-medium ">Daftar</button>
+                        <a href="" type="button" class="btn btn-signup w-100 mb-2 fw-medium ">Daftar</a>
                   </div>
                   <div class="text-center fw-medium mb-5">
                         <p>Sudah memiliki akun?<a href=""  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Masuk Sekarang</a></p>
