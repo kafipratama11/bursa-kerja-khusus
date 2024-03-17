@@ -122,3 +122,7 @@ nav {
   height: 400px;
   margin-top: 4rem;
 } */
+
+.scroll-nav{
+  position: fixed;
+}

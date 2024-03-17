@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="mb-4">
                                           <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                                          <input type="password" name="password" class="form-control" id="inputPassword">
+                                          <input type="text" name="password" class="form-control" id="inputPassword">
                                     </div>
                                     <div class="mb-5">
                                           <button type="submit" class="btn btn-signup w-100 fw-medium mb-2">Login</button>
@@ -46,25 +46,25 @@
       <div class="row mt-5 d-flex justify-content-center">
             <div class="col-xl-4 col-md-4 col-sm-12">
                   <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>
-                  <input type="text" class="form-control py-3" id="formGroupExampleInput" placeholder="Example input placeholder" />
+                  <input type="text" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan" />
             </div>
             <div class="col-xl-4 col-md-4 col-sm-12">
                   <label for="klasifikasi" class="fw-bold form-label">Klasifikasi</label>
                   <select class="form-select py-3" aria-label="Default select example" id="klasifikasi">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected>Piih Jurusan Anda</option>
+                        <option value="1">RPL</option>
+                        <option value="2">DPIB</option>
+                        <option value="3">Geomatika</option>
                   </select>
             </div>
             <div class="col-xl-4 col-md-4 col-sm-12">
-                  <label for="where" class="fw-bold form-label">Dimana</label>
+                  <label for="where" class="fw-bold form-label">Domisili</label>
                   <div class="d-flex gap-3">
                         <select class="form-select py-3" aria-label="Default select example" id="where">
-                              <option selected>Open this select menu</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                              <option selected>Pilih Kota Anda</option>
+                              <option value="1">Tangerang</option>
+                              <option value="2">Malang</option>
+                              <option value="3">Jogja</option>
                         </select>
                         <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
                               Cari
@@ -146,96 +146,7 @@
                               </div>
                         </div>
                   </a>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                              <div class="modal-content">
-                                    <div class="modal-header">
-                                          <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                                Modal title
-                                          </h1>
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ps-5">
-                                          <div class="mb-4">
-                                                <div class="modal-position-loker fs-4 fw-semibold">
-                                                      Administrasi
-                                                </div>
-                                                <div class="modal-perusahaan-loker fs-5 fw-normal">
-                                                      PT First Property Abadi
-                                                </div>
-                                          </div>
-                                          <div class="mb-3">
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-geo-alt"></i>
-                                                      Yogyakarta, DI Yogyakarta
-                                                </div>
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-building"></i>
-                                                      Entry Data dan Pengolahan Data
-                                                </div>
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-clock"></i>
-                                                      Full Time
-                                                </div>
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-cash-stack"></i>
-                                                      Rp. 4,500,000 - Rp. 5,000,000
-                                                </div>
-                                          </div>
-                                          <div class="modal-post-day-loker mb-3 text-body-tertiary">
-                                                Diposting 1 hari yang lalu
-                                          </div>
-                                          <div class="modal-jobdesc mb-4">
-                                                <div class="title-modal-jobdesc mb-2">JOB DESCRIPTION</div>
-                                                <div class="detail-modal-jobdesc">
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="modal-requirement mb-4">
-                                                <div class="title-modal-requirement mb-2">
-                                                      JOB REQUIREMENT
-                                                </div>
-                                                <div class="detail-modal-requirement">
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                      <div>
-                                                            > Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit. Temporibus, incidunt.
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <a type="button" href="apply" class="btn btn-apply-loker px-5 fw-bolder" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                Lamaran Cepat
-                                          </a>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
+                  @include('partials.modal-loker')
             </div>
       </div>
       @include('partials.footer')
