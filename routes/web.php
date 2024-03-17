@@ -33,6 +33,7 @@ Route::group(['prefix' => 'user','middleware' => ['auth'], 'as' => 'user.'], fun
     Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
     Route::get('/user', [HomeController::class, 'user'])->name('user');
 });
+
 Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], function(){
     Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
     Route::get('/user', [HomeController::class, 'user'])->name('user');
@@ -44,4 +45,7 @@ Route::get('/profile-perusahaan', function () {
 });
 Route::get('/perusahaan-list', function () {
     return view('company-list');
+});
+Route::get('/tentang', function () {
+    return view('about');
 });

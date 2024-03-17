@@ -14,7 +14,7 @@
             </div>
             <div class="col-8">
                   <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                        <div id="list-item-1">
+                        <div id="list-item-1" class="mb-5">
                               <div class="fw-bolder mb-4 text-center text-dark bg-body-tertiary rounded p-2">PROFILE PERUSAHAAN</div>
                               <div class="row">
                                     <div class="col-3 mt-2">
@@ -46,7 +46,7 @@
                                     </div>
                               </div>
                         </div>
-                        <div id="list-item-2">
+                        <div id="list-item-2" class="mb-5">
                               <div class="fw-bolder mb-4 text-center text-dark bg-body-tertiary rounded p-2">DESKRIPSI PERUSAHAAN</div>
                               <div class="row">
                                     <div class="deskripsi-perusahaan">

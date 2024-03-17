@@ -27,7 +27,7 @@
                                     <a class="nav-link active text-light" aria-current="page" href="/perusahaan-list">Perusahaan</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="#">Tentang</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/tentang">Tentang</a>
                               </li>
                         </ul>
                   </div>
