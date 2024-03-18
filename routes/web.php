@@ -33,16 +33,20 @@ Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('lo
 // employe
 Route::get('/employer-site', [HomeController::class, 'employe'])->name('employer-site');
 Route::post('/employe-login', [LoginController::class, 'employe_login'])->name('employe-login');
-
+Route::get('/employe-logout', [LoginController::class, 'employe_logout'])->name('employe-logout');
 Route::get('/employe-signup', [HomeController::class, 'employe_signup'])->name('employe-signup');
 Route::post('/employe-register', [LoginController::class, 'employe_register'])->name('employe-register');
-Route::get('/user', [HomeController::class, 'user'])->name('user');
 
 
-Route::group(['prefix' => 'user','middleware' => ['auth'], 'as' => 'user.'], function(){
-    Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
-    Route::get('/user', [HomeController::class, 'user'])->name('user');
+
+Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'user.'], function(){
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
 });
+
+Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'employe.'], function(){
+    Route::get('/dashboard-employe', [HomeController::class, 'employe_login'])->name('employe');
+});
+
 
 
 
