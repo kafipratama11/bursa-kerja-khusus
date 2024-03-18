@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-     
       <div class="row mt-5 pb-5">
             <div class="col-4">
                   <div class="scroll-nav w-25">
@@ -19,7 +18,7 @@
                               <div class="row">
                                     <div class="col-3 mt-2">
                                           <div class="card card-profile-perusahaan p-5">
-                                                <img src="img/bca.png" alt="">
+                                                <img src="../img/bca.png" alt="">
                                           </div>
                                     </div>
                                     <div class="col">
@@ -133,10 +132,11 @@
                                           </a>
                                     </div>
                               </div>
-                              @include('partials.modal-loker')
                         </div>
                   </div>
             </div>
+            @include('partials.modal-loker')
+            @include('partials.modal-login-user')
       </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

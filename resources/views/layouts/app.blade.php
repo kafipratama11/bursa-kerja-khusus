@@ -19,6 +19,7 @@
                         <span class="navbar-toggler-icon text-light"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
+                        @guest
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
                                     <a class="nav-link active text-light" aria-current="page" href="/">Loker</a>
@@ -30,7 +31,41 @@
                                     <a class="nav-link active text-light" aria-current="page" href="/tentang">Tentang</a>
                               </li>
                         </ul>
+                        @else
+                        <ul class="navbar-nav d-flex gap-3">
+                              <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/index-user">Loker</a>
+                              </li>
+                              <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/perusahaan-list">Perusahaan</a>
+                              </li>
+                              <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/tentang">Tentang</a>
+                              </li>
+                        </ul>
+                        @endguest
                   </div>
+                  @guest
+                  <form class="d-flex justify-content-end" role="search">
+                        <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              Login
+                        </button>
+                        <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
+                              Employer Site
+                        </a>
+                  </form>
+                  @else
+                  <div class="dropdown">
+                        <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              @auth
+                              {{ Auth::user()->name }}
+                              @endauth
+                        </a>
+                        <ul class="dropdown-menu">
+                              <li><a class="dropdown-item text-danger" href="{{ route('logout')}}">Log Out</a></li>
+                        </ul>
+                  </div>
+                  @endguest
                   @yield('nav')
             </div>
       </nav>

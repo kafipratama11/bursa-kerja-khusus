@@ -2,11 +2,7 @@
 @section('content')
 
 @section('nav')
-<form class="d-flex" role="search">
-      <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Login
-      </button>
-</form>
+
 @endsection
 
 <div class="container">

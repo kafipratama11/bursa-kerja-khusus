@@ -43,10 +43,9 @@ class PermissionSeeder extends Seeder
         $role_admin->givePermissionTo($permission2);
         $role_user->givePermissionTo($permission2);
 
-        $user = User::find(7);
-        $user2 = User::find(8);
+        $user = User::find(10);
+
 
         $user->assignRole('admin');
-        $user2->assignRole('user');
     }
 }
