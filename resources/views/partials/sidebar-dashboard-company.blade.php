@@ -42,7 +42,8 @@
             <div class="p-2 ps-4">
                   <div class="d-flex gap-3 text-danger menu-sidebar align-items-center">
                         <i class="bi bi-grid-1x2 text-danger"></i>
-                        Keluar
+                        <a href="{{ route('employe-logout')}}" class="text-danger text-decoration-none">Log Out</a>
+
                   </div>
             </div>
       </a>

@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function employe(){
         return view('employer/employer-site');
     }
-    public function user(){
+    public function employe_login(){
         return view('employer.employer-dashboard');
     }
     public function employe_signup(){

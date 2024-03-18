@@ -59,7 +59,7 @@ class LoginController extends Controller
         ];
         if(Auth::guard('employe')->attempt($data)){
             $employe = Auth::guard('employe')->user(); // Mendapatkan instance pengguna yang saat ini login
-            return redirect()->route('user.user')->with('success' ,'Welcome,'. $employe->name );
+            return redirect()->route('employe.employe')->with('success' ,'Welcome,'. $employe->name );
         } else{
             return redirect()->route('login')-> with('failed','email atau password salah');
         }
@@ -83,7 +83,7 @@ class LoginController extends Controller
     
         if(Auth::guard('employe')->attempt(['email' => $request->email, 'password' => $request->password])){
 
-            return redirect()->route('user')->with('success' ,'Welcome, ' . $employe->name);
+            return redirect()->route('employe.user')->with('success' ,'Welcome, ' . $employe->name);
         } else {
 
             return redirect()->route('login')->with('failed','Email atau password salah');
