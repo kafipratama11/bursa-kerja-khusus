@@ -86,7 +86,7 @@
                               Lamaran Cepat
                         </a>
                         @else
-                        <a type="button" href="apply" class="btn btn-apply-loker px-5">
+                        <a type="button" href="/user/apply" class="btn btn-apply-loker px-5">
                               Lamaran Cepat
                         </a>
                         @endguest

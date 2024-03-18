@@ -25,8 +25,8 @@
                         <div class="d-flex justify-content-center mb-2">
                               <div class="number-bg fw-bolder fs-3 pt-1 bg-warning">2</div>
                         </div>
-                        <div class="proses-rekrut fw-bolder mb-3">Login</div>
-                        <div class="detail-proses-rekrut">Lengkapi Profile Perusahaan Anda</div>
+                        <div class="proses-rekrut fw-bolder mb-3">Lengkapi Profil Perusahaan</div>
+                        <div class="detail-proses-rekrut">Isi info tentang profil perusahaan anda dengan lengkap</div>
                   </div>
             </div>
             <div class="col-xl-4 col-md-12 col-sm-12">
