@@ -48,7 +48,7 @@ Route::group(['prefix' => 'user','middleware' => ['auth'], 'as' => 'user.'], fun
 
 
 Route::get('/profile-perusahaan', function () {
-    return view('profile-perusahaan');
+    return view('employer/profile-perusahaan');
 });
 Route::get('/perusahaan-list', function () {
     return view('company-list');

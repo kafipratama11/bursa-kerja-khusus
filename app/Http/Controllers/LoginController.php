@@ -14,7 +14,7 @@ class LoginController extends Controller
     }
     
     public function apply(){
-        return view('apply');
+        return view('user/apply');
     }
     
     public function about(){
@@ -26,7 +26,7 @@ class LoginController extends Controller
     }
     
     public function profileCompany(){
-        return view('profile-perusahaan');
+        return view('employer/profile-perusahaan');
     }
 
     public function login_proses(Request $request){
