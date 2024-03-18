@@ -17,7 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::get('/admin/apply', [LoginController::class, 'apply']);
+Route::get('/user/apply', [LoginController::class, 'apply']);
+
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/user/perusahaan-list', [LoginController::class, 'company']);
+
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/user/profile-perusahaan', [LoginController::class, 'profileCompany']);
+
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/user/tentang', [LoginController::class, 'about']);
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
 // employe
@@ -34,10 +44,7 @@ Route::group(['prefix' => 'user','middleware' => ['auth'], 'as' => 'user.'], fun
     Route::get('/user', [HomeController::class, 'user'])->name('user');
 });
 
-Route::group(['prefix' => 'admin','middleware' => ['auth'], 'as' => 'admin.'], function(){
-    Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
-    Route::get('/user', [HomeController::class, 'user'])->name('user');
-});
+
 
 
 Route::get('/profile-perusahaan', function () {

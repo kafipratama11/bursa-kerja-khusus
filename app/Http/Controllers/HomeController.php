@@ -10,7 +10,7 @@ class HomeController extends Controller
         if(auth()->user()->can('view_dashboard')){
             return view('dashboard-admin');
         }
-        return view('user');
+        return view('index');
     }
     public function employe(){
         return view('employer-site');

@@ -81,9 +81,15 @@
                                     </div>
                               </div>
                         </div>
+                        @guest
                         <a type="button" href="apply" class="btn btn-apply-loker px-5 fw-bolder" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                               Lamaran Cepat
                         </a>
+                        @else
+                        <a type="button" href="/user/apply" class="btn btn-apply-loker px-5">
+                              Lamaran Cepat
+                        </a>
+                        @endguest
                   </div>
             </div>
       </div>
