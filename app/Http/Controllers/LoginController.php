@@ -14,7 +14,7 @@ class LoginController extends Controller
     }
     
     public function apply(){
-        return view('apply');
+        return view('user/apply');
     }
     
     public function about(){
@@ -26,7 +26,7 @@ class LoginController extends Controller
     }
     
     public function profileCompany(){
-        return view('profile-perusahaan');
+        return view('employer/profile-perusahaan');
     }
 
     public function login_proses(Request $request){
@@ -58,8 +58,8 @@ class LoginController extends Controller
             'password'  => $request->password,
         ];
         if(Auth::guard('employe')->attempt($data)){
-            $employe = Auth::guard('employe'); // Mendapatkan instance pengguna yang saat ini login
-            return redirect()->route('user')->with('success' ,'Welcome,'. $employe->name );
+            $employe = Auth::guard('employe')->user(); // Mendapatkan instance pengguna yang saat ini login
+            return redirect()->route('user.user')->with('success' ,'Welcome,'. $employe->name );
         } else{
             return redirect()->route('login')-> with('failed','email atau password salah');
         }

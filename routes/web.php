@@ -39,16 +39,16 @@ Route::post('/employe-register', [LoginController::class, 'employe_register'])->
 Route::get('/user', [HomeController::class, 'user'])->name('user');
 
 
-Route::group(['prefix' => 'user','middleware' => ['auth'], 'as' => 'user.'], function(){
-    Route::get('/index-user', [HomeController::class, 'dashboard'])->name('index-user');
-    Route::get('/user', [HomeController::class, 'user'])->name('user');
+Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'user.'], function(){
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
+    Route::get('/dashboard-employe', [HomeController::class, 'user'])->name('user');
 });
 
 
 
 
 Route::get('/profile-perusahaan', function () {
-    return view('profile-perusahaan');
+    return view('employer/profile-perusahaan');
 });
 Route::get('/perusahaan-list', function () {
     return view('company-list');

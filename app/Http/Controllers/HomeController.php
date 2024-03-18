@@ -8,18 +8,18 @@ class HomeController extends Controller
 {
     public function dashboard(){
         if(auth()->user()->can('view_dashboard')){
-            return view('dashboard-admin');
+            return view('admin.dashboard-admin');
         }
         return view('index');
     }
     public function employe(){
-        return view('employer-site');
+        return view('employer/employer-site');
     }
     public function user(){
-        return view('employer-dashboard');
+        return view('employer.employer-dashboard');
     }
     public function employe_signup(){
-        return view('employer-signup');
+        return view('employer/employer-signup');
     }
 
 }
