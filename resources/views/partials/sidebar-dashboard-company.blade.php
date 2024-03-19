@@ -22,7 +22,7 @@
             <div class="p-2 ps-4">
                   <div class="d-flex gap-3 menu-sidebar align-items-center">
                         <i class="bi bi-grid-1x2 text-dark"></i>
-                        User Applied
+                        User Apply
                   </div>
             </div>
       </a>
