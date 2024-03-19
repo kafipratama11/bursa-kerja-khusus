@@ -25,6 +25,8 @@ Route::get('/user/profile-perusahaan', [LoginController::class, 'profileCompany'
 
 Route::get('/employe/edit-profile', [LoginController::class, 'employerEditProfile']);
 
+Route::get('/employe/index', [LoginController::class, 'employerIndex']);
+
 Route::get('/user/tentang', [LoginController::class, 'about']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

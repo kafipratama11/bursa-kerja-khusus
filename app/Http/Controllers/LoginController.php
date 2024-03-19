@@ -32,6 +32,10 @@ class LoginController extends Controller
     public function employerEditProfile(){
         return view('employer/employer-edit-profile');
     }
+    
+    public function employerIndex(){
+        return view('employer/employer-index');
+    }
 
     public function login_proses(Request $request){
         $request->validate([
