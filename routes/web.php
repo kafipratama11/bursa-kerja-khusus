@@ -40,9 +40,12 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
 });
 
-Route::group(['prefix' => 'employe', 'middleware' => ['auth:employe'], 'as' => 'employe.'], function(){
+
+
+Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'employe.'], function(){
     Route::get('/dashboard-employe', [HomeController::class, 'employe_login'])->name('employe');
 });
+
 
 
 
