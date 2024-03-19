@@ -108,8 +108,5 @@ class LoginController extends Controller
     
         return redirect()->route('login')->with('successout','GoodBye,');
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 223b36030393c4dd2dbf036c0fe9492d22150e8c
 }

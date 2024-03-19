@@ -6,14 +6,7 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-<<<<<<< HEAD
                   <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">DASHBOARD</a>
-=======
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
->>>>>>> 223b36030393c4dd2dbf036c0fe9492d22150e8c
             </li>
       </ul>
 </div>
@@ -34,10 +27,10 @@
       <div class="row pb-5">
             <div class="col-4">
                   <div class="logo d-flex jusifi-content-center">
-                        <img src="../../img/bca.png" style="width: 100%" alt="">
+                        <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
                   </div>
                   <div class="fw-bolder fs-3 text-secondary">
-                        PT Freeport Indonesia
+                        {{$employe->name}}
                   </div>
                   <p class="mt-2">
                         <button class="btn border-secondary w-100 fw-medium btn-dark text-light fw-bolder" style="font-size: 15px" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -46,34 +39,38 @@
                   </p>
                   <div class="collapse" id="collapseExample">
                         <div class="card card-body pt-4">
-                              <form action="">
-                                    @foreach ($dataE as $d)                                       
+                              <form action="{{ route('employe.update-profile', ['id' => $employe->id])}}" method="POST" enctype="multipart/form-data"> 
+                                    @csrf
+                                    @method('PUT')                                    
+                                    <div class="form-group">
+                                          <label for="exampleInputEmail1">Photo Profile</label>
+                                          <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
+                                      </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Nama Perusahaan</label>
-                                          <input type="text" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{ $d->name}}">
+                                          <input type="text" name="name" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->name}}">
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Alamat perusahaan</label>
-                                          <input type="text" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="JL. Veteran, Kota Tangerang, Banten">
+                                          <input type="text" name="lokasi" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->lokasi}}">
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">No Telepon</label>
-                                          <input type="text" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="JL. Veteran, Kota Tangerang, Banten">
+                                          <input type="text" name="no_telp" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->no_telp}}">
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleInputEmail1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Email</label>
-                                          <input type="email" style="font-size: 14px" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="freeportidn@yahoo.co.id">
+                                          <input type="email" name="email" style="font-size: 14px" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$employe->email}}">
                                           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlTextarea1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Deskripsi</label>
-                                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" style="font-size: 14px">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum tenetur dolor eius cumque facilis, cupiditate ducimus culpa voluptate corporis fugiat? Quas natus asperiores iste, harum laboriosam nemo ipsam distinctio saepe maxime sequi porro quaerat quam expedita autem perferendis deserunt molestiae ducimus. Incidunt perspiciatis architecto excepturi fugiat magni quae nostrum adipisci, autem in porro quod consequuntur ea neque doloribus suscipit iusto repellendus! Rerum, deleniti illum maxime dolorem accusantium, ab aperiam sint impedit nobis rem necessitatibus aliquam aliquid. Similique, incidunt tempora doloribus ducimus eius, quia porro, error officia a voluptas dolorum odit culpa dicta quod. Voluptas et quia distinctio, nam fuga aut!</textarea>
+                                          <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="7" style="font-size: 14px">{{$employe->deskripsi}}</textarea>
                                     </div>
                                     <div class="mb-3 d-flex gap-3">
-                                          <div class="btn btn-success">Simpan</div>
+                                          <button type="submit" class="btn btn-success">Simpan</button>
                                           <div class="btn btn-outline-secondary">Cancel</div>
                                     </div>
-                                    @endforeach
                               </form>
                         </div>
                   </div>
