@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'employe',
         ],
+        'profile-employe' => [
+            'driver' => 'session',
+            'provider' => 'profile_employe',
+        ],
     ],
 
     /*
@@ -72,12 +76,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Employe::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'profile-employe' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Profile_Employe::class,
+        ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------

@@ -1,15 +1,17 @@
 @extends('layouts.admin')
 @section('content-admin')
+
+@section('nav-link-employer')
+<button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-light"></span>
+</button>
+@endsection
+
 @section('nav')
-<div class="dropdown">
-      <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            @auth
-            {{ Auth::user()->name }}
-            @endauth
-      </a>
-      <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-danger menu-sidebar" href="{{ route('employe-logout')}}">Logout</a></li>
-      </ul>
+<div class="text-white">
+      @auth
+      {{ Auth::user()->name }}
+      @endauth
 </div>
 @endsection
 

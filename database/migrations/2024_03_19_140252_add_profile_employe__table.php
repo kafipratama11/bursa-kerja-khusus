@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('profile_employe', function (Blueprint $table) {
+            $table->id('employe_id');
             $table->foreign('employe_id')->references('id')->on('employes')->onDelete('cascade');
             $table->string('name');
             $table->string('lokasi');

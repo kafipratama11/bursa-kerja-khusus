@@ -44,5 +44,5 @@ class Employe extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    protected $table = 'employes';
+    protected $table = 'profile_employe';
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employe;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,10 +17,17 @@ class HomeController extends Controller
         return view('employer/employer-site');
     }
     public function employe_login(){
-        return view('employer.employer-dashboard');
+        $dataE = Employe::first();
+        $employe = ProfileEmploye::get();
+        return view('employer.employer-dashboard',compact('dataE'));
     }
     public function employe_signup(){
         return view('employer/employer-signup');
+    }
+
+    public function employerEditProfile(Request $request,$id){
+        $dataE = Employe::get();
+        return view('employer.employer-edit-profile',compact('dataE'));
     }
 
 }
