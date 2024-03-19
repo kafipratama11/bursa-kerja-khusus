@@ -6,7 +6,14 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
+<<<<<<< HEAD
                   <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">DASHBOARD</a>
+=======
+                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
+>>>>>>> 223b36030393c4dd2dbf036c0fe9492d22150e8c
             </li>
       </ul>
 </div>
@@ -81,7 +88,7 @@
                                     <div class="card-body">
                                           <div class="row">
                                                 <div class="col-9">
-                                                      <div class="fw-bolder">Employee Relations</div>
+                                                      <div class="fw-bolder"><a href="" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
                                                 </div>
                                                 <div class="col">
                                                       <div class="text-end text-primary text-end fw-bolder">Aktif</div>

@@ -24,6 +24,8 @@ Route::get('/user/perusahaan-list', [LoginController::class, 'company']);
 Route::get('/user/profile-perusahaan', [LoginController::class, 'profileCompany']);
 
 
+Route::get('/employe/index', [LoginController::class, 'employerIndex']);
+
 Route::get('/user/tentang', [LoginController::class, 'about']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
