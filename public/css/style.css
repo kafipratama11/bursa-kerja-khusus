@@ -166,3 +166,8 @@ nav.stroke ul li a:hover:after {
 nav.fill ul li a {
   transition: all 2s;
 }
+
+nav.stroke ul li a{
+  font-size: 12px;
+  font-weight: 700;
+}

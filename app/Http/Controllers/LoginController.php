@@ -28,6 +28,10 @@ class LoginController extends Controller
     public function profileCompany(){
         return view('employer/profile-perusahaan');
     }
+    
+    public function employerEditProfile(){
+        return view('employer/employer-edit-profile');
+    }
 
     public function login_proses(Request $request){
         $request->validate([
@@ -61,7 +65,7 @@ class LoginController extends Controller
             $employe = Auth::guard('employe')->user(); // Mendapatkan instance pengguna yang saat ini login
             return redirect()->route('employe.employe')->with('success' ,'Welcome,'. $employe->name );
         } else{
-            return redirect()->route('login')-> with('failed','email atau password salah');
+            return redirect()->route('employer-site')-> with('failed','email atau password salah');
         }
     }
 
@@ -79,16 +83,11 @@ class LoginController extends Controller
         ];
     
         // Buat Employe baru
-        $employe = Employe::create($data);
-    
-        if(Auth::guard('employe')->attempt(['email' => $request->email, 'password' => $request->password])){
 
-            return redirect()->route('employe.user')->with('success' ,'Welcome, ' . $employe->name);
-        } else {
 
-            return redirect()->route('login')->with('failed','Email atau password salah');
-        }
+        return redirect()->route('employer-site')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }
+    
     
 
     public function logout(){
@@ -96,7 +95,14 @@ class LoginController extends Controller
     
         Auth::logout();
     
-        return redirect()->route('login')->with('successout','GoodBye,' .  $user->name);
+        return redirect()->route('login')->with('successout','GoodBye,');
+    }
+    public function employe_logout(){
+
+    
+        Auth::logout();
+    
+        return redirect()->route('login')->with('successout','GoodBye,');
     }
     public function employe_logout(){
 

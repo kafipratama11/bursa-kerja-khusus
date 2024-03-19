@@ -19,13 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/user/apply', [LoginController::class, 'apply']);
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/user/perusahaan-list', [LoginController::class, 'company']);
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/user/profile-perusahaan', [LoginController::class, 'profileCompany']);
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/employe/edit-profile', [LoginController::class, 'employerEditProfile']);
+
 Route::get('/user/tentang', [LoginController::class, 'about']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -37,11 +36,11 @@ Route::get('/employe-logout', [LoginController::class, 'employe_logout'])->name(
 Route::get('/employe-signup', [HomeController::class, 'employe_signup'])->name('employe-signup');
 Route::post('/employe-register', [LoginController::class, 'employe_register'])->name('employe-register');
 
-
-
-Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'user.'], function(){
+Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], function(){
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
 });
+
+
 
 Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'employe.'], function(){
     Route::get('/dashboard-employe', [HomeController::class, 'employe_login'])->name('employe');
@@ -51,9 +50,16 @@ Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'employe.'], 
 
 
 
+
+
+
+
+
+
 Route::get('/profile-perusahaan', function () {
     return view('employer/profile-perusahaan');
 });
+
 Route::get('/perusahaan-list', function () {
     return view('company-list');
 });
