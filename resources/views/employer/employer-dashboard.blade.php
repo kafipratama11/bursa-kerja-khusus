@@ -6,9 +6,10 @@
             @auth
             {{ Auth::user()->name }}
             @endauth
+            PT Freeport Indonesia
       </a>
       <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-danger" href="{{ route('logout')}}">Log Out</a></li>
+            <li><a class="dropdown-item text-danger menu-sidebar" href="{{ route('employe-logout')}}">Logout</a></li>
       </ul>
 </div>
 @endsection

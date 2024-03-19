@@ -68,10 +68,9 @@
                                                 <thead>
                                                       <tr>
                                                             <th scope="col" style="width: 50px;">NO</th>
-                                                            <th scope="col" style="width: 150px;">ID PEGAWAI</th>
-                                                            <th scope="col" style="width: 220px;">NAMA PEGAWAI</th>
-                                                            <th scope="col" style="width: 100px;">GOLONGAN</th>
-                                                            <th scope="col" style="width: 200px;">BAGIAN</th>
+                                                            <th scope="col" style="width: 270px;">NAMA PERUSAHAAN</th>
+                                                            <th scope="col" style="width: 180px;">JUMLAH LOKER</th>
+                                                            <th scope="col" style="width: 300px;">JUMLAH LAMARAN DITERIMA</th>
                                                             <th scope="col">ACTION</th>
                                                       </tr>
                                                 </thead>
@@ -80,10 +79,9 @@
                                                             <th>
                                                                   1
                                                             </th>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
+                                                            <td> PT Freeport Indonesia</td>
+                                                            <td> 23</td>
+                                                            <td> 142</td>
                                                             <td>
                                                                   <div class="dropdown text-center">
                                                                         <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,14 +102,39 @@
                                                                   </div>
                                                             </td>
                                                       </tr>
+<<<<<<< HEAD
                                                       {{-- <tr>
+=======
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="d-flex justify-content-center mb-4">
+                              <div class="card" style="width: 1000px">
+                                    <div class="card-header" style="color: #e3edff">Data Perusahaan</div>
+                                    <div class="card-body">
+                                          <table class="table table-hover table-bordered mt-3 table-striped pt-3" id="table">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col" style="max-width: 50px;">NO</th>
+                                                            <th scope="col" style="max-width: 270px;">NAMA PERUSAHAAN</th>
+                                                            <th scope="col" style="max-width: 230px;">EMAIL PERUSAHAAN</th>
+                                                            <th scope="col" style="max-width: 230px;">NO.TELP</th>
+                                                            <th scope="col" style="max-width: 300px;">LOGO PERUSAHAAN</th>
+                                                            <th scope="col">ACTION</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <tr>
+>>>>>>> aba0af464beff8dcd68566218e3a9595e04e52de
                                                             <th>
                                                                   1
                                                             </th>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
+                                                            <td style="max-width: 270px;"> PT Freeport Indonesia</td>
+                                                            <td style="max-width: 230px;"> freeportind@gmail.com</td>
+                                                            <td> 0851-6874-5263</td>
+                                                            <td class="text-center"> <img src="../img/bca.png" style="height: 100px" alt=""></td>
                                                             <td>
                                                                   <div class="dropdown text-center">
                                                                         <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,14 +155,35 @@
                                                                   </div>
                                                             </td>
                                                       </tr>
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="d-flex justify-content-center mb-4">
+                              <div class="card" style="width: 1000px">
+                                    <div class="card-header" style="color: #e3edff">Data User</div>
+                                    <div class="card-body">
+                                          <table class="table table-hover table-bordered mt-3 table-striped pt-3" id="table">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col" style="max-width: 50px;">NO</th>
+                                                            <th scope="col" style="max-width: 200px;">NISN</th>
+                                                            <th scope="col" style="max-width: 200px;">NAMA</th>
+                                                            <th scope="col" style="max-width: 230px;">EMAIL</th>
+                                                            <th scope="col" style="max-width: 230px;">NO.TELP</th>
+                                                            <th scope="col">ACTION</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
                                                       <tr>
                                                             <th>
                                                                   1
                                                             </th>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
-                                                            <td> 1</td>
+                                                            <td style="max-width: 270px;">1298364738936728</td>
+                                                            <td style="max-width: 230px;">Azar Dwi Prasetyo</td>
+                                                            <td style="max-width: 230px;">azarganteng123@gmail.com</td>
+                                                            <td>0813-7286-8492</td>
                                                             <td>
                                                                   <div class="dropdown text-center">
                                                                         <button class="btn dropdown-toggle text-success border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -160,6 +204,7 @@
                                                                   </div>
                                                             </td>
                                                       </tr>
+<<<<<<< HEAD
                                                       <tr>
                                                             <th>
                                                                   1
@@ -359,12 +404,45 @@
                                                                   </div>
                                                             </div>
                                                       </form>
+=======
+>>>>>>> aba0af464beff8dcd68566218e3a9595e04e52de
                                                 </tbody>
                                           </table>
                                     </div>
                               </div>
                         </div>
                         <!-- end table -->
+                        <!-- Modal -->
+                        <form action="" method="post">
+                              <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                          <div class="modal-content">
+                                                <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit
+                                                            data
+                                                      </h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                      <input type="text" name="id_pegawai" hidden>
+                                                      <div class="input1 mt-2">
+                                                            <label for="exampleFormControlInput1" class="form-label">Golongan</label>
+                                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" maxlength="1" name="tgolongan_edit" required />
+                                                      </div>
+                                                      <div class="input2 mt-2">
+                                                            <label for="exampleFormControlInput1" class="form-label">Kode
+                                                                  Bagian</label>
+                                                            <input type="text" class="form-control" id="exampleFormControlInput1" maxlength="3" name="tkode_bagian_edit" required />
+                                                      </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                      <button type="submit" class="btn btn-primary" name="bedit">Simpan</button>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </form>
                   </div>
             </div>
       </div>
