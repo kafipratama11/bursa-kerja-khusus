@@ -28,6 +28,10 @@ class LoginController extends Controller
     public function profileCompany(){
         return view('employer/profile-perusahaan');
     }
+    
+    public function employerEditProfile(){
+        return view('employer/employer-edit-profile');
+    }
 
     public function login_proses(Request $request){
         $request->validate([

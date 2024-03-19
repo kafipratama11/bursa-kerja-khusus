@@ -22,25 +22,25 @@
                         @guest
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/">Loker</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/">LOKER</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/perusahaan-list">Perusahaan</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/perusahaan-list">PERUSAHAAN</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/tentang">Tentang</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/tentang">TENTANG</a>
                               </li>
                         </ul>
                         @else
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/index-user">Loker</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/index-user">LOKER</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/perusahaan-list">Perusahaan</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/perusahaan-list">PERUSAHAAN</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/tentang">Tentang</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/tentang">TENTANG</a>
                               </li>
                         </ul>
                         @endguest
