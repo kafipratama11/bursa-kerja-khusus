@@ -30,29 +30,29 @@
                                                 <i class="bi bi-bar-chart-fill"></i>
                                                 <div class="total text-center">
                                                       <p>
-                                                            10
+                                                            900
                                                       </p>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="box bg-white rounded mt-3 ps-3">
-                                          <p class="pt-2">Total User</p>
+                                          <p class="pt-2">Total Perusahaan</p>
                                           <div class="d-flex mt-2 align-items-center text-align-center">
                                                 <i class="bi bi-bar-chart-fill"></i>
                                                 <div class="total text-center">
                                                       <p>
-                                                            10
+                                                            13
                                                       </p>
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="box bg-white rounded mt-3 ps-3">
-                                          <p class="pt-2">Total User</p>
+                                          <p class="pt-2">Total Pekerjaan</p>
                                           <div class="d-flex mt-2 align-items-center text-align-center">
                                                 <i class="bi bi-bar-chart-fill"></i>
                                                 <div class="total text-center">
                                                       <p>
-                                                            10
+                                                            230
                                                       </p>
                                                 </div>
                                           </div>
@@ -104,7 +104,7 @@
                                                                   </div>
                                                             </td>
                                                       </tr>
-                                                      <tr>
+                                                      {{-- <tr>
                                                             <th>
                                                                   1
                                                             </th>
@@ -327,7 +327,7 @@
                                                                         </ul>
                                                                   </div>
                                                             </td>
-                                                      </tr>
+                                                      </tr> --}}
                                                       <!-- Modal -->
                                                       <form action="" method="post">
                                                             <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
