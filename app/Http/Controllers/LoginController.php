@@ -87,7 +87,7 @@ class LoginController extends Controller
         ];
     
         // Buat Employe baru
-        Employe::create($data);
+
 
         return redirect()->route('employer-site')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }
@@ -96,6 +96,13 @@ class LoginController extends Controller
 
     public function logout(){
         $user = Auth::user();
+    
+        Auth::logout();
+    
+        return redirect()->route('login')->with('successout','GoodBye,');
+    }
+    public function employe_logout(){
+
     
         Auth::logout();
     
