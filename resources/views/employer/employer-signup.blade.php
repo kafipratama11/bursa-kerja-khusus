@@ -19,7 +19,7 @@
                               <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
                               <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama Perusahaan" value="{{old('name')}}">
                         </div>
-                        @error('nama')
+                        @error('name')
                         <small>{{ $message }}</small>
                         @enderror
                         <div class="mb-4">
