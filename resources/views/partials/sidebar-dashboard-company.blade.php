@@ -42,7 +42,7 @@
       </div>
 
       <div class="ps-3  mb-3 text-dark fw-bolder menu-sidebar">MENU LAINNYA</div>
-      <a href="{{ route('employe.edit-employe',['id' => $dataE->id])}}" class="link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink sidebar-admin-logout" data-page="page1" id="colorLink">
+      <a href="{{ route('employe.edit-employe')}}" class="link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink " data-page="page1" id="colorLink">
             <div class="p-2 ps-4">
                   <div class="d-flex gap-3 text-dark menu-sidebar align-items-center">
                         <i class="bi bi-grid-1x2 text-dark"></i>

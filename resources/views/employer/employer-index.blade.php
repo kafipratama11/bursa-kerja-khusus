@@ -7,10 +7,10 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/view/dashboard-employe">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
             </li>
       </ul>
 </div>
@@ -41,28 +41,28 @@
                   <div class="card">
                         <div class="card-body">
                               <div class="logo d-flex justify-content-center">
-                                    <img src="../img/bca.png" style="width: 100%" alt="">
+                                    <img src="{{ asset('storage/photo-employe/'.$dataE->image)}}" style="width: 100%" alt="">
                               </div>
                         </div>
                   </div>
-                  <div class="fw-bolder mt-3 fs-4 mb-4 lh-sm">PT Shopee Indonesia</div>
+                  <div class="fw-bolder mt-3 fs-4 mb-4 lh-sm">{{$dataE->name}}</div>
                   <div style="font-size: 14px">
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-geo-alt"></i>
-                              <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, nesciunt.</div>
+                              <div>{{$dataE->lokasi}}</div>
                         </div>
                         <div class="d-flex gap-3 mb-2">
                               <i class="bi bi-envelope"></i>
-                              <div>Lorem ipsum dolor sit </div>
+                              <div>{{$dataE->email}}</div>
                         </div>
                         <div class="d-flex gap-3 mb-2">
                               <i class="bi bi-telephone"></i>
-                              <div>0813-9827-1374</div>
+                              <div>{{$dataE->no_telp}}</div>
                         </div>
                   </div>
                   <hr class="mt-4 mb-4">
                   <div style="font-size: 14px">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolores tenetur eaque inventore ab numquam fuga perferendis id minima ratione, illo nisi ex quis consequuntur magni, esse est quas? Placeat harum repellendus labore beatae id impedit, eveniet vel adipisci eius obcaecati ex praesentium consequatur tempora eos culpa ratione! Est veritatis culpa, aspernatur placeat nam ipsa labore voluptatibus magnam quod magni aliquam quae minus facilis, dolorem dolorum vero voluptas dolor commodi, a quasi. Quam cumque fuga consectetur, veniam aspernatur ratione esse id sapiente alias blanditiis placeat at totam a nobis, fugiat harum reprehenderit earum, quidem sunt. Nulla dignissimos aliquid natus molestias?
+                        {{$dataE->deskripsi}}
                   </div>
             </div>
             <div class="col">
@@ -80,7 +80,7 @@
                                     <div class="text-secondary mt-2">Human Resource</div>
                               </div>
                               <div class="card-footer text-center text-secondary">
-                                    12 Orang Melamar
+                                    12 Kandidat
                               </div>
                         </div>
                   </div>

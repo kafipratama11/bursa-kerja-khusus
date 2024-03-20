@@ -6,7 +6,7 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
                   <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">DASHBOARD</a>
@@ -29,7 +29,7 @@
 <div class="container">
       <div class="row pb-5">
             <div class="col-4">
-                  <div class="logo d-flex justify-content-center">
+                  <div class="logo d-flex justify-content-center mt-5">
                         <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
                   </div>
                   <div class="fw-bolder fs-3 text-secondary">
@@ -45,8 +45,8 @@
                               <form action="{{ route('employe.update-profile', ['id' => $employe->id])}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
-                                    <div class="form-group">
-                                          <label for="exampleInputEmail1">Photo Profile</label>
+                                    <div class="form-group mb-3">
+                                          <label for="exampleInputEmail1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Photo Profile</label>
                                           <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
                                     </div>
                                     <div class="mb-3">
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="mb-3 d-flex gap-3">
                                           <button type="submit" class="btn btn-success">Simpan</button>
-                                          <div class="btn btn-outline-secondary">Cancel</div>
+                                          <div class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</div>
                                     </div>
                               </form>
                         </div>
