@@ -35,7 +35,7 @@
                               <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                           <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Analyst</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                           </div>
                                           <div class="modal-body">
@@ -122,7 +122,73 @@
             </div>
             <div class="col">
                   <div class="fw-bolder text-secondary fs-4 text-center bg-body-tertiary mb-3">Kandidat</div>
-                  <div class="card">
+                  <div class="card mb-3">
+                        <div class="card-body">
+                              <div class="d-flex gap-3">
+                                    <div>
+                                          <img src="../../img/bg_iu.jpg" width="70px" height="70px" class="rounded" alt="">
+                                    </div>
+                                    <div>
+                                          <div class="fw-semibold text-secondary">Krisna Saputra</div>
+                                          <div class="mt-1">
+                                                <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
+                                                      <i class="bi bi-envelope"></i>
+                                                      <div>Krisnasptr@gmail.com</div>
+                                                </div>
+                                                <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
+                                                      <i class="bi bi-telephone"></i>
+                                                      <div>0897-9142-4031</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="card mb-3">
+                        <div class="card-body">
+                              <div class="d-flex gap-3">
+                                    <div>
+                                          <img src="../../img/bg_iu.jpg" width="70px" height="70px" class="rounded" alt="">
+                                    </div>
+                                    <div>
+                                          <div class="fw-semibold text-secondary">Krisna Saputra</div>
+                                          <div class="mt-1">
+                                                <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
+                                                      <i class="bi bi-envelope"></i>
+                                                      <div>Krisnasptr@gmail.com</div>
+                                                </div>
+                                                <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
+                                                      <i class="bi bi-telephone"></i>
+                                                      <div>0897-9142-4031</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="card mb-3">
+                        <div class="card-body">
+                              <div class="d-flex gap-3">
+                                    <div>
+                                          <img src="../../img/bg_iu.jpg" width="70px" height="70px" class="rounded" alt="">
+                                    </div>
+                                    <div>
+                                          <div class="fw-semibold text-secondary">Krisna Saputra</div>
+                                          <div class="mt-1">
+                                                <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
+                                                      <i class="bi bi-envelope"></i>
+                                                      <div>Krisnasptr@gmail.com</div>
+                                                </div>
+                                                <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
+                                                      <i class="bi bi-telephone"></i>
+                                                      <div>0897-9142-4031</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="card mb-3">
                         <div class="card-body">
                               <div class="d-flex gap-3">
                                     <div>

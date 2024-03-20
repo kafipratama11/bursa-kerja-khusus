@@ -7,7 +7,7 @@
             {{ Auth::guard('employe')->user()->name }}
       </a>
       <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-danger" href="{{ route('employe-logout')}}">Log Out</a></li>
+            <li><a class="dropdown-item text-danger" href="{{ route('employe.employe-logout')}}">Log Out</a></li>
       </ul>
 </div>
 @endsection

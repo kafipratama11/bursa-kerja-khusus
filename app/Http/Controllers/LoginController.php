@@ -106,10 +106,7 @@ class LoginController extends Controller
         return redirect()->route('login')->with('successout','GoodBye,');
     }
     
-    public function employe_logout(){
-
-
-    
+    public function employe_logout(){    
         Auth::logout();
     
         return redirect()->route('login')->with('successout','GoodBye,');
