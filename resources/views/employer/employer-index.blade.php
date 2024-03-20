@@ -80,7 +80,7 @@
                                     <div class="text-secondary mt-2">Human Resource</div>
                               </div>
                               <div class="card-footer text-center text-secondary">
-                                    12 Orang Melamar
+                                    12 Kandidat
                               </div>
                         </div>
                   </div>
