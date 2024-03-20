@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class Employe extends Authenticatable
+class Profile extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
@@ -19,12 +19,11 @@ class Employe extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
+        'image',
         'name',
         'email',
         'password',
-        'lokasi',
-        'no_telp',
-        'deskripsi',
     ];
 
     /**

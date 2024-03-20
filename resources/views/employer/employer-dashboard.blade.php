@@ -8,27 +8,20 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/perusahaan-list">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
             </li>
       </ul>
 </div>
 @endsection
 
 @section('nav')
-<div class="dropdown">
-      <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            @auth
-            {{ Auth::user()->name }}
-            @endauth
-      </a>
-
-      <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-dark menu-sidebar" href="/employe/edit-profile">Profile</a></li>
-            <li><a class="dropdown-item text-danger menu-sidebar" href="{{ route('employe-logout')}}">Logout</a></li>
-      </ul>
+<div class="text-white">
+      @auth
+      {{ Auth::user()->name }}
+      @endauth
 </div>
 @endsection
 
@@ -77,6 +70,12 @@
                                     </div>
                               </div>
                         </div>
+                  </div>
+                  <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
+                        <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">loker</div>
+                        <div class="tab-pane fade" id="list-apply" role="tabpanel" aria-labelledby="list-apply-list">apply</div>
+                        <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">candidat</div>
                   </div>
                   <!-- table -->
                   {{-- <div class="d-flex justify-content-center mb-4">

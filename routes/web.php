@@ -23,7 +23,8 @@ Route::get('/user/perusahaan-list', [LoginController::class, 'company']);
 
 Route::get('/user/profile-perusahaan', [LoginController::class, 'profileCompany']);
 
-Route::get('/employe/edit-profile', [LoginController::class, 'employerEditProfile']);
+
+Route::get('/employe/index', [LoginController::class, 'employerIndex']);
 
 Route::get('/user/tentang', [LoginController::class, 'about']);
 
@@ -44,6 +45,9 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
 
 Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'employe.'], function(){
     Route::get('/dashboard-employe', [HomeController::class, 'employe_login'])->name('employe');
+    Route::get('/edit-employe/{id}', [HomeController::class, 'employerEditProfile'])->name('edit');
+    Route::get('/edit-employe/{id}', [HomeController::class, 'employerEditProfile'])->name('edit-employe');
+    Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');
 });
 
 
