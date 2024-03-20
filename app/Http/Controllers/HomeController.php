@@ -22,7 +22,7 @@ class HomeController extends Controller
     }
     public function employe_login(){
         $dataE = Employe::first();
-        return view('employer.employer-dashboard',compact('dataE'));
+        return view('employer.employer-index',compact('dataE'));
     }
     public function employe_signup(){
         return view('employer/employer-signup');
@@ -35,6 +35,15 @@ class HomeController extends Controller
     
         // Tampilkan view untuk mengedit profil
         return view('employer.employer-edit-profile', compact('employe'));
+    }
+
+    public function dashboard_employe(Request $request)
+    {
+        $employeId = Auth::id();
+        $employE = Employe::where('id', $employeId)->first();
+    
+        // Tampilkan view untuk mengedit profil
+        return view('employer.employer-dashboard', compact('employE'));
     }
 
     public function update(Request $request, $id)

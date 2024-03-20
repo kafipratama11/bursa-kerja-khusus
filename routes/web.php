@@ -44,10 +44,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
 
 
 Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'employe.'], function(){
-    Route::get('/dashboard-employe', [HomeController::class, 'employe_login'])->name('employe');
-    Route::get('/edit-employe/{id}', [HomeController::class, 'employerEditProfile'])->name('edit');
-    Route::get('/edit-employe/{id}', [HomeController::class, 'employerEditProfile'])->name('edit-employe');
+    Route::get('/home-employe', [HomeController::class, 'employe_login'])->name('employe');
+    Route::get('/edit-employe', [HomeController::class, 'employerEditProfile'])->name('edit-employe');
     Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');
+    Route::get('/dashboard-employe', [HomeController::class, 'dashboard_employe'])->name('dashboard-employe');
 });
 
 

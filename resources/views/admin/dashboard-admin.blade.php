@@ -102,9 +102,9 @@
                                                                   </div>
                                                             </td>
                                                       </tr>
-<<<<<<< HEAD
+
                                                       {{-- <tr>
-=======
+
                                                 </tbody>
                                           </table>
                                     </div>
@@ -127,7 +127,7 @@
                                                 </thead>
                                                 <tbody>
                                                       <tr>
->>>>>>> aba0af464beff8dcd68566218e3a9595e04e52de
+
                                                             <th>
                                                                   1
                                                             </th>
@@ -204,7 +204,7 @@
                                                                   </div>
                                                             </td>
                                                       </tr>
-<<<<<<< HEAD
+
                                                       <tr>
                                                             <th>
                                                                   1
@@ -404,8 +404,7 @@
                                                                   </div>
                                                             </div>
                                                       </form>
-=======
->>>>>>> aba0af464beff8dcd68566218e3a9595e04e52de
+
                                                 </tbody>
                                           </table>
                                     </div>

@@ -6,7 +6,7 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
                   <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">DASHBOARD</a>
