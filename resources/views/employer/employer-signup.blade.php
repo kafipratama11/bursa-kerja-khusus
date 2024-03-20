@@ -19,7 +19,7 @@
                               <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
                               <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama Perusahaan" value="{{old('name')}}">
                         </div>
-                        @error('nama')
+                        @error('name')
                         <small>{{ $message }}</small>
                         @enderror
                         <div class="mb-4">
@@ -27,6 +27,27 @@
                               <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Masukan Password Perusahaan anda">
                         </div>
                         @error('password')
+                        <small>{{ $message }}</small>
+                        @enderror
+                        <div class="mb-4">
+                              <label for="exampleFormControlInput1" class="form-label">Lokasi</label>
+                              <input type="text" name="lokasi" class="form-control" id="inputPassword" placeholder="Masukan Password Perusahaan anda">
+                        </div>
+                        @error('lokasi')
+                        <small>{{ $message }}</small>
+                        @enderror
+                        <div class="mb-4">
+                              <label for="exampleFormControlInput1" class="form-label">no Telepon</label>
+                              <input type="text" name="no_telp" class="form-control" id="inputPassword" placeholder="Masukan Password Perusahaan anda">
+                        </div>
+                        @error('no_telp')
+                        <small>{{ $message }}</small>
+                        @enderror
+                        <div class="mb-4">
+                              <label for="exampleFormControlInput1" class="form-label">Deskripsi</label>
+                              <input type="text" name="deskripsi" class="form-control" id="inputPassword" placeholder="Masukan Password Perusahaan anda">
+                        </div>
+                        @error('deskripsi')
                         <small>{{ $message }}</small>
                         @enderror
                         <div class="">

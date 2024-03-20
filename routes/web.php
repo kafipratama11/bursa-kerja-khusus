@@ -23,7 +23,8 @@ Route::get('/user/perusahaan-list', [LoginController::class, 'company']);
 
 Route::get('/user/profile-perusahaan', [LoginController::class, 'profileCompany']);
 
-Route::get('/employe/edit-profile', [LoginController::class, 'employerEditProfile']);
+
+Route::get('/employe/index', [LoginController::class, 'employerIndex']);
 
 Route::get('/user/tentang', [LoginController::class, 'about']);
 
@@ -42,8 +43,11 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
 
 
 
-Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'employe.'], function(){
-    Route::get('/dashboard-employe', [HomeController::class, 'employe_login'])->name('employe');
+Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'employe.'], function(){
+    Route::get('/home-employe', [HomeController::class, 'employe_login'])->name('employe');
+    Route::get('/edit-employe', [HomeController::class, 'employerEditProfile'])->name('edit-employe');
+    Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');
+    Route::get('/dashboard-employe', [HomeController::class, 'dashboard_employe'])->name('dashboard-employe');
 });
 
 
@@ -55,6 +59,10 @@ Route::group(['prefix' => 'view','middleware' => ['auth'], 'as' => 'employe.'], 
 
 
 
+
+Route::get('/view/loker-edit/kode-loker', function () {
+    return view('employer/employer-detail-loker');
+});
 
 Route::get('/profile-perusahaan', function () {
     return view('employer/profile-perusahaan');

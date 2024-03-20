@@ -30,11 +30,11 @@
                                                             Yogyakarta, DI Yogyakarta
                                                       </div>
                                                       <div class="d-flex gap-3 mb-2">
-                                                            <i class="bi bi-building"></i>
+                                                            <i class="bi bi-envelope"></i>
                                                             shopeeind@yahoo.co.id
                                                       </div>
                                                       <div class="d-flex gap-3 mb-2">
-                                                            <i class="bi bi-clock"></i>
+                                                            <i class="bi bi-telephone"></i>
                                                             085174140161
                                                       </div>
                                                       <div class="mb-2 fw-medium text-secondary">

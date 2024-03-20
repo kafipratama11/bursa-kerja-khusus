@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('layouts.app')
 @section('content')
 
@@ -16,5 +15,4 @@
       <h1 class="text-primary fs-1">hello world</h1>
 </div>
 @endsection
-=======
->>>>>>> 05fdb51a9c41e8852d14fe951a59dde2ff42e5cc
+

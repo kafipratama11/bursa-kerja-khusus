@@ -32,6 +32,10 @@ class LoginController extends Controller
     public function employerEditProfile(){
         return view('employer/employer-edit-profile');
     }
+    
+    public function employerIndex(){
+        return view('employer/employer-index');
+    }
 
     public function login_proses(Request $request){
         $request->validate([
@@ -73,17 +77,21 @@ class LoginController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'lokasi' => 'required',
+            'no_telp' => 'required',
+            'deskripsi' => 'required',
         ]);
     
-        $data = [
-            'name'       => $request->name,
-            'email'      => $request->email,
-            'password'   => Hash::make($request->password),
-        ];
-    
-        // Buat Employe baru
+        
+            $data['name']       = $request->name;
+            $data['email']      = $request->email;
+            $data['password']   = $request->password;
+            $data['lokasi']     = $request->lokasi;
+            $data['no_telp']    = $request->no_telp;
+            $data['deskripsi']  = $request->deskripsi;
 
+            Employe::create($data);
 
         return redirect()->route('employer-site')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }
@@ -97,14 +105,9 @@ class LoginController extends Controller
     
         return redirect()->route('login')->with('successout','GoodBye,');
     }
+    
     public function employe_logout(){
 
-    
-        Auth::logout();
-    
-        return redirect()->route('login')->with('successout','GoodBye,');
-    }
-    public function employe_logout(){
 
     
         Auth::logout();
