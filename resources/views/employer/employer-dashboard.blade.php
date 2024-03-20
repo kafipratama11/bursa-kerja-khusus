@@ -36,7 +36,7 @@
             <div class="container content-body" style="width: 1000px">
                   <div class="d-flex mb-4">
                         <div class="d-flex justify-content-start gap-3">
-                              <div class="box bg-white rounded mt-  3 ps-3">
+                              <div class="box bg-white rounded mt-3  3 ps-3">
                                     <p class="pt-2">Total User</p>
                                     <div class="d-flex mt-2 align-items-center text-align-center">
                                           <i class="bi bi-bar-chart-fill"></i>
