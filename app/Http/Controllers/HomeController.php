@@ -18,7 +18,6 @@ class HomeController extends Controller
     }
     public function employe_login(){
         $dataE = Employe::first();
-        $employe = ProfileEmploye::get();
         return view('employer.employer-dashboard',compact('dataE'));
     }
     public function employe_signup(){

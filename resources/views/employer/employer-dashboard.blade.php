@@ -5,8 +5,6 @@
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-light"></span>
 </button>
-<<<<<<< HEAD
-=======
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
@@ -17,7 +15,6 @@
             </li>
       </ul>
 </div>
->>>>>>> 223b36030393c4dd2dbf036c0fe9492d22150e8c
 @endsection
 
 @section('nav')

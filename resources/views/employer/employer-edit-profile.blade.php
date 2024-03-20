@@ -6,14 +6,10 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-<<<<<<< HEAD
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">DASHBOARD</a>
-=======
                   <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
->>>>>>> 223b36030393c4dd2dbf036c0fe9492d22150e8c
+                  <a class="nav-link active text-light" aria-current="page" href="/view/dashboard-employe">DASHBOARD</a>
             </li>
       </ul>
 </div>

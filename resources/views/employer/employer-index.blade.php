@@ -7,10 +7,10 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="/view/dashboard-employe">DASHBOARD</a>
             </li>
       </ul>
 </div>
