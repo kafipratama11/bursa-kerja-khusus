@@ -83,22 +83,15 @@ class LoginController extends Controller
             'deskripsi' => 'required',
         ]);
     
-        $data = [
-            'name'       => $request->name,
-            'email'      => $request->email,
-            'password'   => Hash::make($request->password),
-            'lokasi'   => ($request->lokasi),
-            'no_telp'   => ($request->no_telp),
-            'deskripsi'   => ($request->deskripsi),
-        ];
-    
-        if(Auth::guard('employe')->attempt($data)){
-            $employe = Auth::guard('employe')->user(); // Mendapatkan instance pengguna yang saat ini login
-            return redirect()->route('employe.employe')->with('success' ,'Welcome,'. $employe->name );
-        } else{
-            return redirect()->route('employer-site')-> with('failed','email atau password salah');
-        }
+        
+            $data['name']       = $request->name;
+            $data['email']      = $request->email;
+            $data['password']   = $request->password;
+            $data['lokasi']     = $request->lokasi;
+            $data['no_telp']    = $request->no_telp;
+            $data['deskripsi']  = $request->deskripsi;
 
+            Employe::create($data);
 
         return redirect()->route('employer-site')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }
