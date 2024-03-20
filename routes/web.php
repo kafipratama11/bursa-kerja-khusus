@@ -60,6 +60,10 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
 
 
 
+Route::get('/view/loker-edit/kode-loker', function () {
+    return view('employer/employer-detail-loker');
+});
+
 Route::get('/profile-perusahaan', function () {
     return view('employer/profile-perusahaan');
 });

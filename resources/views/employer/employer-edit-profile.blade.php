@@ -29,7 +29,7 @@
 <div class="container">
       <div class="row pb-5">
             <div class="col-4">
-                  <div class="logo d-flex jusifi-content-center">
+                  <div class="logo d-flex justify-content-center">
                         <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
                   </div>
                   <div class="fw-bolder fs-3 text-secondary">
