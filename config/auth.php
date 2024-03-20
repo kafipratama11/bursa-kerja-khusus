@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Profile;
+
 return [
 
     /*
@@ -44,9 +46,9 @@ return [
             'driver' => 'session',
             'provider' => 'employe',
         ],
-        'profile-employe' => [
+        'profile' => [
             'driver' => 'session',
-            'provider' => 'profile_employe',
+            'provider' => 'profile',
         ],
     ],
 
@@ -76,9 +78,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Employe::class,
         ],
-        'profile-employe' => [
+        'profile' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Profile_Employe::class,
+            'model' => App\Models\Profile::class,
         ],
     ],
     
