@@ -17,6 +17,9 @@ class EmployeSeeder extends Seeder
             'email'      => 'hosting@gmail.com',
             'name'  => 'Software Host Jakarta',
             'password'  => 'hosting',
+            'lokasi'  => 'oke',
+            'no_telp'  => '099191818',
+            'deskripsi'  => 'jfhfhhfhfhhhhchdhdhdjcdd',
         ]);
     }
 }
