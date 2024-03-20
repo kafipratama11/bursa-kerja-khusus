@@ -47,7 +47,7 @@
                   </div>
                   <div class="fw-bolder mt-3 fs-4 mb-4 lh-sm">{{$dataE->name}}</div>
                   <div style="font-size: 14px">
-                        <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-geo-alt"></i>
                               <div>{{$dataE->lokasi}}</div>
                         </div>
