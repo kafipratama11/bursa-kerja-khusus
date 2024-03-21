@@ -185,4 +185,69 @@ nav.stroke ul li a{
 
 .box-warning-alert{
   border-radius: 20px 20px 0 0;
+  border-top: 4px solid black!important;
+  border-left: 4px solid black!important;
+}
+
+.box-warning-alert2{
+  margin-top: 2rem;
+  width: 100%;
+  height: 270px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 4px solid black;
+  border-right: 7px solid #000;
+}
+
+.dinamic-island{
+  width: 26px;
+  height: 80px;
+}
+
+.nav-iphone{
+  min-width: 35px;
+  height: 100%;
+  border-radius: 0 22px 22px 0;
+}
+
+.nav-iphone i {
+  font-size: 25px;
+}
+
+.hover-nav-iphone:hover{
+  background-color: var(--smoke-white);
+}
+
+.camera{
+  width: 10px;
+  height: 10px;
+  background-color: rgb(0, 0, 123);
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.dinamic-island-1{
+  width: 100px;
+}
+
+.camera-1{
+  width: 10px;
+  height: 10px;
+  background-color:  rgb(0, 0, 123);
+  border-radius: 50%;
+  margin-left: 28px;
+}
+
+.phoni-mekbuk{
+  width: 140px;
+  background-color: black!important;
+  height: 30px;
+  border-radius: 0 0 15px 15px;
+} 
+
+.list-mekbuk{
+  border-radius: 25px 25px 0 0;
+  border-top: 5px solid black;
+  border-right: 7px solid black;
+  border-left: 7px solid black;
 }
