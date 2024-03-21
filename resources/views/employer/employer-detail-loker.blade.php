@@ -53,23 +53,23 @@
                         </div>
                   </div>
                   <div style="font-size: 14px" class="text-secondary">
-                        <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-geo-alt"></i>
                               <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, nesciunt.</div>
                         </div>
-                        <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-envelope"></i>
                               <div>Lorem ipsum dolor sit </div>
                         </div>
-                        <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-telephone"></i>
                               <div>0813-9827-1374</div>
                         </div>
-                        <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-clock"></i>
                               Full Time
                         </div>
-                        <div class="d-flex gap-3 mb-2">
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-cash-stack"></i>
                               Rp. 4,500,000 - Rp. 5,000,000
                         </div>
