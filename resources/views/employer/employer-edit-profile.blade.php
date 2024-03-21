@@ -9,7 +9,7 @@
                   <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
             </li>
       </ul>
 </div>

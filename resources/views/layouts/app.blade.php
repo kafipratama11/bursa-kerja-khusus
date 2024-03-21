@@ -63,7 +63,7 @@
                               @endauth
                         </a>
                         <ul class="dropdown-menu">
-                              <li><a class="dropdown-item text-danger" href="{{ route('logout')}}">Log Out</a></li>
+                              <li><a class="dropdown-item text-danger" href="{{ route('user.logout')}}">Log Out</a></li>
                         </ul>
                   </div>
                   @endguest

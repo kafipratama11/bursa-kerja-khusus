@@ -28,7 +28,7 @@ Route::get('/employe/index', [LoginController::class, 'employerIndex']);
 
 Route::get('/user/tentang', [LoginController::class, 'about']);
 
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
 // employe
 Route::get('/employer-site', [HomeController::class, 'employe'])->name('employer-site');
@@ -38,6 +38,7 @@ Route::get('/employe-signup', [HomeController::class, 'employe_signup'])->name('
 Route::post('/employe-register', [LoginController::class, 'employe_register'])->name('employe-register');
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], function(){
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
 });
 
