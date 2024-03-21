@@ -34,43 +34,6 @@
       </div>
       <div class="kanan w-75 mt-5">
             <div class="container content-body" style="width: 1000px">
-                  <div class="d-flex mb-4">
-                        <div class="d-flex justify-content-start gap-3">
-                              <div class="box bg-white rounded mt-3  3 ps-3">
-                                    <p class="pt-2">Total User</p>
-                                    <div class="d-flex mt-2 align-items-center text-align-center">
-                                          <i class="bi bi-bar-chart-fill"></i>
-                                          <div class="total text-center">
-                                                <p>
-                                                      10
-                                                </p>
-                                          </div>
-                                    </div>
-                              </div>
-                              <div class="box bg-white rounded mt-3 ps-3">
-                                    <p class="pt-2">Total User</p>
-                                    <div class="d-flex mt-2 align-items-center text-align-center">
-                                          <i class="bi bi-bar-chart-fill"></i>
-                                          <div class="total text-center">
-                                                <p>
-                                                      10
-                                                </p>
-                                          </div>
-                                    </div>
-                              </div>
-                              <div class="box bg-white rounded mt-3 ps-3">
-                                    <p class="pt-2">Total User</p>
-                                    <div class="d-flex mt-2 align-items-center text-align-center">
-                                          <i class="bi bi-bar-chart-fill"></i>
-                                          <div class="total text-center">
-                                                <p>
-                                                      10
-                                                </p>
-                                          </div>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
                   <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
                         <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">loker</div>
