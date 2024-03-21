@@ -38,7 +38,7 @@
 <div class="container">
       <div class="row mt-5">
             <div class="col-4">
-                  <div class="card">
+                  <div class="">
                         <div class="card-body">
                               <div class="logo d-flex justify-content-center">
                                     <img src="{{ asset('storage/photo-employe/'.$dataE->image)}}" style="width: 100%" alt="">
@@ -66,21 +66,31 @@
                   </div>
             </div>
             <div class="col">
-                  <div class="col-6 mb-3">
-                        <div class="card w-full" style="font-size: 14px">
-                              <div class="card-body">
-                                    <div class="row">
-                                          <div class="col-9">
-                                                <div class="fw-bolder"><a href="/view/loker-edit/kode-loker" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
-                                          </div>
-                                          <div class="col">
-                                                <div class="text-end text-primary text-end fw-bolder">Aktif</div>
-                                          </div>
-                                    </div>
-                                    <div class="text-secondary mt-2">Human Resource</div>
+                  <div class="row mb-3">
+                        <div class="col d-flex justify-content-end">
+                              <div>
+                                    <a class="btn btn-dark px-5 fw-semibold" style="font-size: 12px" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">TAMBAH LOKER</a>
                               </div>
-                              <div class="card-footer text-center text-secondary">
-                                    12 Kandidat
+                        </div>
+                        @include('partials.modal-new-loker')
+                  </div>
+                  <div class="row">
+                        <div class="col-6 mb-3">
+                              <div class="card w-full" style="font-size: 14px">
+                                    <div class="card-body">
+                                          <div class="row">
+                                                <div class="col-9">
+                                                      <div class="fw-bolder"><a href="/view/loker-edit/kode-loker" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
+                                                </div>
+                                                <div class="col">
+                                                      <div class="text-end text-primary text-end fw-bolder">Aktif</div>
+                                                </div>
+                                          </div>
+                                          <div class="text-secondary mt-2">Human Resource</div>
+                                    </div>
+                                    <div class="card-footer text-center text-secondary">
+                                          12 Kandidat
+                                    </div>
                               </div>
                         </div>
                   </div>
