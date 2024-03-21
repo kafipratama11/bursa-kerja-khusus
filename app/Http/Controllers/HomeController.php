@@ -21,7 +21,8 @@ class HomeController extends Controller
         return view('employer/employer-site');
     }
     public function employe_login(){
-        $dataE = Employe::first();
+        $employeId = Auth::id();
+        $dataE = Employe::where('id', $employeId)->first();
         return view('employer.employer-index',compact('dataE'));
     }
     public function employe_signup(){
