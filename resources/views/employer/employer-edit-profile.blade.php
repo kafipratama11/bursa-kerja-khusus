@@ -96,7 +96,7 @@
                                     <div class="card-body">
                                           <div class="row">
                                                 <div class="col-9">
-                                                      <div class="fw-bolder"><a href="" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
+                                                      <div class="fw-bolder"><a href="{{ route('employe.kode-loker')}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
                                                 </div>
                                                 <div class="col">
                                                       <div class="text-end text-primary text-end fw-bolder">Aktif</div>
