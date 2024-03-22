@@ -62,6 +62,14 @@
                                     </div>
                               </div>
                         </div>
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="mb-3">
+                                          <div class="fw-semibold">Setting</div>
+                                    </div>
+                                    <div style="font-size: 14px"><a class="text-danger link-underline link-underline-opacity-0" href="{{ route('user.logout')}}">Logout</a></div>
+                              </div>
+                        </div>
                   </div>
                   <div class="col-4">
                         <div>

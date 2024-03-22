@@ -72,15 +72,13 @@
                         </a>
                   </form>
                   @else
-                  <div class="dropdown">
-                        <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-2">
+                        <div class="text-light">
                               @auth
                               {{ Auth::user()->name }}
                               @endauth
-                        </a>
-                        <ul class="dropdown-menu">
-                              <li><a class="dropdown-item text-danger" href="{{ route('user.logout')}}">Log Out</a></li>
-                        </ul>
+                        </div>
+                        <div><a href="/user/profile"><img src="../img/bg_iu.jpg" style="width: 40px" class="rounded-pill" alt=""></a></div>
                   </div>
                   @endguest
                   @yield('nav')
