@@ -270,3 +270,15 @@ nav.stroke ul li a{
 .custom-file-upload:hover {
   background-color: #e0e0e0;
 }
+
+.img-profile-user{
+  width: 150px;
+  height: 150px;
+}
+
+.history-apply-user{
+  min-height: 500px;
+  max-height: 500px;
+  max-width: 350px;
+  position: fixed;
+}
