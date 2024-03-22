@@ -12,6 +12,10 @@
   height: 2000px;
 } */
 
+*{
+  font-family: "Poppins", sans-serif;
+}
+
 nav {
   background-color: var(--primary);
 }
