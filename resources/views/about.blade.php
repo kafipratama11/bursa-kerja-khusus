@@ -4,8 +4,8 @@
       @include('partials.modal-login-user')
       <div class="card">
             <div class="card-body">
-                  <div class="d-flex row gap-4 p-4">
-                        <div class="d-flex col-12-sm align-items-center justify-content-center">
+                  <div class="d-flex gap-4 p-4">
+                        <div class="d-flex align-items-center justify-content-center">
                               <div class="fw-bold fs-2 bg-warning px-3 rounded d-flex gap-1">J4bSeeker<i class="bi bi-search"></i></div>
                         </div>
                         <div>
