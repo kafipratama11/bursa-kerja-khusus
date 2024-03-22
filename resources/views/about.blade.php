@@ -4,8 +4,8 @@
       @include('partials.modal-login-user')
       <div class="card">
             <div class="card-body">
-                  <div class="d-flex gap-4 p-4">
-                        <div class="d-flex align-items-center justify-content-center">
+                  <div class="d-flex row gap-4 p-4">
+                        <div class="d-flex col-12-sm align-items-center justify-content-center">
                               <div class="fw-bold fs-2 bg-warning px-3 rounded d-flex gap-1">J4bSeeker<i class="bi bi-search"></i></div>
                         </div>
                         <div>
@@ -23,7 +23,7 @@
                         </div>
                   </div>
                   <div class="row p-5 pb-0">
-                        <div class="col-5">
+                        <div class="col-xl-5 col-sm-12">
                               <div class="bg-white box-warning-alert border-start border-top border-end pt-3 pb-3 px-2 pb-0 overflow-auto" style="max-height: 500px">
                                     <div class="fw-bolder text-start d-flex justify-content-center">
                                           <p class="bg-black py-1 rounded-pill px-3 text-secondary position-absolute dinamic-island-1" style="font-size: 12px"><i class="bi bi-music-note-beamed"></i>
@@ -74,7 +74,7 @@
                                     </div>
                               </div>
                         </div>
-                        <div class="col-7">
+                        <div class="col-xl-7 col-sm-12">
                               <div class="d-flex align-items-center">
                                     <div class="text-secondary fs-5">
                                           Mencari pekerjaan secara aman tidak hanya berarti memperhatikan faktor-faktor keamanan fisik, tetapi juga melibatkan perlindungan terhadap privasi, keamanan data, dan memastikan bahwa Anda terhindar dari penipuan atau ancaman online.
@@ -133,10 +133,10 @@
       <div class="collapse" id="collapseExample">
             <div class="card card-body mt-2">
                   <div class="row">
-                        <div class="col-6 mb-3">
+                        <div class="col-xl-6 col-12-md col-12-sm mb-3">
                               <div class="d-flex gap-3">
                                     <div>
-                                          <img src="img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
                                     </div>
                                     <div>
                                           <div class="fw-semibold">Ihsan Ushain</div>
@@ -144,10 +144,10 @@
                                     </div>
                               </div>
                         </div>
-                        <div class="col-6 mb-3">
+                        <div class="col-xl-6 col-12-md col-12-sm mb-3">
                               <div class="d-flex gap-3">
                                     <div>
-                                          <img src="img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
                                     </div>
                                     <div>
                                           <div class="fw-semibold">Ihsan Ushain</div>
@@ -155,10 +155,10 @@
                                     </div>
                               </div>
                         </div>
-                        <div class="col-6 mb-2">
+                        <div class="col-xl-6 col-12-md col-12-sm mb-2">
                               <div class="d-flex gap-3">
                                     <div>
-                                          <img src="img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
                                     </div>
                                     <div>
                                           <div class="fw-semibold">Ihsan Ushain</div>
@@ -166,10 +166,10 @@
                                     </div>
                               </div>
                         </div>
-                        <div class="col-6 mb-2">
+                        <div class="col-xl-6 col-12-md col-12-sm mb-2">
                               <div class="d-flex gap-3">
                                     <div>
-                                          <img src="img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
                                     </div>
                                     <div>
                                           <div class="fw-semibold">Ihsan Ushain</div>
@@ -177,10 +177,11 @@
                                     </div>
                               </div>
                         </div>
-                        
+
                   </div>
             </div>
       </div>
       @include('partials.footer')
 </div>
+
 @endsection
