@@ -32,6 +32,14 @@
                   <div class="logo d-flex justify-content-center mt-5">
                         <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
                   </div>
+                  <form method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group mb-3 mt-3">
+                              <label class="form-label fw-bolder text-secondary custom-file-upload" for="file-upload" style="font-size: 15px">Ubah Logo</label>
+                              <input type="file" class="form-control" id="file-upload" name="photo" style="display:none;">
+                        </div>
+                  </form>
                   <div class="fw-bolder fs-3 text-secondary">
                         {{$employe->name}}
                   </div>
@@ -88,7 +96,7 @@
                                     <div class="card-body">
                                           <div class="row">
                                                 <div class="col-9">
-                                                      <div class="fw-bolder"><a href="" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
+                                                      <div class="fw-bolder"><a href="{{ route('employe.kode-loker')}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
                                                 </div>
                                                 <div class="col">
                                                       <div class="text-end text-primary text-end fw-bolder">Aktif</div>

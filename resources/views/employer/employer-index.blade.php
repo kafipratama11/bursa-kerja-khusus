@@ -67,7 +67,7 @@
             </div>
             <div class="col">
                   <div class="row mb-3">
-                        <div class="col d-flex justify-content-end">
+                        <div class="col d-flex justify-content-start">
                               <div>
                                     <a class="btn btn-dark px-5 fw-semibold" style="font-size: 12px" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">TAMBAH LOKER</a>
                               </div>
@@ -98,5 +98,4 @@
       </div>
       @include('partials.footer')
 </div>
-
 @endsection

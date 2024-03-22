@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Models\Employe;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +51,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/edit-employe', [HomeController::class, 'employerEditProfile'])->name('edit-employe');
     Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');
     Route::get('/dashboard-employe', [HomeController::class, 'dashboard_employe'])->name('dashboard-employe');
+    Route::get('/kode_loker', [EmployeController::class, 'kode_loker'])->name('kode-loker');
 });
 
 

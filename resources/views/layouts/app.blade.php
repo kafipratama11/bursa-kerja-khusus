@@ -7,6 +7,9 @@
       <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
       <link rel="stylesheet" href="../css/style.css" />
       <link rel="stylesheet" href="../css/dashboard.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-8o5ZR1Z5g8dyjEgjWZBP08fJ2A53HOJM+UXYPZM/Zq8x9o58r+AZa68y6V9Vc74YO/l6BL/+tnUcckyU5T2zpg==" crossorigin="anonymous" />
       {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -48,9 +51,22 @@
                   </div>
                   @guest
                   <form class="d-flex justify-content-end" role="search">
-                        <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="liveToastBtn">
                               Login
                         </button>
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header">
+                                          <img src="..." class="rounded me-2" alt="...">
+                                          <strong class="me-auto">Bootstrap</strong>
+                                          <small>11 mins ago</small>
+                                          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                          Hello, world! This is a toast message.
+                                    </div>
+                              </div>
+                        </div>
                         <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
                               Employer Site
                         </a>
@@ -78,5 +94,6 @@
             CKEDITOR.replace('content');
 
       </script>
+      <script src="../../js/script.js"></script>
 </body>
 </html>
