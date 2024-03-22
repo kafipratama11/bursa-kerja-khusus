@@ -38,7 +38,7 @@
                         @else
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/index-user">LOKER</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/dashboard">LOKER</a>
                               </li>
                               <li class="nav-item">
                                     <a class="nav-link active text-light" aria-current="page" href="/user/perusahaan-list">PERUSAHAAN</a>
