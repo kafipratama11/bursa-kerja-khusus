@@ -32,6 +32,14 @@
                   <div class="logo d-flex justify-content-center mt-5">
                         <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
                   </div>
+                  <form method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group mb-3 mt-3">
+                              <label class="form-label fw-bolder text-secondary custom-file-upload" for="file-upload" style="font-size: 15px">Ubah Logo</label>
+                              <input type="file" class="form-control" id="file-upload" name="photo" style="display:none;">
+                        </div>
+                  </form>
                   <div class="fw-bolder fs-3 text-secondary">
                         {{$employe->name}}
                   </div>

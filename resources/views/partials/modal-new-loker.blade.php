@@ -64,7 +64,7 @@
                   <div class="modal-footer">
                         <div class="d-flex gap-3">
                               <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Kembali</button>
-                              <button class="btn btn-primary px-4" type="submit">Buat</button>
+                              <button class="btn btn-primary px-4" type="submit" data-bs-dismiss="modal" aria-label="Close">Buat</button>
                         </div>
                   </div>
             </div>

@@ -39,5 +39,6 @@
             CKEDITOR.replace('content');
 
       </script>
+      <script src="../../js/script.js"></script>
 </body>
 </html>

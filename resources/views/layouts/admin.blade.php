@@ -20,5 +20,6 @@
             CKEDITOR.replace('jobdesc');
             CKEDITOR.replace('jobrequirement');
       </script>
+      <script src="../../js/script.js"></script>
 </body>
 </html>
