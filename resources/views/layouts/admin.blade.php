@@ -4,8 +4,8 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
-      <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="../../../css/style.css" />
       <link rel="stylesheet" href="../../css/dashboard.css" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,6 @@
             CKEDITOR.replace('jobdesc');
             CKEDITOR.replace('jobrequirement');
       </script>
-      <script src="../../js/script.js"></script>
+      <script src="../../../js/script.js"></script>
 </body>
 </html>
