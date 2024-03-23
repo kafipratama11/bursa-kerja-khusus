@@ -17,7 +17,55 @@
                                                       <div class=""><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
                                                 </div>
                                                 <div class="text-secondary">Jakarta Barat, Jakarta</div>
-                                                <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px">Contact info</a></div>
+                                                <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact info</a></div>
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                      <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                  <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Muhammad Kafi Pratama</h1>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                  </div>
+                                                                  <div class="modal-body px-4">
+                                                                        <div class="d-flex">
+                                                                              <div class="mb-3">Contact Info</div>
+                                                                              <a href="" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="ms-auto"><i class="bi bi-pen text-secondary"></i></a>
+                                                                        </div>
+                                                                        <div class="mb-2">
+                                                                              <div class="fw-semibold text-secondary">Email</div>
+                                                                              <small><a href="" class="link-underline link-underline-opacity-0">kafipratama1512@gmail.com</a></small>
+                                                                        </div>
+                                                                        <div class="mb-2">
+                                                                              <div class="fw-semibold text-secondary">Telp</div>
+                                                                              <small>0851-7414-0161</small>
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                                <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                                      <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                  <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Edit info contact</h1>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                  </div>
+                                                                  <div class="modal-body px-4">
+                                                                        <div class="mb-3">
+                                                                              <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                                                              <input type="email" class="form-control" id="exampleFormControlInput1" value="kafipratama1512@gmail.com">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                              <label for="exampleFormControlInput2" class="form-label">Telp</label>
+                                                                              <input type="text" class="form-control" id="exampleFormControlInput2" value="085174140161">
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="modal-footer d-flex gap-2" style="font-size: 12px">
+                                                                        <button class="btn btn-outline-secondary rounded-pill" data-bs-target="#exampleModal" data-bs-toggle="modal">Cancel</button>
+                                                                        <button class="btn btn-primary rounded-pill px-4" type="submit">Save</button>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="d-flex gap-3">
                                                             <i class="bi bi-envelope-at"></i>kafipratama1512@gmail.com

@@ -68,6 +68,10 @@ Route::get('/view/loker-edit/kode-loker', function () {
     return view('employer/employer-detail-loker');
 });
 
+Route::get('/view/create-loker', function () {
+    return view('employer/employer-create-loker');
+});
+
 Route::get('/view/loker-edit/kode-loker/kode-candidat', function () {
     return view('employer/employer-candidat');
 });
