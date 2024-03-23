@@ -42,6 +42,10 @@
                                           <label for="exampleFormControlInput2" class="form-label">Email</label>
                                           <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex: namaperusahaan@gmail.com">
                                     </div>
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Dibuka Sampai Tanggal</label>
+                                          <input type="date" class="form-control" id="exampleFormControlInput2">
+                                    </div>
                               </div>
                               <div class="col-xl-8 col-md-9 col-sm-12">
                                     <div class="mb-3">
