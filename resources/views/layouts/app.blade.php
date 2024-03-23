@@ -72,7 +72,7 @@
                         </a>
                   </form>
                   @else
-                  <div class="d-flex align-items-center gap-2">
+                  <div class="d-flex align-items-center gap-3">
                         <div class="text-light">
                               @auth
                               {{ Auth::user()->name }}
