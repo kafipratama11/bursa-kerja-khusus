@@ -69,7 +69,7 @@
                   <div class="row mb-3">
                         <div class="col d-flex justify-content-start">
                               <div>
-                                    <a class="btn btn-dark px-5 fw-semibold" href="/view/create-loker" style="font-size: 12px" href="#" role="button">BUAT LOKER</a>
+                                    <a class="btn btn-dark px-5 fw-semibold" href="{{ route('employe.new-loker', ['id' => $dataE->id]) }}" style="font-size: 12px" href="#" role="button">BUAT LOKER</a>
                               </div>
                         </div>
                   </div>

@@ -1,30 +1,5 @@
 @extends('layouts.admin')
 @section('content-admin')
-
-@section('nav-link-employer')
-<button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon text-light"></span>
-</button>
-<div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
-      <ul class="navbar-nav d-flex gap-3">
-            <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
-            </li>
-      </ul>
-</div>
-@endsection
-
-@section('nav')
-<div class="text-white">
-      @auth
-      {{ Auth::user()->name }}
-      @endauth
-</div>
-@endsection
-
 @include('partials.navbar-dashboard-admin')
 <div class="d-flex dashboard-content">
       <div class="left w-25 h-100 mt-5">
@@ -42,17 +17,25 @@
                                           <thead>
                                                 <tr>
                                                       <th scope="col">No</th>
-                                                      <th scope="col">Job Position</th>
-                                                      <th scope="col">Upload</th>
-                                                      <th scope="col">Expired</th>
+                                                      <th scope="col">Nama Pekerjaan</th>
+                                                      <th scope="col">Nama Perusahaan</th>
+                                                      <th scope="col">Lokasi</th>
+                                                      <th scope="col">Waktu</th>
+                                                      <th scope="col">Gaji</th>
+                                                      <th scope="col">Email</th>
+                                                      <th scope="col">Batas Waktu</th>
                                                       <th scope="col">Action</th>
                                                 </tr>
                                           </thead>
                                           <tbody>
                                                 <tr>
-                                                      <th scope="row">1</th>
+                                                      <td></td>
+                                                      <td></td>
                                                       <td>Administrasi</td>
                                                       <td>12/09/2023</td>
+                                                      <td>30/09/2023</td>
+                                                      <td>30/09/2023</td>
+                                                      <td>30/09/2023</td>
                                                       <td>30/09/2023</td>
                                                       <td>
                                                             <div class="dropdown">
@@ -64,7 +47,7 @@
                                                                         <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
                                                                   </ul>
                                                             </div>
-                                                      </td>
+                                                      </td>                                                                                                                 
                                                 </tr>
                                           </tbody>
                                     </table>
