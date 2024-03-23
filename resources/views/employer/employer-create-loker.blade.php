@@ -69,7 +69,7 @@
                                     @enderror
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput2" class="form-label">Email</label>
-                                          <input type="email" name="email" class="form-control" id="exampleFormControlInput2" placeholder="ex: namaperusahaan@gmail.com">
+                                          <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ $data->email}}" readonly placeholder="ex: namaperusahaan@gmail.com">
                                     </div>
                                     @error('email')
                                     <small>{{ $message }}</small>

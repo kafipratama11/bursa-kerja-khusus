@@ -7,11 +7,6 @@
                   @include('partials.sidebar-dashboard-company')
             </div>
       </div>
-      <div class="kanan w-75 mt-5">
-            <div class="container content-body" style="width: 1000px">
-                  <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
-                        {{-- <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                               <div class="pe-5">
                                     <table class="table table-striped">
                                           <thead>
@@ -28,16 +23,17 @@
                                                 </tr>
                                           </thead>
                                           <tbody>
+                                                @foreach ($employE->loker as $item)
                                                 <tr>
-                                                      @foreach ($employeE->loker as $item)
-                                                      <td>{{$item->id}}</td>
-                                                      <td></td>
-                                                      <td>Administrasi</td>
-                                                      <td>12/09/2023</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>30/09/2023</td>
+                                                      <td>{{$loop->iteration}}</td>
+                                                      <td>{{$item->nama_pekerjaan}}</td>
+                                                      <td>{{$item->nama_perusahaan}}</td>
+                                                      <td>{{$item->lokasi}}</td>
+                                                      <td>{{$item->waktu}}</td>
+                                                      <td>{{$item->gaji}}</td>
+                                                      <td>{{$item->email}}</td>
+                                                      <td>{{$item->expired}}</td>
+
                                                       <td>
                                                             <div class="dropdown">
                                                                   <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,16 +45,10 @@
                                                                   </ul>
                                                             </div>
                                                       </td>   
-                                                      @endforeach                                                                                                              
                                                 </tr>
+                                                @endforeach                                                                                                              
                                           </tbody>
                                     </table>
                               </div>
-                        </div> --}}
-                        <div class="tab-pane fade" id="list-apply" role="tabpanel" aria-labelledby="list-apply-list">apply</div>
-                        <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">candidat</div>
-                  </div>
-            </div>
-      </div>
-</div>
+                        </div>
 @endsection

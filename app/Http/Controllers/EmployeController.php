@@ -5,11 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Employe;
 use App\Models\loker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmployeController extends Controller
 {
     public function kode_loker(){
         return view('employer.employer-detail-loker');
+    }
+
+    public function loker($id){
+        $employeId = Auth::id();
+        $employE = Employe::where('id', $employeId)->first();
+        $data = Employe::find($id);
+        $data->load('loker');
+        $loker = $data->Loker;
+        return view('employer.employer-loker',compact('loker','employE'));
     }
     
 
