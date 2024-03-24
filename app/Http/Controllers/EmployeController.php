@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EmployeController extends Controller
 {
-    public function kode_loker(){
-        return view('employer.employer-detail-loker');
-    }
+
 
     public function loker($id){
         $employeId = Auth::id();
@@ -45,6 +43,7 @@ class EmployeController extends Controller
         
             $data['employe_id']             = $request->employe_id;
             $data['nama_pekerjaan']         = $request->nama_pekerjaan;
+            $data['bagian']                 = $request->bagian;
             $data['nama_perusahaan']        = $request->nama_perusahaan;
             $data['lokasi']                 = $request->lokasi;
             $data['waktu']                  = $request->waktu;
@@ -55,7 +54,14 @@ class EmployeController extends Controller
             $data['requirement']            = $request->requirement;
 
             Loker::create($data);
-            return redirect()->route('employe.dashboard-employe')->with('success', 'Registrasi berhasil. Silakan masuk.');
+            return redirect()->route('employe.employe')->with('success', 'Registrasi berhasil. Silakan masuk.');
+    }
+
+    public function detail_loker(Request $request, $id){
+
+        $data = Loker::find($id);
+
+        return view('employer.employer-detail-loker',compact('data'));
     }
     
 }

@@ -23,27 +23,16 @@
       <form action="{{ route('employe.create-new-loker', ['id' => $data->id]) }}" method="POST">
             @csrf
             <div class="card mt-5">
-                  <div class="card-header text-center">Buat Lowongan Baru</div>
+                  <div class="card-header text-center text-white">Buat Lowongan Baru</div>
                   <div class="card-body px-5 pt-5">
                         <div class="row">
                               <div class="col-xl-4 col-md-3 col-sm-12">
                                     <input type="hidden" name="employe_id" class="form-control" id="exampleFormControlInput1" value="{{ $data->id}}"  placeholder="ex: Keuangan">
                                     <div class="mb-3">
-                                          <label for="exampleFormControlInput1" class="form-label">Nama pekerjaan</label>
+                                          <label for="exampleFormControlInput1" class="form-label">Nama Pekerjaan</label>
                                           <input type="text" name="nama_pekerjaan" class="form-control" id="exampleFormControlInput1"  placeholder="ex: Keuangan">
                                     </div>
                                     @error('nama_pekerjaan')
-                                    <small>{{ $message }}</small>
-                                    @enderror
-                                    <div class="mb-3">
-                                          <label for="exampleFormControlInput2" class="form-label">Nama Perusahaan</label>
-                                          <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">
-                                    </div>
-                                    <div class="mb-3">
-                                          <label for="exampleFormControlInput2" class="form-label">Lokasi</label>
-                                          <input type="text" name="lokasi" class="form-control" id="exampleFormControlInput2" placeholder="ex: Jakarta Barat, Jakarta">
-                                    </div>
-                                    @error('lokasi')
                                     <small>{{ $message }}</small>
                                     @enderror
                                     <div class="mb-3">
@@ -51,6 +40,16 @@
                                           <input type="text" name="bagian" class="form-control" id="exampleFormControlInput2" placeholder="ex: backend Developer">
                                     </div>
                                     @error('bagian')
+                                    <small>{{ $message }}</small>
+                                    @enderror
+                                    <div class="mb-3">
+                                          <input type="hidden" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">
+                                    </div>
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Lokasi</label>
+                                          <input type="text" name="lokasi" class="form-control" id="exampleFormControlInput2" placeholder="ex: Jakarta Barat, Jakarta">
+                                    </div>
+                                    @error('lokasi')
                                     <small>{{ $message }}</small>
                                     @enderror
                                     <div class="mb-3">
@@ -69,7 +68,7 @@
                                     @enderror
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput2" class="form-label">Email</label>
-                                          <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ $data->email}}" readonly placeholder="ex: namaperusahaan@gmail.com">
+                                          <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ $data->email}}" placeholder="ex: namaperusahaan@gmail.com">
                                     </div>
                                     @error('email')
                                     <small>{{ $message }}</small>

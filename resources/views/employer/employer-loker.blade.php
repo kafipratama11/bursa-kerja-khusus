@@ -40,7 +40,7 @@
                                                                         Option
                                                                   </a>
                                                                   <ul class="dropdown-menu">
-                                                                        <li><a class="dropdown-item d-flex gap-3" href="/view/loker-edit/kode-loker"><i class="bi bi-eye"></i>Show</a></li>
+                                                                        <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                         <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
                                                                   </ul>
                                                             </div>

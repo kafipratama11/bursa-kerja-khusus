@@ -29,7 +29,7 @@
                                           </thead>
                                           <tbody>
                                                 <tr>
-                                                      @foreach ($employeE->loker as $item)
+                                                      @foreach ($employE->loker as $item)
                                                       <td>{{$item->id}}</td>
                                                       <td></td>
                                                       <td>Administrasi</td>

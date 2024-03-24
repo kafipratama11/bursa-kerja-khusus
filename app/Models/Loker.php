@@ -13,6 +13,7 @@ class loker extends Model
     protected $fillable = [
         'employe_id',
         'nama_pekerjaan',
+        'bagian',
         'nama_perusahaan',
         'lokasi',
         'waktu',
