@@ -80,7 +80,7 @@
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
                                           <div class="position fw-medium fs-4">Administrasi</div>
-                                          <div class="nama-perusahaan">PT First Property Abadi</div>
+                                          <div class="nama-perusahaan text-secondary">PT First Property Abadi</div>
                                     </div>
                                     <div class="row">
                                           <div class="col-1 text-end">
@@ -104,8 +104,8 @@
                                           </div>
                                     </div>
                               </div>
-                              <div class="card-footer">
-                                    <div class="loker-post-day text-center">Dibuka sampai tanggal 10/09/2021</div>
+                              <div class="card-footer bg-white">
+                                    <div class="loker-post-day text-center text-secondary"><small>Dibuka sampai tanggal 10/09/2021</small></div>
                               </div>
                         </div>
                   </a>

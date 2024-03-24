@@ -38,7 +38,7 @@
                         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
                         <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                               <div class="pe-5">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped border">
                                           <thead>
                                                 <tr>
                                                       <th scope="col">No</th>
@@ -71,7 +71,42 @@
                               </div>
                         </div>
                         <div class="tab-pane fade" id="list-apply" role="tabpanel" aria-labelledby="list-apply-list">apply</div>
-                        <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">candidat</div>
+                        <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
+                              <div class="pe-5">
+                                    <table class="table table-striped border">
+                                          <thead>
+                                                <tr>
+                                                      <th scope="col">No</th>
+                                                      <th scope="col">Nama</th>
+                                                      <th scope="col">Kode Loker</th>
+                                                      <th scope="col">Job Position</th>
+                                                      <th scope="col">Tanggal Apply</th>
+                                                      <th scope="col">Action</th>
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                <tr>
+                                                      <th scope="row">1</th>
+                                                      <td>Muhammad Kafi Pratama</td>
+                                                      <td>LSHOPEE12132023001</td>
+                                                      <td>Akuntan</td>
+                                                      <td>30/09/2023</td>
+                                                      <td>
+                                                            <div class="dropdown">
+                                                                  <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        Option
+                                                                  </a>
+                                                                  <ul class="dropdown-menu">
+                                                                        <li><a class="dropdown-item d-flex gap-3" href="/view/loker-edit/kode-loker/kode-candidat"><i class="bi bi-eye"></i>Show</a></li>
+                                                                        <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
+                                                                  </ul>
+                                                            </div>
+                                                      </td>
+                                                </tr>
+                                          </tbody>
+                                    </table>
+                              </div>
+                        </div>
                   </div>
             </div>
       </div>
