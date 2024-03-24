@@ -91,59 +91,27 @@
                         <div class="fw-medium mb-1">
                               Lowongan Kerja
                         </div>
-                        <div class="col-6 mb-3">
-                              <div class="card w-full" style="font-size: 14px">
-                                    <div class="card-body">
-                                          <div class="row">
-                                                <div class="col-9">
-                                                      <div class="fw-bolder"><a href="{{ route('employe.kode-loker')}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
+                        <div class="row">
+                              @foreach ($employe->loker as $item)
+                              <div class="col-6 mb-3">
+                                    <div class="card w-full" style="font-size: 14px">
+                                          <div class="card-body">
+                                                <div class="row">
+                                                      <div class="col-9">
+                                                            <div class="fw-bolder"><a href="{{ route('employe.detail-loker', ['id' =>$item->id])}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">{{$item->nama_pekerjaan}}</a></div>
+                                                      </div>
+                                                      <div class="col">
+                                                            <div class="text-end text-primary text-end fw-bolder">{{$item->status}}</div>
+                                                      </div>
                                                 </div>
-                                                <div class="col">
-                                                      <div class="text-end text-primary text-end fw-bolder">Aktif</div>
-                                                </div>
+                                                <div class="text-secondary mt-2">{{$item->bagian}}</div>
                                           </div>
-                                          <div class="text-secondary mt-2">Human Resource</div>
-                                    </div>
-                                    <div class="card-footer text-center text-secondary">
-                                          12 Orang Melamar
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                              <div class="card w-full" style="font-size: 14px">
-                                    <div class="card-body">
-                                          <div class="row">
-                                                <div class="col-9">
-                                                      <div class="fw-bolder">Employee Relations</div>
-                                                </div>
-                                                <div class="col">
-                                                      <div class="text-end text-primary text-end fw-bolder">Aktif</div>
-                                                </div>
+                                          <div class="card-footer text-center text-secondary">
+                                                12 Kandidat
                                           </div>
-                                          <div class="text-secondary mt-2">Human Resource</div>
                                     </div>
-                                    <div class="card-footer text-center text-secondary">
-                                          12 Orang Melamar
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="col-6 mb-3">
-                              <div class="card w-full" style="font-size: 14px">
-                                    <div class="card-body">
-                                          <div class="row">
-                                                <div class="col-9">
-                                                      <div class="fw-bolder">Employee Relations</div>
-                                                </div>
-                                                <div class="col">
-                                                      <div class="text-end text-primary text-end fw-bolder">Aktif</div>
-                                                </div>
-                                          </div>
-                                          <div class="text-secondary mt-2">Human Resource</div>
-                                    </div>
-                                    <div class="card-footer text-center text-secondary">
-                                          12 Orang Melamar
-                                    </div>
-                              </div>
+                              </div>                                                    
+                              @endforeach
                         </div>
                   </div>
             </div>

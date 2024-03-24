@@ -74,13 +74,14 @@
             </div>
       </div>
       <div class="row mt-5">
+            @foreach ($data as $item)
             <div class="col-xl-6 col-md-12 col-sm-12">
                   <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div class="card card-loker mb-3">
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
-                                          <div class="position fw-medium fs-4">Administrasi</div>
-                                          <div class="nama-perusahaan text-secondary">PT First Property Abadi</div>
+                                          <div class="position fw-medium fs-4">{{ $item->nama_pekerjaan}}</div>
+                                          <div class="nama-perusahaan text-secondary">{{$item->nama_perusahaan}}</div>
                                     </div>
                                     <div class="row">
                                           <div class="col-1 text-end">
@@ -88,29 +89,28 @@
                                           </div>
                                           <div class="col">
                                                 <div class="mb-2">
-                                                      <div class="where">Yogyakarta, DI Yogyakarta</div>
+                                                      <div class="where">{{$item->lokasi}}</div>
                                                       <div class="salary">
-                                                            Rp. 4,500,000 - Rp. 5,000,000 per month
+                                                            {{$item->gaji}}
                                                       </div>
                                                       <div class="detail-position">
-                                                            Administrasi & Dukungan Perkantoran
+                                                            {{$item->bagian}}
                                                       </div>
                                                 </div>
                                                 <div class="deskription text-secondary" style="font-size: 14px">
-                                                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                      Sed qui rerum adipisci reiciendis quam veniam perferendis
-                                                      illo iure excepturi alias.
+                                                      {{$item->deskripsi}}
                                                 </div>
                                           </div>
                                     </div>
                               </div>
                               <div class="card-footer bg-white">
-                                    <div class="loker-post-day text-center text-secondary"><small>Dibuka sampai tanggal 10/09/2021</small></div>
+                                    <div class="loker-post-day text-center text-secondary"><small>Dibuka sampai tanggal {{$item->expired}} </small></div>
                               </div>
                         </div>
                   </a>
                   @include('partials.modal-loker')
             </div>
+            @endforeach
       </div>
       @include('partials.footer')
 </div>
