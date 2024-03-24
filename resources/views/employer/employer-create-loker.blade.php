@@ -50,8 +50,6 @@
                                     @error('bagian')
                                     <small>{{ $message }}</small>
                                     @enderror
-                                    <div class="mb-3">
-                                          <input type="hidden" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">
                                     <div class="mb-3" hidden>
                                           <label for="exampleFormControlInput2" class="form-label">Nama Perusahaan</label>
                                           <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">
@@ -79,7 +77,6 @@
                                     @enderror
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput2" class="form-label">Email</label>
-                                          <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ $data->email}}" placeholder="ex: namaperusahaan@gmail.com">
                                           <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ $data->email}}" placeholder="ex: namaperusahaan@gmail.com">
                                     </div>
                                     @error('email')

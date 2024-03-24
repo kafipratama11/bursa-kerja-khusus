@@ -1,7 +1,5 @@
 @extends('layouts.admin')
 
-@include('partials.navbar-dashboard-admin')
-
 @section('nav-link-employer')
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-light"></span>
@@ -9,15 +7,24 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
             </li>
       </ul>
 </div>
 @endsection
 
+@section('nav')
+<div class="text-white">
+      @auth
+      {{ Auth::user()->name }}
+      @endauth
+</div>
+@endsection
+
+@include('partials.navbar-dashboard-admin')
 @section('content-admin')
 <div class="container">
       <div class="row mt-5">
