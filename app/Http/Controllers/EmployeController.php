@@ -45,6 +45,7 @@ class EmployeController extends Controller
         
             $data['employe_id']             = $request->employe_id;
             $data['nama_pekerjaan']         = $request->nama_pekerjaan;
+            $data['bagian']                 = $request->bagian;
             $data['nama_perusahaan']        = $request->nama_perusahaan;
             $data['lokasi']                 = $request->lokasi;
             $data['waktu']                  = $request->waktu;

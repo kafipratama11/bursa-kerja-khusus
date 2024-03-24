@@ -14,6 +14,7 @@ class loker extends Model
         'employe_id',
         'nama_pekerjaan',
         'nama_perusahaan',
+        'bagian',
         'lokasi',
         'waktu',
         'gaji',

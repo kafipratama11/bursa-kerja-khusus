@@ -286,3 +286,7 @@ nav.stroke ul li a{
 th , td , td a{
   font-size: 13px;
 }
+
+table{
+  margin-top: 4rem;
+}

@@ -1,5 +1,28 @@
 @extends('layouts.admin')
 @section('content-admin')
+@section('nav-link-employer')
+<button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-light"></span>
+</button>
+<div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
+      <ul class="navbar-nav d-flex gap-3">
+            <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
+            </li>
+      </ul>
+</div>
+@endsection
+
+@section('nav')
+<div class="text-white">
+      @auth
+      {{ Auth::user()->name }}
+      @endauth
+</div>
+@endsection
 @include('partials.navbar-dashboard-admin')
 <div class="d-flex dashboard-content">
       <div class="left w-25 h-100 mt-5">
@@ -13,12 +36,11 @@
                         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
                         <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                               <div class="pe-5">
-                                    <table class="table table-striped border">
+                                    <table class="table table-striped border" style="width: 1000px;">
                                           <thead>
                                                 <tr>
                                                       <th scope="col">No</th>
                                                       <th scope="col">Nama Pekerjaan</th>
-                                                      <th scope="col">Nama Perusahaan</th>
                                                       <th scope="col">Lokasi</th>
                                                       <th scope="col">Waktu</th>
                                                       <th scope="col">Gaji</th>
@@ -28,16 +50,16 @@
                                                 </tr>
                                           </thead>
                                           <tbody>
+                                                @foreach ($employE->loker as $item)
                                                 <tr>
-                                                      @foreach ($employeE->loker as $item)
-                                                      <td>{{$item->id}}</td>
-                                                      <td></td>
-                                                      <td>Administrasi</td>
-                                                      <td>12/09/2023</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>30/09/2023</td>
+                                                      <td>{{$loop->iteration}}</td>
+                                                      <td>{{$item->nama_pekerjaan}}</td>
+                                                      <td>{{$item->lokasi}}</td>
+                                                      <td>{{$item->waktu}}</td>
+                                                      <td>{{$item->gaji}}</td>
+                                                      <td>{{$item->email}}</td>
+                                                      <td>{{$item->expired}}</td>
+                        
                                                       <td>
                                                             <div class="dropdown">
                                                                   <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,9 +70,9 @@
                                                                         <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
                                                                   </ul>
                                                             </div>
-                                                      </td>   
-                                                      @endforeach                                                                                                              
+                                                      </td>
                                                 </tr>
+                                                @endforeach
                                           </tbody>
                                     </table>
                               </div>
