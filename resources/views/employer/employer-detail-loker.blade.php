@@ -23,7 +23,7 @@
       <div class="row mt-5">
             <div class="col">
                   <div class="d-flex gap-2">
-                        <div class="fw-semi-bold fs-3 text-dark mb-3">Data Analyst</div>
+                        <div class="fw-semi-bold fs-3 text-dark mb-3">{{$data->nama_pekerjaan}}</div>
                         <!-- Button trigger modal -->
                         <a type="button" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-offset-2 pt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                               <i class="bi bi-pen"></i>
@@ -54,32 +54,31 @@
                   </div>
                   <div style="font-size: 14px" class="text-secondary">
                         <div class="d-flex gap-3 mb-2 align-items-center">
+                              <i class="bi bi-building"></i>
+                              <div>{{ $data->bagian}}</div>
+                        </div>
+                        <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-geo-alt"></i>
-                              <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, nesciunt.</div>
+                              <div>{{ $data->lokasi}}</div>
                         </div>
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-envelope"></i>
-                              <div>Lorem ipsum dolor sit </div>
-                        </div>
-                        <div class="d-flex gap-3 mb-2 align-items-center">
-                              <i class="bi bi-telephone"></i>
-                              <div>0813-9827-1374</div>
+                              <div>{{ $data->email}}</div>
                         </div>
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-clock"></i>
-                              Full Time
+                              {{ $data->waktu}}
                         </div>
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-cash-stack"></i>
-                              Rp. 4,500,000 - Rp. 5,000,000
+                              Rp.{{ $data->gaji}}
                         </div>
                         <hr>
                         <div class="modal-jobdesc mb-4">
                               <div class="title-modal-jobdesc mb-2 fw-bolder">JOB DESCRIPTION</div>
                               <div class="detail-modal-jobdesc">
                                     <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
+                                          > {{ $data->deskripsi}}
                                     </div>
                                     <div>
                                           > Lorem ipsum dolor sit amet consectetur adipisicing
@@ -101,8 +100,7 @@
                               </div>
                               <div class="detail-modal-requirement">
                                     <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
+                                          > {{ $data->requirement}}
                                     </div>
                                     <div>
                                           > Lorem ipsum dolor sit amet consectetur adipisicing

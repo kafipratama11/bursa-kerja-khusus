@@ -51,7 +51,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/edit-employe', [HomeController::class, 'employerEditProfile'])->name('edit-employe');
     Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');
     Route::get('/dashboard-employe', [HomeController::class, 'dashboard_employe'])->name('dashboard-employe');
-    Route::get('/kode_loker', [EmployeController::class, 'kode_loker'])->name('kode-loker');
+    Route::get('/detail-loker/{id}', [EmployeController::class, 'detail_loker'])->name('detail-loker');
     Route::get('/loker/{id}', [EmployeController::class, 'loker'])->name('loker');
     Route::get('/employe/{id}/new-loker', [EmployeController::class, 'new_loker'])->name('new-loker');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');

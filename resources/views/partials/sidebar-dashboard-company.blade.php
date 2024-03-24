@@ -1,16 +1,16 @@
 <div class="vstack gap-0">
       <div role="tablist" id="list-tab">
+                        <a href="{{ route('employe.employe')}}"  class="list-group-item list-group-item-action active link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" >
+                  <div class="p-2 ps-4">
+                        <div class="text-dark menu-sidebar">
+                              Home
+                        </div>
+                  </div>
+            </a>
             <a href="{{ route('employe.dashboard-employe')}}"  class="list-group-item list-group-item-action active link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" >
                   <div class="p-2 ps-4">
                         <div class="text-dark menu-sidebar">
                               Dashboard
-                        </div>
-                  </div>
-            </a>
-            <a href="{{ route('employe.employe')}}"  class="list-group-item list-group-item-action active link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" >
-                  <div class="p-2 ps-4">
-                        <div class="text-dark menu-sidebar">
-                              Home
                         </div>
                   </div>
             </a>
