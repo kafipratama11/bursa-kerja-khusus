@@ -20,42 +20,83 @@
 
 @section('content-admin')
 <div class="container">
-      <form action="">
+      <form action="{{ route('employe.create-new-loker', ['id' => $data->id]) }}" method="POST">
+            @csrf
             <div class="card mt-5">
                   <div class="card-header text-center">Buat Lowongan Baru</div>
                   <div class="card-body px-5 pt-5">
                         <div class="row">
                               <div class="col-xl-4 col-md-3 col-sm-12">
+                                    <input type="hidden" name="employe_id" class="form-control" id="exampleFormControlInput1" value="{{ $data->id}}"  placeholder="ex: Keuangan">
                                     <div class="mb-3">
-                                          <label for="exampleFormControlInput1" class="form-label">Posisi</label>
-                                          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex: Keuangan">
+                                          <label for="exampleFormControlInput1" class="form-label">Nama pekerjaan</label>
+                                          <input type="text" name="nama_pekerjaan" class="form-control" id="exampleFormControlInput1"  placeholder="ex: Keuangan">
+                                    </div>
+                                    @error('nama_pekerjaan')
+                                    <small>{{ $message }}</small>
+                                    @enderror
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Nama Perusahaan</label>
+                                          <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">
                                     </div>
                                     <div class="mb-3">
-                                          <label for="exampleFormControlInput2" class="form-label">Sub Posisi</label>
-                                          <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex: Akuntan">
+                                          <label for="exampleFormControlInput2" class="form-label">Lokasi</label>
+                                          <input type="text" name="lokasi" class="form-control" id="exampleFormControlInput2" placeholder="ex: Jakarta Barat, Jakarta">
                                     </div>
+                                    @error('lokasi')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                                     <div class="mb-3">
-                                          <label for="exampleFormControlInput2" class="form-label">Kota</label>
-                                          <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex: Jakarta Barat, Jakarta">
+                                          <label for="exampleFormControlInput2" class="form-label">Bagian</label>
+                                          <input type="text" name="bagian" class="form-control" id="exampleFormControlInput2" placeholder="ex: backend Developer">
                                     </div>
+                                    @error('bagian')
+                                    <small>{{ $message }}</small>
+                                    @enderror
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Waktu</label>
+                                          <input type="text" name="waktu" class="form-control" id="exampleFormControlInput2" placeholder="ex: Full Time">
+                                    </div>
+                                    @error('waktu')
+                                    <small>{{ $message }}</small>
+                                    @enderror
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Gaji</label>
+                                          <input type="text" name="gaji" class="form-control" id="exampleFormControlInput2" placeholder="ex: 50.000.000">
+                                    </div>
+                                    @error('gaji')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput2" class="form-label">Email</label>
-                                          <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex: namaperusahaan@gmail.com">
+                                          <input type="email" name="email" class="form-control" id="exampleFormControlInput2" value="{{ $data->email}}" readonly placeholder="ex: namaperusahaan@gmail.com">
                                     </div>
+                                    @error('email')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput2" class="form-label">Dibuka Sampai Tanggal</label>
-                                          <input type="date" class="form-control" id="exampleFormControlInput2">
+                                          <input type="date" name="expired" class="form-control" id="exampleFormControlInput2">
                                     </div>
+                                    @error('dibuka_sampai')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                               </div>
                               <div class="col-xl-8 col-md-9 col-sm-12">
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label">Deskripsi Pekerjaan</label>
-                                          <textarea class="form-control" name="jobdesc" rows="5" placeholder="Masukkan Job Desc"></textarea>
+                                          <textarea class="form-control" name="deskripsi" rows="5" placeholder="Masukkan Job Desc"></textarea>
                                     </div>
+                                    @error('deskripsi')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label">Persyaratan Pekerjaan</label>
-                                          <textarea class="form-control" name="jobrequirement" rows="5" placeholder="Masukkan Job Desc"></textarea>
+                                          <textarea class="form-control" name="requirement" rows="5" placeholder="Masukkan Job Desc"></textarea>
                                     </div>
+                                    @error('requirement')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                               </div>
                         </div>
                   </div>

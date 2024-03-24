@@ -47,4 +47,9 @@ class Employe extends Authenticatable
         'password' => 'hashed',
     ];
     protected $table = 'employes';
+
+    public function loker()
+    {
+        return $this->hasMany(Loker::class);
+    }
 }

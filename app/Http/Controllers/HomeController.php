@@ -42,6 +42,7 @@ class HomeController extends Controller
     {
         $employeId = Auth::id();
         $employE = Employe::where('id', $employeId)->first();
+
     
         // Tampilkan view untuk mengedit profil
         return view('employer.employer-dashboard', compact('employE'));
