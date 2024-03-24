@@ -37,7 +37,7 @@
                               edit
                         </a>
 
-                        <!-- Modal -->
+                        <!-- Modal 1-->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -47,8 +47,49 @@
                                           </div>
                                           <div class="modal-body">
                                                 <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label">Bagian</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$data->nama_pekerjaan}}">
+                                                </div>
+                                                <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label">Posisi</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $data->bagian}}">
+                                                </div>
+                                                <div class="mb-3">
                                                       <label for="exampleFormControlInput1" class="form-label">Lokasi</label>
-                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="Jl. Melati 3 No. 24 Cengkareng Barat">
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $data->lokasi}}">
+                                                </div>
+                                                <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label">Status</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $data->waktu}}">
+                                                </div>
+                                                <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label">Gaji</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $data->gaji}}">
+                                                </div>
+                                          </div>
+                                          <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Selanjutnya</button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        {{-- modal 2 --}}
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                          <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Analyst</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                                <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label">Deskripsi Pekerjaan</label>
+                                                      <textarea type="text" class="form-control" id="exampleFormControlInput1" cols="30" rows="10" value="">{{ $data->deskripsi}}</textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label">Persyaratan Pekerjaan</label>
+                                                      <textarea type="text" class="form-control" id="exampleFormControlInput1" cols="30" rows="10" value="">{{ $data->requirement}}</textarea>
                                                 </div>
                                           </div>
                                           <div class="modal-footer">
@@ -78,26 +119,14 @@
                         </div>
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-cash-stack"></i>
-                              Rp.{{ $data->gaji}}
+                              Rp. {{ $data->gaji}}
                         </div>
                         <hr>
                         <div class="modal-jobdesc mb-4">
                               <div class="title-modal-jobdesc mb-2 fw-bolder">JOB DESCRIPTION</div>
                               <div class="detail-modal-jobdesc">
                                     <div>
-                                          > {{ $data->deskripsi}}
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
+                                          {{ $data->deskripsi}}
                                     </div>
                               </div>
                         </div>
@@ -107,19 +136,7 @@
                               </div>
                               <div class="detail-modal-requirement">
                                     <div>
-                                          > {{ $data->requirement}}
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
+                                          {{ $data->requirement}}
                                     </div>
                               </div>
                         </div>
