@@ -11,7 +11,7 @@
             <div class="container content-body" style="width: 1000px">
                   <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
-                        {{-- <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
+                        <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                               <div class="pe-5">
                                     <table class="table table-striped border">
                                           <thead>
@@ -54,7 +54,7 @@
                                           </tbody>
                                     </table>
                               </div>
-                        </div> --}}
+                        </div>
                         <div class="tab-pane fade" id="list-apply" role="tabpanel" aria-labelledby="list-apply-list">apply</div>
                         <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
                               <div class="pe-5">

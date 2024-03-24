@@ -23,7 +23,5 @@ class loker extends Model
         'requirement',
 
     ];
-
- 
     protected $table = 'lokers';
 }
