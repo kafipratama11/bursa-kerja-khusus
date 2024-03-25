@@ -13,8 +13,7 @@
                         <div class="card card-company-list ">
                               <div class="pt-3 ps-4 p-3 pb-1">
                                     <div class="fw-bolder fs-5 mb-2">Shopee Indonesia</div>
-                                    <div class="d-flex gap-2">
-                                          <div class="vr ms-3 p-1 text-body-tertiary rounded-pill"></div>
+                                    <div class="ps-3">
                                           <div>
                                                 <div class="d-flex gap-3 mb-2">
                                                       <i class="bi bi-geo-alt"></i>
