@@ -24,6 +24,7 @@ class HomeController extends Controller
         $loker = Loker::count();
         return view('index',compact('data','loker','user','employe'));
     }
+    
     public function employe(){
         return view('employer/employer-site');
     }

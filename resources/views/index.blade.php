@@ -100,10 +100,10 @@
                                                             {{$item->waktu}}
                                                       </div>
                                                 </div>
-                                                <div class="deskription text-secondary" style="font-size: 14px">
-                                                      {{$item->deskripsi}}
-                                                </div>
                                           </div>
+                                    </div>
+                                    <div class="deskription text-secondary" style="font-size: 14px">
+                                          {{$item->deskripsi}}
                                     </div>
                               </div>
                               <div class="card-footer">
