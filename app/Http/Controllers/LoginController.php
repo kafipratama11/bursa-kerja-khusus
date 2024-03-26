@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employe;
 use App\Models\loker;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -12,8 +13,11 @@ class LoginController extends Controller
 {
     public function index(){
         $data = Loker::all();
+        $user = User::count();
+        $employe = Employe::count();
+        $loker = Loker::count();
         
-        return view('index', compact('data'));
+        return view('index', compact('data','loker','user','employe'));
     }
     
     

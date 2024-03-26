@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employe;
 use App\Models\loker;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,10 @@ class HomeController extends Controller
         }
 
         $data = loker::all();
-        return view('index',compact('data'));
+        $employe = Employe::count();
+        $user = User::count();
+        $loker = Loker::count();
+        return view('index',compact('data','loker','user','employe'));
     }
     public function employe(){
         return view('employer/employer-site');

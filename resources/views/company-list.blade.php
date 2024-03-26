@@ -36,7 +36,7 @@
                                     </div>
                               </div>
                               <div class="card-footer bg-white mt-2 ps-5">
-                                    <small>Jumlah loker : 3</small>
+                                    <small>Jumlah loker : {{$item->loker_count}} </small>
                               </div>
                         </div>
                   </a>

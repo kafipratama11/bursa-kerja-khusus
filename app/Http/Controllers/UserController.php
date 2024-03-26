@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employe;
+use App\Models\loker;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,7 +17,7 @@ class UserController extends Controller
     }
     
     public function company_list(){
-        $data = Employe::all();
+        $data = Employe::withCount('loker')->get();
 
         return view('company-list',compact('data'));
     }

@@ -43,7 +43,7 @@
                               <p>LOWONGAN PEKERJAAN</p>
                         </div>
                         <div class="text-center">
-                              <h2>56</h2>
+                              <h2>{{$loker}}</h2>
                         </div>
                         <hr />
                   </div>
@@ -55,7 +55,7 @@
                               <p>ALUMNI</p>
                         </div>
                         <div class="text-center">
-                              <h2>1208</h2>
+                              <h2>{{$user}}</h2>
                         </div>
                         <hr />
                   </div>
@@ -67,7 +67,7 @@
                               <p>PERUSAHAAN</p>
                         </div>
                         <div class="text-center">
-                              <h2>27</h2>
+                              <h2>{{$employe}}</h2>
                         </div>
                         <hr />
                   </div>
