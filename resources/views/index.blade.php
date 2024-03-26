@@ -76,12 +76,12 @@
       <div class="row mt-5">
             @foreach ($data as $item)
             <div class="col-xl-6 col-md-12 col-sm-12">
-                  <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
+                  <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
                         <div class="card card-loker mb-3">
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
-                                          <div class="position fw-medium fs-4">{{ $item->nama_pekerjaan}}</div>
-                                          <div class="nama-perusahaan text-secondary">{{$item->nama_perusahaan}}</div>
+                                          <div class="position fw-medium fs-4">{{$item->nama_pekerjaan}}</div>
+                                          <div class="nama-perusahaan">{{$item->nama_perusahaan}}</div>
                                     </div>
                                     <div class="row">
                                           <div class="col-1 text-end">
@@ -91,20 +91,23 @@
                                                 <div class="mb-2">
                                                       <div class="where">{{$item->lokasi}}</div>
                                                       <div class="salary">
-                                                            {{$item->gaji}}
+                                                            Rp. {{$item->gaji}}
                                                       </div>
                                                       <div class="detail-position">
                                                             {{$item->bagian}}
                                                       </div>
+                                                      <div class="detail-position">
+                                                            {{$item->waktu}}
+                                                      </div>
                                                 </div>
-                                          </div>
-                                          <div class="deskription text-secondary" style="font-size: 14px">
-                                                {{$item->deskripsi}}
+                                                <div class="deskription text-secondary" style="font-size: 14px">
+                                                      {{$item->deskripsi}}
+                                                </div>
                                           </div>
                                     </div>
                               </div>
-                              <div class="card-footer bg-white">
-                                    <div class="loker-post-day text-center text-secondary"><small>Dibuka sampai tanggal {{$item->expired}} </small></div>
+                              <div class="card-footer">
+                                    <div class="loker-post-day text-center">Dibuka sampai tanggal {{$item->expired}}</div>
                               </div>
                         </div>
                   </a>

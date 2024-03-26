@@ -17,29 +17,7 @@ class LoginController extends Controller
     }
     
     
-    public function apply(){
-        return view('user/apply');
-    }
     
-    public function about(){
-        return view('about');
-    }
-    
-    public function company(){
-        return view('company-list');
-    }
-    
-    public function profileCompany(){
-        return view('employer/profile-perusahaan');
-    }
-    
-    public function employerEditProfile(){
-        return view('employer/employer-edit-profile');
-    }
-    
-    public function employerIndex(){
-        return view('employer/employer-index');
-    }
 
     public function login_proses(Request $request){
         $request->validate([

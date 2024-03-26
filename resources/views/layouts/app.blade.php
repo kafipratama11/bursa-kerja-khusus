@@ -4,10 +4,10 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>J4bSeeker</title>
-      <link rel="website icon" type="jpg" href="../../../img/jobseeker-bg-darkblue.jpg">
-      <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="../css/style.css" />
-      <link rel="stylesheet" href="../css/dashboard.css" />
+      <link rel="website icon" type="jpg" href="../../../../img/jobseeker-bg-darkblue.jpg">
+      <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../css/dashboard.css" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -30,10 +30,10 @@
                                     <a class="nav-link active text-light" aria-current="page" href="/">LOKER</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/perusahaan-list">PERUSAHAAN</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{ route('company-list')}}">PERUSAHAAN</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/tentang">TENTANG</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('about')}}">TENTANG</a>
                               </li>
                         </ul>
                         @else
@@ -42,10 +42,10 @@
                                     <a class="nav-link active text-light" aria-current="page" href="/user/dashboard">LOKER</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/perusahaan-list">PERUSAHAAN</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.company-list')}}">PERUSAHAAN</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/tentang">TENTANG</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.about')}}">TENTANG</a>
                               </li>
                         </ul>
                         @endguest
