@@ -63,5 +63,14 @@ class EmployeController extends Controller
 
         return view('employer.employer-detail-loker',compact('data'));
     }
+
+    public function delete(Request $request, $id){
+        $data = Loker::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->route('employe.employe')->with('successdel' ,'oke');
+        }
+    }
     
 }

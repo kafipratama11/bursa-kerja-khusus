@@ -66,7 +66,11 @@
                                                                   </a>
                                                                   <ul class="dropdown-menu">
                                                                         <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                        <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
+                                                                        <li> <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
+                                                                              @csrf
+                                                                              @method('DELETE')
+                                                                              <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
+                                                                          </form></li>
                                                                   </ul>
                                                             </div>
                                                       </td>

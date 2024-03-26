@@ -59,6 +59,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/loker/{id}', [EmployeController::class, 'loker'])->name('loker');
     Route::get('/employe/{id}/new-loker', [EmployeController::class, 'new_loker'])->name('new-loker');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');
+    Route::delete('/delete/{id}',[EmployeController::class,'delete'])->name('delete');
 });
 
 
