@@ -1,6 +1,6 @@
 <div class="vstack gap-0">
       <div role="tablist" id="list-tab">
-            <a href="{{ route('employe.dashboard-employe')}}" class="list-group-item list-group-item-action active link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink">
+            <a href="#list-dashboard" id="list-dashboard-list" data-bs-toggle="list" role="tab" aria-controls="list-dashboard" class="list-group-item list-group-item-action active link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="text-dark menu-sidebar">
                               Dashboard
@@ -11,7 +11,7 @@
                   <hr style="color: #8ca9e0;">
             </div>
             <div class="ps-3  mb-3 text-dark fw-bolder menu-sidebar">MENU</div>
-            <a href="{{ route('employe.loker', ['id' => $employE])}}" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink">
+            <a href="#list-loker{{ $employE->id }}" id="list-loker-list" data-bs-toggle="list" role="tab" aria-controls="list-loker" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="d-flex gap-3 menu-sidebar align-items-center">
                               <i class="bi bi-grid-1x2 text-dark"></i>

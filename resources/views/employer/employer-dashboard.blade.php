@@ -33,10 +33,10 @@
       <div class="kanan w-75 mt-5">
             <div class="container content-body" style="width: 1000px">
                   <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
-                        <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
+                        <div class="tab-pane fade show active" id="list-dashboard" role="tabpanel" aria-labelledby="list-dashboard-list">dashboard</div>
+                        <div class="tab-pane fade" id="list-loker{{ $employE->id }}" role="tabpanel" aria-labelledby="list-loker-list">
                               <div class="pe-5">
-                                    <table class="table table-striped border" style="width: 1000px;">
+                                    <table class="table table-striped border" style="width: 950px;">
                                           <thead>
                                                 <tr>
                                                       <th scope="col">No</th>
@@ -59,14 +59,13 @@
                                                       <td>{{$item->gaji}}</td>
                                                       <td>{{$item->email}}</td>
                                                       <td>{{$item->expired}}</td>
-                        
                                                       <td>
                                                             <div class="dropdown">
                                                                   <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                                         Option
                                                                   </a>
                                                                   <ul class="dropdown-menu">
-                                                                        <li><a class="dropdown-item d-flex gap-3" href="/view/loker-edit/kode-loker"><i class="bi bi-eye"></i>Show</a></li>
+                                                                        <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                         <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
                                                                   </ul>
                                                             </div>

@@ -76,7 +76,7 @@
       <div class="row mt-5">
             @foreach ($data as $item)
             <div class="col-xl-6 col-md-12 col-sm-12">
-                  <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
                         <div class="card card-loker mb-3">
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
