@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employe;
+use App\Models\loker;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,9 @@ class HomeController extends Controller
         if(auth()->user()->can('view_dashboard')){
             return view('admin.dashboard-admin');
         }
-        return view('index');
+
+        $data = loker::all();
+        return view('index',compact('data'));
     }
     public function employe(){
         return view('employer/employer-site');
