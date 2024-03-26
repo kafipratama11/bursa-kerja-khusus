@@ -79,7 +79,7 @@
                                           </div>
                                     </div>
                               </a>
-                              @include('partials.modal-loker-new')
+                              @include('partials.modal-loker')
                               @include('partials.modal-login-user')
                         </div>
                         @endforeach
