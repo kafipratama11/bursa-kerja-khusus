@@ -54,7 +54,7 @@
                   <div class="row">
                         @foreach ($data->loker as $item)
                         <div class="col-6 mb-3">
-                              <a class="card ps-4 p-3 pe-3 link-underline link-underline-opacity-0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
+                              <a href="" class="card ps-4 p-3 pe-3 link-underline link-underline-opacity-0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
                                     <div class="pt-2">
                                           <div class="d-flex">
                                                 <div class="position fw-bolder mb-3">{{$item->nama_pekerjaan}}</div>
