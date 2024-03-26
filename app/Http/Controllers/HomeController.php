@@ -20,6 +20,7 @@ class HomeController extends Controller
         $data = loker::all();
         return view('index',compact('data'));
     }
+    
     public function employe(){
         return view('employer/employer-site');
     }
