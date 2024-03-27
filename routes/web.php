@@ -46,6 +46,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/profile-employer/{id}', [UserController::class, 'profile_employer'])->name('profile-employer');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
+    Route::delete('/delete/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
 });
 
 
@@ -59,6 +60,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/loker/{id}', [EmployeController::class, 'loker'])->name('loker');
     Route::get('/employe/{id}/new-loker', [EmployeController::class, 'new_loker'])->name('new-loker');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');
+    Route::delete('/delete/{id}',[EmployeController::class,'delete'])->name('delete');
 });
 
 

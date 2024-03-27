@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Employe;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,6 +26,8 @@ class PermissionSeeder extends Seeder
         ],
         ['name' => 'user']
         );
+        $role_employer = Role::UpdateOrCreate(['name' => 'employer', 'guard_name' => 'employe']);
+        $role_new_account = Role::UpdateOrCreate(['name' => 'new_account', 'guard_name' => 'employe']);
         
         $permission1 = Permission::updateOrCreate(
             [
@@ -38,20 +41,22 @@ class PermissionSeeder extends Seeder
             ],
             ['name' => 'view_index']
         );
-
-        $role_admin->givePermissionTo($permission1);
-        $role_admin->givePermissionTo($permission2);
-        $role_user->givePermissionTo($permission2);
-
-        $user = User::find(10);
-<<<<<<< HEAD
-
-        $user->assignRole('admin');
-
-=======
+        $permission3 = Permission::updateOrCreate(
+            ['name' => 'create_work', 'guard_name' => 'employe'],
+            ['name' => 'create_work', 'guard_name' => 'employe']
+        );
 
 
-        $user->assignRole('admin');
->>>>>>> 05fdb51a9c41e8852d14fe951a59dde2ff42e5cc
+
+        $role_employer->givePermissionTo($permission3);
+
+
+        $user = Employe::find(4);
+
+
+        $user->assignRole('employer');
+
+
+
     }
 }
