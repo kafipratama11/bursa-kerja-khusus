@@ -23,11 +23,8 @@
             <div class="col-xl-4 col-md-4 col-sm-12">
                   <label for="where" class="fw-bold form-label">Domisili</label>
                   <div class="d-flex gap-3">
-                        <select class="form-select py-3" aria-label="Default select example" id="where">
-                              <option selected>Pilih Kota Anda</option>
-                              <option value="1">Tangerang</option>
-                              <option value="2">Malang</option>
-                              <option value="3">Jogja</option>
+                        <select class="form-select py-3" aria-label="Default select example" id="provinsi" onclick="loadProvinsi()">
+                              <option value="">Pilih Kota Anda</option>
                         </select>
                         <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
                               Cari
@@ -106,8 +103,10 @@
                                           {{$item->deskripsi}}
                                     </div>
                               </div>
-                              <div class="card-footer">
-                                    <div class="loker-post-day text-center">Dibuka sampai tanggal {{$item->expired}}</div>
+                              <div class="card-footer bg-white">
+                                    <div class="loker-post-day text-center fw-light">
+                                          <small>Dibuka sampai tanggal {{$item->expired}}</small>
+                                    </div>
                               </div>
                         </div>
                   </a>

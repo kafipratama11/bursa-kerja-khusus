@@ -41,19 +41,7 @@
                               <div class="title-modal-jobdesc mb-2 fw-bolder">JOB DESCRIPTION</div>
                               <div class="detail-modal-jobdesc">
                                     <div>
-                                          > {{$item->deskripsi}}
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
+                                          {{$item->deskripsi}}
                                     </div>
                               </div>
                         </div>
@@ -63,19 +51,7 @@
                               </div>
                               <div class="detail-modal-requirement">
                                     <div>
-                                          > {{$item->requirement}}
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
-                                    </div>
-                                    <div>
-                                          > Lorem ipsum dolor sit amet consectetur adipisicing
-                                          elit. Temporibus, incidunt.
+                                          {{$item->requirement}}
                                     </div>
                               </div>
                         </div>
