@@ -45,4 +45,12 @@ class UserController extends Controller
             return redirect()->route('user.index-user')->with('successdel' ,'oke');
         }
     }
+    public function delete_loker(Request $request, $id){
+        $data = Loker::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->route('user.index-user')->with('successdel' ,'oke');
+        }
+    }
 }

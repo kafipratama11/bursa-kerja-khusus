@@ -71,7 +71,7 @@
                                                             <th scope="col">Email</th>
                                                             <th scope="col">Lokasi</th>
                                                             <th scope="col">No Telephone</th>
-                                                            <th scope="col">Role</th>
+                                                            <th scope="col">Status</th>
                                                             <th scope="col">Action</th>
                                                       </tr>
                                                 </thead>
@@ -175,7 +175,7 @@
                                                                         </a>
                                                                         <ul class="dropdown-menu">
                                                                               <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                              <li> <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
+                                                                              <li> <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
                                                                                     @csrf
                                                                                     @method('DELETE')
                                                                                     <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
