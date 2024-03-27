@@ -23,5 +23,15 @@ class RoleSeeder extends Seeder
         ],
         ['name' => 'user']
         );
+        Role::updateOrCreate([
+        'name' => 'new_account',
+        ],
+        ['name' => 'new_account']
+        );
+        Role::updateOrCreate([
+        'name' => 'employer',
+        ],
+        ['name' => 'employer']
+        );
     }
 }

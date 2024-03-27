@@ -22,10 +22,16 @@ class EmployeController extends Controller
     
 
     public function new_loker(Request $request, $id){
+        if(auth()->user()->can('create_work')){
         $data = Employe::find($id);
         $data->load('loker');
         $loker = $data->Loker; // Ambil data loker yang terkait dengan employe
         return view('employer.employer-create-loker', compact('data', 'loker'));
+        }else{
+            $employeId = Auth::id();
+            $dataE = Employe::where('id', $employeId)->first();
+            return redirect()->route('employe.employe',compact('dataE'))->with('new_account',''. $dataE->name);
+        }
     }
 
     public function create_loker(Request $request){
@@ -72,5 +78,6 @@ class EmployeController extends Controller
             return redirect()->route('employe.employe')->with('successdel' ,'oke');
         }
     }
+
     
 }

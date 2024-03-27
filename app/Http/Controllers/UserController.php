@@ -36,4 +36,13 @@ class UserController extends Controller
     public function employerIndex(){
         return view('employer/employer-index');
     }
+
+    public function delete_employe(Request $request, $id){
+        $data = Employe::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->route('user.index-user')->with('successdel' ,'oke');
+        }
+    }
 }

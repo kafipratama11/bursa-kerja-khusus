@@ -10,12 +10,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use PHPUnit\Framework\Constraint\Count;
 
 class HomeController extends Controller
 {
     public function dashboard(){
         if(auth()->user()->can('view_dashboard')){
-            return view('admin.dashboard-admin');
+            $employE = Employe::all();
+            $employe = Employe::count();
+            $user = User::count();
+            $loker = loker::count();
+            
+            $data = Loker::all();
+            $dataU = User::all();
+            return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU'));
         }
 
         $data = loker::all();
