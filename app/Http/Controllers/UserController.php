@@ -50,7 +50,7 @@ class UserController extends Controller
 
         if($data){
             $data->delete();
-            return redirect()->route('user.index-user')->with('successdel' ,'oke');
+            return redirect()->back()->with('successdel' ,'oke');
         }
     }
 }

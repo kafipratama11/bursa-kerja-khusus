@@ -86,7 +86,7 @@
                                           <label for="exampleFormControlInput2" class="form-label">Dibuka Sampai Tanggal</label>
                                           <input type="date" name="expired" class="form-control" id="exampleFormControlInput2">
                                     </div>
-                                    @error('dibuka_sampai')
+                                    @error('expired')
                                     <small>{{ $message }}</small>
                                     @enderror
                               </div>

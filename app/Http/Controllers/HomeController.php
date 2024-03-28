@@ -11,24 +11,26 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use PHPUnit\Framework\Constraint\Count;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
     public function dashboard(){
         if(auth()->user()->can('view_dashboard')){
-            $employE = Employe::all();
+            $employE = Employe::role('employer')->get();
+            $dataE = Employe::role('new_account')->get();
             $employe = Employe::count();
-            $user = User::count();
+            $user = User::count('role_id','2');
             $loker = loker::count();
             
             $data = Loker::all();
-            $dataU = User::all();
-            return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU'));
+            $dataU = User::role('user')->get();
+            return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU','dataE'));
         }
 
         $data = loker::all();
         $employe = Employe::count();
-        $user = User::count();
+        $user = User::count('role_id','2');
         $loker = Loker::count();
         return view('index',compact('data','loker','user','employe'));
     }
@@ -42,7 +44,8 @@ class HomeController extends Controller
         return view('employer.employer-index',compact('dataE'));
     }
     public function employe_signup(){
-        return view('employer/employer-signup');
+        $data = Role::all();
+        return view('employer/employer-signup', compact('data'));
     }
 
     public function employerEditProfile(Request $request)

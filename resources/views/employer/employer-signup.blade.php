@@ -9,6 +9,8 @@
                               <div class="title-signup fw-bolder fs-3 text-center">Daftar</div>
                         </div>
                         <div class="mb-3">
+                        </div>
+                        <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">Alamat Email</label>
                               <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{old('email')}}">
                         </div>

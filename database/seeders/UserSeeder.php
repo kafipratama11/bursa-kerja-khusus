@@ -23,5 +23,11 @@ class UserSeeder extends Seeder
             'name'  => 'user',
             'password'  => 'user',
         ]);
+        User::create([
+            'nisn'      => '003',
+            'role_id'  => '2',
+            'name'  => 'user03',
+            'password'  => 'user',
+        ]);
     }
 }

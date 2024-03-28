@@ -42,6 +42,7 @@ class EmployeController extends Controller
             'waktu'             => 'required',
             'gaji'              => 'required',
             'email'             => 'required|email',
+            'expired'           => 'required',
             'deskripsi'         => 'required',
             'requirement'       => 'required',
         ]);

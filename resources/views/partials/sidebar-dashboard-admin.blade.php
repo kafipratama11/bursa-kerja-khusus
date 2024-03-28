@@ -19,6 +19,14 @@
                         </div>
                   </div>
             </a>
+            <a href="#list-verif" id="list-loker-list" data-bs-toggle="list" role="tab" aria-controls="list-loker" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
+                  <div class="p-2 ps-4">
+                        <div class="d-flex gap-3 menu-sidebar align-items-center">
+                              <i class="bi bi-grid-1x2 text-dark"></i>
+                              VERIFIKASI
+                        </div>
+                  </div>
+            </a>
             <a href="#list-apply" id="list-apply-list" data-bs-toggle="list" role="tab" aria-controls="list-apply" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="d-flex gap-3 menu-sidebar align-items-center">
