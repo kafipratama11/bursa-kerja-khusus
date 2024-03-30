@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     public function index(){
         $data = Loker::all();
-        $user = User::count('role_id','2');
+        $user = User::role('user')->count();
         $employe = Employe::count();
         $loker = Loker::count();
         

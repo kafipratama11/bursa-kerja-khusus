@@ -18,19 +18,21 @@ class HomeController extends Controller
     public function dashboard(){
         if(auth()->user()->can('view_dashboard')){
             $employE = Employe::role('employer')->get();
-            $dataE = Employe::role('new_account')->get();
+            $dataE = Employe::withoutRole('employer')->get();
             $employe = Employe::count();
-            $user = User::count('role_id','2');
+            $user = User::role('user')->count();
             $loker = loker::count();
             
             $data = Loker::all();
             $dataU = User::role('user')->get();
-            return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU','dataE'));
+
+            $role = Role::where('guard_name','employe')->get();
+            return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU','dataE','role'));
         }
 
         $data = loker::all();
         $employe = Employe::count();
-        $user = User::count('role_id','2');
+        $user = User::role('user')->count();
         $loker = Loker::count();
         return view('index',compact('data','loker','user','employe'));
     }

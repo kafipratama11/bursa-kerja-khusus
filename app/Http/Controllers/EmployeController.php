@@ -37,7 +37,8 @@ class EmployeController extends Controller
     public function create_loker(Request $request){
         $request->validate([
             'nama_pekerjaan'    => 'required',
-            'lokasi'            => 'required',
+            'provinsi'          => 'required',
+            'kota_kabupaten'    => 'required',
             'bagian'            => 'required',
             'waktu'             => 'required',
             'gaji'              => 'required',
@@ -52,7 +53,8 @@ class EmployeController extends Controller
             $data['nama_pekerjaan']         = $request->nama_pekerjaan;
             $data['bagian']                 = $request->bagian;
             $data['nama_perusahaan']        = $request->nama_perusahaan;
-            $data['lokasi']                 = $request->lokasi;
+            $data['provinsi']               = $request->provinsi;
+            $data['kota_kabupaten']         = $request->kota_kabupaten;
             $data['waktu']                  = $request->waktu;
             $data['gaji']                   = $request->gaji;
             $data['email']                  = $request->email;

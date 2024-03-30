@@ -16,11 +16,15 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(employes::class)->constrained()->cascadeOnDelete();
             $table->string('nama_pekerjaan',25);
+            $table->string('bagian',25);
             $table->string('nama_perusahaan',25);
-            $table->string('lokasi',25);
+            $table->string('provinsi',25);
+            $table->string('kota_kabupaten',25);
             $table->string('waktu',25);
             $table->string('gaji',25);
             $table->string('email',25);
+            $table->string('deskripsi',100);
+            $table->string('requirement',100);
             $table->string('expired',25);
             $table->timestamps();
         });

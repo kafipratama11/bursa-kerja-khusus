@@ -23,12 +23,9 @@
             <div class="col-xl-4 col-md-4 col-sm-12">
                   <label for="where" class="fw-bold form-label">Domisili</label>
                   <div class="d-flex gap-3">
-                        <select class="form-select py-3" aria-label="Default select example" id="where">
-                              <option selected>Pilih Kota Anda</option>
-                              <option value="1">Tangerang</option>
-                              <option value="2">Malang</option>
-                              <option value="3">Jogja</option>
-                        </select>
+                             <select class="form-select py-3" name="lokasi" id="lokasi">
+                              <option>Pilih Provinsi Anda</option>
+                             </select>
                         <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
                               Cari
                         </button>
@@ -89,7 +86,7 @@
                                           </div>
                                           <div class="col">
                                                 <div class="mb-2">
-                                                      <div class="where">{{$item->lokasi}}</div>
+                                                      <div class="where">{{$item->provinsi}},{{$item->kota_kabupaten}}</div>
                                                       <div class="salary">
                                                             Rp. {{$item->gaji}}
                                                       </div>

@@ -84,7 +84,7 @@
                                                             <td>{{$item->lokasi}}</td>
                                                             <td>{{$item->no_telp}}</td>
                                                             <td>
-                                                                  {{$roles = $item->getRoleNames()->join(', ');}}
+                                                                  {{$roles = $item->getRoleNames()->join(', ');}}                                                                  
                                                             </td>
                                                             <td>
                                                                   <div class="dropdown">
@@ -92,7 +92,8 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Edit Role</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.edit-role', ['id' =>$item->id])}}"><i class="bi bi-pencil"></i>Edit Role</a></li>
                                                                               <li> <form action="{{ route('user.delete-employe',['id' => $item->id]) }}" method="POST">
                                                                                     @csrf
                                                                                     @method('DELETE')
@@ -138,12 +139,15 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Edit Role</a></li>
-                                                                              <li> <form action="{{ route('user.delete-employe',['id' => $item->id]) }}" method="POST">
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.edit-role', ['id' =>$item->id])}}"><i class="bi bi-pencil"></i>Edit Role</a></li>
+                                                                              <li> 
+                                                                                    <form action="{{ route('user.delete-employe',['id' => $item->id]) }}" method="POST">
                                                                                     @csrf
                                                                                     @method('DELETE')
-                                                                                    <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
-                                                                                </form></li>
+                                                                                          <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
+                                                                                    </form>
+                                                                              </li>
                                                                         </ul>
                                                                   </div>
                                                             </td>
@@ -176,7 +180,7 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.user-profile', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                               <li> <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
                                                                                     @csrf
                                                                                     @method('DELETE')
@@ -211,7 +215,7 @@
                                                       <tr>
                                                             <td>{{$loop->iteration}}</td>
                                                             <td>{{$item->nama_pekerjaan}}</td>
-                                                            <td>{{$item->lokasi}}</td>
+                                                            <td>{{$item->provinsi}},{{$item->kota_kabupaten}}</td>
                                                             <td>{{$item->waktu}}</td>
                                                             <td>{{$item->gaji}}</td>
                                                             <td>{{$item->email}}</td>
@@ -222,7 +226,7 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                               <li> <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
                                                                                     @csrf
                                                                                     @method('DELETE')

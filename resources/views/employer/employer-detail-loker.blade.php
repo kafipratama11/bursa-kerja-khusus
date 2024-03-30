@@ -42,7 +42,7 @@
                               <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                           <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Analyst</h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit {{$data->nama_pekerjaan}} </h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                           </div>
                                           <div class="modal-body">
@@ -56,7 +56,7 @@
                                                 </div>
                                                 <div class="mb-3">
                                                       <label for="exampleFormControlInput1" class="form-label">Lokasi</label>
-                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $data->lokasi}}">
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ $data->provinsi}} , {{$data->kota_kabupaten}}">
                                                 </div>
                                                 <div class="mb-3">
                                                       <label for="exampleFormControlInput1" class="form-label">Status</label>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-geo-alt"></i>
-                              <div>{{ $data->lokasi}}</div>
+                              <div>{{ $data->provinsi}} , {{$data->kota_kabupaten}} </div>
                         </div>
                         <div class="d-flex gap-3 mb-2 align-items-center">
                               <i class="bi bi-envelope"></i>

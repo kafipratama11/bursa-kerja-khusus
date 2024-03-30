@@ -12,10 +12,11 @@
                                           </div>
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                      <div class="fw-semibold text-black fs-5">Muhammad Kafi Pratama</div>
+                                                      <div class="fw-semibold text-black fs-5">{{$data->name}}</div>
                                                       <div class="fw-light text-secondary" style="font-size: 12px">(He/Him)</div>
                                                       <div class=""><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
                                                 </div>
+                                                <div class="text-dark">{{$data->nisn}}</div>
                                                 <div class="text-secondary">Jakarta Barat, Jakarta</div>
                                                 <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact info</a></div>
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
