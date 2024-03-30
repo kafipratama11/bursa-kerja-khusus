@@ -13,19 +13,18 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'nisn'      => '002',
-            'name'  => 'admin',
-            'password'  => 'admin',
-        ]);
-        User::create([
-            'nisn'      => '001',
-            'name'  => 'user',
-            'password'  => 'user',
-        ]);
+        // User::create([
+        //     'nisn'      => '002',
+        //     'name'  => 'admin',
+        //     'password'  => 'admin',
+        // ]);
+        // User::create([
+        //     'nisn'      => '001',
+        //     'name'  => 'user',
+        //     'password'  => 'user',
+        // ]);
         User::create([
             'nisn'      => '003',
-            'role_id'  => '2',
             'name'  => 'user03',
             'password'  => 'user',
         ]);

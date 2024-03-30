@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Contracts\Role;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class Education extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
@@ -19,9 +20,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'nama_sekolah',
+        'jurusan',
+        'tahun',
     ];
 
     /**
@@ -43,14 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    protected $table = 'education';
 
-    public function profile_user()
-    {
-        return $this->hasOne(ProfileUser::class);
-    }
 
-    public function education()
-    {
-        return $this->hasMany(Education::class);
-    }
+
+
+
 }

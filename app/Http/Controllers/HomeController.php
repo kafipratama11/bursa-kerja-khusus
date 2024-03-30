@@ -34,7 +34,9 @@ class HomeController extends Controller
         $employe = Employe::count();
         $user = User::role('user')->count();
         $loker = Loker::count();
-        return view('index',compact('data','loker','user','employe'));
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+        return view('index',compact('data','loker','user','employe','dataU'));
     }
     
     public function employe(){
@@ -74,7 +76,6 @@ class HomeController extends Controller
 
         $employeId = Auth::id();
     
-        $photo      = $request->file('photo');
         $photo      = $request->file('photo');
         $filename   = date('y-m-d').$photo->getClientOriginalName();
         $path       ='photo-employe/'.$filename;
