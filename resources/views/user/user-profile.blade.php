@@ -13,7 +13,7 @@
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
                                                       <div class="fw-semibold text-black fs-5">{{$dataU->name}}</div>
-                                                      <div class="fw-light text-secondary" style="font-size: 12px">(He/Him)</div>
+                                                      <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                       <div class=""><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
                                                 </div>
                                                 <div class="text-dark">{{$dataU->nisn}}</div>
