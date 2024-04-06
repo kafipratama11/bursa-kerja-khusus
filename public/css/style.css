@@ -283,7 +283,7 @@ nav.stroke ul li a{
   position: fixed;
 }
 
-th , td , td a{
+th , td , td a, td form button{
   font-size: 13px;
 }
 

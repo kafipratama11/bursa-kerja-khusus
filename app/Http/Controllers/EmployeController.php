@@ -66,6 +66,8 @@ class EmployeController extends Controller
     public function detail_loker(Request $request, $id){
 
         $data = Loker::find($id);
+        $ganjil = Loker::whereRaw('id % 2 != 0')->get();
+        $genap = Loker::whereRaw('id % 2 = 0')->get();
 
         return view('employer.employer-detail-loker',compact('data'));
     }
