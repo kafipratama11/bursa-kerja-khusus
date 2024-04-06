@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     public function index(){
         $data = Loker::all();
-        $user = User::count();
+        $user = User::role('user')->count();
         $employe = Employe::count();
         $loker = Loker::count();
         
@@ -70,6 +70,7 @@ class LoginController extends Controller
         ]);
     
         
+
             $data['name']       = $request->name;
             $data['email']      = $request->email;
             $data['password']   = $request->password;
@@ -77,7 +78,9 @@ class LoginController extends Controller
             $data['no_telp']    = $request->no_telp;
             $data['deskripsi']  = $request->deskripsi;
 
-            Employe::create($data);
+         $user = Employe::create($data);
+
+         $user->syncRoles(['new_account']);
 
         return redirect()->route('employer-site')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }

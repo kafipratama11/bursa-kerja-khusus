@@ -86,7 +86,7 @@
                                           </div>
                                           <div class="col">
                                                 <div class="mb-2">
-                                                      <div class="where">{{$item->lokasi}}</div>
+                                                      <div class="where">{{$item->provinsi}},{{$item->kota_kabupaten}}</div>
                                                       <div class="salary">
                                                             Rp. {{$item->gaji}}
                                                       </div>

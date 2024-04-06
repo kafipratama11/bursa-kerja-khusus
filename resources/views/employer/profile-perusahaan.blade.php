@@ -64,7 +64,7 @@
                                           <div class="ps-4">
                                                 <div class="d-flex gap-3 mb-2">
                                                       <i class="bi bi-geo-alt"></i>
-                                                      {{$item->lokasi}}
+                                                      {{$item->provinsi}},{{$item->kota_kabupaten}}
                                                 </div>
                                                 <div class="d-flex gap-3 mb-2">
                                                       <i class="bi bi-building"></i>

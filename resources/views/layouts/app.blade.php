@@ -79,7 +79,7 @@
                               {{ Auth::user()->name }}
                               @endauth
                         </div>
-                        <div><a href="/user/profile"><img src="../img/bg_iu.jpg" style="width: 40px" class="rounded-pill" alt=""></a></div>
+                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img src="../img/bg_iu.jpg" style="width: 40px" class="rounded-pill" alt=""></a></div>
                   </div>
                   @endguest
                   @yield('nav')
@@ -94,5 +94,27 @@
 
       </script>
       <script src="../../js/script.js"></script>
+      <script>
+             fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                .then(response => response.json())
+                .then(provinces => {
+                    var data = provinces;
+                    var tampung = '<option>Pilih Provinsi Anda</option>';
+                    data.forEach(element => {
+                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                    });
+                    document.getElementById('lokasi').innerHTML = tampung;
+                });
+             fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                .then(response => response.json())
+                .then(provinces => {
+                    var data = provinces;
+                    var tampung = '<option>Pilih Provinsi Anda</option>';
+                    data.forEach(element => {
+                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                    });
+                    document.getElementById('provinsi').innerHTML = tampung;
+                });
+      </script>
 </body>
 </html>

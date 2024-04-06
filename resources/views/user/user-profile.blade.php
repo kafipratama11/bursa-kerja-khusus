@@ -12,17 +12,18 @@
                                           </div>
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                      <div class="fw-semibold text-black fs-5">Muhammad Kafi Pratama</div>
-                                                      <div class="fw-light text-secondary" style="font-size: 12px">(He/Him)</div>
+                                                      <div class="fw-semibold text-black fs-5">{{$dataU->name}}</div>
+                                                      <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                       <div class=""><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
                                                 </div>
-                                                <div class="text-secondary">Jakarta Barat, Jakarta</div>
+                                                <div class="text-dark">{{$dataU->nisn}}</div>
+                                                <div class="text-secondary">{{$dataU->profile_user->jk}}</div>
                                                 <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact info</a></div>
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                   <div class="modal-header">
-                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Muhammad Kafi Pratama</h1>
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$dataU->name}}</h1>
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                   </div>
                                                                   <div class="modal-body px-4">
@@ -32,11 +33,11 @@
                                                                         </div>
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">Email</div>
-                                                                              <small><a href="" class="link-underline link-underline-opacity-0">kafipratama1512@gmail.com</a></small>
+                                                                              <small><a href="" class="link-underline link-underline-opacity-0">{{$dataU->profile_user->email}}</a></small>
                                                                         </div>
                                                                         <div class="mb-2">
-                                                                              <div class="fw-semibold text-secondary">Telp</div>
-                                                                              <small>0851-7414-0161</small>
+                                                                              <div class="fw-semibold text-secondary">No Telephone</div>
+                                                                              <small>{{$dataU->profile_user->no_telp}}</small>
                                                                         </div>
                                                                   </div>
                                                             </div>
@@ -68,10 +69,10 @@
                                                 </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="d-flex gap-3">
-                                                            <i class="bi bi-envelope-at"></i>kafipratama1512@gmail.com
+                                                            <i class="bi bi-envelope-at"></i>{{$dataU->profile_user->email}}
                                                       </div>
                                                       <div class="d-flex gap-3">
-                                                            <i class="bi bi-telephone"></i>0813-7414-0161
+                                                            <i class="bi bi-telephone"></i>{{$dataU->profile_user->no_telp}}
                                                       </div>
                                                 </div>
                                           </div>
@@ -85,7 +86,7 @@
                                           <div><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
                                     </div>
                                     <div style="font-size: 14px">
-                                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae ut aspernatur consequuntur recusandae quasi doloremque sunt, libero minima odio eligendi maiores, quos optio mollitia dignissimos sint nisi illum! Distinctio doloribus, eveniet vel provident odit earum, necessitatibus qui sapiente voluptates ipsam itaque doloremque nemo nihil magni in? Est a ipsam accusantium deserunt, harum et cupiditate enim eveniet voluptate quos! Sint reprehenderit voluptas cupiditate est officiis illum quia debitis labore rem quas nulla minima, animi atque quisquam distinctio voluptate perspiciatis! Dicta eveniet voluptatibus ad rem assumenda est perspiciatis voluptatum, ullam omnis porro? Architecto, quis minima debitis perferendis itaque incidunt non fuga qui quo explicabo ad laudantium sapiente natus distinctio quae, consequatur officiis ipsum pariatur? Ullam vitae impedit error debitis maxime! Atque magnam tenetur laudantium totam hic, numquam, deserunt illum iure doloremque deleniti iste, modi explicabo aut architecto repudiandae dolores reprehenderit nesciunt quidem eius odit itaque harum? Distinctio deleniti labore numquam beatae illum!</p>
+                                          <p>{{$dataU->profile_user->about}}</p>
                                     </div>
                               </div>
                         </div>
@@ -95,19 +96,13 @@
                                           <div class="fw-semibold">Education</div>
                                           <div><a href="" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
                                     </div>
+                                    @foreach ($dataU->education as $item)
                                     <div class="mb-2">
-                                          <div class="fw-semibold" style="font-size: 14px">SMKN 4 Tangerang</div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">Rekayasa Perangkat Lunak</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">2020 - 2025</div>
+                                          <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
+                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
                                     </div>
-                                    <div class="mb-2">
-                                          <div class="d-flex gap-2 align-items-center">
-                                                <div class="fw-semibold" style="font-size: 14px">Universitas Indonesia</div>
-                                                <a href=""><i class="bi bi-pen text-secondary"></i></a>
-                                          </div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">Ilmu Komunikasi</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">2025 - 2029</div>
-                                    </div>
+                                    @endforeach
                               </div>
                         </div>
                         <div class="card bg-white mb-3">

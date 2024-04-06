@@ -55,10 +55,21 @@
                                           <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">
                                     </div>
                                     <div class="mb-3">
-                                          <label for="exampleFormControlInput2" class="form-label">Lokasi</label>
-                                          <input type="text" name="lokasi" class="form-control" id="exampleFormControlInput2" placeholder="ex: Jakarta Barat, Jakarta">
+                                          <label for="exampleFormControlInput2" class="form-label">Provinsi</label>
+                                         <select class="form-control" name="provinsi" id="provinsi">
+                                          <option>Pilih Provinsi</option>
+                                         </select>
                                     </div>
-                                    @error('lokasi')
+                                    @error('provinsi')
+                                    <small>{{ $message }}</small>
+                                    @enderror
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Kota/Kabupaten</label>
+                                         <select class="form-control" name="kota_kabupaten" id="kota_kabupaten">
+                                          <option>Pilih Provinsi Terlebih Dahulu</option>
+                                         </select>
+                                    </div>
+                                    @error('kota/kabpaten')
                                     <small>{{ $message }}</small>
                                     @enderror
                                     <div class="mb-3">
@@ -86,7 +97,7 @@
                                           <label for="exampleFormControlInput2" class="form-label">Dibuka Sampai Tanggal</label>
                                           <input type="date" name="expired" class="form-control" id="exampleFormControlInput2">
                                     </div>
-                                    @error('dibuka_sampai')
+                                    @error('expired')
                                     <small>{{ $message }}</small>
                                     @enderror
                               </div>
@@ -117,5 +128,4 @@
       </form>
       @include('partials.footer')
 </div>
-
 @endsection

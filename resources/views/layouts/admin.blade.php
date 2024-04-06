@@ -26,5 +26,33 @@
             CKEDITOR.replace('jobrequirement');
       </script>
       <script src="../../../js/script.js"></script>
+      <script>
+            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                .then(response => response.json())
+                .then(provinces => {
+                    var data = provinces;
+                    var tampung = '<option>Pilih Provinsi</option>';
+                    data.forEach(element => {
+                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                    });
+                    document.getElementById('provinsi').innerHTML = tampung;
+                });
+
+            const selectProvinsi = document.getElementById('provinsi');
+            
+            selectProvinsi.addEventListener('change', (e) => {
+            var provinsi = e.target.options[e.target.selectedIndex].dataset.reg;
+            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/regencies/${provinsi}.json`)
+                .then(response => response.json())
+                .then(provinces => {
+                    var data = provinces;
+                    var tampung = '<option>Pilih Kota/Kabupaten</option>';
+                    data.forEach(element => {
+                        tampung += `<option data-dist="${element.id}" value="${element.name}">${element.name}</option>`;
+                    });
+                    document.getElementById('kota_kabupaten').innerHTML = tampung;
+                });
+            });
+        </script>
 </body>
 </html>

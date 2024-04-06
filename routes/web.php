@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Models\Employe;
+use App\Models\User;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -46,7 +47,12 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/profile-employer/{id}', [UserController::class, 'profile_employer'])->name('profile-employer');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
-    Route::delete('/delete/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
+    Route::delete('/delete_emplpoye/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
+    Route::delete('/delete/{id}',[UserController::class,'delete_loker'])->name('delete-loker');
+    Route::get('/detail-loker/{id}', [EmployeController::class, 'detail_loker'])->name('detail-loker');
+    Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
+    Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
+    Route::put('update-role/{id}',[UserController::class,'update_role'])->name('update-role');
 });
 
 
