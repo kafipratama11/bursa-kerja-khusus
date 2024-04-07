@@ -96,7 +96,7 @@
                                                             Administrasi & Dukungan Perkantoran
                                                       </div>
                                                 </div>
-                                                <div class="deskription">
+                                                <div class="deskription text-secondary" style="font-size: 14px">
                                                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                                       Sed qui rerum adipisci reiciendis quam veniam perferendis
                                                       illo iure excepturi alias.

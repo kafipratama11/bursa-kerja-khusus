@@ -14,9 +14,12 @@ class EmployeSeeder extends Seeder
     public function run(): void
     {
         Employe::create([
-            'email'      => 'host@gmail.com',
+            'email'      => 'hosting@gmail.com',
             'name'  => 'Software Host Jakarta',
-            'password'  => 'host',
+            'password'  => 'hosting',
+            'lokasi'  => 'oke',
+            'no_telp'  => '099191818',
+            'deskripsi'  => 'jfhfhhfhfhhhhchdhdhdjcdd',
         ]);
     }
 }
