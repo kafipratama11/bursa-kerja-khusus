@@ -14,10 +14,33 @@
                                                 <div class="d-flex gap-2 align-items-center">
                                                       <div class="fw-semibold text-black fs-5">{{$dataU->name}}</div>
                                                       <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
-                                                      <div class=""><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
                                                 </div>
-                                                <div class="text-dark">{{$dataU->nisn}}</div>
-                                                <div class="text-secondary">{{$dataU->profile_user->jk}}</div>
+                                                <div class="text-dark text-secondary" style="font-size: 13px">{{$dataU->nisn}}</div>
+                                                <div class="d-flex gap-2">
+                                                      <div class="text-secondary">Jakarta Selatan</div>
+                                                      <div class=""><a href="" data-bs-toggle="modal" data-bs-target="#provinsiUser"><i class="bi bi-pen text-secondary"></i></a></div>
+                                                </div>
+                                                <div class="modal fade" id="provinsiUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                      <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                  <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                  </div>
+                                                                  <div class="modal-body">
+                                                                        <div class="d-flex gap-3">
+                                                                              <select class="form-select py-3" aria-label="Default select example" id="provinsi" onclick="loadProvinsi()">
+                                                                                    <option value="">Pilih Kota Anda</option>
+                                                                              </select>
+                                                                        </div>
+                                                                  </div>
+                                                                  <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
                                                 <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#contact">Contact info</a></div>
                                                 <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog">
@@ -53,15 +76,15 @@
                                                                   <div class="modal-body px-4">
                                                                         <div class="mb-3">
                                                                               <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                                                              <input type="email" class="form-control" id="exampleFormControlInput1" value="kafipratama1512@gmail.com">
+                                                                              <input type="email" class="form-control" id="exampleFormControlInput1" value="{{$dataU->profile_user->email}}">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                               <label for="exampleFormControlInput2" class="form-label">Telp</label>
-                                                                              <input type="text" class="form-control" id="exampleFormControlInput2" value="085174140161">
+                                                                              <input type="text" class="form-control" id="exampleFormControlInput2" value="{{$dataU->profile_user->no_telp}}">
                                                                         </div>
                                                                   </div>
                                                                   <div class="modal-footer d-flex gap-2" style="font-size: 12px">
-                                                                        <button class="btn btn-outline-secondary rounded-pill" data-bs-target="#exampleModal" data-bs-toggle="modal">Cancel</button>
+                                                                        <button class="btn btn-outline-secondary rounded-pill" data-bs-target="#contact" data-bs-toggle="modal">Cancel</button>
                                                                         <button class="btn btn-primary rounded-pill px-4" type="submit">Save</button>
                                                                   </div>
                                                             </div>
@@ -83,7 +106,24 @@
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-3">
                                           <div class="fw-semibold mb-3">About</div>
-                                          <div><a href=""><i class="bi bi-pen text-secondary"></i></a></div>
+                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#about"><i class="bi bi-pen text-secondary"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                      <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7">{{$dataU->profile_user->about}}</textarea>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                      </div>
+                                                </div>
+                                          </div>
                                     </div>
                                     <div style="font-size: 14px">
                                           <p>{{$dataU->profile_user->about}}</p>
@@ -94,7 +134,35 @@
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-2 mb-3 align-items-center">
                                           <div class="fw-semibold">Education</div>
-                                          <div><a href="" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#education" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                      <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Education</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                            <div class="mb-3">
+                                                                  <label for="exampleFormControlInput1" class="form-label">Nama sekolah atau uni</label>
+                                                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                  <label for="exampleFormControlInput1" class="form-label">Jurusan</label>
+                                                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                  <label for="exampleFormControlInput1" class="form-label">Angkatan</label>
+                                                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                            </div>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                      </div>
+                                                </div>
+                                          </div>
                                     </div>
                                     @foreach ($dataU->education as $item)
                                     <div class="mb-2">
