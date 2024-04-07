@@ -69,33 +69,44 @@
                   <div class="row mb-3">
                         <div class="col d-flex justify-content-start">
                               <div>
-                                    <a class="btn btn-dark px-5 fw-semibold" style="font-size: 12px" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">TAMBAH LOKER</a>
+                                    <a class="btn btn-dark px-5 fw-semibold" href="{{ route('employe.new-loker', ['id' => $dataE->id]) }}" style="font-size: 12px" role="button">BUAT LOKER</a>
                               </div>
                         </div>
-                        @include('partials.modal-new-loker')
                   </div>
                   <div class="row">
+                        @foreach ($dataE->loker as $item)
                         <div class="col-6 mb-3">
                               <div class="card w-full" style="font-size: 14px">
                                     <div class="card-body">
                                           <div class="row">
                                                 <div class="col-9">
-                                                      <div class="fw-bolder"><a href="/view/loker-edit/kode-loker" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">Employee Relations</a></div>
+                                                      <div class="fw-bolder"><a href="{{ route('employe.detail-loker', ['id' =>$item->id])}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">{{$item->nama_pekerjaan}}</a></div>
                                                 </div>
                                                 <div class="col">
-                                                      <div class="text-end text-primary text-end fw-bolder">Aktif</div>
+                                                      <div class="text-end text-primary text-end fw-bolder">{{$item->status}}</div>
                                                 </div>
                                           </div>
-                                          <div class="text-secondary mt-2">Human Resource</div>
+                                          <div class="text-secondary mt-2">{{$item->bagian}}</div>
                                     </div>
                                     <div class="card-footer text-center text-secondary">
                                           12 Kandidat
                                     </div>
                               </div>
-                        </div>
+                        </div>                                                    
+                        @endforeach
                   </div>
             </div>
       </div>
       @include('partials.footer')
 </div>
+@if($message = Session::get('new_account'))
+    <script>
+        Swal.fire({
+  icon: "info",
+  title: "{{$message}}",
+  text: "Perusahaan anda sedang dalam verifikasi",
+  footer: "Tunggu beberapa saat"
+});
+    </script>
+    @endif
 @endsection

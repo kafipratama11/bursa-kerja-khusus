@@ -3,20 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employe;
+use App\Models\loker;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use PHPUnit\Framework\Constraint\Count;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
     public function dashboard(){
         if(auth()->user()->can('view_dashboard')){
-            return view('admin.dashboard-admin');
+            $employE = Employe::role('employer')->get();
+            $dataE = Employe::withoutRole('employer')->get();
+            $employe = Employe::count();
+            $user = User::role('user')->count();
+            $loker = loker::count();
+            
+            $data = Loker::all();
+            $dataU = User::role('user')->get();
+
+            $role = Role::where('guard_name','employe')->get();
+            return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU','dataE','role'));
         }
-        return view('index');
+
+        $data = loker::all();
+        $employe = Employe::count();
+        $user = User::role('user')->count();
+        $loker = Loker::count();
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+        return view('index',compact('data','loker','user','employe','dataU'));
     }
+    
     public function employe(){
         return view('employer/employer-site');
     }
@@ -26,7 +48,8 @@ class HomeController extends Controller
         return view('employer.employer-index',compact('dataE'));
     }
     public function employe_signup(){
-        return view('employer/employer-signup');
+        $data = Role::all();
+        return view('employer/employer-signup', compact('data'));
     }
 
     public function employerEditProfile(Request $request)
@@ -42,6 +65,7 @@ class HomeController extends Controller
     {
         $employeId = Auth::id();
         $employE = Employe::where('id', $employeId)->first();
+
     
         // Tampilkan view untuk mengedit profil
         return view('employer.employer-dashboard', compact('employE'));
@@ -52,7 +76,6 @@ class HomeController extends Controller
 
         $employeId = Auth::id();
     
-        $photo      = $request->file('photo');
         $photo      = $request->file('photo');
         $filename   = date('y-m-d').$photo->getClientOriginalName();
         $path       ='photo-employe/'.$filename;

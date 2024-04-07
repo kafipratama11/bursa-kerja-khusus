@@ -4,12 +4,13 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>J4bSeeker</title>
-      <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="../css/style.css" />
-      <link rel="stylesheet" href="../css/dashboard.css" />
+      <link rel="website icon" type="jpg" href="../../../../img/jobseeker-bg-darkblue.jpg">
+      <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../css/dashboard.css" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-8o5ZR1Z5g8dyjEgjWZBP08fJ2A53HOJM+UXYPZM/Zq8x9o58r+AZa68y6V9Vc74YO/l6BL/+tnUcckyU5T2zpg==" crossorigin="anonymous" />
       {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -29,22 +30,22 @@
                                     <a class="nav-link active text-light" aria-current="page" href="/">LOKER</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/perusahaan-list">PERUSAHAAN</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{ route('company-list')}}">PERUSAHAAN</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/tentang">TENTANG</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('about')}}">TENTANG</a>
                               </li>
                         </ul>
                         @else
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/index-user">LOKER</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="/user/dashboard">LOKER</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/perusahaan-list">PERUSAHAAN</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.company-list')}}">PERUSAHAAN</a>
                               </li>
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/tentang">TENTANG</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.about')}}">TENTANG</a>
                               </li>
                         </ul>
                         @endguest
@@ -72,15 +73,13 @@
                         </a>
                   </form>
                   @else
-                  <div class="dropdown">
-                        <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                        <div class="text-light">
                               @auth
                               {{ Auth::user()->name }}
                               @endauth
-                        </a>
-                        <ul class="dropdown-menu">
-                              <li><a class="dropdown-item text-danger" href="{{ route('user.logout')}}">Log Out</a></li>
-                        </ul>
+                        </div>
+                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img src="../img/bg_iu.jpg" style="width: 40px" class="rounded-pill" alt=""></a></div>
                   </div>
                   @endguest
                   @yield('nav')
@@ -95,5 +94,27 @@
 
       </script>
       <script src="../../js/script.js"></script>
+      <script>
+             fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                .then(response => response.json())
+                .then(provinces => {
+                    var data = provinces;
+                    var tampung = '<option>Pilih Provinsi Anda</option>';
+                    data.forEach(element => {
+                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                    });
+                    document.getElementById('lokasi').innerHTML = tampung;
+                });
+             fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                .then(response => response.json())
+                .then(provinces => {
+                    var data = provinces;
+                    var tampung = '<option>Pilih Provinsi Anda</option>';
+                    data.forEach(element => {
+                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                    });
+                    document.getElementById('provinsi').innerHTML = tampung;
+                });
+      </script>
 </body>
 </html>

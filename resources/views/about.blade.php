@@ -4,8 +4,8 @@
       @include('partials.modal-login-user')
       <div class="card">
             <div class="card-body">
-                  <div class="d-flex row gap-4 p-4">
-                        <div class="d-flex col-12-sm align-items-center justify-content-center">
+                  <div class="d-flex gap-4 p-4">
+                        <div class="d-flex align-items-center justify-content-center">
                               <div class="fw-bold fs-2 bg-warning px-3 rounded d-flex gap-1">J4bSeeker<i class="bi bi-search"></i></div>
                         </div>
                         <div>
@@ -92,7 +92,7 @@
                                                       <div class="tab-pane fade" id="list-satu" role="tabpanel" aria-labelledby="list-satu-list">Setiap pengguna yang mendaftar di J4BSeeker harus melewati proses verifikasi identitas untuk memastikan keaslian informasi yang diberikan. Hal ini membantu mencegah akun palsu atau penipuan identitas.</div>
                                                       <div class="tab-pane fade" id="list-dua" role="tabpanel" aria-labelledby="list-dua-list">
                                                             <div class="d-flex align-items-center justify-content-center">
-                                                                  <div class="fw-bold d-flex gap-1 text-dark" style="font-size: 68px">J4bSeeker<i class="bi bi-search"></i></div>
+                                                                  <div class="fw-bold d-flex gap-1 text-dark"><img style="width: 100%" src="../img/js-blue.png" alt=""></div>
                                                             </div>
                                                       </div>
                                                       <div class="tab-pane fade" id="list-tiga" role="tabpanel" aria-labelledby="list-tiga-list">Kami memiliki sistem pengaduan dan pelaporan yang memungkinkan pengguna untuk melaporkan aktivitas yang mencurigakan atau penipuan yang mereka temui. Tim kami akan segera menindaklanjuti setiap laporan dengan serius.</div>

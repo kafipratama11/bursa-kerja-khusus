@@ -6,20 +6,9 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('user.index-user')}}">BACK</a>
             </li>
       </ul>
-</div>
-@endsection
-
-@section('nav')
-<div class="text-white">
-      @auth
-      {{ Auth::user()->name }}
-      @endauth
 </div>
 @endsection
 
@@ -32,14 +21,6 @@
                   <div class="logo d-flex justify-content-center mt-5">
                         <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
                   </div>
-                  <form method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-group mb-3 mt-3">
-                              <label class="form-label fw-bolder text-secondary custom-file-upload" for="file-upload" style="font-size: 15px">Ubah Logo</label>
-                              <input type="file" class="form-control" id="file-upload" name="photo" style="display:none;">
-                        </div>
-                  </form>
                   <div class="fw-bolder fs-3 text-secondary">
                         {{$employe->name}}
                   </div>
@@ -50,33 +31,38 @@
                   </p>
                   <div class="collapse" id="collapseExample">
                         <div class="card card-body pt-4">
-                              <form action="{{ route('employe.update-profile', ['id' => $employe->id])}}" method="POST" enctype="multipart/form-data">
+                              <form action="{{ route('user.update-role', ['id' => $employe->id])}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
-                                    <div class="form-group mb-3">
-                                          <label for="exampleInputEmail1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Photo Profile</label>
-                                          <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Nama Role</label><br>
+                                          <select name="role" style="font-size: 14px" class="form-control">
+                                                <option class="form-label fw-bolder text-secondary">{{$roles = $employe->getRoleNames()->join(', ');}}</option>
+                                                @foreach ($role as $item)
+                                                <option class="form-label fw-bolder text-secondary">{{$item->name}}</option>
+                                                @endforeach
+                                          </select>
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Nama Perusahaan</label>
-                                          <input type="text" name="name" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->name}}">
+                                          <input type="text" readonly name="name" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->name}}">
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Alamat perusahaan</label>
-                                          <input type="text" name="lokasi" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->lokasi}}">
+                                          <input type="text" readonly name="lokasi" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->lokasi}}">
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">No Telepon</label>
-                                          <input type="text" name="no_telp" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->no_telp}}">
+                                          <input type="text" readonly name="no_telp" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->no_telp}}">
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleInputEmail1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Email</label>
-                                          <input type="email" name="email" style="font-size: 14px" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$employe->email}}">
+                                          <input type="email" readonly name="email" style="font-size: 14px" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$employe->email}}">
                                           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                                     </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlTextarea1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Deskripsi</label>
-                                          <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="7" style="font-size: 14px">{{$employe->deskripsi}}</textarea>
+                                          <textarea class="form-control" name="deskripsi" readonly id="exampleFormControlTextarea1" rows="7" style="font-size: 14px">{{$employe->deskripsi}}</textarea>
                                     </div>
                                     <div class="mb-3 d-flex gap-3">
                                           <button type="submit" class="btn btn-success">Simpan</button>
@@ -98,7 +84,7 @@
                                           <div class="card-body">
                                                 <div class="row">
                                                       <div class="col-9">
-                                                            <div class="fw-bolder"><a href="{{ route('employe.detail-loker', ['id' =>$item->id])}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">{{$item->nama_pekerjaan}}</a></div>
+                                                            <div class="fw-bolder"><a href="{{ route('user.detail-loker', ['id' =>$item->id])}}" class="link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-dark">{{$item->nama_pekerjaan}}</a></div>
                                                       </div>
                                                       <div class="col">
                                                             <div class="text-end text-primary text-end fw-bolder">{{$item->status}}</div>
