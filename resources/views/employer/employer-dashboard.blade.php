@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard-employer')
 @section('content-admin')
 @section('nav-link-employer')
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

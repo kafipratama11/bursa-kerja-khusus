@@ -60,7 +60,11 @@
                               </div>
                         </div>
                         <div class="tab-content" id="nav-tabContent">
-                              <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">dashboard</div>
+                              <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                                          <div class="col-lg-5 chart">
+                                                <canvas id="doughutChart" width="500" height="250"></canvas>
+                                          </div>
+                              </div>
                               <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                                     <div class="pe-5">
                                           <table class="table table-striped border" style="width: 950px;">
@@ -248,7 +252,6 @@
                                                                                                 <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
                                                                                           </form>
                                                                                     </li>
-                                                                                    =======
                                                                                     <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                                     <li>
                                                                                           <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
@@ -257,7 +260,6 @@
                                                                                                 <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
                                                                                           </form>
                                                                                     </li>
-                                                                                    >>>>>>> 9ddcf01803987f88689f0745931c5cfadcae7009
                                                                         </ul>
                                                                   </div>
                                                             </td>

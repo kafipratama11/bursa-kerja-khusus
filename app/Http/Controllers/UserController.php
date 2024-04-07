@@ -7,6 +7,7 @@ use App\Models\loker;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -20,9 +21,11 @@ class UserController extends Controller
     }
     
     public function company_list(){
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
         $data = Employe::withCount('loker')->get();
 
-        return view('company-list',compact('data'));
+        return view('company-list',compact('data','dataU'));
     }
     
     public function profile_employer(Request $request, $id){

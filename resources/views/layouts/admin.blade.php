@@ -54,5 +54,51 @@
                 });
             });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var user = {!! $chartUser !!};
+            var employer = {!! $employe !!};
+            var loker = {!! $loker !!};
+        
+            var total = user + employer + loker;
+        
+            var userPercen = (user / total) * 100;
+            var employerPercen = (employer / total) * 100;
+            var lokerPercen = (loker / total) * 100;
+        
+            console.log(userPercen, employerPercen, lokerPercen);
+        
+            var ctx = document.getElementById("doughutChart");
+        
+            ctx.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [userPercen, employerPercen, lokerPercen],
+                        backgroundColor: [
+                            "#070f2b",
+                            "#ffee00",
+                            "#1b1a55"
+                        ],
+                        hoverBackgroundColor: [
+                            "#070f2b",
+                            "#ffee00",
+                            "#1b1a55"
+                        ]
+        
+                    }],
+                    labels: [
+                        "User",
+                        "Employer",
+                        "Pekerjaan"
+                    ]
+                },
+                options: {
+                    responsive: true,
+                }
+            });
+        </script>
+        
 </body>
 </html>

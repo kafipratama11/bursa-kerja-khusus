@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard-employer')
 @section('content-admin')
 @include('partials.navbar-dashboard-admin')
 <div class="d-flex dashboard-content">
