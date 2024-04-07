@@ -8,7 +8,7 @@
                               <div class="card-body ps-4">
                                     <div class="d-flex gap-4">
                                           <div>
-                                                <img src="../img/bg_iu.jpg" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
+                                                <img src="../../../img/bg_iu.jpg" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
                                           </div>
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
@@ -18,8 +18,8 @@
                                                 </div>
                                                 <div class="text-dark">{{$dataU->nisn}}</div>
                                                 <div class="text-secondary">{{$dataU->profile_user->jk}}</div>
-                                                <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact info</a></div>
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div><a href="" class="link-offset-1 link-underline link-underline-opacity-75" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#contact">Contact info</a></div>
+                                                <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                   <div class="modal-header">
@@ -123,91 +123,7 @@
                                                 <div class="p-2">
                                                       <div class="d-flex gap-3">
                                                             <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
-                                                      </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
-                                                </div>
-                                          </div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
-                                                      </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
-                                                </div>
-                                          </div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
-                                                      </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
-                                                </div>
-                                          </div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
-                                                      </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
-                                                </div>
-                                          </div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
-                                                      </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
-                                                </div>
-                                          </div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
-                                                      </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
-                                                </div>
-                                          </div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../img/bca.png" style="width: 50px" alt=""></div>
+                                                                  <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
                                                             </div>
                                                             <div class="">
                                                                   <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>

@@ -182,24 +182,14 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <<<<<<< HEAD <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                                    <li>
-                                                                                          <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
-                                                                                                @csrf
-                                                                                                @method('DELETE')
-                                                                                                <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
-                                                                                          </form>
-                                                                                    </li>
-                                                                                    =======
-                                                                                    <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.user-profile', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                                    <li>
-                                                                                          <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
-                                                                                                @csrf
-                                                                                                @method('DELETE')
-                                                                                                <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
-                                                                                          </form>
-                                                                                    </li>
-                                                                                    >>>>>>> 9ddcf01803987f88689f0745931c5cfadcae7009
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.user-profile', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li>
+                                                                                    <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
+                                                                                          @csrf
+                                                                                          @method('DELETE')
+                                                                                          <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
+                                                                                    </form>
+                                                                              </li>
                                                                         </ul>
                                                                   </div>
                                                             </td>
@@ -240,24 +230,14 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <<<<<<< HEAD <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                                    <li>
-                                                                                          <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
-                                                                                                @csrf
-                                                                                                @method('DELETE')
-                                                                                                <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
-                                                                                          </form>
-                                                                                    </li>
-                                                                                    =======
-                                                                                    <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                                    <li>
-                                                                                          <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
-                                                                                                @csrf
-                                                                                                @method('DELETE')
-                                                                                                <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
-                                                                                          </form>
-                                                                                    </li>
-                                                                                    >>>>>>> 9ddcf01803987f88689f0745931c5cfadcae7009
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li>
+                                                                                    <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
+                                                                                          @csrf
+                                                                                          @method('DELETE')
+                                                                                          <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
+                                                                                    </form>
+                                                                              </li>
                                                                         </ul>
                                                                   </div>
                                                             </td>
