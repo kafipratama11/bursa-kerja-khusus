@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
 use App\Models\Employe;
 use App\Models\loker;
 use App\Models\Profile;
+use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +19,9 @@ class UserController extends Controller
     }
     
     public function about(){
-        return view('about');
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+        return view('about', compact('dataU'));
     }
     
     public function company_list(){
@@ -84,5 +88,37 @@ class UserController extends Controller
         
 
         return view('user.user-profile',compact('dataU'));
+    }
+
+    public function update_provinsi( Request $request, $id){
+        $provinsi['provinsi'] = $request->provinsi;
+        ProfileUser::where('user_id', $id)->update($provinsi);
+
+        return redirect()->back();
+    }
+
+    public function update_about( Request $request, $id){
+        $about['about'] = $request->about;
+        ProfileUser::where('user_id', $id)->update($about);
+
+        return redirect()->back();
+    }
+
+    public function update_contact( Request $request, $id){
+        $contact['email'] = $request->email;
+        $contact['no_telp'] = $request->no_telp;
+        ProfileUser::where('user_id', $id)->update($contact);
+
+        return redirect()->back();
+    }
+
+    public function add_education( Request $request,$id){
+        $education['user_id']      = $request->user_id;
+        $education['nama_sekolah'] = $request->nama_sekolah;
+        $education['jurusan']      = $request->jurusan;
+        $education['tahun']        = $request->tahun;
+        Education::where('user_id', $id)->create($education);
+        return redirect()->back();
+
     }
 }

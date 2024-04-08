@@ -20,6 +20,7 @@ class Education extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'nama_sekolah',
         'jurusan',
         'tahun',
