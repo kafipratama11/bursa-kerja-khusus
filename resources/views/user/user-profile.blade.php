@@ -56,7 +56,7 @@
                                                                         </div>
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">Email</div>
-                                                                              <small><a href="" class="link-underline link-underline-opacity-0">{{$dataU->profile_user->email}}</a></small>
+                                                                              <small><a href="mailto:{{$dataU->profile_user->email}}" class="link-underline link-underline-opacity-0">{{$dataU->profile_user->email}}</a></small>
                                                                         </div>
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">No Telephone</div>

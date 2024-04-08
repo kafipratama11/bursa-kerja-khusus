@@ -17,7 +17,9 @@ class UserController extends Controller
     }
     
     public function about(){
-        return view('about');
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+        return view('about', compact('dataU'));
     }
     
     public function company_list(){
