@@ -53,6 +53,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
     Route::put('update-role/{id}',[UserController::class,'update_role'])->name('update-role');
+    Route::put('update-provinsi/{id}',[UserController::class,'update_provinsi'])->name('update-provinsi');
+    Route::put('update-contact/{id}',[UserController::class,'update_contact'])->name('update-contact');
+    Route::put('update-about/{id}',[UserController::class,'update_about'])->name('update-about');
+    Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
 });
 
 

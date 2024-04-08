@@ -40,7 +40,7 @@
                                           <thead>
                                                 <tr>
                                                       <th scope="col">No</th>
-                                                      <th scope="col">Nama Pekerjaan</th>
+                                                      <th scope="col">Bagian</th>
                                                       <th scope="col">Lokasi</th>
                                                       <th scope="col">Waktu</th>
                                                       <th scope="col">Gaji</th>
@@ -53,8 +53,8 @@
                                                 @foreach ($employE->loker as $item)
                                                 <tr>
                                                       <td>{{$loop->iteration}}</td>
-                                                      <td>{{$item->nama_pekerjaan}}</td>
-                                                      <td>{{$item->lokasi}}</td>
+                                                      <td>{{$item->bagian}}</td>
+                                                      <td>{{$item->provinsi}},{{$item->kota_kabupaten}}</td>
                                                       <td>{{$item->waktu}}</td>
                                                       <td>{{$item->gaji}}</td>
                                                       <td>{{$item->email}}</td>
