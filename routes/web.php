@@ -49,7 +49,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
     Route::delete('/delete_emplpoye/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
     Route::delete('/delete/{id}',[UserController::class,'delete_loker'])->name('delete-loker');
-    Route::get('/detail-loker/{id}', [EmployeController::class, 'detail_loker'])->name('detail-loker');
+    Route::get('/detail-loker/{id}', [UserController::class, 'detail_loker'])->name('detail-loker');
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
     Route::put('update-role/{id}',[UserController::class,'update_role'])->name('update-role');
@@ -57,6 +57,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::put('update-contact/{id}',[UserController::class,'update_contact'])->name('update-contact');
     Route::put('update-about/{id}',[UserController::class,'update_about'])->name('update-about');
     Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
+    Route::put('update-education/{id}',[UserController::class,'update_education'])->name('update-education');
+    Route::put('photo-profile/{id}',[UserController::class,'photo_profile'])->name('photo-profile');
 });
 
 
@@ -71,6 +73,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/employe/{id}/new-loker', [EmployeController::class, 'new_loker'])->name('new-loker');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');
     Route::delete('/delete/{id}',[EmployeController::class,'delete'])->name('delete');
+    Route::put('photo-profile/{id}',[EmployeController::class,'photo_profile'])->name('photo-profile');
 });
 
 

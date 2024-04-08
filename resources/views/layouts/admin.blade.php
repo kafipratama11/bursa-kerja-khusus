@@ -66,8 +66,6 @@
             var employerPercen = (employer / total) * 100;
             var lokerPercen = (loker / total) * 100;
         
-            console.log(userPercen, employerPercen, lokerPercen);
-        
             var ctx = document.getElementById("doughutChart");
         
             ctx.height = 150;
@@ -75,7 +73,7 @@
                 type: 'doughnut',
                 data: {
                     datasets: [{
-                        data: [userPercen, employerPercen, lokerPercen],
+                        data: [user, employer, loker],
                         backgroundColor: [
                             "#070f2b",
                             "#ffee00",
@@ -89,9 +87,9 @@
         
                     }],
                     labels: [
-                        "User",
-                        "Employer",
-                        "Pekerjaan"
+                        "User" + " " + userPercen + "%",
+                        "Employer" + " " + employerPercen + "%",
+                        "Pekerjaan" + " " + lokerPercen + "%",
                     ]
                 },
                 options: {

@@ -15,9 +15,10 @@ return new class extends Migration
         Schema::create('education', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->string('nama_sekoalh',25)->nullable();
+            $table->string('nama_sekolah',25)->nullable();
             $table->string('jurusan',25)->nullable();
             $table->string('tahun',25)->nullable();
+            $table->timestamps();
         });
     }
 

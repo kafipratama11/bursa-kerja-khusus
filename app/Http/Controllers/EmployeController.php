@@ -6,6 +6,7 @@ use App\Models\Employe;
 use App\Models\loker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeController extends Controller
 {
@@ -82,6 +83,20 @@ class EmployeController extends Controller
             $data->delete();
             return redirect()->route('employe.employe')->with('successdel' ,'oke');
         }
+    }
+
+    public function photo_profile(Request $request, $id){
+
+        $photo      = $request->file('photo');
+        $filename   = date('y-m-d').$photo->getClientOriginalName();
+        $path       ='photo-employe/'.$filename;
+
+        Storage::disk('public')->put($path,file_get_contents($photo));
+
+        $data['image'] = $filename;
+
+        Employe::where('id', $id)->update($data);
+        return redirect()->back();
     }
 
     

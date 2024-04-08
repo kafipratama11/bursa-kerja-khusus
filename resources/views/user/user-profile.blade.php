@@ -8,27 +8,31 @@
                               <div class="card-body ps-4">
                                     <div class="d-flex gap-4">
                                           <div class="d-flex">
-                                                <img src="../../../img/bg_iu.jpg" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
+                                                <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
                                                 <div class="d-flex align-items-end">
                                                       <a href="" class="text-secondary" style="font-size: 24px; margin-left: -1rem; margin-bottom: -10px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
                                                 </div>
                                                 <div class="modal fade" id="photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog modal-dialog-centered">
-                                                            <div class="modal-content">
-                                                                  <div class="modal-header">
-                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Photo Profile</h1>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                  </div>
-                                                                  <div class="modal-body">
-                                                                        <div class="mb-3">
-                                                                              <input class="form-control" type="file" id="formFile">
+                                                            <form action="{{route('user.photo-profile',['id' =>$dataU->id])}}" method="POST" enctype="multipart/form-data">
+                                                                  @csrf
+                                                                  @method('PUT')
+                                                                  <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                              <h1 class="modal-title fs-5" id="exampleModalLabel">Photo Profile</h1>
+                                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                              <div class="mb-3">
+                                                                                    <input class="form-control" name="photo" type="file" id="formFile">
+                                                                              </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                              <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                                                                              <button type="submit" class="btn btn-primary rounded-pill">Save changes</button>
                                                                         </div>
                                                                   </div>
-                                                                  <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary rounded-pill">Save changes</button>
-                                                                  </div>
-                                                            </div>
+                                                            </form>
                                                       </div>
                                                 </div>
                                           </div>
@@ -202,45 +206,49 @@
                                                 </form>
                                           </div>
                                     </div>
-                                    @foreach ($dataU->education as $item)
+                                    @foreach ($dataU->education as $dataU)
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
-                                                <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
+                                                <div class="fw-semibold" style="font-size: 14px">{{$dataU->nama_sekolah}}</div>
                                                 <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editEducation{{ $dataU->id }}"><i class="bi bi-pen"></i></a>
                                           </div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
+                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$dataU->jurusan}}</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$dataU->tahun}}</div>
                                     </div>
                                     @endforeach
                               </div>
                         </div>
                         <div class="modal fade" id="editEducation{{ $dataU->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
-                                    <div class="modal-content">
-                                          <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Education</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                          </div>
-                                          <div class="modal-body">
-                                                <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
-                                                <div class="mb-3">
-                                                      <label for="exampleFormControlInput1" class="form-label">Nama sekolah atau universitas</label>
-                                                      <input type="text" name="nama_sekolah" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->nama_sekolah}}">
+                                    <form action="{{ route('user.update-education', ['id' => $dataU->id])}}" method="POST">
+                                          @csrf
+                                          @method('PUT')
+                                          <div class="modal-content">
+                                                <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Education</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <div class="mb-3">
-                                                      <label for="exampleFormControlInput1" class="form-label">Jurusan</label>
-                                                      <input type="text" name="jurusan" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->jurusan}}">
+                                                <div class="modal-body">
+                                                      <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
+                                                      <div class="mb-3">
+                                                            <label for="exampleFormControlInput1" class="form-label">Nama sekolah atau universitas</label>
+                                                            <input type="text" name="nama_sekolah" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->nama_sekolah}}">
+                                                      </div>
+                                                      <div class="mb-3">
+                                                            <label for="exampleFormControlInput1" class="form-label">Jurusan</label>
+                                                            <input type="text" name="jurusan" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->jurusan}}">
+                                                      </div>
+                                                      <div class="mb-3">
+                                                            <label for="exampleFormControlInput1" class="form-label">Tahun Ajaran</label>
+                                                            <input type="text" name="tahun" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->tahun}}">
+                                                      </div>
                                                 </div>
-                                                <div class="mb-3">
-                                                      <label for="exampleFormControlInput1" class="form-label">Tahun Ajaran</label>
-                                                      <input type="text" name="tahun" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->tahun}}">
+                                                <div class="modal-footer">
+                                                      <button type="button" class="btn btn-danger">Delete</button>
+                                                      <button type="submit" class="btn btn-primary">Save changes</button>
                                                 </div>
                                           </div>
-                                          <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger">Delete</button>
-                                                <button type="submit" class="btn btn-primary">Save changes</button>
-                                          </div>
-                                    </div>
+                                    </form>
                               </div>
                         </div>
                         <div class="card bg-white mb-3">

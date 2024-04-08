@@ -45,18 +45,23 @@ class PermissionSeeder extends Seeder
             ['name' => 'create_work', 'guard_name' => 'employe'],
             ['name' => 'create_work', 'guard_name' => 'employe']
         );
+        $permission4 = Permission::updateOrCreate(
+            ['name' => 'guest', 'guard_name' => 'employe'],
+            ['name' => 'guest', 'guard_name' => 'employe']
+        );
 
 
 
-        $role_employer->givePermissionTo($permission3);
         $role_admin->givePermissionTo($permission1);
+        $role_user->givePermissionTo($permission2);
+        $role_employer->givePermissionTo($permission3);
+        $role_new_account->givePermissionTo($permission4);
+
+        
 
 
-        $user = Employe::find(2);
 
-
-        $user->assignRole('employer');
-
+        
 
 
     }
