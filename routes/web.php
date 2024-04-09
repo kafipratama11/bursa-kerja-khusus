@@ -62,6 +62,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::delete('/delete-education/{id}',[UserController::class,'delete_education'])->name('delete-education');
     Route::delete('/delete/{id}',[UserController::class,'delete'])->name('delete');
     Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
+    Route::delete('update-experience/{id}',[UserController::class,'update_experience'])->name('update-experience');
     Route::delete('/delete-experience/{id}',[UserController::class,'delete_experience'])->name('delete-experience');
 });
 

@@ -200,4 +200,16 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    public function update_experience(Request $request, $id){
+        $data['user_id']            = $request->user_id;
+        $data['nama_perusahaan']    = $request->nama_perusahaan;
+        $data['nama_pekerjaan']     = $request->nama_pekerjaan;
+        $data['status']             = $request->status;
+        $data['lama_bekerja']       = $request->lama_bekerja;
+        $data['deskripsi']          = $request->deskripsi;
+
+        Experience::where('id',$id)->update($data);
+        return redirect()->back();
+    }
 }

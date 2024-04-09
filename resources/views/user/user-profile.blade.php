@@ -319,42 +319,44 @@
                                     </div>
                                     <div class="modal fade" id="editExperience{{$exp->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="" method="POST">
+                                                <form action="{{ route('user.update-experience',['id' => $exp->id])}}" method="POST">
+                                                      @csrf
+                                                      @method('PUT')
                                                       <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Experience</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                  <input type="hidden" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$exp->nama_perusahaan}}">
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$exp->nama_perusahaan}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Nama Pekerjaan</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="contract" value="{{$exp->nama_pekerjaan}}">
+                                                                        <input type="text" name="nama_pekerjaan" class="form-control" id="exampleFormControlInput1" placeholder="contract" value="{{$exp->nama_pekerjaan}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Status</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="contract" value="{{$exp->status}}">
+                                                                        <input type="text" name="status" class="form-control" id="exampleFormControlInput1" placeholder="contract" value="{{$exp->status}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Lama Bekerja</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$exp->lama_bekerja}}">
+                                                                        <input type="text" name="lama_bekerja" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$exp->lama_bekerja}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">{{$exp->deskripsi}}</textarea>
+                                                                        <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="4">{{$exp->deskripsi}}</textarea>
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                  <form action="{{ route('user.delete-experience',['id' => $exp->id])}}" method="POST">
+                                                                  <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button type="submit" class="btn btn-danger">Delete</button>
-                                                                  </form>
+                                                                    </form>     
                                                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                       </div>
