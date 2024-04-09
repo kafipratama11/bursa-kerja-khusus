@@ -15,18 +15,27 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        // User::create([
+        //     'nisn'      => '001',
+        //     'name'      => 'admin',
+        //     'password'  => 'admin',
+        // ]);
+        // User::create([
+        //     'nisn'      => '002',
+        //     'name'      => 'user',
+        //     'password'  => 'user',
+        // ]);
+        // ProfileUser::create([
+        //     'user_id'   => '002',
+        //     'jk'        => 'she/her',
+        // ]);
         User::create([
-            'nisn'      => '001',
-            'name'      => 'admin',
-            'password'  => 'admin',
-        ]);
-        User::create([
-            'nisn'      => '002',
+            'nisn'      => '003',
             'name'      => 'user',
             'password'  => 'user',
         ]);
         ProfileUser::create([
-            'user_id'   => '002',
+            'user_id'   => '003',
             'jk'        => 'she/her',
         ]);
     }

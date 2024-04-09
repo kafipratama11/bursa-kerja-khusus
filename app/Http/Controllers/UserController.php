@@ -87,6 +87,7 @@ class UserController extends Controller
         $dataU->load('profile_user');
         $dataU->load('education');
         
+        
 
         return view('user.user-profile',compact('dataU'));
     }

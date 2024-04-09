@@ -75,11 +75,12 @@
                   @else
                   <div class="d-flex align-items-center gap-3">
                         <div class="text-light">
+                        <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}" class="text-light text-decoration-none">
                               @auth
                               {{ Auth::user()->name }}
                               @endauth
+                        </a>
                         </div>
-                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" class="rounded-pill" alt=""></a></div>
                   </div>
                   @endguest
                   @yield('nav')
