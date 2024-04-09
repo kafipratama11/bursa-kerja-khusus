@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->string('jk',5)->nullable();
+            $table->string('jk',12)->nullable();
             $table->string('provinsi',25)->nullable();
             $table->string('kota',25)->nullable();
             $table->string('email',30)->nullable();

@@ -79,7 +79,7 @@
                               {{ Auth::user()->name }}
                               @endauth
                         </div>
-                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img src="../img/bg_iu.jpg" style="width: 40px" class="rounded-pill" alt=""></a></div>
+                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" class="rounded-pill" alt=""></a></div>
                   </div>
                   @endguest
                   @yield('nav')

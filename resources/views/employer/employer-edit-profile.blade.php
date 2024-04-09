@@ -35,9 +35,8 @@
                   <form method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="form-group mb-3 mt-3">
-                              <label class="form-label fw-bolder text-secondary custom-file-upload" for="file-upload" style="font-size: 15px">Ubah Logo</label>
-                              <input type="file" class="form-control" id="file-upload" name="photo" style="display:none;">
+                        <div class="d-flex align-items-end">
+                              <a href="" class="text-secondary" style="font-size: 24px; margin-left: -1rem; margin-bottom: -10px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
                         </div>
                   </form>
                   <div class="fw-bolder fs-3 text-secondary">
@@ -117,6 +116,29 @@
             </div>
       </div>
       @include('partials.footer')
+      <div class="modal fade" id="photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                  <form action="{{route('employe.photo-profile',['id' =>$employe->id])}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Photo Profile</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                    <div class="mb-3">
+                                          <input class="form-control" name="photo" type="file" id="formFile">
+                                    </div>
+                              </div>
+                              <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary rounded-pill">Save changes</button>
+                              </div>
+                        </div>
+                  </form>
+            </div>
+      </div>
 </div>
 
 @endsection

@@ -234,8 +234,8 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                               <li>
+                                                                              <a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a>
                                                                                     <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
                                                                                           @csrf
                                                                                           @method('DELETE')

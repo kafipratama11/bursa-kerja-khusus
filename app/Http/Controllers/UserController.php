@@ -10,6 +10,7 @@ use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -120,5 +121,38 @@ class UserController extends Controller
         Education::where('user_id', $id)->create($education);
         return redirect()->back();
 
+    }
+
+    public function detail_loker(Request $request, $id){
+
+        $data = Loker::find($id);
+        $ganjil = Loker::whereRaw('id % 2 != 0')->get();
+        $genap = Loker::whereRaw('id % 2 = 0')->get();
+
+        return view('admin.employer-detail-loker',compact('data'));
+    }
+
+    public function update_education(Request $request, $id){
+        $education['nama_sekolah']   = $request->nama_sekolah;
+        $education['jurusan']        = $request->jurusan;
+        $education['tahun']          = $request->tahun;
+
+        Education::where('id', $id)->update($education);
+
+        return redirect()->back();
+    }
+
+    public function photo_profile(Request $request, $id){
+
+        $photo      = $request->file('photo');
+        $filename   = date('y-m-d').$photo->getClientOriginalName();
+        $path       ='photo-user/'.$filename;
+
+        Storage::disk('public')->put($path,file_get_contents($photo));
+
+        $data['image'] = $filename;
+
+        ProfileUser::where('user_id', $id)->update($data);
+        return redirect()->back();
     }
 }
