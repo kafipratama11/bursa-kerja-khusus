@@ -191,4 +191,13 @@ class UserController extends Controller
         Experience::where('id',$id)->create($data);
         return redirect()->back();
     }
+
+    public function delete_experience($id){
+        $data = Experience::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->back();
+        }
+    }
 }
