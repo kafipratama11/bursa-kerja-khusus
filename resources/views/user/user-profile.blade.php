@@ -317,7 +317,6 @@
                                           <div class="fw-light text-secondary" style="font-size: 12px">{{$exp->lama_bekerja}}</div>
                                           <div class="fw-light text-secondary mt-3" style="font-size: 12px">{{$exp->deskripsi}}</div>
                                     </div>
-                                    @endforeach
                                     <div class="modal fade" id="editExperience{{$exp->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
                                                 <form action="" method="POST">
