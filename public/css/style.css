@@ -7,9 +7,6 @@
                                     --light-yellow: rgb(251, 255, 132);
                                     --yellow: #ffee00;
                                 }
-                                /* body {
-  height: 2000px;
-} */
                                 
                                 * {
                                     font-family: "Poppins", sans-serif;
@@ -119,18 +116,11 @@
                                 .quote {
                                     font-size: 15px;
                                 }
-                                /* .footer{
-  background-color: var(--dark-blue);
-  height: 400px;
-  margin-top: 4rem;
-} */
+
                                 
                                 .scroll-nav {
                                     position: fixed;
                                 }
-                                /* .navbar-nav a:hover{
-  color: var(--light-yellow)!important;
-} */
                                 
                                 nav ul li a,
                                 nav ul li a:after,
@@ -313,4 +303,24 @@
                                     margin: 0 auto;
                                     display: block;
                                     width: 45%;
+                                }
+                                
+                                @keyframes fadeInOut {
+                                    0% { opacity: 0; }
+                                    25% { opacity: 1; }
+                                    75% { opacity: 1; }
+                                    100% { opacity: 0; }
+                                }
+                                
+                                #copy-feedback {
+                                    position: fixed;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    padding: 10px 20px;
+                                    background-color: rgba(0, 0, 0, 0.7);
+                                    color: white;
+                                    border-radius: 5px;
+                                    animation: fadeInOut 2s ease-out;
+                                    display: none;
                                 }

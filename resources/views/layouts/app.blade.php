@@ -75,12 +75,11 @@
                   @else
                   <div class="d-flex align-items-center gap-3">
                         <div class="text-light">
-                        <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}" class="text-light text-decoration-none">
                               @auth
                               {{ Auth::user()->name }}
                               @endauth
-                        </a>
                         </div>
+                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../../storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a></div>
                   </div>
                   @endguest
                   @yield('nav')
@@ -95,28 +94,29 @@
             CKEDITOR.replace('content');
 
       </script>
-      <script src="../../js/script.js"></script>
+      <script src="../../../js/script.js"></script>
       <script>
-             fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
-                .then(response => response.json())
-                .then(provinces => {
-                    var data = provinces;
-                    var tampung = '<option>Pilih Provinsi Anda</option>';
-                    data.forEach(element => {
-                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
-                    });
-                    document.getElementById('lokasi').innerHTML = tampung;
-                });
-             fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
-                .then(response => response.json())
-                .then(provinces => {
-                    var data = provinces;
-                    var tampung = '<option>Pilih Provinsi Anda</option>';
-                    data.forEach(element => {
-                        tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
-                    });
-                    document.getElementById('provinsi').innerHTML = tampung;
-                });
+            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                  .then(response => response.json())
+                  .then(provinces => {
+                        var data = provinces;
+                        var tampung = '<option>Pilih Provinsi Anda</option>';
+                        data.forEach(element => {
+                              tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                        });
+                        document.getElementById('lokasi').innerHTML = tampung;
+                  });
+            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+                  .then(response => response.json())
+                  .then(provinces => {
+                        var data = provinces;
+                        var tampung = '<option>Pilih Provinsi Anda</option>';
+                        data.forEach(element => {
+                              tampung += `<option data-reg="${element.id}" value="${element.name}">${element.name}</option>`;
+                        });
+                        document.getElementById('provinsi').innerHTML = tampung;
+                  });
       </script>
+
 </body>
 </html>

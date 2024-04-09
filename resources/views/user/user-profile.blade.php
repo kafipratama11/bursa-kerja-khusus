@@ -91,6 +91,7 @@
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">No Telephone</div>
                                                                               <small>{{$dataU->profile_user->no_telp}}</small>
+
                                                                         </div>
                                                                   </div>
                                                             </div>
@@ -125,11 +126,14 @@
                                                       </div>
                                                 </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
-                                                      <div class="d-flex gap-3">
+                                                      <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-envelope-at"></i>{{$dataU->profile_user->email}}
                                                       </div>
-                                                      <div class="d-flex gap-3">
-                                                            <i class="bi bi-telephone"></i>{{$dataU->profile_user->no_telp}}
+                                                      <div class="d-flex gap-3 align-items-center">
+                                                            <i class="bi bi-telephone"></i>
+                                                            <div class="d-flex gap-1 align-items-center">
+                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div><a id="copy-link" class="" href="#"><i class="bi bi-clipboard"></i> </a>
+                                                            </div>
                                                       </div>
                                                 </div>
                                           </div>
@@ -304,7 +308,7 @@
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$edu->nama_perusahaan}}</div>
-                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editExperience"><i class="bi bi-pen"></i></a>
+                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editExperience{{ $edu->id }}"><i class="bi bi-pen"></i></a>
                                           </div>
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-normal text-secondary" style="font-size: 14px">{{$edu->nama_pekerjaan}}</div>
@@ -313,8 +317,7 @@
                                           <div class="fw-light text-secondary" style="font-size: 12px">{{$edu->lama_bekerja}}</div>
                                           <div class="fw-light text-secondary mt-3" style="font-size: 12px">{{$edu->deskripsi}}</div>
                                     </div>
-                                    @endforeach
-                                    <div class="modal fade" id="editExperience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="editExperience{{ $edu->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
                                                 <form action="" method="POST">
                                                       <div class="modal-content">
@@ -326,19 +329,23 @@
                                                                   <input type="hidden" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="Astra Indonesia">
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$edu->nama_perusahaan}}">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Posisi</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$edu->nama_pekerjaan}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Status</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="contract" value="Contract">
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" value="{{$edu->status}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Lama Bekerja</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="2020 - 2021">
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$edu->lama_bekerja}}">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">{{$edu->deskripsi}}</textarea>
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -349,6 +356,7 @@
                                                 </form>
                                           </div>
                                     </div>
+                                    @endforeach
                               </div>
                         </div>
                         {{-- SETTINGS --}}
@@ -385,6 +393,7 @@
                         </div>
                   </div>
             </div>
+            <div id="copy-feedback">No telp berhasil disalin!</div>
       </div>
 </body>
 
