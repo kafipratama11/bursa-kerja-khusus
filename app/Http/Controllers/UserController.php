@@ -39,7 +39,9 @@ class UserController extends Controller
         $data = Employe::find($id);
         $data->load('loker');
         $loker = $data->Loker; 
-        return view('employer.profile-perusahaan',compact('data','loker'));
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+        return view('employer.profile-perusahaan',compact('data','loker','dataU'));
     }
     
     public function employerEditProfile(){
@@ -188,5 +190,14 @@ class UserController extends Controller
 
         Experience::where('id',$id)->create($data);
         return redirect()->back();
+    }
+
+    public function delete_experience($id){
+        $data = Experience::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->back();
+        }
     }
 }
