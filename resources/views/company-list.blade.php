@@ -7,6 +7,11 @@
 @include('partials.modal-login-user')
 <div class="container">
       <div class="row mt-5">
+            @if($data->isEmpty())
+            <div class="d-flex align-items-center justify-content-center">
+                  <img src="../assets/images/no_data_found2.png" style="width: 500px" alt="">
+            </div>
+            @else
             @foreach ($data as $item)
             <div class="col-6 mb-3">
                   @guest
@@ -74,6 +79,7 @@
                   @endguest
             </div>
             @endforeach
+            @endif
       </div>
       @include('partials.footer')
 </div>
