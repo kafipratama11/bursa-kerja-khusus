@@ -58,53 +58,46 @@
       </script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
-            var user = {
-                  !!$chartUser!!
-            };
-            var employer = {
-                  !!$employe!!
-            };
-            var loker = {
-                  !!$loker!!
-            };
+      var ctx = document.getElementById("doughutChart");
+      var user          = {!! $user !!};
+      var employer      = {!! $employe !!};
+      var loker         = {!! $loker !!};
 
             var total = user + employer + loker;
-
             var userPercen = (user / total) * 100;
             var employerPercen = (employer / total) * 100;
             var lokerPercen = (loker / total) * 100;
 
-            var ctx = document.getElementById("doughutChart");
+      ctx.height = 150;
+        var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [user,employer,loker],
+                backgroundColor: [
+                    "rgba(117, 113, 249,0.9)",
+                    "rgba(117, 113, 249,0.7)",
+                    "rgba(117, 113, 249,0.5)",
+                    "rgba(144,	104,	190,0.07)"
+                ],
+                hoverBackgroundColor: [
+                    "rgba(117, 113, 249,0.9)",
+                    "rgba(117, 113, 249,0.7)",
+                    "rgba(117, 113, 249,0.5)",
+                    "rgba(144,	104,	190,0.7)"
+                ]
 
-            ctx.height = 150;
-            var myChart = new Chart(ctx, {
-                  type: 'doughnut'
-                  , data: {
-                        datasets: [{
-                              data: [user, employer, loker]
-                              , backgroundColor: [
-                                    "#070f2b"
-                                    , "#ffee00"
-                                    , "#1b1a55"
-                              ]
-                              , hoverBackgroundColor: [
-                                    "#070f2b"
-                                    , "#ffee00"
-                                    , "#1b1a55"
-                              ]
-
-                        }]
-                        , labels: [
-                              "User" + " " + userPercen + "%"
-                              , "Employer" + " " + employerPercen + "%"
-                              , "Pekerjaan" + " " + lokerPercen + "%"
-                        , ]
-                  }
-                  , options: {
-                        responsive: true
-                  , }
-            });
-
+            }],
+            labels: [
+                "User" + userPercen + "%",
+                "Employer" + employerPercen + "%",
+                "Loker" + lokerPercen + "%",
+            ]
+        },
+        options: {
+            responsive: true,
+        }
+    });
       </script>
 
 </body>

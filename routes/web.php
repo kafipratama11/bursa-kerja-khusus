@@ -59,6 +59,9 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
     Route::put('update-education/{id}',[UserController::class,'update_education'])->name('update-education');
     Route::put('photo-profile/{id}',[UserController::class,'photo_profile'])->name('photo-profile');
+    Route::delete('/delete-education/{id}',[UserController::class,'delete_education'])->name('delete-education');
+    Route::delete('/delete/{id}',[UserController::class,'delete'])->name('delete');
+    Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
 });
 
 

@@ -240,7 +240,11 @@
                                                             </div>
                                                       </div>
                                                       <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger">Delete</button>
+                                                            <form action="{{ route('user.delete-education',['id' => $item->id])}}" method="POST">
+                                                                  @csrf
+                                                                  @method('DELETE')
+                                                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </form>
                                                             <button type="submit" class="btn btn-primary">Save changes</button>
                                                       </div>
                                                 </div>
@@ -258,29 +262,34 @@
                                     </div>
                                     <div class="modal fade" id="experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="" method="POST">
+                                                <form action="{{ route('user.add-experience',['id' => $dataU->id])}}" method="POST">
+                                                      @csrf
                                                       <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">Add Experience</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                  <input type="hidden" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Nama Pekerjaan</label>
+                                                                        <input type="text" name="nama_pekerjaan" class="form-control" id="exampleFormControlInput1" placeholder="">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Status</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="contract">
+                                                                        <input type="text" name="status" class="form-control" id="exampleFormControlInput1" placeholder="contract">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Lama Bekerja</label>
-                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                        <input type="text" name="lama_bekerja" class="form-control" id="exampleFormControlInput1" placeholder="2020-2021">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                                                        <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="4"></textarea>
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -291,18 +300,20 @@
                                                 </form>
                                           </div>
                                     </div>
+                                    @foreach ($dataU->experiences as $edu)
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
-                                                <div class="fw-semibold" style="font-size: 14px">Astra Indonesia</div>
+                                                <div class="fw-semibold" style="font-size: 14px">{{$edu->nama_perusahaan}}</div>
                                                 <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editExperience"><i class="bi bi-pen"></i></a>
                                           </div>
                                           <div class="d-flex gap-2 align-items-center">
-                                                <div class="fw-normal text-secondary" style="font-size: 14px">UI/UX Designer</div>
-                                                <div class="fw-light text-secondary" style="font-size: 12px">Contract</div>
+                                                <div class="fw-normal text-secondary" style="font-size: 14px">{{$edu->nama_pekerjaan}}</div>
+                                                <div class="fw-light text-secondary" style="font-size: 12px">{{$edu->status}}</div>
                                           </div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">2020 - 2021</div>
-                                          <div class="fw-light text-secondary mt-3" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum non aspernatur eaque, possimus accusantium ab recusandae minus velit sunt. Vero itaque incidunt molestiae ipsa voluptates fugit est laborum neque deserunt!</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$edu->lama_bekerja}}</div>
+                                          <div class="fw-light text-secondary mt-3" style="font-size: 12px">{{$edu->deskripsi}}</div>
                                     </div>
+                                    @endforeach
                                     <div class="modal fade" id="editExperience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
                                                 <form action="" method="POST">

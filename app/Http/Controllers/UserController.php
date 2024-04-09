@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Education;
 use App\Models\Employe;
+use App\Models\Experience;
 use App\Models\loker;
 use App\Models\Profile;
 use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
 
@@ -86,6 +88,7 @@ class UserController extends Controller
         $dataU = User::find($id);
         $dataU->load('profile_user');
         $dataU->load('education');
+        $dataU->load('experiences');
         
         
 
@@ -154,6 +157,36 @@ class UserController extends Controller
         $data['image'] = $filename;
 
         ProfileUser::where('user_id', $id)->update($data);
+        return redirect()->back();
+    }
+
+    public function delete_education($id){
+        $data = Education::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->back();
+        }
+    }
+
+    public function delete(Request $request, $id){
+        $data = User::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->back();
+        }
+    }
+
+    public function add_experience(Request $request, $id){
+        $data['user_id']            = $request->user_id;
+        $data['nama_perusahaan']    = $request->nama_perusahaan;
+        $data['nama_pekerjaan']     = $request->nama_pekerjaan;
+        $data['status']             = $request->status;
+        $data['lama_bekerja']       = $request->lama_bekerja;
+        $data['deskripsi']          = $request->deskripsi;
+
+        Experience::where('id',$id)->create($data);
         return redirect()->back();
     }
 }
