@@ -71,6 +71,12 @@
             </div>
       </div>
       <div class="row mt-5">
+            @if($data->isEmpty())
+            <div class="d-flex align-items-center justify-content-center">
+                  <img src="../assets/images/no_data_found2.png" style="width: 500px" alt="">
+            </div>
+            @else
+            {{-- Tampilkan data yang ada --}}
             @foreach ($data as $item)
             <div class="col-xl-6 col-md-12 col-sm-12">
                   <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
@@ -113,6 +119,8 @@
                   @include('partials.modal-loker')
             </div>
             @endforeach
+            @endif
+            
       </div>
       @include('partials.footer')
 </div>

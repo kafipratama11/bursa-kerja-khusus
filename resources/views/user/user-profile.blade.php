@@ -168,6 +168,7 @@
                                     </div>
                               </div>
                         </div>
+                        {{-- EDUCATION --}}
                         <div class="card bg-white mb-3">
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-2 mb-3 align-items-center">
@@ -206,51 +207,140 @@
                                                 </form>
                                           </div>
                                     </div>
-                                    @foreach ($dataU->education as $dataU)
+                                    @foreach ($dataU->education as $item)
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
-                                                <div class="fw-semibold" style="font-size: 14px">{{$dataU->nama_sekolah}}</div>
-                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editEducation{{ $dataU->id }}"><i class="bi bi-pen"></i></a>
+                                                <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
+                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen"></i></a>
                                           </div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$dataU->jurusan}}</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$dataU->tahun}}</div>
+                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
+                                    </div>
+                                    <div class="modal fade" id="editEducation{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                      <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Education</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                            <input type="text" value="{{$dataU->id}}" hidden>
+                                                            <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
+                                                            <div class="mb-3">
+                                                                  <label for="exampleFormControlInput1" class="form-label">Nama sekolah atau universitas</label>
+                                                                  <input type="text" name="nama_sekolah" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->nama_sekolah}}">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                  <label for="exampleFormControlInput1" class="form-label">Jurusan</label>
+                                                                  <input type="text" name="jurusan" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->jurusan}}">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                  <label for="exampleFormControlInput1" class="form-label">Tahun Ajaran</label>
+                                                                  <input type="text" name="tahun" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->tahun}}">
+                                                            </div>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger">Delete</button>
+                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                      </div>
+                                                </div>
+                                          </div>
                                     </div>
                                     @endforeach
                               </div>
                         </div>
-                        <div class="modal fade" id="editEducation{{ $dataU->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                    <form action="{{ route('user.update-education', ['id' => $dataU->id])}}" method="POST">
-                                          @csrf
-                                          @method('PUT')
-                                          <div class="modal-content">
-                                                <div class="modal-header">
-                                                      <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Education</h1>
-                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                      <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
-                                                      <div class="mb-3">
-                                                            <label for="exampleFormControlInput1" class="form-label">Nama sekolah atau universitas</label>
-                                                            <input type="text" name="nama_sekolah" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->nama_sekolah}}">
+                        {{-- EXPERIENCE --}}
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="d-flex gap-2 mb-3 align-items-center">
+                                          <div class="fw-semibold">Experience</div>
+                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#experience" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Experience</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Status</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="contract">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Lama Bekerja</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
+                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
                                                       </div>
-                                                      <div class="mb-3">
-                                                            <label for="exampleFormControlInput1" class="form-label">Jurusan</label>
-                                                            <input type="text" name="jurusan" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->jurusan}}">
-                                                      </div>
-                                                      <div class="mb-3">
-                                                            <label for="exampleFormControlInput1" class="form-label">Tahun Ajaran</label>
-                                                            <input type="text" name="tahun" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->tahun}}">
-                                                      </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                      <button type="button" class="btn btn-danger">Delete</button>
-                                                      <button type="submit" class="btn btn-primary">Save changes</button>
-                                                </div>
+                                                </form>
                                           </div>
-                                    </form>
+                                    </div>
+                                    <div class="mb-2">
+                                          <div class="d-flex gap-2">
+                                                <div class="fw-semibold" style="font-size: 14px">Astra Indonesia</div>
+                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editExperience"><i class="bi bi-pen"></i></a>
+                                          </div>
+                                          <div class="d-flex gap-2 align-items-center">
+                                                <div class="fw-normal text-secondary" style="font-size: 14px">UI/UX Designer</div>
+                                                <div class="fw-light text-secondary" style="font-size: 12px">Contract</div>
+                                          </div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">2020 - 2021</div>
+                                          <div class="fw-light text-secondary mt-3" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum non aspernatur eaque, possimus accusantium ab recusandae minus velit sunt. Vero itaque incidunt molestiae ipsa voluptates fugit est laborum neque deserunt!</div>
+                                    </div>
+                                    <div class="modal fade" id="editExperience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Experience</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="Astra Indonesia">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Status</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="contract" value="Contract">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Lama Bekerja</label>
+                                                                        <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="" value="2020 - 2021">
+                                                                  </div>
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
+                                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
                               </div>
                         </div>
+                        {{-- SETTINGS --}}
                         <div class="card bg-white mb-3">
                               <div class="card-body pt-4 ps-4">
                                     <div class="mb-3">
