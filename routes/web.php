@@ -109,3 +109,10 @@ Route::get('/perusahaan-list', function () {
 Route::get('/tentang', function () {
     return view('about');
 });
+
+// routes/web.php
+
+// Route untuk halaman 404
+Route::fallback(function () {
+    return view('errors.404');
+});
