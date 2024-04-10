@@ -31,14 +31,16 @@
             <div class="col-4">
                   <div class="logo d-flex justify-content-center mt-5">
                         <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
+                        <form method="POST" enctype="multipart/form-data">
+                              @csrf
+                              @method('PUT')
+                              <div class="d-flex align-items-end z-3">
+                                    <div class="d-flex align-items-center justify-content-center border bg-white rounded-pill shadow" style="width: 30px; height: 30px; margin-left: -2.3rem; margin-bottom: 10px;">
+                                          <a href="" class="text-black" style="font-size: 20px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
+                                    </div>
+                              </div>
+                        </form>
                   </div>
-                  <form method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="d-flex align-items-end">
-                              <a href="" class="text-secondary" style="font-size: 24px; margin-left: -1rem; margin-bottom: -10px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
-                        </div>
-                  </form>
                   <div class="fw-bolder fs-3 text-secondary">
                         {{$employe->name}}
                   </div>
@@ -109,7 +111,7 @@
                                                 12 Kandidat
                                           </div>
                                     </div>
-                              </div>                                                    
+                              </div>
                               @endforeach
                         </div>
                   </div>

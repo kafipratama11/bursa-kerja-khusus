@@ -91,10 +91,11 @@ class UserController extends Controller
         $dataU->load('profile_user');
         $dataU->load('education');
         $dataU->load('experiences');
-        
+        $user = User::role('user')->count();
+        $user = auth()->user()->role;
         
 
-        return view('user.user-profile',compact('dataU'));
+        return view('user.user-profile',compact('dataU','user'));
     }
 
     public function update_provinsi( Request $request, $id){
