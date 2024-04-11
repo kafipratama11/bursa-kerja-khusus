@@ -19,10 +19,7 @@ class LoginController extends Controller
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
         
-<<<<<<< HEAD
-=======
         
->>>>>>> 8ec50800cb3c15016427e86033c34d63a197c9aa
         return view('index', compact('data','loker','user','employe','dataU'));
     }
     

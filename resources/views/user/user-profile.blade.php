@@ -152,6 +152,7 @@
                                     </div>
                               </div>
                         </div>
+                        {{-- ABOUT --}}
                         <div class="card bg-white mb-3">
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-3">
@@ -324,8 +325,8 @@
                                                 <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
                                                       @csrf
                                                       @method('DELETE')
-                                                      <button type="submit" class=""><i class="bi bi-trash"></i></button>
-                                                  </form>    
+                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
                                           </div>
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-normal text-secondary" style="font-size: 14px">{{$exp->nama_pekerjaan}}</div>
@@ -368,16 +369,12 @@
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
-<<<<<<< HEAD
-                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
-=======
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                                   <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button type="submit" class="btn btn-danger">Delete</button>
                                                                   </form>
->>>>>>> 8ec50800cb3c15016427e86033c34d63a197c9aa
                                                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                       </div>
@@ -385,6 +382,134 @@
                                           </div>
                                     </div>
                                     @endforeach
+                              </div>
+                        </div>
+                        {{-- SOFT SKILL --}}
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="d-flex gap-2 mb-3 align-items-center">
+                                          <div class="fw-semibold">Soft Skill</div>
+                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#softskill" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="softskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Softskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Softskill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="mb-2 pb-2 border-bottom">
+                                          <div class="d-flex gap-2">
+                                                <div class="fw-semibold" style="font-size: 14px">Communication</div>
+                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editSoftskill"><i class="bi bi-pen"></i></a>
+                                                <form action="" method="POST">
+                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="modal fade" id="editSoftskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Softskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Soft SKill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="Communication">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        {{-- HARD SKILL --}}
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="d-flex gap-2 mb-3 align-items-center">
+                                          <div class="fw-semibold">Hard Skill</div>
+                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#hardskill" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="hardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Hardskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Hardskill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="mb-2 pb-2 border-bottom">
+                                          <div class="d-flex gap-2">
+                                                <div class="fw-semibold" style="font-size: 14px">Adobe Ilustrastion</div>
+                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill"><i class="bi bi-pen"></i></a>
+                                                <form action="" method="POST">
+                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="modal fade" id="editHardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Hardskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Hard SKill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="Adobe Ilustration">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
                               </div>
                         </div>
                         {{-- SETTINGS --}}
