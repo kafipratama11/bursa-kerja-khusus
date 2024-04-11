@@ -43,6 +43,7 @@ class HomeController extends Controller
     public function employe(){
         return view('employer/employer-site');
     }
+    
     public function employe_login(){
         $employeId = Auth::id();
         $dataE = Employe::where('id', $employeId)->first();

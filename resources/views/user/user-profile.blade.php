@@ -9,8 +9,11 @@
                                     <div class="d-flex gap-4">
                                           <div class="d-flex">
                                                 <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
-                                                <div class="d-flex align-items-end">
-                                                      <a href="" class="text-secondary" style="font-size: 24px; margin-left: -1rem; margin-bottom: -10px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
+                                                @if($user = 'user')
+                                                <div class="d-flex align-items-end z-3">
+                                                      <div class="d-flex align-items-center justify-content-center border bg-white rounded-pill shadow" style="width: 30px; height: 30px; margin-left: -2.3rem; margin-bottom: 10px;">
+                                                            <a href="" class="text-black" style="font-size: 20px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
+                                                      </div>
                                                 </div>
                                                 <div class="modal fade" id="photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog modal-dialog-centered">
@@ -35,6 +38,9 @@
                                                             </form>
                                                       </div>
                                                 </div>
+                                                @else
+                                                <div></div>
+                                                @endif
                                           </div>
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
@@ -44,7 +50,9 @@
                                                 <div class="text-dark text-secondary" style="font-size: 13px">{{$dataU->nisn}}</div>
                                                 <div class="d-flex gap-2">
                                                       <div class="text-secondary">{{$dataU->profile_user->provinsi}}</div>
+                                                      @if($user = 'user')
                                                       <div class=""><a href="" data-bs-toggle="modal" data-bs-target="#provinsiUser"><i class="bi bi-pen text-secondary"></i></a></div>
+                                                      @endif
                                                 </div>
                                                 <div class="modal fade" id="provinsiUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog">
@@ -82,7 +90,9 @@
                                                                   <div class="modal-body px-4">
                                                                         <div class="d-flex">
                                                                               <div class="mb-3">Contact Info</div>
+                                                                              @if ($user = 'user')
                                                                               <a href="" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="ms-auto"><i class="bi bi-pen text-secondary"></i></a>
+                                                                              @endif
                                                                         </div>
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">Email</div>
@@ -91,7 +101,6 @@
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">No Telephone</div>
                                                                               <small>{{$dataU->profile_user->no_telp}}</small>
-
                                                                         </div>
                                                                   </div>
                                                             </div>
@@ -359,7 +368,16 @@
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
+<<<<<<< HEAD
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+=======
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                                  </form>
+>>>>>>> 8ec50800cb3c15016427e86033c34d63a197c9aa
                                                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                       </div>

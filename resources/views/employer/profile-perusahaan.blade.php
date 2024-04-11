@@ -10,7 +10,11 @@
                               <div class="row d-flex align-items-center">
                                     <div class="col-3 mt-2 me-5">
                                           <div class="card-profile-perusahaan">
+                                                @if($data->image)
                                                 <img src="{{ asset('storage/photo-employe/'.$data->image)}}" alt="">
+                                                @else
+                                                <img src="{{ asset('../../assets/images/building.jpg') }}" alt="Default Image">
+                                                @endif
                                           </div>
                                     </div>
                                     <div class="col-7">
@@ -53,6 +57,11 @@
             <div>
                   <div class="fw-bolder mb-4 mt-5 text-center text-secondary rounded p-2">LOKER PERUSAHAAN</div>
                   <div class="row">
+                        @if($data->loker->isEmpty())
+                        <div class="d-flex align-items-center justify-content-center">
+                              <img src="../../../assets/images/no_data_found2.png" style="width: 260px" alt="">
+                        </div>
+                        @else
                         @foreach ($data->loker as $item)
                         <div class="col-6 mb-3">
                               <a href="" class="card ps-4 p-3 pe-3 link-underline link-underline-opacity-0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
@@ -84,6 +93,7 @@
                               @include('partials.modal-login-user')
                         </div>
                         @endforeach
+                        @endif
                   </div>
             </div>
       </div>
