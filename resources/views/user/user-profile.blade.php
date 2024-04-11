@@ -8,7 +8,7 @@
                               <div class="card-body ps-4">
                                     <div class="d-flex gap-4">
                                           <div class="d-flex">
-                                                <a href=""  data-bs-toggle="modal" data-bs-target="#detailphoto">
+                                                <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
                                                       <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
                                                 </a>
                                                 @if($user = 'user')
@@ -162,17 +162,17 @@
                                           <div><a href="" data-bs-toggle="modal" data-bs-target="#about"><i class="bi bi-pen text-secondary"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                          <div class="modal-dialog">
+                                          <div class="modal-dialog modal-dialog-scrollable d-flex justify-content-center">
                                                 <form action="{{ route('user.update-about',['id' => $dataU->id])}}" method="POST">
                                                       @csrf
                                                       @method('PUT')
-                                                      <div class="modal-content">
+                                                      <div class="modal-content" style="width: 680px">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                  <textarea class="form-control" name="about" id="exampleFormControlTextarea1" rows="7">{{$dataU->profile_user->about}}</textarea>
+                                                                  <textarea class="form-control" name="about" id="exampleFormControlTextarea1" rows="20">{{$dataU->profile_user->about}}</textarea>
                                                             </div>
                                                             <div class="modal-footer">
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -182,7 +182,7 @@
                                                 </form>
                                           </div>
                                     </div>
-                                    <div style="font-size: 14px">
+                                    <div style="font-size: 13px">
                                           <p>{{$dataU->profile_user->about}}</p>
                                     </div>
                               </div>
@@ -320,7 +320,7 @@
                                           </div>
                                     </div>
                                     @foreach ($dataU->experiences as $exp)
-                                    <div class="mb-2">
+                                    <div class="mb-3">
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$exp->nama_perusahaan}}</div>
                                                 <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editExperience{{$exp->id}}"><i class="bi bi-pen"></i></a>
@@ -529,23 +529,27 @@
                               <div class="card overflow-auto p-4 ps-3 pe-2" style="max-height: 500px">
                                     <div class="w-100">
                                           <div class="text-center fw-semibold text-black mb-3">History Apply</div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
-                                                            </div>
-                                                            <div class="w-100">
-                                                                  <div class="d-flex" style="font-size: 14px">
-                                                                        <div class="fw-medium">Administrasi</div>
-                                                                        <div class="ms-auto" style="font-size: 12px">Status</div>
+                                          @foreach ( $dataU->education as $item )
+                                          <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                <div class="mb-2 border-bottom">
+                                                      <div class="p-2">
+                                                            <div class="d-flex gap-3">
+                                                                  <div class="d-flex justify-content-center">
+                                                                        <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
                                                                   </div>
-                                                                  <div style="font-size: 12px">PT Freeport Indonesia</div>
+                                                                  <div class="w-100">
+                                                                        <div class="d-flex" style="font-size: 14px">
+                                                                              <div class="fw-medium">Administrasi</div>
+                                                                              <div class="ms-auto" style="font-size: 12px">Status</div>
+                                                                        </div>
+                                                                        <div style="font-size: 12px">PT Freeport Indonesia</div>
+                                                                  </div>
                                                             </div>
+                                                            <div class="text-secondary fw-light text-end" style="font-size: 10px">1 hari yang lalu</div>
                                                       </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 10px">1 hari yang lalu</div>
                                                 </div>
-                                          </div>
+                                          </a>
+                                          @endforeach
                                     </div>
                               </div>
                         </div>
