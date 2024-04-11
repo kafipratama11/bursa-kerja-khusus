@@ -524,7 +524,7 @@
                   </div>
                   <div class="col-4">
                         <div>
-                              <div class="card history-apply-user overflow-auto p-4 ps-3 pe-2" style="min-width: 350px">
+                              <div class="card  overflow-auto p-4 ps-3 pe-2" style="max-height: 500px">
                                     <div class="w-100">
                                           <div class="text-center fw-semibold text-black mb-3">History Apply</div>
                                           <div class="card mb-2">
