@@ -34,6 +34,7 @@ class UserSeeder extends Seeder
             'name'      => 'user',
             'password'  => 'user',
         ]);
+        
         ProfileUser::create([
             'user_id'   => '003',
             'jk'        => 'she/her',

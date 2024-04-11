@@ -19,7 +19,6 @@ class LoginController extends Controller
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
         
-
         return view('index', compact('data','loker','user','employe','dataU'));
     }
     

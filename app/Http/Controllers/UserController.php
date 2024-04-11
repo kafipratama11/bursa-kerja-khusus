@@ -100,6 +100,7 @@ class UserController extends Controller
 
     public function update_provinsi( Request $request, $id){
         $provinsi['provinsi'] = $request->provinsi;
+        $provinsi['kota'] = $request->kota;
         ProfileUser::where('user_id', $id)->update($provinsi);
 
         return redirect()->back();

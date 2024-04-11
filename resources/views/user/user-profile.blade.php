@@ -3,12 +3,14 @@
 <body class="bg-body-tertiary">
       <div class="container pt-5">
             <div class="row">
-                  <div class="col-8">
+                  <div class="col-xl-8 col-md-12 col-sm-12">
                         <div class="card bg-white mb-3">
                               <div class="card-body ps-4">
                                     <div class="d-flex gap-4">
                                           <div class="d-flex">
-                                                <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
+                                                <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
+                                                      <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
+                                                </a>
                                                 @if($user = 'user')
                                                 <div class="d-flex align-items-end z-3">
                                                       <div class="d-flex align-items-center justify-content-center border bg-white rounded-pill shadow" style="width: 30px; height: 30px; margin-left: -2.3rem; margin-bottom: 10px;">
@@ -54,6 +56,9 @@
                                                       <div class=""><a href="" data-bs-toggle="modal" data-bs-target="#provinsiUser"><i class="bi bi-pen text-secondary"></i></a></div>
                                                       @endif
                                                 </div>
+                                                <div class="d-flex gap-2">
+                                                      <div class="text-secondary">{{$dataU->profile_user->kota}}</div>
+                                                </div>
                                                 <div class="modal fade" id="provinsiUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog">
                                                             <form action="{{ route('user.update-provinsi', ['id' => $dataU->id])}}" method="POST">
@@ -68,6 +73,13 @@
                                                                               <div class="d-flex gap-3">
                                                                                     <select class="form-select py-3" aria-label="Default select example" id="provinsi" name="provinsi" onclick="loadProvinsi()">
                                                                                           <option value="">Pilih Provinsi Anda</option>
+                                                                                    </select>
+                                                                              </div>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                              <div class="d-flex gap-3">
+                                                                                    <select class="form-select py-3" aria-label="Default select example" id="kota_kabupaten" name="kota" onclick="loadKotaKabupaten()">
+                                                                                          <option value="">Pilih Provinsi Terlebih Dahulu</option>
                                                                                     </select>
                                                                               </div>
                                                                         </div>
@@ -152,6 +164,7 @@
                                     </div>
                               </div>
                         </div>
+                        {{-- ABOUT --}}
                         <div class="card bg-white mb-3">
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-3">
@@ -159,17 +172,17 @@
                                           <div><a href="" data-bs-toggle="modal" data-bs-target="#about"><i class="bi bi-pen text-secondary"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                          <div class="modal-dialog">
+                                          <div class="modal-dialog modal-dialog-scrollable d-flex justify-content-center">
                                                 <form action="{{ route('user.update-about',['id' => $dataU->id])}}" method="POST">
                                                       @csrf
                                                       @method('PUT')
-                                                      <div class="modal-content">
+                                                      <div class="modal-content" style="width: 680px">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                  <textarea class="form-control" name="about" id="exampleFormControlTextarea1" rows="7">{{$dataU->profile_user->about}}</textarea>
+                                                                  <textarea class="form-control" name="about" id="exampleFormControlTextarea1" rows="20">{{$dataU->profile_user->about}}</textarea>
                                                             </div>
                                                             <div class="modal-footer">
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -179,7 +192,7 @@
                                                 </form>
                                           </div>
                                     </div>
-                                    <div style="font-size: 14px">
+                                    <div style="font-size: 13px">
                                           <p>{{$dataU->profile_user->about}}</p>
                                     </div>
                               </div>
@@ -189,7 +202,7 @@
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-2 mb-3 align-items-center">
                                           <div class="fw-semibold">Education</div>
-                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#education" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                          <div><a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#education" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
@@ -274,7 +287,7 @@
                               <div class="card-body pt-4 ps-4">
                                     <div class="d-flex gap-2 mb-3 align-items-center">
                                           <div class="fw-semibold">Experience</div>
-                                          <div><a href="" data-bs-toggle="modal" data-bs-target="#experience" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                          <div><a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#experience" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
@@ -317,15 +330,15 @@
                                           </div>
                                     </div>
                                     @foreach ($dataU->experiences as $exp)
-                                    <div class="mb-2">
-                                          <div class="d-flex gap-2">
+                                    <div class="mb-3">
+                                          <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$exp->nama_perusahaan}}</div>
-                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editExperience{{$exp->id}}"><i class="bi bi-pen"></i></a>
+                                                <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editExperience{{$exp->id}}"><i class="bi bi-pen"></i></a>
                                                 <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
                                                       @csrf
                                                       @method('DELETE')
-                                                      <button type="submit" class=""><i class="bi bi-trash"></i></button>
-                                                  </form>    
+                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash text-danger"></i></button>
+                                                </form>
                                           </div>
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-normal text-secondary" style="font-size: 14px">{{$exp->nama_pekerjaan}}</div>
@@ -368,16 +381,12 @@
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
-<<<<<<< HEAD
-                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
-=======
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                                   <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button type="submit" class="btn btn-danger">Delete</button>
                                                                   </form>
->>>>>>> 8ec50800cb3c15016427e86033c34d63a197c9aa
                                                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                       </div>
@@ -385,6 +394,134 @@
                                           </div>
                                     </div>
                                     @endforeach
+                              </div>
+                        </div>
+                        {{-- SOFT SKILL --}}
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="d-flex gap-2 mb-3 align-items-center">
+                                          <div class="fw-semibold">Soft Skill</div>
+                                          <div><a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#softskill" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="softskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Softskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Softskill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="mb-2 pb-2 border-bottom">
+                                          <div class="d-flex gap-2 align-items-center">
+                                                <div class="fw-semibold" style="font-size: 14px">Communication</div>
+                                                <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill"><i class="bi bi-pen"></i></a>
+                                                <form action="" method="POST">
+                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="modal fade" id="editSoftskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Softskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Soft SKill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="Communication">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        {{-- HARD SKILL --}}
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="d-flex gap-2 mb-3 align-items-center">
+                                          <div class="fw-semibold">Hard Skill</div>
+                                          <div><a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#hardskill" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
+                                    </div>
+                                    <div class="modal fade" id="hardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Hardskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Hardskill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="mb-2 pb-2 border-bottom">
+                                          <div class="d-flex gap-2 align-items-center">
+                                                <div class="fw-semibold" style="font-size: 14px">Adobe Ilustrastion</div>
+                                                <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill"><i class="bi bi-pen"></i></a>
+                                                <form action="" method="POST">
+                                                      <button class="text-secondary bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
+                                          </div>
+                                    </div>
+                                    <div class="modal fade" id="editHardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                                <form action="" method="POST">
+                                                      <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Hardskill</h1>
+                                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <div class="mb-3">
+                                                                        <label for="exampleFormControlInput1" class="form-label">Hard SKill</label>
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="Adobe Ilustration">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
                               </div>
                         </div>
                         {{-- SETTINGS --}}
@@ -397,25 +534,32 @@
                               </div>
                         </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-xl-4 col-md-12 col-sm-12">
                         <div>
-                              <div class="card history-apply-user overflow-auto p-4 ps-3 pe-2" style="min-width: 350px">
+                              <div class="card overflow-auto p-4 ps-3 pe-2" style="max-height: 500px">
                                     <div class="w-100">
                                           <div class="text-center fw-semibold text-black mb-3">History Apply</div>
-                                          <div class="card mb-2">
-                                                <div class="p-2">
-                                                      <div class="d-flex gap-3">
-                                                            <div class="d-flex justify-content-center">
-                                                                  <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
+                                          @foreach ( $dataU->education as $item )
+                                          <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                <div class="mb-2 border-bottom">
+                                                      <div class="p-2">
+                                                            <div class="d-flex gap-3">
+                                                                  <div class="d-flex justify-content-center">
+                                                                        <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
+                                                                  </div>
+                                                                  <div class="w-100">
+                                                                        <div class="d-flex" style="font-size: 14px">
+                                                                              <div class="fw-medium">Administrasi</div>
+                                                                              <div class="ms-auto" style="font-size: 12px">Status</div>
+                                                                        </div>
+                                                                        <div style="font-size: 12px">PT Freeport Indonesia</div>
+                                                                  </div>
                                                             </div>
-                                                            <div class="">
-                                                                  <div class="fw-medium" style="font-size: 14px">PT Freeport Indonesia</div>
-                                                                  <div style="font-size: 14px">Administrasi</div>
-                                                            </div>
+                                                            <div class="text-secondary fw-light text-end" style="font-size: 10px">1 hari yang lalu</div>
                                                       </div>
-                                                      <div class="text-secondary fw-light text-end" style="font-size: 12px">1 hari yang lalu</div>
                                                 </div>
-                                          </div>
+                                          </a>
+                                          @endforeach
                                     </div>
                               </div>
                         </div>
@@ -423,6 +567,13 @@
             </div>
             <div id="copy-feedback">No telp berhasil disalin!</div>
             <div id="copy-feedback-email">Email berhasil disalin!</div>
+      </div>
+      <div class="modal fade" id="detailphoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center">
+                  <div class="d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                  </div>
+            </div>
       </div>
 </body>
 
