@@ -48,7 +48,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
     Route::delete('/delete_emplpoye/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
-    Route::delete('/delete/{id}',[UserController::class,'delete_loker'])->name('delete-loker');
+    Route::delete('/delete-loker/{id}',[UserController::class,'delete_loker'])->name('delete-loker');
     Route::get('/detail-loker/{id}', [UserController::class, 'detail_loker'])->name('detail-loker');
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');

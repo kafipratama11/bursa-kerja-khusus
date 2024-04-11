@@ -127,12 +127,15 @@
                                                 </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="d-flex gap-3 align-items-center">
-                                                            <i class="bi bi-envelope-at"></i>{{$dataU->profile_user->email}}
+                                                            <i class="bi bi-telephone"></i>
+                                                            <div class="d-flex gap-1 align-items-center">
+                                                                  <div id="text-to-copy-email">{{$dataU->profile_user->email}}</div><a id="copy-link-email" class="email" href="#"><i class="bi bi-clipboard"></i></a>
+                                                            </div>
                                                       </div>
                                                       <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-telephone"></i>
                                                             <div class="d-flex gap-1 align-items-center">
-                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div><a id="copy-link" class="" href="#"><i class="bi bi-clipboard"></i> </a>
+                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div><a id="copy-link" class="" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>
                                                 </div>
@@ -309,6 +312,11 @@
                                           <div class="d-flex gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$exp->nama_perusahaan}}</div>
                                                 <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editExperience{{$exp->id}}"><i class="bi bi-pen"></i></a>
+                                                <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
+                                                      @csrf
+                                                      @method('DELETE')
+                                                      <button type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                  </form>    
                                           </div>
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-normal text-secondary" style="font-size: 14px">{{$exp->nama_pekerjaan}}</div>
@@ -351,12 +359,7 @@
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                  <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                                                    </form>     
+                                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
                                                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                       </div>
@@ -401,6 +404,7 @@
                   </div>
             </div>
             <div id="copy-feedback">No telp berhasil disalin!</div>
+            <div id="copy-feedback-email">Email berhasil disalin!</div>
       </div>
 </body>
 

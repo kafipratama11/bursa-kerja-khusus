@@ -16,8 +16,10 @@ class LoginController extends Controller
         $user = User::role('user')->count();
         $employe = Employe::count();
         $loker = Loker::count();
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
         
-        return view('index', compact('data','loker','user','employe'));
+        return view('index', compact('data','loker','user','employe','dataU'));
     }
     
     

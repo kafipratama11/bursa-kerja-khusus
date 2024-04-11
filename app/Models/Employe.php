@@ -55,6 +55,13 @@ class Employe extends Authenticatable
         return $this->hasMany(Loker::class);
     }
 
+    public function getStatusAttribute(){
+        if($this->name == null){
+            return 'secondary';
+        }
+        return 'danger';
+    }
+
 
 
 }

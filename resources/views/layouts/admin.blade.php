@@ -75,23 +75,21 @@
             datasets: [{
                 data: [user,employer,loker],
                 backgroundColor: [
-                    "rgba(117, 113, 249,0.9)",
-                    "rgba(117, 113, 249,0.7)",
-                    "rgba(117, 113, 249,0.5)",
-                    "rgba(144,	104,	190,0.07)"
+                    "#070f2b",
+                    "#1b1a55",
+                    "#ffee00"
                 ],
                 hoverBackgroundColor: [
-                    "rgba(117, 113, 249,0.9)",
-                    "rgba(117, 113, 249,0.7)",
-                    "rgba(117, 113, 249,0.5)",
-                    "rgba(144,	104,	190,0.7)"
+                  "#070f2b",
+                  "#1b1a55",
+                  "#ffee00"
                 ]
 
             }],
             labels: [
-                "User" + userPercen + "%",
-                "Employer" + employerPercen + "%",
-                "Loker" + lokerPercen + "%",
+                "User" + " " + userPercen + "%",
+                "Employer" + " " + employerPercen + "%",
+                "Loker" + " " + lokerPercen + "%",
             ]
         },
         options: {

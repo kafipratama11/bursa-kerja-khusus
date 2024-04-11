@@ -189,17 +189,20 @@ class UserController extends Controller
         $data['deskripsi']          = $request->deskripsi;
 
         Experience::where('id',$id)->create($data);
-        return redirect()->back();
+        return redirect()->back()->with('successexp');
     }
 
     public function delete_experience($id){
-        $data = Experience::find($id);
-
-        if($data){
-            $data->delete();
+        $experience = Experience::find($id);
+    
+        if($experience){
+            $experience->delete();
+            return redirect()->back();
+        }else{
             return redirect()->back();
         }
     }
+    
 
     public function update_experience(Request $request, $id){
         $data['user_id']            = $request->user_id;
