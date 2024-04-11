@@ -337,7 +337,7 @@
                                                 <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
                                                       @csrf
                                                       @method('DELETE')
-                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash text-danger"></i></button>
+                                                      <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
                                                 </form>
                                           </div>
                                           <div class="d-flex gap-2 align-items-center">
@@ -382,11 +382,6 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                  <form action="{{ route('user.delete-experience', ['id' => $exp->id]) }}" method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                                                  </form>
                                                                   <button type="submit" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                       </div>
@@ -405,17 +400,18 @@
                                     </div>
                                     <div class="modal fade" id="softskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="" method="POST">
+                                                <form action="{{ route('user.add-softskill' ,['id' => $item->id ])}}" method="POST">
+                                                      @csrf
                                                       <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">Add Softskill</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Softskill</label>
-                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                        <input type="text" name="skill" class="form-control" id="exampleFormControlInput1" placeholder="">
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -426,18 +422,23 @@
                                                 </form>
                                           </div>
                                     </div>
+                                    @foreach ($dataU->softskill as $item)
                                     <div class="mb-2 pb-2 border-bottom">
                                           <div class="d-flex gap-2 align-items-center">
-                                                <div class="fw-semibold" style="font-size: 14px">Communication</div>
-                                                <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill"><i class="bi bi-pen"></i></a>
-                                                <form action="" method="POST">
-                                                      <button class="text-secondary bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
+                                                <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
+                                                      @csrf
+                                                      @method("DELETE")
+                                                      <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
                                                 </form>
-                                          </div>
+                                          </div>                                    
                                     </div>
-                                    <div class="modal fade" id="editSoftskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="editSoftskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="" method="POST">
+                                                <form action="{{ route('user.update-softskill',['id' => $item->id])}}" method="POST">
+                                                      @csrf
+                                                      @method('PUT')
                                                       <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Softskill</h1>
@@ -447,7 +448,7 @@
                                                                   <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Soft SKill</label>
-                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="Communication">
+                                                                        <input type="text" name="skill" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->skill}}">
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -458,6 +459,7 @@
                                                 </form>
                                           </div>
                                     </div>
+                                    @endforeach
                               </div>
                         </div>
                         {{-- HARD SKILL --}}
@@ -469,17 +471,18 @@
                                     </div>
                                     <div class="modal fade" id="hardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="" method="POST">
+                                                <form action="{{ route('user.add-hardskill' ,['id' => $item->id ])}}" method="POST">
+                                                      @csrf
                                                       <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">Add Hardskill</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+                                                                  <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Hardskill</label>
-                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                        <input type="text" name="skill" class="form-control" id="exampleFormControlInput1" placeholder="">
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -490,18 +493,23 @@
                                                 </form>
                                           </div>
                                     </div>
+                                    @foreach ($dataU->hardskill as $item)
                                     <div class="mb-2 pb-2 border-bottom">
                                           <div class="d-flex gap-2 align-items-center">
-                                                <div class="fw-semibold" style="font-size: 14px">Adobe Ilustrastion</div>
-                                                <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill"><i class="bi bi-pen"></i></a>
-                                                <form action="" method="POST">
-                                                      <button class="text-secondary bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
+                                                <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST">
+                                                      @csrf
+                                                      @method('DELETE')
+                                                      <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
                                                 </form>
                                           </div>
-                                    </div>
-                                    <div class="modal fade" id="editHardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    </div>                         
+                                    <div class="modal fade" id="editHardskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="" method="POST">
+                                                <form action="{{ route('user.update-hardskill' ,['id' => $item->id ])}}" method="POST">
+                                                      @csrf
+                                                      @method('PUT')
                                                       <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Hardskill</h1>
@@ -511,7 +519,7 @@
                                                                   <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Hard SKill</label>
-                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="" value="Adobe Ilustration">
+                                                                        <input type="text" name="skill" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$item->skill}}">
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -522,6 +530,7 @@
                                                 </form>
                                           </div>
                                     </div>
+                                    @endforeach
                               </div>
                         </div>
                         {{-- SETTINGS --}}
@@ -539,7 +548,6 @@
                               <div class="card overflow-auto p-4 ps-3 pe-2" style="max-height: 500px">
                                     <div class="w-100">
                                           <div class="text-center fw-semibold text-black mb-3">History Apply</div>
-                                          @foreach ( $dataU->education as $item )
                                           <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                 <div class="mb-2 border-bottom">
                                                       <div class="p-2">
@@ -559,7 +567,6 @@
                                                       </div>
                                                 </div>
                                           </a>
-                                          @endforeach
                                     </div>
                               </div>
                         </div>

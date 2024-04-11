@@ -58,4 +58,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Experience::class);
     }
+    public function softskill()
+    {
+        return $this->hasMany(SoftSkill::class);
+    }
+    public function hardskill()
+    {
+        return $this->hasMany(HardSkill::class);
+    }
 }

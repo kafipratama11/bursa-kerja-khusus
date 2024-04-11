@@ -30,13 +30,13 @@ class UserSeeder extends Seeder
         //     'jk'        => 'she/her',
         // ]);
         User::create([
-            'nisn'      => '003',
+            'nisn'      => '002',
             'name'      => 'user',
             'password'  => 'user',
         ]);
         
         ProfileUser::create([
-            'user_id'   => '003',
+            'user_id'   => '7',
             'jk'        => 'she/her',
         ]);
     }

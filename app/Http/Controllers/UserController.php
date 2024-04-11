@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Education;
 use App\Models\Employe;
 use App\Models\Experience;
+use App\Models\HardSkill;
 use App\Models\loker;
 use App\Models\Profile;
 use App\Models\ProfileUser;
+use App\Models\SoftSkill;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +43,16 @@ class UserController extends Controller
         $loker = $data->Loker; 
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
-        return view('employer.profile-perusahaan',compact('data','loker','dataU'));
+        return view('admin.profile-perusahaan',compact('data','loker','dataU'));
+    }
+
+    public function profile_employe(Request $request, $id){
+        $data = Employe::find($id);
+        $data->load('loker');
+        $loker = $data->Loker; 
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+        return view('admin.employer-profile',compact('data','loker','dataU'));
     }
     
     public function employerEditProfile(){
@@ -91,6 +102,8 @@ class UserController extends Controller
         $dataU->load('profile_user');
         $dataU->load('education');
         $dataU->load('experiences');
+        $dataU->load('softskill');
+        $dataU->load('hardskill');
         $user = User::role('user')->count();
         $user = auth()->user()->role;
         
@@ -137,7 +150,7 @@ class UserController extends Controller
         $ganjil = Loker::whereRaw('id % 2 != 0')->get();
         $genap = Loker::whereRaw('id % 2 = 0')->get();
 
-        return view('admin.employer-detail-loker',compact('data'));
+        return view('admin.detail-loker',compact('data'));
     }
 
     public function update_education(Request $request, $id){
@@ -215,6 +228,54 @@ class UserController extends Controller
         $data['deskripsi']          = $request->deskripsi;
 
         Experience::where('id',$id)->update($data);
+        return redirect()->back();
+    }
+
+    public function add_softskill(Request $request, $id){
+        $data['user_id']    =$request->user_id;
+        $data['skill']    =$request->skill;
+
+        SoftSkill::where('id',$id)->create($data);
+        return redirect()->back();
+    }
+
+    public function delete_softskill($id){
+        $data = SoftSkill::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->back();
+        }
+    }
+
+    public function update_softskill( Request $request, $id){
+        $data['skill'] = $request->skill;
+        SoftSkill::where('id', $id)->update($data);
+
+        return redirect()->back();
+    }
+
+    public function add_hardskill(Request $request, $id){
+        $data['user_id']    =$request->user_id;
+        $data['skill']    =$request->skill;
+
+        HardSkill::where('id',$id)->create($data);
+        return redirect()->back();
+    }
+
+    public function delete_hardskill($id){
+        $data = HardSkill::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->back();
+        }
+    }
+
+    public function update_hardskill( Request $request, $id){
+        $data['skill'] = $request->skill;
+        HardSkill::where('id', $id)->update($data);
+
         return redirect()->back();
     }
 }
