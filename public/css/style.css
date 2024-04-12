@@ -357,3 +357,26 @@
                                     border-radius: 50%;
                                     background-color: #f1f1f1;
                                    }
+
+                                   @media (max-width: 768px) {
+                                    .card-intro, .card-about{
+                                        flex-direction: column; /* Mengubah tata letak menjadi tumpukan */
+                                    }
+
+                                    .profile-picture{
+                                        justify-content: center;
+                                    }
+
+                                    .box-warning-alert2{
+                                        display: none;
+                                    }
+
+                                    .text-about-alert{
+                                        margin-top: 15px;
+                                        margin-bottom: 15px;
+                                    }
+
+                                    .text-about-alert div{
+                                        font-size: 14px!important;
+                                    }
+                                }

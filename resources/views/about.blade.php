@@ -4,7 +4,7 @@
       @include('partials.modal-login-user')
       <div class="card">
             <div class="card-body">
-                  <div class="d-flex gap-4 p-4">
+                  <div class="card-about d-flex gap-4 p-4">
                         <div class="d-flex align-items-center justify-content-center">
                               <div class="fw-bold fs-2 bg-warning px-3 rounded d-flex gap-1">J4bSeeker<i class="bi bi-search"></i></div>
                         </div>
@@ -75,7 +75,7 @@
                               </div>
                         </div>
                         <div class="col-xl-7 col-sm-12">
-                              <div class="d-flex align-items-center">
+                              <div class="text-about-alert d-flex align-items-center">
                                     <div class="text-secondary fs-5">
                                           Mencari pekerjaan secara aman tidak hanya berarti memperhatikan faktor-faktor keamanan fisik, tetapi juga melibatkan perlindungan terhadap privasi, keamanan data, dan memastikan bahwa Anda terhindar dari penipuan atau ancaman online.
                                     </div>

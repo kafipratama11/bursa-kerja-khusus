@@ -51,43 +51,42 @@
                               </li>
                         </ul>
                         @endguest
-                  </div>
-                  @guest
-                  <form class="d-flex justify-content-end" role="search">
-                        <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="liveToastBtn">
-                              Login
-                        </button>
-                        <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
-                              Employer Site
-                        </a>
-                  </form>
-                  @else
-                  <div class="d-flex align-items-center gap-3">
-                        <div class="text-light">
-                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}" class="text-decoration-none text-light">
-                              @auth
-                              {{ Auth::user()->name }}
-                              @endauth
-                        </a>
+                        @guest
+                        <form class="ms-auto d-flex justify-content-end" role="search">
+                              <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="liveToastBtn">
+                                    Login
+                              </button>
+                              <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
+                                    Employer Site
+                              </a>
+                        </form>
+                        @else
+                        <div class="ms-auto d-flex align-items-center gap-3">
+                              <div class="text-light">
+                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}" class="text-decoration-none text-light">
+                                    @auth
+                                    {{ Auth::user()->name }}
+                                    @endauth
+                              </a>
+                              </div>
+                              <div>
+                                    @if ($dataU->profile_user->image)
+                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../../storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
+                                    @else
+                                    @if ($dataU->profile_user->jk === 'she/her')
+                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default-female.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>                                  
+                                    @else
+                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
+                                    @endif
+                                    @endif
+                              </div>
                         </div>
-                        <div>
-                              @if ($dataU->profile_user->image)
-                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../../storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
-                              @else
-                              @if ($dataU->profile_user->jk === 'she/her')
-                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default-female.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>                                  
-                              @else
-                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
-                              @endif
-                              @endif
-                        </div>
+                        @endguest
+                        @yield('nav')
                   </div>
-                  @endguest
-                  @yield('nav')
             </div>
       </nav>
       @yield('content')
-      <script src="../../../bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="../../../../bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
