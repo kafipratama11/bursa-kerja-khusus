@@ -6,11 +6,11 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>404 - Halaman Tidak Ditemukan</title>
-      <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../../../bootstrap/css/bootstrap.min.css">
 </head>
 <style>
       .page_404 {
-            padding: 40px ;
+            padding: 40px;
             background: #fff;
             font-family: 'Arvo', serif;
       }
@@ -56,23 +56,23 @@
                               <div class="col-sm-10 col-sm-offset-1  text-center">
                                     <div class="four_zero_four_bg">
                                           <h1 class="text-center ">404</h1>
-
-
                                     </div>
-
                                     <div class="contant_box_404">
                                           <h3 class="h2">
                                                 Look like you're lost
                                           </h3>
-
                                           <p>the page you are looking for not avaible!</p>
-
-                                          <a href="/" class="link_404">Go to Home</a>
+                                          <a class="rounded-pill link_404 link-underline link-underline-opacity-0 px-5" href="javascript:history.back()">Back</a>
                                     </div>
                               </div>
                         </div>
                   </div>
             </div>
       </section>
+      <script>
+            function goBack() {
+                  window.history.back();
+            }
+      </script>
 </body>
 </html>

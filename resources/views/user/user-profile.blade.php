@@ -183,7 +183,7 @@
                                           </div>
                                     </div>
                                     <div style="font-size: 13px">
-                                          <p>{{$dataU->profile_user->about}}</p>
+                                          <p>{!! nl2br(e($dataU->profile_user->about)) !!}</p>
                                     </div>
                               </div>
                         </div>
