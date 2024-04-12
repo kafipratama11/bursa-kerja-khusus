@@ -48,6 +48,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
     Route::get('/detail-loker/{id}', [UserController::class, 'detail_loker'])->name('detail-loker');
     Route::get('/profile-employe/{id}', [UserController::class, 'profile_employe'])->name('profile-employe');
+    Route::get('/profile-employer/{id}', [UserController::class, 'profile_employer'])->name('profile-employer');
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
     Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');

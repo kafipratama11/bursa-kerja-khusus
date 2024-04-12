@@ -56,7 +56,9 @@
                                                       </div>
                                                 </div>
                                                 @else
-                                                <div></div>
+                                                <div>
+
+                                                </div>
                                                 @endif
                                           </div>
                                           <div>
@@ -161,7 +163,11 @@
                                                 </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="d-flex gap-3 align-items-center">
+<<<<<<< HEAD
+                                                            <i class="bi bi-envelope"></i>
+=======
                                                             <i class="bi bi-envelope-at"></i>
+>>>>>>> 248c1554b5931dc407a0f50003f02e013c31c121
                                                             <div class="d-flex gap-1 align-items-center">
                                                                   <div id="text-to-copy-email">{{$dataU->profile_user->email}}</div>
                                                                   <a id="copy-link-email" class="email text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
@@ -415,7 +421,7 @@
                                     </div>
                                     <div class="modal fade" id="softskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="{{ route('user.add-softskill' ,['id' => $item->id ])}}" method="POST">
+                                                <form action="{{ route('user.add-softskill' ,['id' => $dataU->id ])}}" method="POST">
                                                       @csrf
                                                       <div class="modal-content">
                                                             <div class="modal-header">
@@ -486,7 +492,7 @@
                                     </div>
                                     <div class="modal fade" id="hardskill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
-                                                <form action="{{ route('user.add-hardskill' ,['id' => $item->id ])}}" method="POST">
+                                                <form action="{{ route('user.add-hardskill' ,['id' => $dataU->id ])}}" method="POST">
                                                       @csrf
                                                       <div class="modal-content">
                                                             <div class="modal-header">

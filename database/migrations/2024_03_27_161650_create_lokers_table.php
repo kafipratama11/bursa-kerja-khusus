@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('bagian',25);
             $table->string('nama_perusahaan',25);
             $table->string('provinsi',25);
-            $table->string('kota_kabupaten',25);
+            $table->string('kota_kabupaten',35);
             $table->string('waktu',25);
             $table->string('gaji',25);
             $table->string('email',25);
