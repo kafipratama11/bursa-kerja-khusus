@@ -33,7 +33,7 @@
                         @enderror
                         <div class="mb-3">
                               <label for="exampleFormControlInput2" class="form-label">Lokasi</label>
-                             <select class="form-control" name="lokasi" id="lokasi">
+                             <select class="form-control" name="lokasi" id="provinsi">
                               <option>Pilih Provinsi Anda</option>
                              </select>
                         </div>

@@ -26,31 +26,11 @@
                         <span class="navbar-toggler-icon text-light"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
-                       @guest
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/">LOKER</a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="{{ route('company-list')}}">PERUSAHAAN</a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="{{route('about')}}">TENTANG</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.index-user')}}">Back</a>
                               </li>
                         </ul>
-                        @else
-                        <ul class="navbar-nav d-flex gap-3">
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/dashboard">LOKER</a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.company-list')}}">PERUSAHAAN</a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.about')}}">TENTANG</a>
-                              </li>
-                        </ul>
-                        @endguest
                   </div>
                   @yield('nav')
             </div>
