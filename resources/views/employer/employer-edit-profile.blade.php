@@ -54,10 +54,6 @@
                               <form action="{{ route('employe.update-profile', ['id' => $employe->id])}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
-                                    <div class="form-group mb-3">
-                                          <label for="exampleInputEmail1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Photo Profile</label>
-                                          <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
-                                    </div>
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label fw-bolder text-secondary" style="font-size: 15px">Nama Perusahaan</label>
                                           <input type="text" name="name" style="font-size: 14px" class="form-control" id="exampleFormControlInput1" value="{{$employe->name}}">

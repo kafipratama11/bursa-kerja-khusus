@@ -12,16 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profile_user', function (Blueprint $table) {
+        Schema::create('hard_skills', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->string('jk',12)->nullable();
-            $table->string('provinsi',25)->nullable();
-            $table->string('kota',35)->nullable();
-            $table->string('email',30)->nullable();
-            $table->string('about',500)->nullable();
-            $table->string('no_telp',13)->nullable();
+            $table->string('skill',25)->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profile_user');
+        Schema::dropIfExists('hard_skills');
     }
 };

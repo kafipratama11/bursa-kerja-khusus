@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use PHPUnit\Framework\Constraint\Count;
 use Spatie\Permission\Models\Role;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -37,6 +37,7 @@ class HomeController extends Controller
         $loker = Loker::count();
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
+        
         return view('index',compact('data','loker','user','employe','dataU'));
     }
     

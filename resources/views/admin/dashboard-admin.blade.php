@@ -96,7 +96,7 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.profile-employe', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                               <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.edit-role', ['id' =>$item->id])}}"><i class="bi bi-pencil"></i>Edit Role</a></li>
                                                                               <li>
                                                                                     <form action="{{ route('user.delete-employe',['id' => $item->id]) }}" method="POST">
@@ -145,7 +145,7 @@
                                                                               Option
                                                                         </a>
                                                                         <ul class="dropdown-menu">
-                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.profile-employe', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                               <li><a class="dropdown-item d-flex gap-3" href="{{ route('user.edit-role', ['id' =>$item->id])}}"><i class="bi bi-pencil"></i>Edit Role</a></li>
                                                                               <li>
                                                                                     <form action="{{ route('user.delete-employe',['id' => $item->id]) }}" method="POST">

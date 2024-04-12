@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-employer      ')
+@extends('layouts.dashboard-employer')
 
 @section('nav-link-employer')
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,9 +6,9 @@
 </button>
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
-            <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="{{ route('user.index-user')}}">DASHBOARD</a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="{{ route('user.index-user')}}">DASHBOARD</a>
+      </li>
       </ul>
 </div>
 @endsection
@@ -29,10 +29,6 @@
                   <div class="d-flex gap-2">
                         <div class="fw-semi-bold fs-3 text-dark mb-3">{{$data->nama_pekerjaan}}</div>
                         <!-- Button trigger modal -->
-                        <a type="button" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-offset-2 pt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                              <i class="bi bi-pen"></i>
-                              edit
-                        </a>
 
                         <!-- Modal 1-->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

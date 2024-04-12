@@ -44,26 +44,34 @@ Route::post('/employe-register', [LoginController::class, 'employe_register'])->
 Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], function(){
     Route::get('/about', [UserController::class, 'about'])->name('about');
     Route::get('/company-list', [UserController::class, 'company_list'])->name('company-list');
-    Route::get('/profile-employer/{id}', [UserController::class, 'profile_employer'])->name('profile-employer');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('index-user');
-    Route::delete('/delete_emplpoye/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
-    Route::delete('/delete-loker/{id}',[UserController::class,'delete_loker'])->name('delete-loker');
     Route::get('/detail-loker/{id}', [UserController::class, 'detail_loker'])->name('detail-loker');
+    Route::get('/profile-employe/{id}', [UserController::class, 'profile_employe'])->name('profile-employe');
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
+    Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
+    Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
     Route::put('update-role/{id}',[UserController::class,'update_role'])->name('update-role');
     Route::put('update-provinsi/{id}',[UserController::class,'update_provinsi'])->name('update-provinsi');
     Route::put('update-contact/{id}',[UserController::class,'update_contact'])->name('update-contact');
     Route::put('update-about/{id}',[UserController::class,'update_about'])->name('update-about');
-    Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
     Route::put('update-education/{id}',[UserController::class,'update_education'])->name('update-education');
     Route::put('photo-profile/{id}',[UserController::class,'photo_profile'])->name('photo-profile');
+    Route::put('update-experience/{id}',[UserController::class,'update_experience'])->name('update-experience');
+    Route::delete('/delete_emplpoye/{id}',[UserController::class,'delete_employe'])->name('delete-employe');
+    Route::delete('/delete-loker/{id}',[UserController::class,'delete_loker'])->name('delete-loker');
     Route::delete('/delete-education/{id}',[UserController::class,'delete_education'])->name('delete-education');
     Route::delete('/delete/{id}',[UserController::class,'delete'])->name('delete');
-    Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
-    Route::delete('update-experience/{id}',[UserController::class,'update_experience'])->name('update-experience');
     Route::delete('/delete-experience/{id}',[UserController::class,'delete_experience'])->name('delete-experience');
+    // hardskill
+    Route::post('add-softskill/{id}',[UserController::class,'add_softskill'])->name('add-softskill');
+    Route::delete('/delete-softskill/{id}',[UserController::class,'delete_softskill'])->name('delete-softskill');
+    Route::put('update-softskill/{id}',[UserController::class,'update_softskill'])->name('update-softskill');
+    // softskill
+    Route::post('add-hardskill/{id}',[UserController::class,'add_hardskill'])->name('add-hardskill');
+    Route::delete('/delete-hardskill/{id}',[UserController::class,'delete_hardskill'])->name('delete-hardskill');
+    Route::put('update-hardskill/{id}',[UserController::class,'update_hardskill'])->name('update-hardskill');
 });
 
 
