@@ -29,8 +29,12 @@
 <div class="container">
       <div class="row pb-5">
             <div class="col-4">
-                  <div class="logo d-flex justify-content-center mt-5">
-                        <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" style="width: 100%" alt="">
+                  <div class="logo d-flex justify-content-center w-100 mt-5" style="width:200px; height: 300px;">
+                        @if($employe->image)
+                        <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" class="w-100 h-100" alt="">
+                        @else
+                        <img src="{{ asset('../../assets/images/building.jpg')}}" alt="">
+                        @endif
                         <form method="POST" enctype="multipart/form-data">
                               @csrf
                               @method('PUT')

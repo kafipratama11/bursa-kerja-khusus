@@ -57,19 +57,6 @@
                         <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="liveToastBtn">
                               Login
                         </button>
-                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="toast-header">
-                                          <img src="..." class="rounded me-2" alt="...">
-                                          <strong class="me-auto">Bootstrap</strong>
-                                          <small>11 mins ago</small>
-                                          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                    <div class="toast-body">
-                                          Hello, world! This is a toast message.
-                                    </div>
-                              </div>
-                        </div>
                         <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
                               Employer Site
                         </a>
@@ -83,7 +70,17 @@
                               @endauth
                         </a>
                         </div>
-                        <div><a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../../storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a></div>
+                        <div>
+                              @if ($dataU->profile_user->image)
+                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../../storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
+                              @else
+                              @if ($dataU->profile_user->jk === 'she/her')
+                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default-female.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>                                  
+                              @else
+                              <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
+                              @endif
+                              @endif
+                        </div>
                   </div>
                   @endguest
                   @yield('nav')

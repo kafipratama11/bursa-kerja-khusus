@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="container">
+      @include('partials.modal-login-user')
       <div class="row mt-5 pb-5">
             <div class="col-6">
                   <div class="">

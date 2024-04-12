@@ -8,13 +8,28 @@
                               <div class="card-body ps-4">
                                     <div class="d-flex gap-4">
                                           <div class="d-flex">
+                                                @if ($dataU->profile_user->image)
                                                 <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
                                                       <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
                                                 </a>
+                                                @else
+                                                @if ($dataU->profile_user->jk === 'she/her')
+                                                <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
+                                                      <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
+                                                </a>
+                                                @else
+                                                <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
+                                                      <img src="{{ asset('../../img/person-default.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
+                                                </a>
+                                                @endif
+                                                @endif
+
                                                 @if($user = 'user')
                                                 <div class="d-flex align-items-end z-3">
-                                                      <div class="d-flex align-items-center justify-content-center border bg-white rounded-pill shadow" style="width: 30px; height: 30px; margin-left: -2.3rem; margin-bottom: 10px;">
-                                                            <a href="" class="text-black" style="font-size: 20px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
+                                                      <div class="d-flex align-items-center justify-content-center bg-white rounded-pill" style="margin-left: -2.3rem; margin-bottom: 10px;">
+                                                            <div class="d-flex align-items-center justify-content-center m-1 border bg-primary rounded-pill" style="width: 30px; height: 30px;">
+                                                                  <a href="" class="text-white" style="font-size: 20px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
+                                                            </div>
                                                       </div>
                                                 </div>
                                                 <div class="modal fade" id="photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -52,14 +67,12 @@
                                                       <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                 </div>
                                                 <div class="text-dark text-secondary" style="font-size: 13px">{{$dataU->nisn}}</div>
-                                                <div class="d-flex gap-2">
+                                                <div class="d-flex gap-2" >
+                                                      <div class="text-secondary" id="myText">{{$dataU->profile_user->kota}},</div>
                                                       <div class="text-secondary">{{$dataU->profile_user->provinsi}}</div>
                                                       @if($user = 'user')
                                                       <div class=""><a href="" data-bs-toggle="modal" data-bs-target="#provinsiUser"><i class="bi bi-pen text-secondary"></i></a></div>
                                                       @endif
-                                                </div>
-                                                <div class="d-flex gap-2">
-                                                      <div class="text-secondary">{{$dataU->profile_user->kota}}</div>
                                                 </div>
                                                 <div class="modal fade" id="provinsiUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                       <div class="modal-dialog">
@@ -150,15 +163,21 @@
                                                 </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="d-flex gap-3 align-items-center">
+<<<<<<< HEAD
                                                             <i class="bi bi-envelope"></i>
+=======
+                                                            <i class="bi bi-envelope-at"></i>
+>>>>>>> 248c1554b5931dc407a0f50003f02e013c31c121
                                                             <div class="d-flex gap-1 align-items-center">
-                                                                  <div id="text-to-copy-email">{{$dataU->profile_user->email}}</div><a id="copy-link-email" class="email" href="#"><i class="bi bi-clipboard"></i></a>
+                                                                  <div id="text-to-copy-email">{{$dataU->profile_user->email}}</div>
+                                                                  <a id="copy-link-email" class="email text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>
                                                       <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-telephone"></i>
                                                             <div class="d-flex gap-1 align-items-center">
-                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div><a id="copy-link" class="" href="#"><i class="bi bi-clipboard"></i></a>
+                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div>
+                                                                  <a id="copy-link" class="text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>
                                                 </div>
@@ -195,7 +214,7 @@
                                           </div>
                                     </div>
                                     <div style="font-size: 13px">
-                                          <p>{{$dataU->profile_user->about}}</p>
+                                          <p>{!! nl2br(e($dataU->profile_user->about)) !!}</p>
                                     </div>
                               </div>
                         </div>
@@ -434,7 +453,7 @@
                                                       @method("DELETE")
                                                       <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
                                                 </form>
-                                          </div>                                    
+                                          </div>
                                     </div>
                                     <div class="modal fade" id="editSoftskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
@@ -506,7 +525,7 @@
                                                       <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
                                                 </form>
                                           </div>
-                                    </div>                         
+                                    </div>
                                     <div class="modal fade" id="editHardskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog">
                                                 <form action="{{ route('user.update-hardskill' ,['id' => $item->id ])}}" method="POST">
@@ -580,7 +599,15 @@
       <div class="modal fade" id="detailphoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center">
                   <div class="d-flex justify-content-center align-items-center">
+                        @if ($dataU->profile_user->image)
                         <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                        @else
+                        @if ($dataU->profile_user->jk === 'she/her')
+                        <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">                            
+                        @else
+                        <img src="{{ asset('../../img/person-default.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">                            
+                        @endif
+                        @endif
                   </div>
             </div>
       </div>
