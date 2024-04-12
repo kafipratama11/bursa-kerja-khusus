@@ -26,7 +26,7 @@
                         <span class="navbar-toggler-icon text-light"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
-                       @guest
+                        @guest
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
                                     <a class="nav-link active text-light" aria-current="page" href="/">LOKER</a>
@@ -51,8 +51,8 @@
                               </li>
                         </ul>
                         @endguest
+                        @yield('nav')
                   </div>
-                  @yield('nav')
             </div>
       </nav>
       @yield('content')
@@ -62,6 +62,7 @@
       <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
       <script>
             CKEDITOR.replace('');
+
       </script>
       <script src="../../../js/script.js"></script>
       <script>
@@ -93,7 +94,7 @@
             });
 
       </script>
-      
+
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

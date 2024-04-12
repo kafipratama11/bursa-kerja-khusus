@@ -46,7 +46,7 @@
                         </div>
                   </a>
                   @else
-                  <a href="{{ route('user.profile-employer',['id'=>$item->id])}}" class="link-underline link-underline-opacity-0">
+                  <a href="{{ route('profile-employer',['id'=>$item->id])}}" class="link-underline link-underline-opacity-0">
                         <div class="card card-company-list ">
                               <div class="pt-3 ps-4 p-3 pb-1">
                                     <div class="fw-bolder fs-5 mb-2">{{$item->name}}</div>
