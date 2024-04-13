@@ -109,6 +109,7 @@ class UserController extends Controller
         
 
         return view('user.user-profile',compact('dataU','user'));
+        return view('user.apply',compact('dataU','user'));
     }
 
     public function update_provinsi( Request $request, $id){

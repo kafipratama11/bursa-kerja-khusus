@@ -37,21 +37,36 @@
                                                                   </div>
                                                                   <div class="modal-body px-5">
                                                                         <div class="d-flex gap-3 mb-3">
-                                                                              <img src="../../../img/person-default-female.jpg" class="rounded-pill" alt="" style="width: 100px">
+                                                                              @if ($dataU->profile_user->image)
+                                                                              <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" class="rounded-pill" alt="" style="width: 100px">
+                                                                              @else
+                                                                              @if ($dataU->profile_user->jk === 'she/her')
+                                                                              <img src="{{ asset('../../img/person-default-female.jpg')}}" class="rounded-pill" alt="" style="width: 100px">
+                                                                              @else
+                                                                              <img src="{{ asset('../../img/person-default.jpg')}}" class="rounded-pill" alt="" style="width: 100px">
+                                                                              @endif
+                                                                              @endif
                                                                               <div>
                                                                                     <div class="d-flex gap-2 align-items-center">
-                                                                                          <div class="text-dark fw-medium">Emma Watson</div>
+                                                                                          <div class="text-dark fw-medium">{{$dataU->name}}</div>
                                                                                           <div class="text-secondary fw-light" style="font-size: 13px">Female</div>
                                                                                     </div>
-                                                                                    <div class="text-secondary" style="font-size: 13px">Jakarta Barat, Jakarta</div>
-                                                                                    <div class="text-dark mt-3" style="font-size: 13px">Figma, Adobe Ilustrator, JavaScript (Programming Language)</div>
+                                                                                    <div class="text-secondary" style="font-size: 13px" id="myText">{{$dataU->profile_user->kota}}, {{$dataU->profile_user->provinsi}}</div>
+                                                                                    <div class="text-dark mt-3" style="font-size: 13px">
+                                                                                          @foreach ($dataU->hardskill as $key => $item)
+                                                                                          {{$item->skill}}
+                                                                                          @if (!$loop->last)
+                                                                                          ,
+                                                                                          @endif
+                                                                                          @endforeach
+                                                                                    </div>
                                                                               </div>
                                                                         </div>
                                                                         <div class="row" style="font-size: 13px">
                                                                               <div class="col">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom01" class="form-label text-secondary">Email address</label>
-                                                                                          <input type="email" class="form-control" id="validationCustom01" placeholder="" value="kafipratama1512@gmail.com" required>
+                                                                                          <input type="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -60,7 +75,7 @@
                                                                               <div class="col">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom02" class="form-label text-secondary">Phone Number</label>
-                                                                                          <input type="text" class="form-control" id="validationCustom02" placeholder="" value="081374140161" required>
+                                                                                          <input type="text" class="form-control" id="validationCustom02" placeholder="" value="{{$dataU->profile_user->no_telp}}" required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
