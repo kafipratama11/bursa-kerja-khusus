@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employe;
+use App\Models\Jurusan;
 use App\Models\loker;
 use App\Models\Profile;
 use App\Models\User;
@@ -35,10 +36,11 @@ class HomeController extends Controller
         $employe = Employe::count();
         $user = User::role('user')->count();
         $loker = Loker::count();
+        $jurusan = Jurusan::all();
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
         
-        return view('index',compact('data','loker','user','employe','dataU'));
+        return view('index',compact('data','loker','user','employe','dataU','jurusan'));
     }
     
     public function employe(){

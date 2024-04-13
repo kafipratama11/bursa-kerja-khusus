@@ -257,7 +257,7 @@
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
-                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                <a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
                                           </div>
                                           <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
                                           <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>

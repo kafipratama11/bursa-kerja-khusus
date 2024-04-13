@@ -43,6 +43,7 @@ Route::get('/employe-signup', [HomeController::class, 'employe_signup'])->name('
 Route::post('/employe-register', [LoginController::class, 'employe_register'])->name('employe-register');
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], function(){
+    Route::get('/search', [UserController::class, 'search'])->name('search');
     Route::get('/about', [UserController::class, 'about'])->name('about');
     Route::get('/company-list', [UserController::class, 'company_list'])->name('company-list');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

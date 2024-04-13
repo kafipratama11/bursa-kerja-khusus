@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(Employe::class)->constrained()->cascadeOnDelete();
             $table->string('nama_pekerjaan',25);
             $table->string('bagian',25);
+            $table->string('jurusan',35);
             $table->string('nama_perusahaan',25);
             $table->string('provinsi',25);
             $table->string('kota_kabupaten',35);

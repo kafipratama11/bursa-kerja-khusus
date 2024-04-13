@@ -7,32 +7,35 @@
 <div style="background-color:#fbfbfb;" class="pt-5">
       <div class="container">
             @include('partials.modal-login-user')
-            <div class="row d-flex justify-content-center">
-                  <div class="col-xl-4 col-md-4 col-sm-12">
-                        <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>
-                        <input type="text" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan" />
-                  </div>
-                  <div class="col-xl-4 col-md-4 col-sm-12">
-                        <label for="klasifikasi" class="fw-bold form-label">Klasifikasi</label>
-                        <select class="form-select py-3" aria-label="Default select example" id="klasifikasi">
-                              <option selected>Piih Jurusan Anda</option>
-                              <option value="1">RPL</option>
-                              <option value="2">DPIB</option>
-                              <option value="3">Geomatika</option>
-                        </select>
-                  </div>
-                  <div class="col-xl-4 col-md-4 col-sm-12">
-                        <label for="where" class="fw-bold form-label">Domisili</label>
-                        <div class="d-flex gap-3">
-                              <select class="form-select py-3" aria-label="Default select example" id="provinsi" onclick="loadProvinsi()">
-                                    <option value="">Pilih Kota Anda</option>
+            <form action="{{route('user.search')}}" method="GET">
+                  <div class="row d-flex justify-content-center">
+                        <div class="col-xl-4 col-md-4 col-sm-12">
+                              <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>
+                              <input type="text" name="search" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan" />
+                        </div>
+                        <div class="col-xl-4 col-md-4 col-sm-12">
+                              <label for="klasifikasi" class="fw-bold form-label">Klasifikasi</label>
+                              <select class="form-select py-3" aria-label="Default select example" name="jurusan" id="klasifikasi">
+                                    @foreach ($jurusan as $item)
+                                        <option>
+                                          {{$item->jurusan}}
+                                        </option>
+                                    @endforeach
                               </select>
-                              <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
-                                    Cari
-                              </button>
+                        </div>
+                        <div class="col-xl-4 col-md-4 col-sm-12">
+                              <label for="where" class="fw-bold form-label">Domisili</label>
+                              <div class="d-flex gap-3">
+                                    <select class="form-select py-3" aria-label="Default select example" name="provinsi" id="provinsi" onclick="loadProvinsi()">
+                                          <option value="">Pilih Kota Anda</option>
+                                    </select>
+                                    <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
+                                          Cari
+                                    </button>
+                              </div>
                         </div>
                   </div>
-            </div>
+            </form      >
             <div class="row d-flex justify-content-center mt-5">
                   <div class="col-xl-4 col-md-4 col-sm-12">
                         <div class="card pt-2 px-3 fw-bold">

@@ -50,6 +50,19 @@
                                     @error('bagian')
                                     <small>{{ $message }}</small>
                                     @enderror
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput2" class="form-label">Jurusan</label>
+                                          <select name="jurusan" id="jurusan" class="form-control">
+                                                @foreach ($jurusan as $item)
+                                                <option>
+                                                      {{$item->jurusan}}
+                                                </option>
+                                                @endforeach
+                                          </select>
+                                    </div>
+                                    @error('jurusan')
+                                    <small>{{ $message }}</small>
+                                    @enderror
                                     <div class="mb-3" hidden>
                                           <label for="exampleFormControlInput2" class="form-label">Nama Perusahaan</label>
                                           <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput2" value="{{ $data->name}}" readonly placeholder="ex: Hostinger">

@@ -6,6 +6,7 @@ use App\Models\Education;
 use App\Models\Employe;
 use App\Models\Experience;
 use App\Models\HardSkill;
+use App\Models\Jurusan;
 use App\Models\loker;
 use App\Models\Profile;
 use App\Models\ProfileUser;
@@ -19,8 +20,25 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function apply(){
-        return view('user/apply');
+    public function search(Request $request){
+        $data = $request->input('search');
+        $provinsi = $request->input('provinsi');
+        $jurusan = $request->input('jurusan');
+        $user = User::role('user')->count();
+        $employe = Employe::count();
+        $loker = Loker::count();
+        $jurusan = Jurusan::all();
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+
+
+        $data = Loker::where('nama_pekerjaan', 'like', '%'.$data.'%')
+                        ->orWhere('bagian', 'like', '%'.$data.'%')
+                        ->orWhere('jurusan', 'like', '%'.$jurusan.'%')
+                        ->orWhere('provinsi', 'like', '%'.$provinsi.'%')
+                        ->get();
+
+        return view('index',compact('data','loker','user','employe','dataU','jurusan'));
     }
     
     public function about(){
