@@ -39,7 +39,7 @@
 
                         <!-- Modal 1-->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                                     <div class="modal-content">
                                           <div class="modal-header">
                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Edit {{$data->nama_pekerjaan}} </h1>
@@ -76,7 +76,7 @@
                         </div>
                         {{-- modal 2 --}}
                         <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                              <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
                                     <div class="modal-content">
                                           <div class="modal-header">
                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Analyst</h1>
@@ -84,12 +84,12 @@
                                           </div>
                                           <div class="modal-body">
                                                 <div class="mb-3">
-                                                      <label for="exampleFormControlInput1" class="form-label">Deskripsi Pekerjaan</label>
-                                                      <textarea type="text" class="form-control" id="exampleFormControlInput1" cols="30" rows="10" value="">{{ $data->deskripsi}}</textarea>
+                                                      <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
+                                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="10">{{$data->deskripsi}}</textarea>
                                                 </div>
                                                 <div class="mb-3">
-                                                      <label for="exampleFormControlInput1" class="form-label">Persyaratan Pekerjaan</label>
-                                                      <textarea type="text" class="form-control" id="exampleFormControlInput1" cols="30" rows="10" value="">{{ $data->requirement}}</textarea>
+                                                      <label for="exampleFormControlTextarea1" class="form-label">Persyaratan</label>
+                                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="10">{{$data->requirement}}</textarea>
                                                 </div>
                                           </div>
                                           <div class="modal-footer">
@@ -126,7 +126,7 @@
                               <div class="title-modal-jobdesc mb-2 fw-bolder">JOB DESCRIPTION</div>
                               <div class="detail-modal-jobdesc">
                                     <div>
-                                          {{ $data->deskripsi}}
+                                          {!! nl2br(e($data->deskripsi)) !!}
                                     </div>
                               </div>
                         </div>
@@ -136,7 +136,7 @@
                               </div>
                               <div class="detail-modal-requirement">
                                     <div>
-                                          {{ $data->requirement}}
+                                          {!! nl2br(e($data->requirement)) !!}
                                     </div>
                               </div>
                         </div>

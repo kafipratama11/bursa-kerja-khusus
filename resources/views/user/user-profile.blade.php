@@ -6,8 +6,8 @@
                   <div class="col-xl-8 col-md-12 col-sm-12">
                         <div class="card bg-white mb-3">
                               <div class="card-body ps-4">
-                                    <div class="d-flex gap-4">
-                                          <div class="d-flex">
+                                    <div class="card-intro d-flex gap-4">
+                                          <div class="d-flex profile-picture">
                                                 @if ($dataU->profile_user->image)
                                                 <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
                                                       <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user">
@@ -172,7 +172,8 @@
                                                       <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-telephone"></i>
                                                             <div class="d-flex gap-1 align-items-center">
-                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div>
+                                                                  <div id="text-to-copy" hidden>{{$dataU->profile_user->no_telp}}</div>
+                                                                  <div>{{$formattedPhoneNumber = implode('-', str_split($dataU->profile_user->no_telp, 4))}}</div>
                                                                   <a id="copy-link" class="text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>
@@ -189,7 +190,7 @@
                                           <div><a href="" data-bs-toggle="modal" data-bs-target="#about"><i class="bi bi-pen text-secondary"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                          <div class="modal-dialog modal-dialog-scrollable d-flex justify-content-center">
+                                          <div class="modal-dialog modal-dialog-scrollable modal-lg d-flex justify-content-center">
                                                 <form action="{{ route('user.update-about',['id' => $dataU->id])}}" method="POST">
                                                       @csrf
                                                       @method('PUT')
@@ -307,7 +308,7 @@
                                           <div><a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#experience" style="font-size: 18px"><i class="bi bi-plus-lg text-dark"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                          <div class="modal-dialog">
+                                          <div class="modal-dialog modal-dialog-scrollable">
                                                 <form action="{{ route('user.add-experience',['id' => $dataU->id])}}" method="POST">
                                                       @csrf
                                                       <div class="modal-content">
@@ -443,12 +444,14 @@
                                     <div class="mb-2 pb-2 border-bottom">
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
-                                                <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill{{$item->id}}"><i class="bi bi-pen"></i></a>
-                                                <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
-                                                      @csrf
-                                                      @method("DELETE")
-                                                      <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
-                                                </form>
+                                                <div class="ms-auto gap-2 align-items-center d-flex">
+                                                      <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                      <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
+                                                            @csrf
+                                                            @method("DELETE")
+                                                            <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                      </form>
+                                                </div>
                                           </div>
                                     </div>
                                     <div class="modal fade" id="editSoftskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -514,12 +517,14 @@
                                     <div class="mb-2 pb-2 border-bottom">
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
-                                                <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill{{$item->id}}"><i class="bi bi-pen"></i></a>
-                                                <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST">
-                                                      @csrf
-                                                      @method('DELETE')
-                                                      <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
-                                                </form>
+                                                <div class="ms-auto gap-2 align-items-center d-flex">
+                                                      <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                      <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                      </form>
+                                                </div>
                                           </div>
                                     </div>
                                     <div class="modal fade" id="editHardskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -562,7 +567,7 @@
                   </div>
                   <div class="col-xl-4 col-md-12 col-sm-12">
                         <div>
-                              <div class="card overflow-auto p-4 ps-3 pe-2" style="max-height: 500px">
+                              <div class="card overflow-auto p-4 ps-3 pe-2 mb-3" style="max-height: 500px">
                                     <div class="w-100">
                                           <div class="text-center fw-semibold text-black mb-3">History Apply</div>
                                           <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">

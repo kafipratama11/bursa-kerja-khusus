@@ -80,14 +80,6 @@ class HomeController extends Controller
     {
 
         $employeId = Auth::id();
-    
-        $photo      = $request->file('photo');
-        $filename   = date('y-m-d').$photo->getClientOriginalName();
-        $path       ='photo-employe/'.$filename;
-
-        Storage::disk('public')->put($path,file_get_contents($photo));
-
-        $data['image'] = $filename;
         $data['name'] = $request->name;
         $data['lokasi'] = $request->lokasi;
         $data['no_telp'] = $request->no_telp;
