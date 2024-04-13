@@ -443,12 +443,14 @@
                                     <div class="mb-2 pb-2 border-bottom">
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
-                                                <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill{{$item->id}}"><i class="bi bi-pen"></i></a>
-                                                <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
-                                                      @csrf
-                                                      @method("DELETE")
-                                                      <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
-                                                </form>
+                                                <div class="ms-auto gap-2 align-items-center d-flex">
+                                                      <a href="" class="text-secondary profile-action-button" data-bs-toggle="modal" data-bs-target="#editSoftskill{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                      <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
+                                                            @csrf
+                                                            @method("DELETE")
+                                                            <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                      </form>
+                                                </div>
                                           </div>
                                     </div>
                                     <div class="modal fade" id="editSoftskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -514,12 +516,14 @@
                                     <div class="mb-2 pb-2 border-bottom">
                                           <div class="d-flex gap-2 align-items-center">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
-                                                <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill{{$item->id}}"><i class="bi bi-pen"></i></a>
-                                                <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST">
-                                                      @csrf
-                                                      @method('DELETE')
-                                                      <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
-                                                </form>
+                                                <div class="ms-auto gap-2 align-items-center d-flex">
+                                                      <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                      <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                      </form>
+                                                </div>
                                           </div>
                                     </div>
                                     <div class="modal fade" id="editHardskill{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
