@@ -172,7 +172,8 @@
                                                       <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-telephone"></i>
                                                             <div class="d-flex gap-1 align-items-center">
-                                                                  <div id="text-to-copy">{{$dataU->profile_user->no_telp}}</div>
+                                                                  <div id="text-to-copy" hidden>{{$dataU->profile_user->no_telp}}</div>
+                                                                  <div>{{$formattedPhoneNumber = implode('-', str_split($dataU->profile_user->no_telp, 4))}}</div>
                                                                   <a id="copy-link" class="text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>

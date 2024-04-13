@@ -49,7 +49,13 @@
                                                                               <div>
                                                                                     <div class="d-flex gap-2 align-items-center">
                                                                                           <div class="text-dark fw-medium">{{$dataU->name}}</div>
-                                                                                          <div class="text-secondary fw-light" style="font-size: 13px">Female</div>
+                                                                                          <div class="text-secondary fw-light" style="font-size: 13px">
+                                                                                                @if ($dataU->profile_user->jk === 'she/her')
+                                                                                                Female
+                                                                                                @else
+                                                                                                Male
+                                                                                                @endif
+                                                                                          </div>
                                                                                     </div>
                                                                                     <div class="text-secondary" style="font-size: 13px" id="myText">{{$dataU->profile_user->kota}}, {{$dataU->profile_user->provinsi}}</div>
                                                                                     <div class="text-dark mt-3" style="font-size: 13px">

@@ -92,7 +92,7 @@
                                           12 Kandidat
                                     </div>
                               </div>
-                        </div>                                                    
+                        </div>
                         @endforeach
                   </div>
             </div>
@@ -100,13 +100,14 @@
       @include('partials.footer')
 </div>
 @if($message = Session::get('new_account'))
-    <script>
-        Swal.fire({
-  icon: "info",
-  title: "{{$message}}",
-  text: "Perusahaan anda sedang dalam verifikasi",
-  footer: "Tunggu beberapa saat"
-});
-    </script>
-    @endif
+<script>
+      Swal.fire({
+            icon: "info"
+            , title: "{{$message}}"
+            , text: "Perusahaan anda sedang dalam verifikasi"
+            , footer: "Tunggu beberapa saat"
+      });
+
+</script>
+@endif
 @endsection

@@ -98,6 +98,7 @@ class UserController extends Controller
     }
 
     public function user_profile(Request $request, $id){
+        $data = Loker::find($id);
         $dataU = User::find($id);
         $dataU->load('profile_user');
         $dataU->load('education');
@@ -108,8 +109,8 @@ class UserController extends Controller
         $user = auth()->user()->role;
         
 
-        return view('user.user-profile',compact('dataU','user'));
-        return view('user.apply',compact('dataU','user'));
+        return view('user.user-profile',compact('dataU','user','data'));
+        return view('user.apply',compact('dataU','user', 'data'));
     }
 
     public function update_provinsi( Request $request, $id){
@@ -164,18 +165,29 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function photo_profile(Request $request, $id){
+    public function photo_profile(Request $request, $id)
+    {
+    // Validasi request
+    $request->validate([
+        'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // sesuaikan dengan kebutuhan
+    ]);
 
-        $photo      = $request->file('photo');
-        $filename   = date('y-m-d').$photo->getClientOriginalName();
-        $path       ='photo-user/'.$filename;
+    // Mendapatkan file foto dari request
+    $photo = $request->file('photo');
 
-        Storage::disk('public')->put($path,file_get_contents($photo));
+    // Membuat nama file unik dengan menambahkan timestamp
+    $filename = date('y-m-d_H-i-s') . '_' . uniqid() . '.' . $photo->getClientOriginalExtension();
 
-        $data['image'] = $filename;
+    // Menyimpan file foto ke dalam direktori storage
+    $path = 'photo-user/' . $filename;
+    Storage::disk('public')->put($path, file_get_contents($photo));
 
-        ProfileUser::where('user_id', $id)->update($data);
-        return redirect()->back();
+    // Menyimpan nama file foto ke dalam database
+    $data['image'] = $filename;
+    ProfileUser::where('user_id', $id)->update($data);
+
+    // Redirect kembali
+    return redirect()->back();
     }
 
     public function delete_education($id){

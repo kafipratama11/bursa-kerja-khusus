@@ -73,7 +73,9 @@ class EmployeController extends Controller
         $ganjil = Loker::whereRaw('id % 2 != 0')->get();
         $genap = Loker::whereRaw('id % 2 = 0')->get();
 
+        
         return view('employer.employer-detail-loker',compact('data'));
+        return view('user.apply',compact('data'));
     }
 
     public function delete(Request $request, $id){
