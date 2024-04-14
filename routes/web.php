@@ -52,7 +52,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/profile-employer/{id}', [UserController::class, 'profile_employer'])->name('profile-employer');
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
-    Route::get('/user-apply', [ApplyController::class, 'apply'])->name('user-apply');
+    Route::get('/user-apply/{id}', [ApplyController::class, 'apply'])->name('user-apply');
     Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
     Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
     Route::put('update-role/{id}',[UserController::class,'update_role'])->name('update-role');

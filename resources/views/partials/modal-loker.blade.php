@@ -60,7 +60,7 @@
                               Lamaran Cepat
                         </a>
                         @else
-                        <a type="button" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}" class="btn btn-apply-loker px-5">
+                        <a type="button" href="{{ route('user.apply', ['id' =>$item->id])}}" class="btn btn-apply-loker px-5">
                               Lamaran Cepat
                         </a>
                         @endguest

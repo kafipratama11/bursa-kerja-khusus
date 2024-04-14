@@ -19,8 +19,9 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function apply(){
-        return view('user/apply');
+    public function apply(Request $request, $id){
+        $data = Loker::find($id);
+        return view('user.apply',compact('data'));
     }
     
     public function about(){
@@ -108,7 +109,6 @@ class UserController extends Controller
         $user = User::role('user')->count();
         $user = auth()->user()->role;
         
-
         return view('user.user-profile',compact('dataU','user','data'));
         return view('user.apply',compact('dataU','user', 'data'));
     }

@@ -26,32 +26,11 @@
                         <span class="navbar-toggler-icon text-light"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
-<<<<<<< HEAD
-=======
-                        @guest
->>>>>>> 248c1554b5931dc407a0f50003f02e013c31c121
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
                                     <a class="nav-link active text-light" aria-current="page" href="{{route('user.index-user')}}">Back</a>
                               </li>
                         </ul>
-<<<<<<< HEAD
-=======
-                        @else
-                        <ul class="navbar-nav d-flex gap-3">
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/user/dashboard">LOKER</a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.company-list')}}">PERUSAHAAN</a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="{{route('user.about')}}">TENTANG</a>
-                              </li>
-                        </ul>
-                        @endguest
-                        @yield('nav')
->>>>>>> 248c1554b5931dc407a0f50003f02e013c31c121
                   </div>
             </div>
       </nav>
