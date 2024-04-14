@@ -27,7 +27,7 @@
                                                 @if($user = 'user')
                                                 <div class="d-flex align-items-end z-3">
                                                       <div class="d-flex align-items-center justify-content-center bg-white rounded-pill" style="margin-left: -2.3rem; margin-bottom: 10px;">
-                                                            <div class="d-flex align-items-center justify-content-center m-1 border bg-primary rounded-pill" style="width: 30px; height: 30px;">
+                                                            <div class="d-flex align-items-center justify-content-center m-1 border bg-primary rounded-pill" style="width: 32px; height: 32px;">
                                                                   <a href="" class="text-white" style="font-size: 20px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
                                                             </div>
                                                       </div>
@@ -189,11 +189,11 @@
                                           <div><a href="" data-bs-toggle="modal" data-bs-target="#about"><i class="bi bi-pen text-secondary"></i></a></div>
                                     </div>
                                     <div class="modal fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                          <div class="modal-dialog modal-dialog-scrollable modal-lg d-flex justify-content-center">
+                                          <div class="modal-dialog modal-dialog-scrollable modal-lg">
                                                 <form action="{{ route('user.update-about',['id' => $dataU->id])}}" method="POST">
                                                       @csrf
                                                       @method('PUT')
-                                                      <div class="modal-content" style="width: 680px">
+                                                      <div class="modal-content">
                                                             <div class="modal-header">
                                                                   <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
                                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -576,7 +576,7 @@
                                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                       @foreach ($applyHistory as $apply)
-                                                      <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                      <a href="{{ route('user.user-apply', ['id' =>$item->id])}}" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                             <div class="mb-2 border-bottom">
                                                                   <div class="p-2">
                                                                         <div class="d-flex gap-3">

@@ -62,7 +62,7 @@ class UserController extends Controller
         $loker = $data->Loker; 
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
-        return view('employer.profile-perusahaan',compact('data','loker','dataU'))->$this->belongsTo(Loker::class);
+        return view('employer.profile-perusahaan',compact('data','loker','dataU'));
     }
 
     public function profile_employe(Request $request, $id){
