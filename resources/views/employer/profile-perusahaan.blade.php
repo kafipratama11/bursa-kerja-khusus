@@ -34,7 +34,7 @@
                                                             {{$data->no_telp}}
                                                       </div>
                                                       <small class="mb-2 fw-medium text-secondary">
-                                                            Bergabung pada tanggal {{$data->created_at}}
+                                                            Bergabung pada tanggal {{$data->created_at->format('d/m/Y')}}
                                                       </small>
                                                 </div>
                                           </div>

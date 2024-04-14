@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apply;
 use App\Models\Employe;
+use App\Models\Jurusan;
 use App\Models\loker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +29,8 @@ class EmployeController extends Controller
         $data = Employe::find($id);
         $data->load('loker');
         $loker = $data->Loker; // Ambil data loker yang terkait dengan employe
-        return view('employer.employer-create-loker', compact('data', 'loker'));
+        $jurusan = Jurusan::all();
+        return view('employer.employer-create-loker', compact('data', 'loker','jurusan'));
         }else{
             $employeId = Auth::id();
             $dataE = Employe::where('id', $employeId)->first();
@@ -41,6 +44,7 @@ class EmployeController extends Controller
             'provinsi'          => 'required',
             'kota_kabupaten'    => 'required',
             'bagian'            => 'required',
+            'jurusan'            => 'required',
             'waktu'             => 'required',
             'gaji'              => 'required',
             'email'             => 'required|email',
@@ -53,6 +57,7 @@ class EmployeController extends Controller
             $data['employe_id']             = $request->employe_id;
             $data['nama_pekerjaan']         = $request->nama_pekerjaan;
             $data['bagian']                 = $request->bagian;
+            $data['jurusan']                = $request->jurusan;
             $data['nama_perusahaan']        = $request->nama_perusahaan;
             $data['provinsi']               = $request->provinsi;
             $data['kota_kabupaten']         = $request->kota_kabupaten;

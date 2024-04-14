@@ -6,6 +6,8 @@ use App\Models\Education;
 use App\Models\Employe;
 use App\Models\Experience;
 use App\Models\HardSkill;
+use App\Models\Jurusan;
+use App\Models\Apply;
 use App\Models\loker;
 use App\Models\Profile;
 use App\Models\ProfileUser;
@@ -19,9 +21,25 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function apply(Request $request, $id){
-        $data = Loker::find($id);
-        return view('user.apply',compact('data'));
+    public function search(Request $request){
+        $data = $request->input('search');
+        $provinsi = $request->input('provinsi');
+        $jurusan = $request->input('jurusan');
+        $user = User::role('user')->count();
+        $employe = Employe::count();
+        $loker = Loker::count();
+        $jurusan = Jurusan::all();
+        $profile = Auth::id();
+        $dataU = User::where('id', $profile)->first();
+
+
+        $data = Loker::where('nama_pekerjaan', 'like', '%'.$data.'%')
+                        ->orWhere('bagian', 'like', '%'.$data.'%')
+                        ->orWhere('jurusan', 'like', '%'.$jurusan.'%')
+                        ->orWhere('provinsi', 'like', '%'.$provinsi.'%')
+                        ->get();
+
+        return view('index',compact('data','loker','user','employe','dataU','jurusan'));
     }
     
     public function about(){
@@ -44,7 +62,7 @@ class UserController extends Controller
         $loker = $data->Loker; 
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
-        return view('employer.profile-perusahaan',compact('data','loker','dataU'));
+        return view('employer.profile-perusahaan',compact('data','loker','dataU'))->$this->belongsTo(Loker::class);
     }
 
     public function profile_employe(Request $request, $id){
@@ -108,8 +126,12 @@ class UserController extends Controller
         $dataU->load('hardskill');
         $user = User::role('user')->count();
         $user = auth()->user()->role;
+        $userId = Auth::id();
+    
+        // Dapatkan riwayat lamaran pengguna
+        $applyHistory = Apply::where('user_id', $userId)->get();
         
-        return view('user.user-profile',compact('dataU','user','data'));
+        return view('user.user-profile',compact('dataU','user','data', 'applyHistory'));
         return view('user.apply',compact('dataU','user', 'data'));
     }
 

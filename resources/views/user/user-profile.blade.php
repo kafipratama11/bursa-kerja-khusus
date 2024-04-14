@@ -57,7 +57,6 @@
                                                 </div>
                                                 @else
                                                 <div>
-
                                                 </div>
                                                 @endif
                                           </div>
@@ -67,7 +66,7 @@
                                                       <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                 </div>
                                                 <div class="text-dark text-secondary" style="font-size: 13px">{{$dataU->nisn}}</div>
-                                                <div class="d-flex gap-2" >
+                                                <div class="d-flex gap-2" style="font-size: 13px">
                                                       <div class="text-secondary" id="myText">{{$dataU->profile_user->kota}},</div>
                                                       <div class="text-secondary">{{$dataU->profile_user->provinsi}}</div>
                                                       @if($user = 'user')
@@ -258,7 +257,7 @@
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
-                                                <a href="" class="text-secondary" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen"></i></a>
+                                                <a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
                                           </div>
                                           <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
                                           <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
@@ -567,28 +566,38 @@
                   </div>
                   <div class="col-xl-4 col-md-12 col-sm-12">
                         <div>
-                              <div class="card overflow-auto p-4 ps-3 pe-2 mb-3" style="max-height: 500px">
-                                    <div class="w-100">
-                                          <div class="text-center fw-semibold text-black mb-3">History Apply</div>
-                                          <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
-                                                <div class="mb-2 border-bottom">
-                                                      <div class="p-2">
-                                                            <div class="d-flex gap-3">
-                                                                  <div class="d-flex justify-content-center">
-                                                                        <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
-                                                                  </div>
-                                                                  <div class="w-100">
-                                                                        <div class="d-flex" style="font-size: 14px">
-                                                                              <div class="fw-medium">Administrasi</div>
-                                                                              <div class="ms-auto" style="font-size: 12px">Status</div>
+                              <div class="accordion overflow-auto w-100" id="accordionExample" style="max-height: 500px">
+                                    <div class="accordion-item">
+                                          <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                      History Apply
+                                                </button>
+                                          </h2>
+                                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                      @foreach ($applyHistory as $apply)
+                                                      <a href="" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                            <div class="mb-2 border-bottom">
+                                                                  <div class="p-2">
+                                                                        <div class="d-flex gap-3">
+                                                                              <div class="d-flex justify-content-center">
+                                                                                    <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
+                                                                              </div>
+                                                                              <div class="w-100">
+                                                                                    <div class="d-flex" style="font-size: 14px">
+                                                                                          <div class="fw-medium">Froentend Developer</div>
+                                                                                          <div class="ms-auto" style="font-size: 12px">Status</div>
+                                                                                    </div>
+                                                                                    <div style="font-size: 12px">PT Freeport Indonesia</div>
+                                                                              </div>
                                                                         </div>
-                                                                        <div style="font-size: 12px">PT Freeport Indonesia</div>
+                                                                        <div class="text-secondary fw-light text-end" style="font-size: 10px">1 hari yang lalu</div>
                                                                   </div>
                                                             </div>
-                                                            <div class="text-secondary fw-light text-end" style="font-size: 10px">1 hari yang lalu</div>
-                                                      </div>
+                                                      </a>
+                                                      @endforeach
                                                 </div>
-                                          </a>
+                                          </div>
                                     </div>
                               </div>
                         </div>
@@ -600,15 +609,24 @@
       <div class="modal fade" id="detailphoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center">
                   <div class="d-flex justify-content-center align-items-center">
-                        @if ($dataU->profile_user->image)
-                        <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
-                        @else
-                        @if ($dataU->profile_user->jk === 'she/her')
-                        <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">                            
-                        @else
-                        <img src="{{ asset('../../img/person-default.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">                            
-                        @endif
-                        @endif
+                        <div class="d-flex">
+                              @if ($dataU->profile_user->image)
+                              <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                              @else
+                              @if ($dataU->profile_user->jk === 'she/her')
+                              <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                              @else
+                              <img src="{{ asset('../../img/person-default.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                              @endif
+                              @endif
+                              <div class="d-flex align-items-end z-3">
+                                    <div class="d-flex align-items-center justify-content-center bg-danger rounded-pill" style="margin-left: -4.3rem; margin-bottom: 10px;">
+                                          <div class="d-flex align-items-center justify-content-center m-1 border bg-danger rounded-pill" style="width: 35px; height: 35px;">
+                                                <button id="submitBtn" type="submit" class="text-white z-4" style="font-size: 20px;"><i class="bi bi-trash3"></i></button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
                   </div>
             </div>
       </div>

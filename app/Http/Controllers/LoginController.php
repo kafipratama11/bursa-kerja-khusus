@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employe;
+use App\Models\Jurusan;
 use App\Models\loker;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,10 +17,11 @@ class LoginController extends Controller
         $user = User::role('user')->count();
         $employe = Employe::count();
         $loker = Loker::count();
+        $jurusan = Jurusan::all();
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
         
-        return view('index', compact('data','loker','user','employe','dataU'));
+        return view('index', compact('data','loker','user','employe','dataU','jurusan'));
     }
     
     
@@ -80,9 +82,9 @@ class LoginController extends Controller
             $data['no_telp']    = $request->no_telp;
             $data['deskripsi']  = $request->deskripsi;
 
-         $user = Employe::create($data);
+            $user = Employe::create($data);
 
-         $user->syncRoles(['new_account']);
+            $user->syncRoles(['new_account']);
 
         return redirect()->route('employer-site')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }

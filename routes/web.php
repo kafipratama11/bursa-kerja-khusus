@@ -5,6 +5,7 @@ use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Models\Apply;
 use App\Models\Employe;
 use App\Models\User;
 use Illuminate\Routing\Route as RoutingRoute;
@@ -43,6 +44,7 @@ Route::get('/employe-signup', [HomeController::class, 'employe_signup'])->name('
 Route::post('/employe-register', [LoginController::class, 'employe_register'])->name('employe-register');
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], function(){
+    Route::get('/search', [UserController::class, 'search'])->name('search');
     Route::get('/about', [UserController::class, 'about'])->name('about');
     Route::get('/company-list', [UserController::class, 'company_list'])->name('company-list');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -53,6 +55,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
     Route::get('/user-apply/{id}', [ApplyController::class, 'apply'])->name('user-apply');
+    Route::post('apply-loker/{id}',[ApplyController::class,'apply_loker'])->name('apply-loker');
     Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
     Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
     Route::put('update-role/{id}',[UserController::class,'update_role'])->name('update-role');

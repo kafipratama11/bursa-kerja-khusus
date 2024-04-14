@@ -20,7 +20,7 @@
                               <div class="pt-3 ps-4 p-3 pb-1">
                                     <div class="fw-bolder fs-5 mb-2">{{$item->name}}</div>
                                     <div class="ps-3">
-                                          <div style="font-size: 14px" class="fw-light">
+                                          <div  class="fw-light">
                                                 <div class="d-flex gap-3 mb-2">
                                                       <i class="bi bi-geo-alt"></i>
                                                       {{$item->lokasi}}

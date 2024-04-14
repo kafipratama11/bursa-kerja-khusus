@@ -358,6 +358,15 @@
                                     background-color: #f1f1f1;
                                    }
 
+                                   #submitBtn {
+                                    background-color: transparent;
+                                    border: none;
+                                    color: blue;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                                
+
                                    @media (max-width: 768px) {
                                     .card-intro, .card-about{
                                         flex-direction: column; /* Mengubah tata letak menjadi tumpukan */

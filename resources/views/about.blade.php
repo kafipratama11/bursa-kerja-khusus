@@ -123,61 +123,63 @@
                   </div>
             </div>
       </div>
-      <div class="card w-100 d-flex justify-content-center mt-5">
-            <a class="w-full link-underline link-underline-opacity-0 text-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                  <div class="card-body text-center">
-                        Team
-                  </div>
-            </a>
-      </div>
-      <div class="collapse" id="collapseExample">
-            <div class="card card-body mt-2">
-                  <div class="row">
-                        <div class="col-xl-6 col-12-md col-12-sm mb-3">
-                              <div class="d-flex gap-3">
-                                    <div>
-                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+      <div class="accordion accordion-flush mt-5 border rounded" id="accordionFlushExample">
+            <div class="accordion-item">
+                  <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              Team
+                        </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                              <div class="row">
+                                    <div class="col-xl-6 col-12-md col-12-sm mb-3">
+                                          <div class="d-flex gap-3">
+                                                <div>
+                                                      <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                                </div>
+                                                <div>
+                                                      <div class="fw-semibold">Ihsan Ushain</div>
+                                                      <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
+                                                </div>
+                                          </div>
                                     </div>
-                                    <div>
-                                          <div class="fw-semibold">Ihsan Ushain</div>
-                                          <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
+                                    <div class="col-xl-6 col-12-md col-12-sm mb-3">
+                                          <div class="d-flex gap-3">
+                                                <div>
+                                                      <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                                </div>
+                                                <div>
+                                                      <div class="fw-semibold">Ihsan Ushain</div>
+                                                      <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
+                                                </div>
+                                          </div>
                                     </div>
+                                    <div class="col-xl-6 col-12-md col-12-sm mb-2">
+                                          <div class="d-flex gap-3">
+                                                <div>
+                                                      <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                                </div>
+                                                <div>
+                                                      <div class="fw-semibold">Ihsan Ushain</div>
+                                                      <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-xl-6 col-12-md col-12-sm mb-2">
+                                          <div class="d-flex gap-3">
+                                                <div>
+                                                      <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
+                                                </div>
+                                                <div>
+                                                      <div class="fw-semibold">Ihsan Ushain</div>
+                                                      <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
+                                                </div>
+                                          </div>
+                                    </div>
+            
                               </div>
                         </div>
-                        <div class="col-xl-6 col-12-md col-12-sm mb-3">
-                              <div class="d-flex gap-3">
-                                    <div>
-                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
-                                    </div>
-                                    <div>
-                                          <div class="fw-semibold">Ihsan Ushain</div>
-                                          <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="col-xl-6 col-12-md col-12-sm mb-2">
-                              <div class="d-flex gap-3">
-                                    <div>
-                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
-                                    </div>
-                                    <div>
-                                          <div class="fw-semibold">Ihsan Ushain</div>
-                                          <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="col-xl-6 col-12-md col-12-sm mb-2">
-                              <div class="d-flex gap-3">
-                                    <div>
-                                          <img src="../img/bg_iu.jpg" class="rounded" style="width: 100px" style="height: 100px" alt="">
-                                    </div>
-                                    <div>
-                                          <div class="fw-semibold">Ihsan Ushain</div>
-                                          <div class="text-secondary" style="font-size: 15px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil consequuntur corporis blanditiis et. Modi quae saepe temporibus illo! Itaque.</div>
-                                    </div>
-                              </div>
-                        </div>
-
                   </div>
             </div>
       </div>

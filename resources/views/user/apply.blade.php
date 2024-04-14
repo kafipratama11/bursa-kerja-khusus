@@ -7,32 +7,38 @@
                   <div class="col-xl-6 col-md-12 col-sm-12 mb-5">
                         <div class="d-flex gap-4">
                               <div class="">
-                                    <div class="position fw-medium" style="font-size: 20px">Administrasi</div>
+                                    <div class="position fw-medium" style="font-size: 20px">{{$loker->nama_pekerjaan}}</div>
                                     <div class="d-flex gap-2 align-items-center">
-                                          <div class="nama-perusahaan text-secondary">Tokopedia</div>
+                                          <div class="nama-perusahaan text-secondary">{{$loker->nama_perusahaan}}</div>
                                           <div>-</div>
-                                          <div class="text-secondary fw-light">Jakarta Selatan, Jakarta</div>
-                                          <div>-</div>
-                                          <div class="text-secondary fw-medium">5 Pelamar</div>
+                                          <div class="text-secondary fw-light" id="myText" style="font-size: 13px">{{$loker->kota_kabupaten}}, {{$loker->provinsi}}</div>
                                     </div>
                                     <div class="mt-3 mb-4" style="font-size: 15px">
                                           <div class="d-flex gap-3 mb-2 align-items-center">
                                                 <i class="bi bi-clock-fill text-secondary"></i>
-                                                <div>Contract</div>
+                                                <div>{{$loker->waktu}}</div>
                                           </div>
                                           <div class="d-flex gap-3 mb-2 align-items-center">
                                                 <i class="bi bi-list-check text-secondary"></i>
-                                                <div>DML, Cybersecurity Tools, Product Demonstration</div>
+                                                <div>{{$loker->bagian}}</div>
                                           </div>
                                     </div>
                                     <div>
-                                          <button type="button" class="btn btn-primary rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium" data-bs-toggle="modal" data-bs-target="#modalapply1">Apply<i class="bi bi-box-arrow-in-up-right"></i></button>
+                                          @if ($existingApplication)
+                                          <div class="d-flex gap-3">
+                                                <button type="button" disabled class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium">Applied<i class="bi bi-check-lg"></i></button>
+                                                <button type="button" class="btn btn-outline-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium">Cancel</button>
+                                          </div>
+                                          @else
+                                          <button type="button" class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium" data-bs-toggle="modal" data-bs-target="#modalapply1">Apply<i class="bi bi-box-arrow-in-up-right"></i></button>
+                                          @endif
                                           <div class="modal fade" id="modalapply1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                                                       <div class="modal-content">
-                                                            <form action="" class="needs-validation" novalidate>
+                                                            <form action="{{route('user.apply-loker',['id' => $loker->id])}}" method="POST" class="needs-validation" novalidate>
+                                                                  @csrf
                                                                   <div class="modal-header px-5">
-                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply di Tokopedia</h1>
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply di {{$loker->nama_perusahaan}}</h1>
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                   </div>
                                                                   <div class="modal-body px-5">
@@ -71,8 +77,11 @@
                                                                         <div class="row" style="font-size: 13px">
                                                                               <div class="col">
                                                                                     <div class="mb-3">
+                                                                                          <input type="hidden" name="user_id" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->id}}" required>
+                                                                                          <input type="hidden" name="employe_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->employe_id}}" required>
+                                                                                          <input type="hidden" name="loker_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->id}}" required>
                                                                                           <label for="validationCustom01" class="form-label text-secondary">Email address</label>
-                                                                                          <input type="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" required>
+                                                                                          <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -81,7 +90,7 @@
                                                                               <div class="col">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom02" class="form-label text-secondary">Phone Number</label>
-                                                                                          <input type="text" class="form-control" id="validationCustom02" placeholder="" value="{{$dataU->profile_user->no_telp}}" required>
+                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="" value="{{$dataU->profile_user->no_telp}}" required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -92,7 +101,7 @@
                                                                               <div class="col">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom03" class="form-label">Resume</label>
-                                                                                          <input class="form-control" type="file" id="validationCustom03" required>
+                                                                                          <input class="form-control" name="cv" type="file" id="validationCustom03" required>
                                                                                           <div class="invalid-feedback">
                                                                                                 Please provide a valid city.
                                                                                           </div>
@@ -101,12 +110,12 @@
                                                                               <div class="col">
                                                                                     <div class="mb-1">
                                                                                           <label for="formFile2" class="form-label">Portfolio</label>
-                                                                                          <input class="form-control" type="file" id="formFile2">
+                                                                                          <input class="form-control" name="portofolio" type="file" id="formFile2">
                                                                                     </div>
                                                                                     <div class="mb-3">
                                                                                           <div class="input-group flex-nowrap">
                                                                                                 <span class="input-group-text" id="addon-wrapping">url</span>
-                                                                                                <input type="url" class="form-control" aria-label="portfolio" aria-describedby="addon-wrapping">
+                                                                                                <input type="url" name="portofolio_online" class="form-control" aria-label="portfolio" aria-describedby="addon-wrapping">
                                                                                           </div>
                                                                                     </div>
                                                                               </div>
@@ -127,13 +136,13 @@
                               <div>
                                     <div class="mt-5 fw-medium mb-2 text-black">About the job</div>
                                     <div class="text-secondary" style="font-size: 14px">
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto illo est recusandae quidem exercitationem ea sed modi debitis quas, commodi quaerat facilis cumque officia provident, doloribus delectus cupiditate pariatur architecto!
+                                          {{$loker->deskripsi}}
                                     </div>
                               </div>
                               <div>
                                     <div class="mt-5 fw-medium mb-2 text-black">Job Requirement</div>
                                     <div class="text-secondary" style="font-size: 14px">
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto illo est recusandae quidem exercitationem ea sed modi debitis quas, commodi quaerat facilis cumque officia provident, doloribus delectus cupiditate pariatur architecto!
+                                          {{$loker->requirement}}
                                     </div>
                               </div>
                         </div>
@@ -144,7 +153,7 @@
                               <a href="" class="link-underline link-underline-opacity-0">
                                     <div class="border-bottom pb-2 pt-2 px-4">
                                           <div>
-                                                <div class="text-black fw-semibold" style="font-size: 15px">Devops Engineer</div>
+                                                <div class="text-black fw-semibold" style="font-size: 15px">{{$item->nama_pekerjaan}}</div>
                                                 <div class="mt-1">
                                                       <div class="text-secondary fw-light" style="font-size: 14px">Jakarta Barat, Jakarta</div>
                                                       <div class="text-secondary fw-light" style="font-size: 14px">Contract</div>

@@ -35,7 +35,7 @@
                               </div>
                         </div>
                         <div class="modal-post-day-loker mb-3 text-body-tertiary">
-                              Diposting {{$item->created_at}}
+                              Diposting {{$item->created_at->format('d/m/Y')}}
                         </div>
                         <div class="modal-jobdesc mb-4">
                               <div class="title-modal-jobdesc mb-2 fw-bolder">JOB DESCRIPTION</div>
@@ -60,7 +60,7 @@
                               Lamaran Cepat
                         </a>
                         @else
-                        <a type="button" href="{{ route('user.apply', ['id' =>$item->id])}}" class="btn btn-apply-loker px-5">
+                        <a type="button" href="{{ route('user.user-apply', ['id' =>$item->id])}}" class="btn btn-apply-loker px-5">
                               Lamaran Cepat
                         </a>
                         @endguest
