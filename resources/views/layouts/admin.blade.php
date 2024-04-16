@@ -61,51 +61,43 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
             var ctx = document.getElementById("doughutChart");
-            var user = {
-                  !!$user!!
-            };
-            var employer = {
-                  !!$employe!!
-            };
-            var loker = {
-                  !!$loker!!
-            };
-
+            ctx.height = 150;
+            var user = {!! $user !!};
+            var employer = {!! $employe !!};
+            var loker = {!! $loker !!};
             var total = user + employer + loker;
             var userPercen = (user / total) * 100;
             var employerPercen = (employer / total) * 100;
             var lokerPercen = (loker / total) * 100;
-
-            ctx.height = 150;
+        
             var myChart = new Chart(ctx, {
-                  type: 'doughnut'
-                  , data: {
-                        datasets: [{
-                              data: [user, employer, loker]
-                              , backgroundColor: [
-                                    "#070f2b"
-                                    , "#1b1a55"
-                                    , "#ffee00"
-                              ]
-                              , hoverBackgroundColor: [
-                                    "#070f2b"
-                                    , "#1b1a55"
-                                    , "#ffee00"
-                              ]
-
-                        }]
-                        , labels: [
-                              "User" + " " + userPercen + "%"
-                              , "Employer" + " " + employerPercen + "%"
-                              , "Loker" + " " + lokerPercen + "%"
-                        , ]
-                  }
-                  , options: {
-                        responsive: true
-                  , }
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [user, employer, loker],
+                        backgroundColor: [
+                            "#070f2b",
+                            "#1b1a55",
+                            "#ffee00"
+                        ],
+                        hoverBackgroundColor: [
+                            "#070f2b",
+                            "#1b1a55",
+                            "#ffee00"
+                        ]
+                    }],
+                    labels: [
+                        "User" + " " + userPercen.toFixed(2) + "%",
+                        "Employer" + " " + employerPercen.toFixed(2) + "%",
+                        "Loker" + " " + lokerPercen.toFixed(2) + "%"
+                    ]
+                },
+                options: {
+                    responsive: true
+                }
             });
-
-      </script>
+        </script>
+        
 
 </body>
 </html>

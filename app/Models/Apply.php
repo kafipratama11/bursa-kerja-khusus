@@ -12,9 +12,6 @@ class Apply extends Model
         'user_id',
         'employe_id',
         'loker_id',
-        'nama',
-        'email',
-        'no_telp',
         'jenis_kelamin',
         'provinsi',
         'kota',
@@ -23,4 +20,9 @@ class Apply extends Model
         'portofolio_online',
     ];
     protected $table = 'apply';
+
+    public function loker()
+    {
+        return $this->belongsTo(Loker::class);
+    }
 }

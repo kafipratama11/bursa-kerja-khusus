@@ -66,4 +66,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(HardSkill::class);
     }
+    public function apply()
+    {
+        return $this->hasMany(Apply::class);
+    }
+    public function loker()
+{
+    return $this->belongsTo(Loker::class);
+}
 }

@@ -27,7 +27,6 @@
                                           @if ($existingApplication)
                                           <div class="d-flex gap-3">
                                                 <button type="button" disabled class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium">Applied<i class="bi bi-check-lg"></i></button>
-                                                <button type="button" class="btn btn-outline-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium">Cancel</button>
                                           </div>
                                           @else
                                           <button type="button" class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium" data-bs-toggle="modal" data-bs-target="#modalapply1">Apply<i class="bi bi-box-arrow-in-up-right"></i></button>
@@ -38,7 +37,7 @@
                                                             <form action="{{route('user.apply-loker',['id' => $loker->id])}}" method="POST" class="needs-validation" novalidate>
                                                                   @csrf
                                                                   <div class="modal-header px-5">
-                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply di {{$loker->nama_perusahaan}}</h1>
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply at {{$loker->nama_perusahaan}}</h1>
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                   </div>
                                                                   <div class="modal-body px-5">
@@ -81,7 +80,7 @@
                                                                                           <input type="hidden" name="employe_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->employe_id}}" required>
                                                                                           <input type="hidden" name="loker_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->id}}" required>
                                                                                           <label for="validationCustom01" class="form-label text-secondary">Email address</label>
-                                                                                          <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" required>
+                                                                                          <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="isi email anda di profile user" value="{{$dataU->profile_user->email}}" readonly required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -90,7 +89,7 @@
                                                                               <div class="col">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom02" class="form-label text-secondary">Phone Number</label>
-                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="" value="{{$dataU->profile_user->no_telp}}" required>
+                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="isi no telephone anda di profile user" value="{{$dataU->profile_user->no_telp}}" readonly required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -122,7 +121,7 @@
                                                                         </div>
                                                                   </div>
                                                                   <div class="modal-footer px-5 ">
-                                                                        <button class="bg-transparent border-0" data-bs-dismiss="modal" style="font-size: 14px">Cancel</button>
+                                                                        <button type="button" class="bg-transparent border-0" data-bs-dismiss="modal" style="font-size: 14px">Cancel</button>
                                                                         <button type="submit" class="btn btn-dark rounded-pill px-4 fw-medium" style="font-size: 14px">Submit</button>
                                                                   </div>
                                                             </form>
@@ -150,23 +149,28 @@
                   <div class="col-xl-6 col-md-12 col-sm-12 mb-4">
                         <div class="text-black mb-3 text-center">Loker lainnya dari perusahaan ini</div>
                         <div>
-                              <a href="" class="link-underline link-underline-opacity-0">
+                              @foreach ($otherLokers as $item)
+                              <a href="{{ route('user.user-apply', ['id' =>$item->id])}}" class="link-underline link-underline-opacity-0">
                                     <div class="border-bottom pb-2 pt-2 px-4">
                                           <div>
                                                 <div class="text-black fw-semibold" style="font-size: 15px">{{$item->nama_pekerjaan}}</div>
                                                 <div class="mt-1">
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Jakarta Barat, Jakarta</div>
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Contract</div>
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Rp. 10.000.000/bulan</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$item->kota_kabupaten}}, {{$item->provinsi}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$item->waktu}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">
+                                                            @php
+                                                            $gajiF = $item->gaji;
+                                                            @endphp
+                                                            Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
+                                                      </div>
                                                 </div>
                                                 <div class="mt-4 d-flex gap-2 align-items-center">
-                                                      <div class="text-secondary fw-light" style="font-size: 12px">1 bulan yang lalu</div>
-                                                      <div>-</div>
-                                                      <div class="text-secondary fw-medium" style="font-size: 12px">29 Pelamar</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 12px">Di buat pada {{$item->created_at}}</div>
                                                 </div>
                                           </div>
                                     </div>
-                              </a>
+                              </a>                 
+                              @endforeach
                         </div>
                   </div>
             </div>

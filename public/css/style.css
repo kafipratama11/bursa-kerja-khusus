@@ -1,391 +1,388 @@
-                                    :root {
-                                       --primary: #070f2b;
-                                       --secondary: rgb(71, 71, 71);
-                                       --dark-blue: #1b1a55;
-                                       --smoke-white: rgb(231, 231, 231);
-                                       --light-blue: rgb(167, 164, 233);
-                                       --light-yellow: rgb(251, 255, 132);
-                                       --yellow: #ffee00;
-                                   }
-                                   
-                                   * {
-                                    font-family: "Inter", sans-serif;
-                                   }
-                                   
-                                   nav {
-                                       background-color: var(--primary);
-                                   }
-                                   
-                                   .btn-search {
-                                       background-color: var(--primary);
-                                   }
-                                   
-                                   .btn-search:hover {
-                                       background-color: #0e183b;
-                                   }
-                                   
-                                   .box-icon {
-                                       background-color: var(--primary);
-                                       width: 30px;
-                                       height: 30px;
-                                   }
-                                   
-                                   .card-header {
-                                       background-color: var(--primary);
-                                   }
-                                   
-                                   .card-loker {
-                                       color: var(--secondary);
-                                       font-weight: 400;
-                                       font-size: 16px;
-                                   }
-                                   
-                                   .box-rekrutment {
-                                       height: 250px;
-                                       background-color: var(--primary);
-                                       color: white;
-                                   }
-                                   
-                                   .number-bg {
-                                       width: 50px;
-                                       height: 50px;
-                                       border-radius: 50%;
-                                       color: var(--primary);
-                                   }
-                                   
-                                   .detail-proses-rekrut {
-                                       color: var(--smoke-white);
-                                   }
-                                   
-                                   .btn-signup {
-                                       background-color: var(--dark-blue);
-                                       color: var(--smoke-white);
-                                   }
-                                   
-                                   .btn-signup:hover {
-                                       background-color: var(--dark-blue);
-                                       color: var(--smoke-white);
-                                   }
-                                   
-                                   .subtitle-signup {
-                                       margin-top: -10px;
-                                       color: var(--secondary);
-                                   }
-                                   
-                                   .title-signup {
-                                       color: var(--dark-blue);
-                                   }
-                                   
-                                   .btn-apply-loker {
-                                       background-color: var(--dark-blue);
-                                       color: var(--smoke-white);
-                                   }
-                                   
-                                   .btn-apply-loker:hover {
-                                       background-color: var(--dark-blue);
-                                       color: var(--smoke-white);
-                                   }
-                                   
-                                   .modal-post-day-loker {
-                                       color: var(--secondary);
-                                   }
-                                   
-                                   .btn-login-cancel {
-                                       border: 1px solid var(--dark-blue);
-                                   }
-                                   
-                                   .btn-login-cancel:hover {
-                                       border: 1px solid var(--dark-blue);
-                                       background-color: var(--dark-blue)!important;
-                                       color: var(--smoke-white)!important;
-                                   }
-                                   
-                                   .card-profile-perusahaan {
-                                       width: 160px;
-                                       height: 160px;
-                                       display: flex;
-                                       justify-content: center;
-                                       align-content: center;
-                                       align-items: center;
-                                   }
-                                   
-                                   .card-profile-perusahaan img {
-                                       width: 140px;
-                                   }
-                                   
-                                   .quote {
-                                       font-size: 15px;
-                                   }
-                                   
-                                   .scroll-nav {
-                                       position: fixed;
-                                   }
-                                   
-                                   nav ul li a,
-                                   nav ul li a:after,
-                                   nav ul li a:before {
-                                       transition: all .5s;
-                                   }
-                                   
-                                   nav ul li a:hover {
-                                       color: #555;
-                                   }
-                                   
-                                   th,
-                                   td,
-                                   td a,
-                                   td form button {
-                                       font-size: 13px;
-                                   }
-                                   
-                                   th,
-                                   td,
-                                   td a,
-                                   td #role {
-                                       font-size: 13px;
-                                   }
-                                   /* stroke */
-                                   
-                                   nav.stroke ul li a,
-                                   nav.fill ul li a {
-                                       position: relative;
-                                   }
-                                   
-                                   nav.stroke ul li a:after,
-                                   nav.fill ul li a:after {
-                                       position: absolute;
-                                       bottom: 0;
-                                       left: 0;
-                                       right: 0;
-                                       margin: auto;
-                                       width: 0%;
-                                       content: '.';
-                                       color: transparent;
-                                       background: #edf102;
-                                       height: 1px;
-                                   }
-                                   
-                                   nav.stroke ul li a:hover:after {
-                                       width: 100%;
-                                   }
-                                   
-                                   nav.fill ul li a {
-                                       transition: all 2s;
-                                   }
-                                   
-                                   nav.stroke ul li a {
-                                       font-size: 12px;
-                                       font-weight: 700;
-                                   }
-                                   
-                                   .box-icon-about {
-                                       min-width: 35px;
-                                       height: 35px;
-                                       background-color: var(--light-yellow);
-                                   }
-                                   
-                                   .about-warning {
-                                       font-size: 12px;
-                                   }
-                                   
-                                   .box-warning-alert {
-                                       border-radius: 20px 20px 0 0;
-                                       border-top: 4px solid black!important;
-                                       border-left: 4px solid black!important;
-                                   }
-                                   
-                                   .box-warning-alert2 {
-                                       margin-top: 2rem;
-                                       width: 100%;
-                                       height: 270px;
-                                       border-radius: 20px;
-                                       font-size: 14px;
-                                       border: 4px solid black;
-                                       border-right: 7px solid #000;
-                                   }
-                                   
-                                   .dinamic-island {
-                                       width: 26px;
-                                       height: 80px;
-                                   }
-                                   
-                                   .nav-iphone {
-                                       min-width: 35px;
-                                       height: 100%;
-                                       border-radius: 0 15px 15px 0;
-                                   }
-                                   
-                                   .nav-iphone i {
-                                       font-size: 25px;
-                                   }
-                                   
-                                   .hover-nav-iphone:hover {
-                                       background-color: var(--smoke-white);
-                                   }
-                                   
-                                   .camera {
-                                       width: 10px;
-                                       height: 10px;
-                                       background-color: rgb(0, 0, 123);
-                                       border-radius: 50%;
-                                       margin-top: 5px;
-                                   }
-                                   
-                                   .dinamic-island-1 {
-                                       width: 100px;
-                                   }
-                                   
-                                   .camera-1 {
-                                       width: 10px;
-                                       height: 10px;
-                                       background-color: rgb(0, 0, 123);
-                                       border-radius: 50%;
-                                       margin-left: 28px;
-                                   }
-                                   
-                                   .phoni-mekbuk {
-                                       width: 140px;
-                                       background-color: black!important;
-                                       height: 30px;
-                                       border-radius: 0 0 15px 15px;
-                                   }
-                                   
-                                   .list-mekbuk {
-                                       border-radius: 25px 25px 0 0;
-                                       border-top: 5px solid black;
-                                       border-right: 7px solid black;
-                                       border-left: 7px solid black;
-                                   }
-                                   
-                                   .custom-file-upload {
-                                       border: 1px solid #ccc;
-                                       display: inline-block;
-                                       padding: 6px 12px;
-                                       cursor: pointer;
-                                       background-color: #f7f7f7;
-                                       color: #333;
-                                       border-radius: 4px;
-                                       transition: background-color 0.3s ease;
-                                   }
-                                   
-                                   .custom-file-upload:hover {
-                                       background-color: #e0e0e0;
-                                   }
-                                   
-                                   .img-profile-user {
-                                       width: 150px;
-                                       height: 150px;
-                                   }
-                                   
-                                   .history-apply-user {
-                                       min-height: 500px;
-                                       max-height: 500px;
-                                       max-width: 350px;
-                                       position: fixed;
-                                   }
-                                   
-                                   th,
-                                   td,
-                                   td a,
-                                   td form button {
-                                       font-size: 13px;
-                                       td,
-                                       td a {
-                                           font-size: 13px;
-                                       }
-                                       table {
-                                           margin-top: 4rem;
-                                       }
-                                   }
-                                   
-                                   .chart {
-                                       margin: 0 auto;
-                                       display: block;
-                                       width: 45%;
-                                   }
-                                   
-                                   @keyframes fadeInOut {
-                                       0% {
-                                           opacity: 0;
-                                       }
-                                       25% {
-                                           opacity: 1;
-                                       }
-                                       75% {
-                                           opacity: 1;
-                                       }
-                                       100% {
-                                           opacity: 0;
-                                       }
-                                   }
-                                   
-                                   #copy-feedback {
-                                       position: fixed;
-                                       top: 50%;
-                                       left: 50%;
-                                       transform: translate(-50%, -50%);
-                                       padding: 10px 20px;
-                                       background-color: rgba(0, 0, 0, 0.7);
-                                       color: white;
-                                       border-radius: 5px;
-                                       animation: fadeInOut 2s ease-out;
-                                       display: none;
-                                   }
-                                   
-                                   #copy-feedback-email {
-                                       position: fixed;
-                                       top: 50%;
-                                       left: 50%;
-                                       transform: translate(-50%, -50%);
-                                       padding: 10px 20px;
-                                       background-color: rgba(0, 0, 0, 0.7);
-                                       color: white;
-                                       border-radius: 5px;
-                                       animation: fadeInOut 2s ease-out;
-                                       display: none;
-                                   }
-
-                                   .profile-action-button{
-                                    width: 30px;
-                                    height: 30px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                   }
-                                   
-                                   .profile-action-button:hover{
-                                    border-radius: 50%;
-                                    background-color: #f1f1f1;
-                                   }
-
-                                   #submitBtn {
-                                    background-color: transparent;
-                                    border: none;
-                                    color: blue;
-                                    cursor: pointer;
-                                    text-decoration: underline;
-                                }
-                                
-
-                                   @media (max-width: 768px) {
-                                    .card-intro, .card-about{
-                                        flex-direction: column; /* Mengubah tata letak menjadi tumpukan */
-                                    }
-
-                                    .profile-picture{
-                                        justify-content: center;
-                                    }
-
-                                    .box-warning-alert2{
-                                        display: none;
-                                    }
-
-                                    .text-about-alert{
-                                        margin-top: 15px;
-                                        margin-bottom: 15px;
-                                    }
-
-                                    .text-about-alert div{
-                                        font-size: 14px!important;
-                                    }
-                                }
+                                                  :root {
+                                                     --primary: #070f2b;
+                                                     --secondary: rgb(71, 71, 71);
+                                                     --dark-blue: #1b1a55;
+                                                     --smoke-white: rgb(231, 231, 231);
+                                                     --light-blue: #a7a4e9;
+                                                     --light-yellow: rgb(251, 255, 132);
+                                                     --yellow: #ffee00;
+                                                 }
+                                                 
+                                                 * {
+                                                     font-family: "Inter", sans-serif;
+                                                 }
+                                                 
+                                                 nav {
+                                                     background-color: var(--primary);
+                                                 }
+                                                 
+                                                 .btn-search {
+                                                     background-color: var(--primary);
+                                                 }
+                                                 
+                                                 .btn-search:hover {
+                                                     background-color: #0e183b;
+                                                 }
+                                                 
+                                                 .box-icon {
+                                                     background-color: var(--primary);
+                                                     width: 30px;
+                                                     height: 30px;
+                                                 }
+                                                 
+                                                 .card-header {
+                                                     background-color: var(--primary);
+                                                 }
+                                                 
+                                                 .card-loker {
+                                                     color: var(--secondary);
+                                                     font-weight: 400;
+                                                     font-size: 16px;
+                                                 }
+                                                 
+                                                 .box-rekrutment {
+                                                     height: 250px;
+                                                     background-color: var(--primary);
+                                                     color: white;
+                                                 }
+                                                 
+                                                 .number-bg {
+                                                     width: 50px;
+                                                     height: 50px;
+                                                     border-radius: 50%;
+                                                     color: var(--primary);
+                                                 }
+                                                 
+                                                 .detail-proses-rekrut {
+                                                     color: var(--smoke-white);
+                                                 }
+                                                 
+                                                 .btn-signup {
+                                                     background-color: var(--dark-blue);
+                                                     color: var(--smoke-white);
+                                                 }
+                                                 
+                                                 .btn-signup:hover {
+                                                     background-color: var(--dark-blue);
+                                                     color: var(--smoke-white);
+                                                 }
+                                                 
+                                                 .subtitle-signup {
+                                                     margin-top: -10px;
+                                                     color: var(--secondary);
+                                                 }
+                                                 
+                                                 .title-signup {
+                                                     color: var(--dark-blue);
+                                                 }
+                                                 
+                                                 .btn-apply-loker {
+                                                     background-color: var(--dark-blue);
+                                                     color: var(--smoke-white);
+                                                 }
+                                                 
+                                                 .btn-apply-loker:hover {
+                                                     background-color: var(--dark-blue);
+                                                     color: var(--smoke-white);
+                                                 }
+                                                 
+                                                 .modal-post-day-loker {
+                                                     color: var(--secondary);
+                                                 }
+                                                 
+                                                 .btn-login-cancel {
+                                                     border: 1px solid var(--dark-blue);
+                                                 }
+                                                 
+                                                 .btn-login-cancel:hover {
+                                                     border: 1px solid var(--dark-blue);
+                                                     background-color: var(--dark-blue)!important;
+                                                     color: var(--smoke-white)!important;
+                                                 }
+                                                 
+                                                 .card-profile-perusahaan {
+                                                     width: 160px;
+                                                     height: 160px;
+                                                     display: flex;
+                                                     justify-content: center;
+                                                     align-content: center;
+                                                     align-items: center;
+                                                 }
+                                                 
+                                                 .card-profile-perusahaan img {
+                                                     width: 140px;
+                                                 }
+                                                 
+                                                 .quote {
+                                                     font-size: 15px;
+                                                 }
+                                                 
+                                                 .scroll-nav {
+                                                     position: fixed;
+                                                 }
+                                                 
+                                                 nav ul li a,
+                                                 nav ul li a:after,
+                                                 nav ul li a:before {
+                                                     transition: all .5s;
+                                                 }
+                                                 
+                                                 nav ul li a:hover {
+                                                     color: #555;
+                                                 }
+                                                 
+                                                 th,
+                                                 td,
+                                                 td a,
+                                                 td form button {
+                                                     font-size: 13px;
+                                                 }
+                                                 
+                                                 th,
+                                                 td,
+                                                 td a,
+                                                 td #role {
+                                                     font-size: 13px;
+                                                 }
+                                                 /* stroke */
+                                                 
+                                                 nav.stroke ul li a,
+                                                 nav.fill ul li a {
+                                                     position: relative;
+                                                 }
+                                                 
+                                                 nav.stroke ul li a:after,
+                                                 nav.fill ul li a:after {
+                                                     position: absolute;
+                                                     bottom: 0;
+                                                     left: 0;
+                                                     right: 0;
+                                                     margin: auto;
+                                                     width: 0%;
+                                                     content: '.';
+                                                     color: transparent;
+                                                     background: #edf102;
+                                                     height: 1px;
+                                                 }
+                                                 
+                                                 nav.stroke ul li a:hover:after {
+                                                     width: 100%;
+                                                 }
+                                                 
+                                                 nav.fill ul li a {
+                                                     transition: all 2s;
+                                                 }
+                                                 
+                                                 nav.stroke ul li a {
+                                                     font-size: 12px;
+                                                     font-weight: 700;
+                                                 }
+                                                 
+                                                 .box-icon-about {
+                                                     min-width: 35px;
+                                                     height: 35px;
+                                                     background-color: var(--light-yellow);
+                                                 }
+                                                 
+                                                 .about-warning {
+                                                     font-size: 12px;
+                                                 }
+                                                 
+                                                 .box-warning-alert {
+                                                     border-radius: 20px 20px 0 0;
+                                                     border-top: 4px solid black!important;
+                                                     border-left: 4px solid black!important;
+                                                 }
+                                                 
+                                                 .box-warning-alert2 {
+                                                     margin-top: 2rem;
+                                                     width: 100%;
+                                                     height: 270px;
+                                                     border-radius: 20px;
+                                                     font-size: 14px;
+                                                     border: 4px solid black;
+                                                     border-right: 7px solid #000;
+                                                 }
+                                                 
+                                                 .dinamic-island {
+                                                     width: 26px;
+                                                     height: 80px;
+                                                 }
+                                                 
+                                                 .nav-iphone {
+                                                     min-width: 35px;
+                                                     height: 100%;
+                                                     border-radius: 0 15px 15px 0;
+                                                 }
+                                                 
+                                                 .nav-iphone i {
+                                                     font-size: 25px;
+                                                 }
+                                                 
+                                                 .hover-nav-iphone:hover {
+                                                     background-color: var(--smoke-white);
+                                                 }
+                                                 
+                                                 .camera {
+                                                     width: 10px;
+                                                     height: 10px;
+                                                     background-color: rgb(0, 0, 123);
+                                                     border-radius: 50%;
+                                                     margin-top: 5px;
+                                                 }
+                                                 
+                                                 .dinamic-island-1 {
+                                                     width: 100px;
+                                                 }
+                                                 
+                                                 .camera-1 {
+                                                     width: 10px;
+                                                     height: 10px;
+                                                     background-color: rgb(0, 0, 123);
+                                                     border-radius: 50%;
+                                                     margin-left: 28px;
+                                                 }
+                                                 
+                                                 .phoni-mekbuk {
+                                                     width: 140px;
+                                                     background-color: black!important;
+                                                     height: 30px;
+                                                     border-radius: 0 0 15px 15px;
+                                                 }
+                                                 
+                                                 .list-mekbuk {
+                                                     border-radius: 25px 25px 0 0;
+                                                     border-top: 5px solid black;
+                                                     border-right: 7px solid black;
+                                                     border-left: 7px solid black;
+                                                 }
+                                                 
+                                                 .custom-file-upload {
+                                                     border: 1px solid #ccc;
+                                                     display: inline-block;
+                                                     padding: 6px 12px;
+                                                     cursor: pointer;
+                                                     background-color: #f7f7f7;
+                                                     color: #333;
+                                                     border-radius: 4px;
+                                                     transition: background-color 0.3s ease;
+                                                 }
+                                                 
+                                                 .custom-file-upload:hover {
+                                                     background-color: #e0e0e0;
+                                                 }
+                                                 
+                                                 .img-profile-user {
+                                                     width: 150px;
+                                                     height: 150px;
+                                                 }
+                                                 
+                                                 .history-apply-user {
+                                                     min-height: 500px;
+                                                     max-height: 500px;
+                                                     max-width: 350px;
+                                                     position: fixed;
+                                                 }
+                                                 
+                                                 th,
+                                                 td,
+                                                 td a,
+                                                 td form button {
+                                                     font-size: 13px;
+                                                     td,
+                                                     td a {
+                                                         font-size: 13px;
+                                                     }
+                                                     table {
+                                                         margin-top: 4rem;
+                                                     }
+                                                 }
+                                                 
+                                                 .chart {
+                                                     margin: 0 auto;
+                                                     display: block;
+                                                     width: 45%;
+                                                 }
+                                                 
+                                                 @keyframes fadeInOut {
+                                                     0% {
+                                                         opacity: 0;
+                                                     }
+                                                     25% {
+                                                         opacity: 1;
+                                                     }
+                                                     75% {
+                                                         opacity: 1;
+                                                     }
+                                                     100% {
+                                                         opacity: 0;
+                                                     }
+                                                 }
+                                                 
+                                                 #copy-feedback {
+                                                     position: fixed;
+                                                     top: 50%;
+                                                     left: 50%;
+                                                     transform: translate(-50%, -50%);
+                                                     padding: 10px 20px;
+                                                     background-color: rgba(0, 0, 0, 0.7);
+                                                     color: white;
+                                                     border-radius: 5px;
+                                                     animation: fadeInOut 2s ease-out;
+                                                     display: none;
+                                                 }
+                                                 
+                                                 #copy-feedback-email {
+                                                     position: fixed;
+                                                     top: 50%;
+                                                     left: 50%;
+                                                     transform: translate(-50%, -50%);
+                                                     padding: 10px 20px;
+                                                     background-color: rgba(0, 0, 0, 0.7);
+                                                     color: white;
+                                                     border-radius: 5px;
+                                                     animation: fadeInOut 2s ease-out;
+                                                     display: none;
+                                                 }
+                                                 
+                                                 .profile-action-button {
+                                                     width: 30px;
+                                                     height: 30px;
+                                                     display: flex;
+                                                     align-items: center;
+                                                     justify-content: center;
+                                                 }
+                                                 
+                                                 .profile-action-button:hover {
+                                                     border-radius: 50%;
+                                                     background-color: #f1f1f1;
+                                                 }
+                                                 
+                                                 #submitBtn {
+                                                     background-color: transparent;
+                                                     border: none;
+                                                     color: blue;
+                                                     cursor: pointer;
+                                                     text-decoration: underline;
+                                                 }
+                                                 
+                                                 @media (max-width: 768px) {
+                                                     .card-intro,
+                                                     .card-about {
+                                                         flex-direction: column;
+                                                         /* Mengubah tata letak menjadi tumpukan */
+                                                     }
+                                                     .profile-picture {
+                                                         justify-content: center;
+                                                     }
+                                                     .box-warning-alert2 {
+                                                         display: none;
+                                                     }
+                                                     .text-about-alert {
+                                                         margin-top: 15px;
+                                                         margin-bottom: 15px;
+                                                     }
+                                                     .text-about-alert div {
+                                                         font-size: 14px!important;
+                                                     }
+                                                 }
