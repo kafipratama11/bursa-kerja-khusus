@@ -55,6 +55,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::get('/edit-role/{id}',[UserController::class,'edit_role'])->name('edit-role');
     Route::get('/user-profile/{id}',[UserController::class,'user_profile'])->name('user-profile');
     Route::get('/user-apply/{id}', [ApplyController::class, 'apply'])->name('user-apply');
+    Route::get('/view-apply/{id}', [ApplyController::class, 'view_apply'])->name('view-apply');
     Route::post('apply-loker/{id}',[ApplyController::class,'apply_loker'])->name('apply-loker');
     Route::post('add-education/{id}',[UserController::class,'add_education'])->name('add-education');
     Route::post('add-experience/{id}',[UserController::class,'add_experience'])->name('add-experience');
@@ -70,6 +71,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::delete('/delete-education/{id}',[UserController::class,'delete_education'])->name('delete-education');
     Route::delete('/delete/{id}',[UserController::class,'delete'])->name('delete');
     Route::delete('/delete-experience/{id}',[UserController::class,'delete_experience'])->name('delete-experience');
+    Route::delete('/delete-apply/{id}',[ApplyController::class,'apply'])->name('delete-apply');
+
     // hardskill
     Route::post('add-softskill/{id}',[UserController::class,'add_softskill'])->name('add-softskill');
     Route::delete('/delete-softskill/{id}',[UserController::class,'delete_softskill'])->name('delete-softskill');

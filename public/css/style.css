@@ -303,6 +303,10 @@
                                        display: block;
                                        width: 45%;
                                    }
+
+                                   .btn-cancel-apply:hover{
+                                    background-color: #f1f1f1;
+                                   }
                                    
                                    @keyframes fadeInOut {
                                        0% {

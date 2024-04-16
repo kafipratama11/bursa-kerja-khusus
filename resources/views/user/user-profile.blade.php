@@ -575,23 +575,25 @@
                                           </h2>
                                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
-                                                      @foreach ($applyHistory as $history)
-                                                      <a href="{{ route('user.user-apply', ['id' =>$history->id])}}" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                      @foreach ($history as $item)
+                                                      <a href="{{route('user.user-apply',['id' => $item->id])}}" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                             <div class="mb-2 border-bottom">
                                                                   <div class="p-2">
                                                                         <div class="d-flex gap-3">
                                                                               <div class="d-flex justify-content-center">
-                                                                                    <div><img src="../../../img/bca.png" style="width: 50px" alt=""></div>
+                                                                                    <div><img src="{{ asset('storage/photo-employe/'.$item->image)}}" style="width: 50px" alt=""></div>
                                                                               </div>
                                                                               <div class="w-100">
-                                                                                    <div class="d-flex" style="font-size: 14px">
-                                                                                          <div class="fw-medium">{{ $history->nama_pekerjaan }}</div>
-                                                                                          <div class="ms-auto" style="font-size: 12px">Status</div>
+                                                                                    <div class="d-flex align-items-center" style="font-size: 14px">
+                                                                                          <div class="fw-medium">{{$item->nama_perusahaan}}</div>
+                                                                                          <div class="ms-auto">
+                                                                                                <button class="btn btn-cancel-apply" style="font-size: 12px;">Batalkan</button>
+                                                                                          </div>
                                                                                     </div>
-                                                                                    <div style="font-size: 12px">PT Freeport Indonesia</div>
+                                                                                    <div style="font-size: 12px">{{$item->nama_loker}}</div>
                                                                               </div>
                                                                         </div>
-                                                                        <div class="text-secondary fw-light text-end" style="font-size: 10px">1 hari yang lalu</div>
+                                                                        <div class="text-secondary fw-light text-end" style="font-size: 10px">{{$item->waktu}}</div>
                                                                   </div>
                                                             </div>
                                                       </a>

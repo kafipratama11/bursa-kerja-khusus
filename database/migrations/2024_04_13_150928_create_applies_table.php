@@ -19,9 +19,6 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Employe::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(loker::class)->constrained()->cascadeOnDelete();
-            $table->string('nama',35);
-            $table->string('email',25);
-            $table->string('no_telp',13)->nullable();
             $table->string('cv');
             $table->string('portofolio')->nullable();
             $table->string('portofolio_online',50)->nullable();

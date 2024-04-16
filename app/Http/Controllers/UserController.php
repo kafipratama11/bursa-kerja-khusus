@@ -119,11 +119,20 @@ class UserController extends Controller
     public function user_profile(Request $request, $id){
         $data = Loker::find($id);
         $dataU = User::find($id);
+        $loker = loker::find($id);
         $dataU->load('profile_user');
         $dataU->load('education');
         $dataU->load('experiences');
         $dataU->load('softskill');
         $dataU->load('hardskill');
+        $dataU->load('apply');
+        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as id')
+        ->join('users', 'apply.user_id', '=', 'users.id')
+        ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+        ->join('employes', 'lokers.employe_id', '=', 'employes.id')
+        ->where('users.nisn', $dataU->nisn)
+        ->get();
+    
         $user = User::role('user')->count();
         $user = auth()->user()->role;
         $userId = Auth::id();
@@ -131,8 +140,7 @@ class UserController extends Controller
         // Dapatkan riwayat lamaran pengguna
         $applyHistory = Apply::where('user_id', $userId)->get();
         
-        return view('user.user-profile',compact('dataU','user','data', 'applyHistory'));
-        return view('user.apply',compact('dataU','user', 'data'));
+        return view('user.user-profile',compact('dataU','user','data', 'applyHistory','history'));
     }
 
     public function update_provinsi( Request $request, $id){

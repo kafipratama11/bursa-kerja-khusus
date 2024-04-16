@@ -15,13 +15,13 @@ class ApplyController extends Controller
         $dataU = User::where('id', $profile)->first();
         $loker = loker::find($id);
         $userId = Auth::id();
+        
         $existingApplication = Apply::where('user_id', $userId)
                                 ->where('loker_id', $id)
                                 ->exists();
-
+                                
                                 $loker_id = $loker->id; // Mengambil ID loker
-    
-                                $other_lokers = Loker::select('lokers.*')
+                                $otherLokers = Loker::select('lokers.*')
                                     ->joinSub(function ($query) use ($loker_id) {
                                         $query->select('employe_id')
                                             ->from('lokers')
@@ -29,12 +29,13 @@ class ApplyController extends Controller
                                     }, 'sub', 'lokers.employe_id', '=', 'sub.employe_id')
                                     ->where('lokers.id', '!=', $loker_id)
                                     ->get();
-    
-        return view('user.apply',compact('dataU','loker','existingApplication','other_lokers'));
+                                    
+        return view('user.apply',compact('dataU','loker','existingApplication','otherLokers'));
     }
 
     public function apply_loker(Request $request,$id){
         $data = [
+            'id'                  => $request->id,
             'user_id'             => $request->user_id,
             'employe_id'          => $request->employe_id,
             'loker_id'            => $request->loker_id,
@@ -71,5 +72,30 @@ class ApplyController extends Controller
         return view('user.user-profile',compact('history'));
     }
     
+    public function anotherLoker($id) {
+        // Ambil ID loker yang sedang ditampilkan
+        $loker = Loker::find($id);
+        $loker_id = $loker->id; // Mengambil ID loker
+    
+        $other_lokers = Loker::select('lokers.*')
+            ->joinSub(function ($query) use ($loker_id) {
+                $query->select('employe_id')
+                    ->from('lokers')
+                    ->where('id', $loker_id);
+            }, 'sub', 'lokers.employe_id', '=', 'sub.employe_id')
+            ->where('lokers.id', '!=', $loker_id)
+            ->get();
+        
+        return view('user.apply', compact('other_lokers'));
+    }
+    
+    public function delete_apply($id){
+        $data = Apply::find($id);
+
+        if($data){
+            $data->delete();
+            return redirect()->route('user.index-user');
+        }
+    }
     
 }

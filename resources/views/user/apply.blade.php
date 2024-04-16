@@ -26,11 +26,10 @@
                                     <div>
                                           @if ($existingApplication)
                                           <div class="d-flex gap-3">
-                                                <button type="button" disabled class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium">Applied<i class="bi bi-check-lg"></i></button>
-                                                <button type="button" class="btn btn-outline-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium">Cancel</button>
+                                                <button type="button" disabled class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center fw-medium" style="width: 120px">Applied<i class="bi bi-check-lg"></i></button>
                                           </div>
                                           @else
-                                          <button type="button" class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center px-4 fw-medium" data-bs-toggle="modal" data-bs-target="#modalapply1">Apply<i class="bi bi-box-arrow-in-up-right"></i></button>
+                                          <button type="button" class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center fw-medium" data-bs-toggle="modal" data-bs-target="#modalapply1" style="width: 120px">Apply<i class="bi bi-box-arrow-in-up-right"></i></button>
                                           @endif
                                           <div class="modal fade" id="modalapply1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -38,7 +37,7 @@
                                                             <form action="{{route('user.apply-loker',['id' => $loker->id])}}" method="POST" class="needs-validation" novalidate>
                                                                   @csrf
                                                                   <div class="modal-header px-5">
-                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply di {{$loker->nama_perusahaan}}</h1>
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply at {{$loker->nama_perusahaan}}</h1>
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                   </div>
                                                                   <div class="modal-body px-5">
@@ -90,7 +89,7 @@
                                                                               <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom02" class="form-label text-secondary">Phone Number</label>
-                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="" value="{{$dataU->profile_user->no_telp}}" style="font-size: 14px" required>
+                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="isi no telephone anda di profile user" value="{{$dataU->profile_user->no_telp}}" readonly required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -150,20 +149,23 @@
                   <div class="col-xl-6 col-md-12 col-sm-12 mb-4">
                         <div class="text-black mb-3 text-center">Loker lainnya dari perusahaan ini</div>
                         <div>
-                              @foreach ($other_lokers as $loker)
-                              <a href="{{ route('user.user-apply', ['id' =>$loker->id])}}" class="link-underline link-underline-opacity-0">
-                                    <div class="border-bottom pb-2 pt-2 px-4 rounded another-loker-in-apply-page">
+                              @foreach ($otherLokers as $item)
+                              <a href="{{ route('user.user-apply', ['id' =>$item->id])}}" class="link-underline link-underline-opacity-0">
+                                    <div class="border-bottom pb-2 pt-2 px-4">
                                           <div>
-                                                <div class="text-black fw-semibold" style="font-size: 15px">{{$loker->nama_pekerjaan}}</div>
+                                                <div class="text-black fw-semibold" style="font-size: 15px">{{$item->nama_pekerjaan}}</div>
                                                 <div class="mt-1">
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$loker->kota_kabupaten}}, {{$loker->provinsi}}</div>
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$loker->waktu}}</div>
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Rp. {{$loker->gaji}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$item->kota_kabupaten}}, {{$item->provinsi}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$item->waktu}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">
+                                                            @php
+                                                            $gajiF = $item->gaji;
+                                                            @endphp
+                                                            Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
+                                                      </div>
                                                 </div>
                                                 <div class="mt-4 d-flex gap-2 align-items-center">
-                                                      <div class="text-secondary fw-light" style="font-size: 12px">{{$loker->created_at}}</div>
-                                                      <div>-</div>
-                                                      <div class="text-secondary fw-medium" style="font-size: 12px">29 Pelamar</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 12px">Di buat pada {{$item->created_at}}</div>
                                                 </div>
                                           </div>
                                     </div>

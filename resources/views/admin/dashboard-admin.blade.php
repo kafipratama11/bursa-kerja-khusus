@@ -61,9 +61,9 @@
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                               <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                          <div class="col-lg-5 chart">
-                                                <canvas id="doughutChart" width="500" height="250"></canvas>
-                                          </div>
+                                    <div class="col-lg-6 chart">
+                                          <canvas id="doughutChart" width="500" height="200"></canvas>
+                                      </div>
                               </div>
                               <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                                     <div class="pe-5">

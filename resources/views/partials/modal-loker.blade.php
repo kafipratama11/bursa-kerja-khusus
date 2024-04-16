@@ -31,7 +31,10 @@
                               </div>
                               <div class="d-flex gap-3 mb-2">
                                     <i class="bi bi-cash-stack"></i>
-                                    Rp.{{$item->gaji}}
+                                    @php
+                                    $gajiF = $item->gaji;
+                                    @endphp
+                                    Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
                               </div>
                         </div>
                         <div class="modal-post-day-loker mb-3 text-body-tertiary">
