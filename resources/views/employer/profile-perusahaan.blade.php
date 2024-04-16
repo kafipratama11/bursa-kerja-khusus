@@ -4,12 +4,12 @@
 <div class="container">
       @include('partials.modal-login-user')
       <div class="row mt-5 pb-5">
-            <div class="col-6">
+            <div class="col-xl-6 col-md-6 col-sm-12">
                   <div class="">
                         <div class="mb-5">
                               <div class="nama-perusahaan fs-4 text-secondary mb-3 fw-bolder">{{$data->name}}</div>
                               <div class="row d-flex align-items-center">
-                                    <div class="col-3 mt-2 me-5">
+                                    <div class="col-xl-3 col-md-3 col-sm-12 mt-2 me-5">
                                           <div class="card-profile-perusahaan">
                                                 @if($data->image)
                                                 <img src="{{ asset('storage/photo-employe/'.$data->image)}}" alt="">
@@ -18,7 +18,7 @@
                                                 @endif
                                           </div>
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-xl-7 col-md-7 col-sm-12">
                                           <div class="">
                                                 <div style="font-size: 15px">
                                                       <div class="d-flex gap-3 mb-2">
@@ -43,7 +43,7 @@
                         </div>
                   </div>
             </div>
-            <div class="col-6">
+            <div class="col-xl-6 col-md-6 col-sm-12">
                   <div>
                         <div class="mb-5">
                               <div class="fw-bolder mb-4 text-center text-secondary rounded p-2">TENTANG PERUSAHAAN</div>

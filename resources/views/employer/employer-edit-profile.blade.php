@@ -12,28 +12,28 @@
                   <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
             </li>
       </ul>
+      @section('nav')
+      <div class="text-white">
+            @auth
+            {{ Auth::user()->name }}
+            @endauth
+      </div>
+      @endsection
 </div>
 @endsection
 
-@section('nav')
-<div class="text-white">
-      @auth
-      {{ Auth::user()->name }}
-      @endauth
-</div>
-@endsection
 
 @section('content-admin')
 @include('partials.navbar-dashboard-admin')
 
 <div class="container">
       <div class="row pb-5">
-            <div class="col-4">
+            <div class="col-xl-4 col-md-6 col-sm-12">
                   <div class="logo d-flex justify-content-center w-100 mt-5" style="width:200px; height: 300px;">
                         @if($employe->image)
-                        <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" class="w-100 h-100" alt="">
+                        <img src="{{ asset('storage/photo-employe/'.$employe->image)}}" class="w-100 h-100 object-fit-contain" alt="">
                         @else
-                        <img src="{{ asset('../../assets/images/building.jpg')}}" alt="">
+                        <img src="{{ asset('../../assets/images/building.jpg')}}" class="object-fit-contain" alt="">
                         @endif
                         <form method="POST" enctype="multipart/form-data">
                               @csrf
@@ -87,14 +87,14 @@
                         </div>
                   </div>
             </div>
-            <div class="col pt-4">
+            <div class="col-xl-8 col-md-6 col-sm-12 pt-4">
                   <div class="row mt-5">
                         <div class="fw-medium mb-1">
                               Lowongan Kerja
                         </div>
                         <div class="row">
                               @foreach ($employe->loker as $item)
-                              <div class="col-6 mb-3">
+                              <div class="col-xl-6 col-md-12 col-sm-12 mb-3">
                                     <div class="card w-full" style="font-size: 14px">
                                           <div class="card-body">
                                                 <div class="row">

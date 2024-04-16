@@ -18,8 +18,19 @@ class ApplyController extends Controller
         $existingApplication = Apply::where('user_id', $userId)
                                 ->where('loker_id', $id)
                                 ->exists();
+
+                                $loker_id = $loker->id; // Mengambil ID loker
     
-        return view('user.apply',compact('dataU','loker','existingApplication'));
+                                $other_lokers = Loker::select('lokers.*')
+                                    ->joinSub(function ($query) use ($loker_id) {
+                                        $query->select('employe_id')
+                                            ->from('lokers')
+                                            ->where('id', $loker_id);
+                                    }, 'sub', 'lokers.employe_id', '=', 'sub.employe_id')
+                                    ->where('lokers.id', '!=', $loker_id)
+                                    ->get();
+    
+        return view('user.apply',compact('dataU','loker','existingApplication','other_lokers'));
     }
 
     public function apply_loker(Request $request,$id){
@@ -47,16 +58,18 @@ class ApplyController extends Controller
                                 }
     }
 
-    // public function applyHistory() {
-    //     // Dapatkan ID pengguna yang sedang login
-    //     $userId = Auth::id();
-    
-    //     // Dapatkan riwayat lamaran pengguna
-    //     $applyHistory = Apply::where('user_id', $userId)->get();
-    
-    //     return view('user.user-profile', compact('applyHistory'));
-    // }
-    
+    public function applyHistory() {
+        $user = Auth::user();
+        
+        $history = Apply::select('employes.name as nama_perusahaan', 'lokers.nama_pekerjaan as nama_loker')
+        ->join('users', 'apply.user_id', '=', 'users.id')
+        ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+        ->join('employes', 'lokers.employe_id', '=', 'employes.id')
+        ->where('users.nisn', $user->nisn)
+        ->get();
+
+        return view('user.user-profile',compact('history'));
+    }
     
     
 }

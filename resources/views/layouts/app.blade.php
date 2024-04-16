@@ -25,7 +25,7 @@
                   <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
+                  <div class="collapse navbar-collapse text-center" id="navbarNav">
                         @guest
                         <ul class="navbar-nav d-flex gap-3">
                               <li class="nav-item">
@@ -61,7 +61,7 @@
                               </a>
                         </form>
                         @else
-                        <div class="ms-auto d-flex align-items-center gap-3">
+                        <div class="ms-auto d-flex align-items-center justify-content-center gap-3">
                               <div class="text-light">
                                     <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}" class="text-decoration-none text-light">
                                     @auth

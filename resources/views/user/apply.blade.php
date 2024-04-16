@@ -75,22 +75,22 @@
                                                                               </div>
                                                                         </div>
                                                                         <div class="row" style="font-size: 13px">
-                                                                              <div class="col">
+                                                                              <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-3">
                                                                                           <input type="hidden" name="user_id" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->id}}" required>
                                                                                           <input type="hidden" name="employe_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->employe_id}}" required>
                                                                                           <input type="hidden" name="loker_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->id}}" required>
                                                                                           <label for="validationCustom01" class="form-label text-secondary">Email address</label>
-                                                                                          <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" required>
+                                                                                          <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" style="font-size: 14px" required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
                                                                                     </div>
                                                                               </div>
-                                                                              <div class="col">
+                                                                              <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom02" class="form-label text-secondary">Phone Number</label>
-                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="" value="{{$dataU->profile_user->no_telp}}" required>
+                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="" value="{{$dataU->profile_user->no_telp}}" style="font-size: 14px" required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>
@@ -98,32 +98,32 @@
                                                                               </div>
                                                                         </div>
                                                                         <div class="row" style="font-size: 13px">
-                                                                              <div class="col">
+                                                                              <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom03" class="form-label">Resume</label>
-                                                                                          <input class="form-control" name="cv" type="file" id="validationCustom03" required>
+                                                                                          <input class="form-control" name="cv" type="file" id="validationCustom03" style="font-size: 14px" required>
                                                                                           <div class="invalid-feedback">
                                                                                                 Please provide a valid city.
                                                                                           </div>
                                                                                     </div>
                                                                               </div>
-                                                                              <div class="col">
+                                                                              <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-1">
                                                                                           <label for="formFile2" class="form-label">Portfolio</label>
-                                                                                          <input class="form-control" name="portofolio" type="file" id="formFile2">
+                                                                                          <input class="form-control" name="portofolio" type="file" id="formFile2" style="font-size: 14px">
                                                                                     </div>
                                                                                     <div class="mb-3">
                                                                                           <div class="input-group flex-nowrap">
                                                                                                 <span class="input-group-text" id="addon-wrapping">url</span>
-                                                                                                <input type="url" name="portofolio_online" class="form-control" aria-label="portfolio" aria-describedby="addon-wrapping">
+                                                                                                <input type="url" name="portofolio_online" class="form-control" aria-label="portfolio" aria-describedby="addon-wrapping" style="font-size: 14px">
                                                                                           </div>
                                                                                     </div>
                                                                               </div>
                                                                         </div>
                                                                   </div>
-                                                                  <div class="modal-footer px-5 ">
-                                                                        <button class="bg-transparent border-0" data-bs-dismiss="modal" style="font-size: 14px">Cancel</button>
-                                                                        <button type="submit" class="btn btn-dark rounded-pill px-4 fw-medium" style="font-size: 14px">Submit</button>
+                                                                  <div class="modal-footer px-5">
+                                                                        <a class="link-underline link-underline-opacity-0 link-secondary" href="" data-bs-dismiss="modal" style="font-size: 14px">Cancel</a>
+                                                                        <button type="submit" class="btn btn-dark rounded-pill px-4 fw-medium ms-3" style="font-size: 14px">Submit</button>
                                                                   </div>
                                                             </form>
                                                       </div>
@@ -150,23 +150,25 @@
                   <div class="col-xl-6 col-md-12 col-sm-12 mb-4">
                         <div class="text-black mb-3 text-center">Loker lainnya dari perusahaan ini</div>
                         <div>
-                              <a href="" class="link-underline link-underline-opacity-0">
-                                    <div class="border-bottom pb-2 pt-2 px-4">
+                              @foreach ($other_lokers as $loker)
+                              <a href="{{ route('user.user-apply', ['id' =>$loker->id])}}" class="link-underline link-underline-opacity-0">
+                                    <div class="border-bottom pb-2 pt-2 px-4 rounded another-loker-in-apply-page">
                                           <div>
-                                                <div class="text-black fw-semibold" style="font-size: 15px">{{$item->nama_pekerjaan}}</div>
+                                                <div class="text-black fw-semibold" style="font-size: 15px">{{$loker->nama_pekerjaan}}</div>
                                                 <div class="mt-1">
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Jakarta Barat, Jakarta</div>
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Contract</div>
-                                                      <div class="text-secondary fw-light" style="font-size: 14px">Rp. 10.000.000/bulan</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$loker->kota_kabupaten}}, {{$loker->provinsi}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">{{$loker->waktu}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 14px">Rp. {{$loker->gaji}}</div>
                                                 </div>
                                                 <div class="mt-4 d-flex gap-2 align-items-center">
-                                                      <div class="text-secondary fw-light" style="font-size: 12px">1 bulan yang lalu</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 12px">{{$loker->created_at}}</div>
                                                       <div>-</div>
                                                       <div class="text-secondary fw-medium" style="font-size: 12px">29 Pelamar</div>
                                                 </div>
                                           </div>
                                     </div>
                               </a>
+                              @endforeach
                         </div>
                   </div>
             </div>

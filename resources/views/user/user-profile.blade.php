@@ -27,7 +27,7 @@
                                                 @if($user = 'user')
                                                 <div class="d-flex align-items-end z-3">
                                                       <div class="d-flex align-items-center justify-content-center bg-white rounded-pill" style="margin-left: -2.3rem; margin-bottom: 10px;">
-                                                            <div class="d-flex align-items-center justify-content-center m-1 border bg-primary rounded-pill" style="width: 32px; height: 32px;">
+                                                            <div class="d-flex align-items-center justify-content-center border bg-primary rounded-pill" style="width: 32px; height: 32px; margin: 2px;">
                                                                   <a href="" class="text-white" style="font-size: 20px;" data-bs-toggle="modal" data-bs-target="#photo"><i class="bi bi-arrow-repeat"></i></a>
                                                             </div>
                                                       </div>
@@ -575,8 +575,8 @@
                                           </h2>
                                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
-                                                      @foreach ($applyHistory as $apply)
-                                                      <a href="{{ route('user.user-apply', ['id' =>$item->id])}}" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                      @foreach ($applyHistory as $history)
+                                                      <a href="{{ route('user.user-apply', ['id' =>$history->id])}}" class="link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                             <div class="mb-2 border-bottom">
                                                                   <div class="p-2">
                                                                         <div class="d-flex gap-3">

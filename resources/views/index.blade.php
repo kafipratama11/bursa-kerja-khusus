@@ -26,7 +26,7 @@
                         </button>
                   </div>
             </form>
-            <form action="{{route('user.search')}}" method="GET" class="d-sm-none">
+            <form action="{{route('user.search')}}" method="GET" class="d-sm-none" method="GET">
                   <div class="row d-flex justify-content-center">
                         <div class="col-xl-4 col-md-4 col-sm-12">
                               <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>

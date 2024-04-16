@@ -13,7 +13,7 @@
             </div>
             @else
             @foreach ($data as $item)
-            <div class="col-6 mb-3">
+            <div class="col-xl-6 col-md-6 col-sm-12 mb-3">
                   @guest
                   <a href="{{ route('profile-employer',['id'=>$item->id])}}" class="link-underline link-underline-opacity-0">
                         <div class="card card-company-list ">
