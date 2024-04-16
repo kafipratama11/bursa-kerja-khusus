@@ -585,7 +585,7 @@
                                                                               </div>
                                                                               <div class="w-100">
                                                                                     <div class="d-flex" style="font-size: 14px">
-                                                                                          <div class="fw-medium">Froentend Developer</div>
+                                                                                          <div class="fw-medium">{{ $history->nama_pekerjaan }}</div>
                                                                                           <div class="ms-auto" style="font-size: 12px">Status</div>
                                                                                     </div>
                                                                                     <div style="font-size: 12px">PT Freeport Indonesia</div>
