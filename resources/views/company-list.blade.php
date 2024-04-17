@@ -6,10 +6,12 @@
 @endsection
 @include('partials.modal-login-user')
 <div class="container">
-      <div class="row mt-5">
+      <div class="row mt-5" style="min-height: 400px">
             @if($data->isEmpty())
             <div class="d-flex align-items-center justify-content-center">
-                  <img src="../assets/images/no_data_found2.png" style="width: 500px" alt="">
+                  <div style="width: 400px">
+                        @include('svg.ilustration-nodatafound')
+                  </div>
             </div>
             @else
             @foreach ($data as $item)

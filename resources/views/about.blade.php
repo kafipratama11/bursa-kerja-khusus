@@ -92,7 +92,9 @@
                                                       <div class="tab-pane fade" id="list-satu" role="tabpanel" aria-labelledby="list-satu-list">Setiap pengguna yang mendaftar di J4BSeeker harus melewati proses verifikasi identitas untuk memastikan keaslian informasi yang diberikan. Hal ini membantu mencegah akun palsu atau penipuan identitas.</div>
                                                       <div class="tab-pane fade" id="list-dua" role="tabpanel" aria-labelledby="list-dua-list">
                                                             <div class="d-flex align-items-center justify-content-center">
-                                                                  <div class="fw-bold d-flex gap-1 text-dark"><img style="width: 100%" src="../img/js-blue.png" alt=""></div>
+                                                                  <div class="d-flex align-items-center justify-content-center" style="width: 210px; margin-left: 100px;">
+                                                                        @include('svg.ilustration-discus')
+                                                                  </div>
                                                             </div>
                                                       </div>
                                                       <div class="tab-pane fade" id="list-tiga" role="tabpanel" aria-labelledby="list-tiga-list">Kami memiliki sistem pengaduan dan pelaporan yang memungkinkan pengguna untuk melaporkan aktivitas yang mencurigakan atau penipuan yang mereka temui. Tim kami akan segera menindaklanjuti setiap laporan dengan serius.</div>

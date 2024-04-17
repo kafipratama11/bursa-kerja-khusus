@@ -149,6 +149,14 @@
                   <div class="col-xl-6 col-md-12 col-sm-12 mb-4">
                         <div class="text-black mb-3 text-center">Loker lainnya dari perusahaan ini</div>
                         <div>
+                              @if ($otherLokers->isEmpty())
+                              <div class="d-flex justify-content-center align-items-center">
+                                    <div>
+                                          <img src="../../../../img/No-data-pana.png" alt="" style="width: 300px;">
+                                          <div class="fs-5 text-secondary fw-semibold text-center">Tidak ada loker lainnya</div>
+                                    </div>
+                              </div>
+                              @else
                               @foreach ($otherLokers as $item)
                               <a href="{{ route('user.user-apply', ['id' =>$item->id])}}" class="link-underline link-underline-opacity-0">
                                     <div class="border-bottom pb-2 pt-2 px-4">
@@ -171,6 +179,7 @@
                                     </div>
                               </a>
                               @endforeach
+                              @endif
                         </div>
                   </div>
             </div>

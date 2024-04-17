@@ -575,6 +575,9 @@
                                           </h2>
                                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body w-100">
+                                                      @if ($history->isEmpty())
+                                                      @include('svg.ilustration-history')
+                                                      @else
                                                       @foreach ($history as $item)
                                                             <a href="{{route('user.user-apply',['id' => $item->loker->id])}}" class="position-relative w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                                   <div class="mb-2 border-bottom">
@@ -606,6 +609,7 @@
                                                                   </div>
                                                             </a>
                                                       @endforeach
+                                                      @endif
                                                 </div>
                                           </div>
                                     </div>
@@ -622,13 +626,6 @@
                         <div class="d-flex">
                               @if ($dataU->profile_user->image)
                               <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
-                              @else
-                              @if ($dataU->profile_user->jk === 'she/her')
-                              <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
-                              @else
-                              <img src="{{ asset('../../img/person-default.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
-                              @endif
-                              @endif
                               <div class="d-flex align-items-end z-3">
                                     <div class="d-flex align-items-center justify-content-center bg-danger rounded-pill" style="margin-left: -4.3rem; margin-bottom: 10px;">
                                           <div class="d-flex align-items-center justify-content-center m-1 border bg-danger rounded-pill" style="width: 35px; height: 35px;">
@@ -636,6 +633,13 @@
                                           </div>
                                     </div>
                               </div>
+                              @else
+                              @if ($dataU->profile_user->jk === 'she/her')
+                              <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                              @else
+                              <img src="{{ asset('../../img/person-default.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
+                              @endif
+                              @endif
                         </div>
                   </div>
             </div>
