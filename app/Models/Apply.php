@@ -9,7 +9,6 @@ class Apply extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
         'user_id',
         'employe_id',
         'loker_id',
