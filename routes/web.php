@@ -71,7 +71,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth'], 'as' => 'user.'], fu
     Route::delete('/delete-education/{id}',[UserController::class,'delete_education'])->name('delete-education');
     Route::delete('/delete/{id}',[UserController::class,'delete'])->name('delete');
     Route::delete('/delete-experience/{id}',[UserController::class,'delete_experience'])->name('delete-experience');
-    Route::delete('/delete-apply/{id}',[ApplyController::class,'apply'])->name('delete-apply');
+    Route::delete('/delete-apply/{id}',[ApplyController::class,'delete_apply'])->name('delete-apply');
 
     // hardskill
     Route::post('add-softskill/{id}',[UserController::class,'add_softskill'])->name('add-softskill');

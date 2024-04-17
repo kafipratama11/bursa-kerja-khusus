@@ -9,6 +9,7 @@ class Apply extends Model
 {
     use HasFactory;
     protected $fillable = [
+        
         'user_id',
         'employe_id',
         'loker_id',
@@ -19,6 +20,7 @@ class Apply extends Model
         'portofolio',
         'portofolio_online',
     ];
+    
     protected $table = 'apply';
 
     public function loker()
