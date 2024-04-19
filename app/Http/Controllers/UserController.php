@@ -126,7 +126,7 @@ class UserController extends Controller
         $dataU->load('softskill');
         $dataU->load('hardskill');
         $dataU->load('apply');
-        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as id')
+        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as id', 'apply.id as apply_id')
         ->join('users', 'apply.user_id', '=', 'users.id')
         ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
         ->join('employes', 'lokers.employe_id', '=', 'employes.id')
@@ -179,10 +179,16 @@ class UserController extends Controller
     public function detail_loker(Request $request, $id){
 
         $data = Loker::find($id);
-        $ganjil = Loker::whereRaw('id % 2 != 0')->get();
-        $genap = Loker::whereRaw('id % 2 = 0')->get();
+        $applyId = Apply::find($id);
 
-        return view('admin.detail-loker',compact('data'));
+        $candidat = User::select('users.name', 'profile_user.*')
+        ->join('apply', 'users.id', '=', 'apply.user_id')
+        ->join('profile_user', 'users.id', '=', 'profile_user.user_id')
+        ->where('apply.loker_id', $applyId)
+        ->distinct()
+        ->get();
+
+        return view('admin.detail-loker',compact('data','candidat'));
     }
 
     public function update_education(Request $request, $id){

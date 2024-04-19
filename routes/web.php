@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/search', [UserController::class, 'search'])->name('search');
 
 
 Route::get('/company-list', [UserController::class, 'company_list'])->name('company-list');
