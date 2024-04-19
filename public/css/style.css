@@ -19,7 +19,7 @@
                                    .btn-search {
                                        background-color: var(--primary);
                                    }
-                                   
+
                                    .btn-search:hover {
                                        background-color: #0e183b;
                                    }
@@ -305,7 +305,11 @@
                                    }
 
                                    .btn-cancel-apply:hover{
-                                    background-color: #f1f1f1;
+                                    background-color: #fedddd;
+                                   }
+
+                                   .card-history:hover{
+                                    background-color: #fbfbfb;
                                    }
                                    
                                    @keyframes fadeInOut {

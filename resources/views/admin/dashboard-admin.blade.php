@@ -22,7 +22,7 @@
             </div>
             <div class="kanan w-75 mt-5">
                   <div class="container content-body" style="width: 1000px">
-                        <div class="d-flex mb-4">
+                        {{-- <div class="d-flex mb-4">
                               <div class="d-flex justify-content-start gap-3">
                                     <div class="box bg-white rounded mt-3 ps-3">
                                           <p class="pt-2">Total User</p>
@@ -58,12 +58,20 @@
                                           </div>
                                     </div>
                               </div>
-                        </div>
+                        </div> --}}
                         <div class="tab-content" id="nav-tabContent">
                               <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                    <div class="col-lg-6 chart">
-                                          <canvas id="doughutChart" width="500" height="200"></canvas>
-                                      </div>
+                                    <div class="row">
+                                          <div class="col">
+                                                @include('svg.ilustration-dashboard')
+                                          </div>
+                                          <div class="col">
+                                                <div style="width: 300px">
+                                                      <canvas id="doughutChart" width="500" height="200"></canvas>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    
                               </div>
                               <div class="tab-pane fade" id="list-loker" role="tabpanel" aria-labelledby="list-loker-list">
                                     <div class="pe-5">
@@ -235,7 +243,7 @@
                                                                         </a>
                                                                         <ul class="dropdown-menu">
                                                                               <li>
-                                                                              <a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a>
+                                                                                    <a class="dropdown-item d-flex gap-3" href="{{ route('user.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a>
                                                                                     <form action="{{ route('user.delete-loker',['id' => $item->id]) }}" method="POST">
                                                                                           @csrf
                                                                                           @method('DELETE')

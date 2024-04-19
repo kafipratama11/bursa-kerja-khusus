@@ -82,7 +82,44 @@
                                     </table>
                               </div>
                         </div>
-                        <div class="tab-pane fade" id="list-apply" role="tabpanel" aria-labelledby="list-apply-list">apply</div>
+                        <div class="tab-pane fade" id="list-apply{{ $employE->id }}" role="tabpanel" aria-labelledby="list-apply-list">
+                              <div class="pe-5">
+                                    <table class="table table-striped border">
+                                          <thead>
+                                                <tr>
+                                                      <th scope="col">No</th>
+                                                      <th scope="col">Nama</th>
+                                                      <th scope="col">Kode Loker</th>
+                                                      <th scope="col">Job Position</th>
+                                                      <th scope="col">Tanggal Apply</th>
+                                                      <th scope="col">Action</th>
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                @foreach ($applies as $item)
+                                                <tr>
+                                                      <th scope="row">{{$loop->iteration}}</th>
+                                                      <td>{{ $item->user_name }}</td>
+                                                      <td>{{ $item->id }}</td>
+                                                      <td>{{ $item->nama_pekerjaan }}</td>
+                                                      <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</td>
+                                                      <td>
+                                                            <div class="dropdown">
+                                                                  <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        Option
+                                                                  </a>
+                                                                  <ul class="dropdown-menu">
+                                                                        <li><a class="dropdown-item d-flex gap-3" href="{{ route('candidat',['id' => $lokerId, 'id' => $applyId])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                        <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
+                                                                  </ul>
+                                                            </div>
+                                                      </td>
+                                                </tr>
+                                                @endforeach
+                                          </tbody>
+                                    </table>
+                              </div>
+                        </div>
                         <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
                               <div class="pe-5">
                                     <table class="table table-striped border">

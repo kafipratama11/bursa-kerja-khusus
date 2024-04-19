@@ -140,6 +140,11 @@
                   <div style="max-height: 400px" class="overflow-auto">
                         @foreach ($candidat as $item)
                         <a href="/view/loker-edit/kode-loker/kode-candidat" class="link-underline link-underline-opacity-0">
+                        @if ($showUsers->isEmpty())
+                        <div>tidak ada kandidat</div>
+                        @else
+                        @foreach ($showUsers as $item)
+                        <a href="" class="link-underline link-underline-opacity-0">
                               <div class="card mb-3">
                                     <div class="card-body">
                                           <div class="d-flex gap-3">
@@ -148,6 +153,7 @@
                                                 </div>
                                                 <div>
                                                       <div class="fw-semibold text-secondary">user_id</div>
+                                                      <div class="fw-semibold text-secondary">Krisna Saputra</div>
                                                       <div class="mt-1">
                                                             <div class="d-flex gap-3 align-items-center text-secondary" style="font-size: 14px">
                                                                   <i class="bi bi-envelope"></i>
@@ -164,6 +170,9 @@
                               </div>
                         </a>                  
                         @endforeach
+                        </a>
+                        @endforeach
+                        @endif
                   </div>
             </div>
       </div>

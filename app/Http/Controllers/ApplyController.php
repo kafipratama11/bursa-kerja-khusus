@@ -13,12 +13,14 @@ class ApplyController extends Controller
     public function apply($id){
         $profile = Auth::id();
         $dataU = User::where('id', $profile)->first();
-        $loker = loker::find($id);
+        $loker = Loker::find($id);
+        $apply = Apply::find($id);
         $userId = Auth::id();
         
         $existingApplication = Apply::where('user_id', $userId)
-                                ->where('loker_id', $id)
-                                ->exists();
+        ->where('loker_id', $id)
+        ->exists();
+    
                                 
                                 $loker_id = $loker->id; // Mengambil ID loker
                                 $otherLokers = Loker::select('lokers.*')
@@ -30,7 +32,7 @@ class ApplyController extends Controller
                                     ->where('lokers.id', '!=', $loker_id)
                                     ->get();
                                     
-        return view('user.apply',compact('dataU','loker','existingApplication','otherLokers'));
+        return view('user.apply',compact('dataU','loker','existingApplication','otherLokers', 'apply'));
     }
 
     public function apply_loker(Request $request,$id){
@@ -62,7 +64,7 @@ class ApplyController extends Controller
     public function applyHistory() {
         $user = Auth::user();
         
-        $history = Apply::select('employes.name as nama_perusahaan', 'lokers.nama_pekerjaan as nama_loker')
+        $history = Apply::select('id','employes.name as nama_perusahaan', 'lokers.nama_pekerjaan as nama_loker')
         ->join('users', 'apply.user_id', '=', 'users.id')
         ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
         ->join('employes', 'lokers.employe_id', '=', 'employes.id')
@@ -94,8 +96,7 @@ class ApplyController extends Controller
 
         if($data){
             $data->delete();
-            return redirect()->route('user.index-user');
+            return redirect()->back();
         }
     }
-    
 }

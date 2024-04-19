@@ -147,11 +147,14 @@
                   <div style="max-height: 400px" class="overflow-auto">
                         @foreach ($candidat as $item)
                         <a href="/view/loker-edit/kode-loker/kode-candidat" class="link-underline link-underline-opacity-0">
+                        @foreach ($showUsers as $item)
+                        <a href="" class="link-underline link-underline-opacity-0">
                               <div class="card mb-3">
                                     <div class="card-body">
                                           <div class="d-flex gap-3">
                                                 <div>
                                                       <img src="{{ asset('storage/photo-employe/'.$item->image)}}" width="70px" height="70px" class="rounded" alt="">
+                                                      <img src="../../img/bg_iu.jpg" width="70px" height="70px" class="rounded" alt="">
                                                 </div>
                                                 <div>
                                                       <div class="fw-semibold text-secondary">Krisna Saputra</div>

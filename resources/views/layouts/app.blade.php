@@ -74,9 +74,9 @@
                                     <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../../storage/photo-user/'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
                                     @else
                                     @if ($dataU->profile_user->jk === 'she/her')
-                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default-female.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>                                  
+                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default-female.jpg')}}" style="width: 40px" alt=""></a>                                  
                                     @else
-                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default.jpg'.$dataU->profile_user->image)}}" style="width: 40px" alt=""></a>
+                                    <a href="{{ route('user.user-profile',['id' => $dataU->id]) }}"><img class="rounded-pill ratio ratio-1x1" src="{{ asset('../../img/person-default.jpg')}}" style="width: 40px" alt=""></a>
                                     @endif
                                     @endif
                               </div>
