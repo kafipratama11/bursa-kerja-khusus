@@ -93,6 +93,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/detail-loker/{id}', [EmployeController::class, 'detail_loker'])->name('detail-loker');
     Route::get('/loker/{id}', [EmployeController::class, 'loker'])->name('loker');
     Route::get('/employe/{id}/new-loker', [EmployeController::class, 'new_loker'])->name('new-loker');
+    // Route::get('/view/{lokerId}/{applyId}', [EmployeController::class, 'candidat'])->name('candidat');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');
     Route::delete('/delete/{id}',[EmployeController::class,'delete'])->name('delete');
     Route::put('photo-profile/{id}',[EmployeController::class,'photo_profile'])->name('photo-profile');

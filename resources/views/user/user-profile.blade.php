@@ -566,7 +566,7 @@
                   </div>
                   <div class="col-xl-4 col-md-12 col-sm-12">
                         <div>
-                              <div class="accordion overflow-auto w-100" id="accordionExample" style="max-height: 500px">
+                              <div class="accordion w-100" id="accordionExample">
                                     <div class="accordion-item">
                                           <h2 class="accordion-header">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -574,13 +574,13 @@
                                                 </button>
                                           </h2>
                                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body w-100">
+                                                <div class="accordion-body w-100 overflow-auto"  style="max-height: 550px">
                                                       @if ($history->isEmpty())
                                                       @include('svg.ilustration-history')
                                                       @else
                                                       @foreach ($history as $item)
-                                                            <a href="{{route('user.user-apply',['id' => $item->loker->id])}}" class="position-relative w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
-                                                                  <div class="mb-2 border-bottom">
+                                                            <a href="{{route('user.user-apply',['id' => $item->loker->id])}}" class="w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                                  <div class="card-history rounded pt-1 border-bottom">
                                                                         <div class="p-2">
                                                                               <div class="d-flex gap-3">
                                                                                     <div class="d-flex justify-content-center align-items-center">
@@ -597,7 +597,7 @@
                                                                                                       <form action="{{route('user.delete-apply',['id' => $item->apply_id])}}" method="POST">
                                                                                                             @csrf
                                                                                                             @method('DELETE')
-                                                                                                            <button class="btn btn-cancel-apply z-4 positon-absolute" type="submit" style="font-size: 12px;">Batalkan</button>
+                                                                                                            <button class="btn btn-cancel-apply z-4 positon-absolute text-danger" type="submit" style="font-size: 12px;">Batalkan</button>
                                                                                                       </form>
                                                                                                 </div>
                                                                                           </div>

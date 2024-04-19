@@ -29,7 +29,7 @@
                   <div class="row d-flex justify-content-center">
                         <div class="col-xl-4 col-md-4 col-sm-12">
                               <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>
-                              <input type="text" name="search" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan"/>
+                              <input type="text" name="search" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan" />
                         </div>
                         <div class="col-xl-4 col-md-4 col-sm-12">
                               <label for="klasifikasi" class="fw-bold form-label">Klasifikasi</label>
@@ -66,7 +66,7 @@
                                     <h2 class="z-3">{{$loker}}</h2>
                                     <i class="bi bi-journal-text position-absolute" style="font-size: 50px; color: #f1f1f1;"></i>
                               </div>
-                              <hr/>
+                              <hr />
                         </div>
                   </div>
                   <div class="col-xl-4 col-md-4 col-sm-12">
@@ -109,7 +109,6 @@
                   {{-- <img src="../assets/images/no_data_found2.png" style="width: 500px" alt=""> --}}
             </div>
             @else
-            {{-- Tampilkan data yang ada --}}
             @foreach ($data as $item)
             <div class="col-xl-6 col-md-12 col-sm-12">
                   <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">

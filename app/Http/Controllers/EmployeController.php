@@ -6,6 +6,8 @@ use App\Models\Apply;
 use App\Models\Employe;
 use App\Models\Jurusan;
 use App\Models\loker;
+use App\Models\User;
+use App\Models\profileUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -75,10 +77,18 @@ class EmployeController extends Controller
     public function detail_loker(Request $request, $id){
 
         $data = Loker::find($id);
-        $ganjil = Loker::whereRaw('id % 2 != 0')->get();
-        $genap = Loker::whereRaw('id % 2 = 0')->get();
-        return view('employer.employer-detail-loker',compact('data'));
-        return view('user.apply',compact('data'));
+        $ex = 9;
+        $lokerId = Loker::find($id);
+        $applyId = Apply::find($id);
+
+        $showUsers = User::select('users.name', 'profile_user.*')
+        ->join('apply', 'users.id', '=', 'apply.user_id')
+        ->join('profile_user', 'users.id', '=', 'profile_user.user_id')
+        ->where('apply.loker_id', $applyId)
+        ->distinct()
+            ->get();
+        
+        return view('employer.employer-detail-loker',compact('data', 'showUsers', 'applyId','lokerId'));
     }
 
     public function delete(Request $request, $id){
@@ -91,7 +101,6 @@ class EmployeController extends Controller
     }
 
     public function photo_profile(Request $request, $id){
-
         $photo      = $request->file('photo');
         $filename   = date('y-m-d').$photo->getClientOriginalName();
         $path       ='photo-employe/'.$filename;
@@ -102,6 +111,20 @@ class EmployeController extends Controller
 
         Employe::where('id', $id)->update($data);
         return redirect()->back();
+    }
+
+    public function candidat(Request $request, $id){
+        $user = User::find($id);
+        $lokerId = Loker::find($id);
+        $applyId = Apply::find($id);
+        
+        $userData = User::select('users.name', 'profile_user.*')
+                    ->join('apply', 'users.id', '=', 'apply.user_id')
+                    ->join('profile_user', 'users.id', '=', 'profile_user.user_id')
+                    ->where('apply.id', $applyId)
+                    ->first();
+                    
+    return view('employer.employer-candidat', compact('lokerId','applyId','userData'));
     }
 
     

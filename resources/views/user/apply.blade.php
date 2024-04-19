@@ -89,7 +89,7 @@
                                                                               <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-3">
                                                                                           <label for="validationCustom02" class="form-label text-secondary">Phone Number</label>
-                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="isi no telephone anda di profile user" value="{{$dataU->profile_user->no_telp}}" readonly required>
+                                                                                          <input type="text" class="form-control" id="validationCustom02" name="no_telp" placeholder="isi no telephone anda di profile user" value="{{$dataU->profile_user->no_telp}}" style="font-size: 14px" readonly required>
                                                                                           <div class="valid-feedback">
                                                                                                 Looks good!
                                                                                           </div>

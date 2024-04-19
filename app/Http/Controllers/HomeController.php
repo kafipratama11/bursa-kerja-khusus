@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employe;
 use App\Models\Jurusan;
 use App\Models\loker;
+use App\Models\Apply;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -70,10 +71,13 @@ class HomeController extends Controller
     {
         $employeId = Auth::id();
         $employE = Employe::where('id', $employeId)->first();
-
+        $applies = Apply::select('users.name as user_name', 'lokers.id', 'lokers.nama_pekerjaan', 'apply.created_at')
+                ->join('users', 'apply.user_id', '=', 'users.id')
+                ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+                ->get();
     
         // Tampilkan view untuk mengedit profil
-        return view('employer.employer-dashboard', compact('employE'));
+        return view('employer.employer-dashboard', compact('employE','applies'));
     }
 
     public function update(Request $request, $id)

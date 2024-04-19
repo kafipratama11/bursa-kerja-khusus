@@ -22,7 +22,7 @@
             </div>
             <div class="kanan w-75 mt-5">
                   <div class="container content-body" style="width: 1000px">
-                        <div class="d-flex mb-4">
+                        {{-- <div class="d-flex mb-4">
                               <div class="d-flex justify-content-start gap-3">
                                     <div class="box bg-white rounded mt-3 ps-3">
                                           <p class="pt-2">Total User</p>
@@ -58,7 +58,7 @@
                                           </div>
                                     </div>
                               </div>
-                        </div>
+                        </div> --}}
                         <div class="tab-content" id="nav-tabContent">
                               <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                                     <div class="row">

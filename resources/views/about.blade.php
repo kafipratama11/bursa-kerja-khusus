@@ -97,7 +97,13 @@
                                                                   </div>
                                                             </div>
                                                       </div>
-                                                      <div class="tab-pane fade" id="list-tiga" role="tabpanel" aria-labelledby="list-tiga-list">Kami memiliki sistem pengaduan dan pelaporan yang memungkinkan pengguna untuk melaporkan aktivitas yang mencurigakan atau penipuan yang mereka temui. Tim kami akan segera menindaklanjuti setiap laporan dengan serius.</div>
+                                                      <div class="tab-pane fade" id="list-tiga" role="tabpanel" aria-labelledby="list-tiga-list">
+                                                            <div class="d-flex align-items-center justify-content-center">
+                                                                  <div class="d-flex align-items-center justify-content-center" style="width: 210px; margin-left: 100px;">
+                                                                        @include('svg.ilustration-user-verified')
+                                                                  </div>
+                                                            </div>
+                                                      </div>
                                                 </div>
                                           </div>
                                           <div class="nav-iphone bg-body-tertiary py-4">

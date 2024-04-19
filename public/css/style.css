@@ -305,7 +305,11 @@
                                    }
 
                                    .btn-cancel-apply:hover{
-                                    background-color: #f1f1f1;
+                                    background-color: #fedddd;
+                                   }
+
+                                   .card-history:hover{
+                                    background-color: #fbfbfb;
                                    }
                                    
                                    @keyframes fadeInOut {

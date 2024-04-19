@@ -6,7 +6,7 @@
 @endsection
 @include('partials.modal-login-user')
 <div class="container">
-      <div class="row mt-5" style="min-height: 400px">
+      <div class="row justify-content-center mt-5" style="min-height: 400px">
             @if($data->isEmpty())
             <div class="d-flex align-items-center justify-content-center">
                   <div style="width: 400px">
@@ -15,7 +15,7 @@
             </div>
             @else
             @foreach ($data as $item)
-            <div class="col-xl-6 col-md-6 col-sm-12 mb-3">
+            <div class="col-xl-6 col-md-8 col-sm-12 mb-3">
                   @guest
                   <div class="card d-flex mb-2">
                         <div class="d-flex" style="min-height: 170px">

@@ -99,5 +99,4 @@ class ApplyController extends Controller
             return redirect()->back();
         }
     }
-    
 }
