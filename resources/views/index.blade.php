@@ -10,7 +10,7 @@
             @guest
             <form class="d-none d-xl-block d-md-block" action="{{ route('search') }}" method="GET">
                   <div class="input-group mb-3">
-                        <input type="text" name="search" class="form-control py-3" placeholder="Search Job" aria-label="Username" aria-describedby="basic-addon1" style="border-radius: 50px 0 0 50px;">
+                        <input type="text" name="search" class="form-control py-3" placeholder="Search Job" aria-label="Username" aria-describedby="basic-addon1">
                         <select class="form-select py-3" aria-label="Username" aria-describedby="basic-addon1" name="jurusan" id="klasifikasi">
                               <option selected>Pilih Jurusan</option>
                               @foreach ($jurusan as $item)
@@ -20,8 +20,9 @@
                               @endforeach
                         </select>
                         <select class="form-select py-3" aria-label="Default select example" name="provinsi" aria-describedby="basic-addon1" id="provinsi" onclick="loadProvinsi()">
+                              <option value="">Pilih Kota Anda</option>
                         </select>
-                        <button class="btn btn-search px-5 text-light fw-semibold" type="submit" style="border-radius: 0 50px 50px 0;">
+                        <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
                               Cari
                         </button>
                         @else
@@ -49,7 +50,7 @@
                   <div class="row d-flex justify-content-center">
                         <div class="col-xl-4 col-md-4 col-sm-12">
                               <label for="formGroupExampleInput" class="form-label fw-bold">Posisi Yang Dicari</label>
-                              <input type="text" name="search" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan" />
+                              <input type="text" name="search" class="form-control py-3" id="formGroupExampleInput" placeholder="Cari Posisi Yang Anda Inginkan"/>
                         </div>
                         <div class="col-xl-4 col-md-4 col-sm-12">
                               <label for="klasifikasi" class="fw-bold form-label">Klasifikasi</label>
@@ -78,7 +79,7 @@
             <div class="row d-flex justify-content-center mt-5">
                   <div class="col-xl-4 col-md-4 col-sm-12">
                         <div class="card pt-2 px-3 fw-bold">
-                              <div class="d-flex text-secondary gap-2 justify-content-center">
+                              <div class="d-flex gap-2 justify-content-center">
                                     {{-- <i class="bi bi-journal-text"></i> --}}
                                     <p>LOWONGAN</p>
                               </div>
@@ -86,12 +87,12 @@
                                     <h2 class="z-3">{{$loker}}</h2>
                                     <i class="bi bi-journal-text position-absolute" style="font-size: 50px; color: #f1f1f1;"></i>
                               </div>
-                              <hr />
+                              <hr/>
                         </div>
                   </div>
                   <div class="col-xl-4 col-md-4 col-sm-12">
                         <div class="card pt-2 px-3 fw-bold">
-                              <div class="d-flex gap-2 text-secondary justify-content-center">
+                              <div class="d-flex gap-2 justify-content-center">
                                     {{-- <i class="bi bi-person-fill"></i> --}}
                                     <p>ALUMNI</p>
                               </div>
@@ -104,7 +105,7 @@
                   </div>
                   <div class="col-xl-4 col-md-4 col-sm-12">
                         <div class="card pt-2 px-3 fw-bold">
-                              <div class="d-flex text-secondary gap-2 justify-content-center">
+                              <div class="d-flex gap-2 justify-content-center">
                                     {{-- <i class="bi bi-buildings-fill"></i> --}}
                                     <p>PERUSAHAAN</p>
                               </div>
@@ -123,12 +124,10 @@
       <div class="row mt-5">
             @if($data->isEmpty())
             <div class="d-flex align-items-center justify-content-center">
-                  <div style="width: 400px">
-                        @include('svg.ilustration-nodatafound')
-                  </div>
-                  {{-- <img src="../assets/images/no_data_found2.png" style="width: 500px" alt=""> --}}
+                  <img src="../assets/images/no_data_found2.png" style="width: 500px" alt="">
             </div>
             @else
+            {{-- Tampilkan data yang ada --}}
             @foreach ($data as $item)
             <div class="col-xl-6 col-md-12 col-sm-12">
                   <a href="" class="link-underline link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
