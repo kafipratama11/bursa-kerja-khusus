@@ -7,7 +7,8 @@
 <div class="pt-5">
       <div class="container">
             @include('partials.modal-login-user')
-            <form class="d-none d-xl-block d-md-block" action="{{ route('user.search') }}" method="GET">
+            @guest
+            <form class="d-none d-xl-block d-md-block" action="{{ route('search') }}" method="GET">
                   <div class="input-group mb-3">
                         <input type="text" name="search" class="form-control py-3" placeholder="Search Job" aria-label="Username" aria-describedby="basic-addon1" style="border-radius: 50px 0 0 50px;">
                         <select class="form-select py-3" aria-label="Username" aria-describedby="basic-addon1" name="jurusan" id="klasifikasi">
@@ -23,6 +24,25 @@
                         <button class="btn btn-search px-5 text-light fw-semibold" type="submit" style="border-radius: 0 50px 50px 0;">
                               Cari
                         </button>
+                        @else
+                        <form class="d-none d-xl-block d-md-block" action="{{ route('user.search') }}" method="GET">
+                              <div class="input-group mb-3">
+                                    <input type="text" name="search" class="form-control py-3" placeholder="Search Job" aria-label="Username" aria-describedby="basic-addon1">
+                                    <select class="form-select py-3" aria-label="Username" aria-describedby="basic-addon1" name="jurusan" id="klasifikasi">
+                                          <option selected>Pilih Jurusan</option>
+                                          @foreach ($jurusan as $item)
+                                          <option id="myText">
+                                                {{$item->jurusan}}
+                                          </option>
+                                          @endforeach
+                                    </select>
+                                    <select class="form-select py-3" aria-label="Default select example" name="provinsi" aria-describedby="basic-addon1" id="provinsi" onclick="loadProvinsi()">
+                                          <option value="">Pilih Kota Anda</option>
+                                    </select>
+                                    <button class="btn btn-search px-5 text-light fw-semibold" type="submit">
+                                          Cari
+                                    </button>
+                        @endguest
                   </div>
             </form>
             <form action="{{route('user.search')}}" method="GET" class="d-sm-none" method="GET">
