@@ -16,7 +16,7 @@
                                     <input type="text" name="nisn" class="form-control" id="exampleFormControlInput1">
                               </div>
                               <div class="mb-4">
-                                    <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                                    <label for="exampleFormControlInput1" class="form-label">Password</label>
                                     <input type="text" name="password" class="form-control" id="inputPassword">
                               </div>
                               <div class="mb-5">

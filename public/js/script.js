@@ -1,12 +1,3 @@
-const toastTrigger = document.getElementById('liveToastBtn')
-const toastLiveExample = document.getElementById('liveToast')
-
-if (toastTrigger) {
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-    toastTrigger.addEventListener('click', () => {
-        toastBootstrap.show()
-    })
-}
 document.addEventListener('DOMContentLoaded', function() {
     var textToCopy = document.getElementById('text-to-copy');
     var copyFeedback = document.getElementById('copy-feedback');

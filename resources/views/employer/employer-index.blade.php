@@ -97,7 +97,7 @@
                   </div>
             </div>
       </div>
-      @include('partials.footer')
+      
 </div>
 @if($message = Session::get('new_account'))
 <script>

@@ -57,24 +57,29 @@
             </div>
             <div>
                   <div class="fw-bolder mb-4 mt-5 text-center text-secondary rounded p-2">LOKER PERUSAHAAN</div>
-                  <div class="row">
+                  <div class="row justify-content-center">
                         @if($data->loker->isEmpty())
                         <div class="d-flex align-items-center justify-content-center">
                               <img src="../../../assets/images/no_data_found2.png" style="width: 260px" alt="">
                         </div>
                         @else
                         @foreach ($data->loker as $item)
-                        <div class="col-6 mb-3">
+                        <div class="col-xl-6 col-md-6 col-sm-12 mb-3">
                               <a href="" class="card ps-4 p-3 pe-3 link-underline link-underline-opacity-0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
                                     <div class="pt-2">
-                                          <div class="d-flex">
+                                          <div class="d-flex gap-2">
                                                 <div class="position fw-bolder mb-3">{{$item->nama_pekerjaan}}</div>
-                                                <small class="ms-auto text-secondary">{{$item->created_at}}</small>
+                                                @if (now()->toDateString() > $item->expired)
+                                                <div class="text-danger fw-medium" style="font-size: 13px;">Ditutup</div>
+                                                @else
+                                                <div class="text-success fw-medium" style="font-size: 13px;">Dibuka</div>
+                                                @endif
+                                                <small class="ms-auto text-secondary">{{$item->created_at->format('d/m/Y')}}</small>
                                           </div>
-                                          <div class="ps-4">
+                                          <div class="ps-4" style="font-size: 13px">
                                                 <div class="d-flex gap-3 mb-2">
                                                       <i class="bi bi-geo-alt"></i>
-                                                      {{$item->provinsi}},{{$item->kota_kabupaten}}
+                                                      {{$item->provinsi}}, {{$item->kota_kabupaten}}
                                                 </div>
                                                 <div class="d-flex gap-3 mb-2">
                                                       <i class="bi bi-building"></i>

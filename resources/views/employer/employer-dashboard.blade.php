@@ -24,140 +24,144 @@
 </div>
 @endsection
 @include('partials.navbar-dashboard-admin')
-<div class="d-flex dashboard-content">
-      <div class="left w-25 h-100 mt-5">
-            <div class="kiri">
-                  @include('partials.sidebar-dashboard-company')
+<body class="bg-body-tertiary">
+      <div class="d-flex dashboard-content">
+            <div class="bg-light z-3 left w-25 h-100">
+                  <div class="kiri bg-white pt-5">
+                        @include('partials.sidebar-dashboard-company')
+                  </div>
             </div>
-      </div>
-      <div class="kanan w-75 mt-5">
-            <div class="container content-body" style="width: 1000px">
-                  <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-dashboard" role="tabpanel" aria-labelledby="list-dashboard-list">dashboard</div>
-                        <div class="tab-pane fade" id="list-loker{{ $employE->id }}" role="tabpanel" aria-labelledby="list-loker-list">
-                              <div class="pe-5">
-                                    <table class="table table-striped border" style="width: 950px;">
-                                          <thead>
-                                                <tr>
-                                                      <th scope="col">No</th>
-                                                      <th scope="col">Bagian</th>
-                                                      <th scope="col">Lokasi</th>
-                                                      <th scope="col">Waktu</th>
-                                                      <th scope="col">Gaji</th>
-                                                      <th scope="col">Email</th>
-                                                      <th scope="col">Batas Waktu</th>
-                                                      <th scope="col">Action</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                @foreach ($employE->loker as $item)
-                                                <tr>
-                                                      <td>{{$loop->iteration}}</td>
-                                                      <td>{{$item->bagian}}</td>
-                                                      <td>{{$item->provinsi}},{{$item->kota_kabupaten}}</td>
-                                                      <td>{{$item->waktu}}</td>
-                                                      <td>{{$item->gaji}}</td>
-                                                      <td>{{$item->email}}</td>
-                                                      <td>{{$item->expired}}</td>
-                                                      <td>
-                                                            <div class="dropdown">
-                                                                  <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                        Option
-                                                                  </a>
-                                                                  <ul class="dropdown-menu">
-                                                                        <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                        <li>
-                                                                              <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
-                                                                                    @csrf
-                                                                                    @method('DELETE')
-                                                                                    <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
-                                                                              </form>
-                                                                        </li>
-                                                                  </ul>
-                                                            </div>
-                                                      </td>
-                                                </tr>
-                                                @endforeach
-                                          </tbody>
-                                    </table>
+            <div class="kanan w-75">
+                  <div class="container pt-5 content-body" style="width: 1000px">
+                        <div class="tab-content" id="nav-tabContent">
+                              <div class="tab-pane fade show active" id="list-dashboard" role="tabpanel" aria-labelledby="list-dashboard-list">dashboard</div>
+                              <div class="tab-pane fade" id="list-loker{{ $employE->id }}" role="tabpanel" aria-labelledby="list-loker-list">
+                                    <div class="pe-5">
+                                          <table class="table table-striped border" style="width: 950px;">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">Bagian</th>
+                                                            <th scope="col">Lokasi</th>
+                                                            <th scope="col">Waktu</th>
+                                                            <th scope="col">Gaji</th>
+                                                            <th scope="col">Email</th>
+                                                            <th scope="col">Jumlah Pelamar</th>
+                                                            <th scope="col">Batas Waktu</th>
+                                                            <th scope="col">Action</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      @foreach ($employE->loker as $item)
+                                                      <tr>
+                                                            <td>{{$loop->iteration}}</td>
+                                                            <td>{{$item->bagian}}</td>
+                                                            <td>{{$item->provinsi}}, {{$item->kota_kabupaten}}</td>
+                                                            <td>{{$item->waktu}}</td>
+                                                            <td>{{$item->gaji}}</td>
+                                                            <td>{{$item->email}}</td>
+                                                            <td>{{$item->email}}</td>
+                                                            <td>{{$item->expired}}</td>
+                                                            <td>
+                                                                  <div class="dropdown">
+                                                                        <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </a>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li>
+                                                                                    <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
+                                                                                          @csrf
+                                                                                          @method('DELETE')
+                                                                                          <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>
+                                                                                    </form>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      @endforeach
+                                                </tbody>
+                                          </table>
+                                    </div>
                               </div>
-                        </div>
-                        <div class="tab-pane fade" id="list-apply{{ $employE->id }}" role="tabpanel" aria-labelledby="list-apply-list">
-                              <div class="pe-5">
-                                    <table class="table table-striped border">
-                                          <thead>
-                                                <tr>
-                                                      <th scope="col">No</th>
-                                                      <th scope="col">Nama</th>
-                                                      <th scope="col">Kode Loker</th>
-                                                      <th scope="col">Job Position</th>
-                                                      <th scope="col">Tanggal Apply</th>
-                                                      <th scope="col">Action</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                @foreach ($applies as $item)
-                                                <tr>
-                                                      <th scope="row">{{$loop->iteration}}</th>
-                                                      <td>{{ $item->user_name }}</td>
-                                                      <td>{{ $item->id }}</td>
-                                                      <td>{{ $item->nama_pekerjaan }}</td>
-                                                      <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</td>
-                                                      <td>
-                                                            <div class="dropdown">
-                                                                  <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                        Option
-                                                                  </a>
-                                                                  <ul class="dropdown-menu">
-                                                                        <li><a class="dropdown-item d-flex gap-3" href="{{ route('candidat',['id' => $lokerId, 'id' => $applyId])}}"><i class="bi bi-eye"></i>Show</a></li>
-                                                                        <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
-                                                                  </ul>
-                                                            </div>
-                                                      </td>
-                                                </tr>
-                                                @endforeach
-                                          </tbody>
-                                    </table>
+                              <div class="tab-pane fade" id="list-apply{{ $employE->id }}" role="tabpanel" aria-labelledby="list-apply-list">
+                                    <div class="pe-5">
+                                          <table class="table table-striped border">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">Nama</th>
+                                                            <th scope="col">Kode Loker</th>
+                                                            <th scope="col">Job Position</th>
+                                                            <th scope="col">Tanggal Apply</th>
+                                                            <th scope="col">Action</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      @foreach ($applies as $item)
+                                                      <tr>
+                                                            <th scope="row">{{$loop->iteration}}</th>
+                                                            <td>{{ $item->user_name }}</td>
+                                                            <td>{{ $item->id }}</td>
+                                                            <td>{{ $item->nama_pekerjaan }}</td>
+                                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</td>
+                                                            <td>
+                                                                  <div class="dropdown">
+                                                                        <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </a>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="/view/kode-candidat"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                      @endforeach
+                                                </tbody>
+                                          </table>
+                                    </div>
                               </div>
-                        </div>
-                        <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
-                              <div class="pe-5">
-                                    <table class="table table-striped border">
-                                          <thead>
-                                                <tr>
-                                                      <th scope="col">No</th>
-                                                      <th scope="col">Nama</th>
-                                                      <th scope="col">Kode Loker</th>
-                                                      <th scope="col">Job Position</th>
-                                                      <th scope="col">Tanggal Apply</th>
-                                                      <th scope="col">Action</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                      <th scope="row">1</th>
-                                                      <td>Muhammad Kafi Pratama</td>
-                                                      <td>LSHOPEE12132023001</td>
-                                                      <td>Akuntan</td>
-                                                      <td>30/09/2023</td>
-                                                      <td>
-                                                            <div class="dropdown">
-                                                                  <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                        Option
-                                                                  </a>
-                                                                  <ul class="dropdown-menu">
-                                                                        <li><a class="dropdown-item d-flex gap-3" href="/view/loker-edit/kode-loker/kode-candidat"><i class="bi bi-eye"></i>Show</a></li>
-                                                                        <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
-                                                                  </ul>
-                                                            </div>
-                                                      </td>
-                                                </tr>
-                                          </tbody>
-                                    </table>
+                              <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
+                                    <div class="pe-5">
+                                          <table class="table table-striped border">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col">No</th>
+                                                            <th scope="col">Nama</th>
+                                                            <th scope="col">Kode Loker</th>
+                                                            <th scope="col">Job Position</th>
+                                                            <th scope="col">Tanggal Apply</th>
+                                                            <th scope="col">Action</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Muhammad Kafi Pratama</td>
+                                                            <td>LSHOPEE12132023001</td>
+                                                            <td>Akuntan</td>
+                                                            <td>30/09/2023</td>
+                                                            <td>
+                                                                  <div class="dropdown">
+                                                                        <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                              Option
+                                                                        </a>
+                                                                        <ul class="dropdown-menu">
+                                                                              <li><a class="dropdown-item d-flex gap-3" href="/view/loker-edit/kode-loker/kode-candidat"><i class="bi bi-eye"></i>Show</a></li>
+                                                                              <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                </tbody>
+                                          </table>
+                                    </div>
                               </div>
                         </div>
                   </div>
             </div>
       </div>
-</div>
+</body>
 @endsection

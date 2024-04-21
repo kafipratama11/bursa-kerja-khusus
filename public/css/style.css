@@ -401,3 +401,14 @@
                                         font-size: 14px!important;
                                     }
                                 }
+
+                                   @media (max-width: 500px) {
+                                    .card-company-list{
+                                        display: block!important;
+                                        padding-top: 15px;
+                                    }
+
+                                    .card-company-list .vr{
+                                        display: none!important;
+                                    }
+                                }

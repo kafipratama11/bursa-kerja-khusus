@@ -47,7 +47,6 @@ class ApplyController extends Controller
             'portofolio'          => $request->portofolio,
             'portofolio_online'   => $request->portofolio_online,
         ];
-        
         $userId = Auth::id();
         $existingApplication = Apply::where('user_id', $userId)
                                 ->where('loker_id', $id)

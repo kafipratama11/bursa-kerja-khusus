@@ -77,11 +77,50 @@
                                     </div>
                               </div>
                         </div>
+                        <div class="card bg-white mb-3">
+                              <div class="card-body pt-4 ps-4">
+                                    <div class="d-flex gap-2 mb-3 align-items-center">
+                                          <div class="fw-semibold">Experience</div>
+                                    </div>
+                                    <div class="mb-2">
+                                          <div class="fw-semibold" style="font-size: 14px">SMKN 4 Tangerang</div>
+                                          <div class="fw-normal text-secondary" style="font-size: 14px">Rekayasa Perangkat Lunak</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">2020 - 2025</div>
+                                    </div>
+                                    <div class="mb-2">
+                                          <div class="d-flex gap-2 align-items-center">
+                                                <div class="fw-semibold" style="font-size: 14px">Universitas Indonesia</div>
+                                          </div>
+                                          <div class="fw-normal text-secondary" style="font-size: 14px">Ilmu Komunikasi</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">2025 - 2029</div>
+                                    </div>
+                              </div>
+                        </div>
                   </div>
                   <div class="col-4">
-                        <div class="card">
+                        <div class="card mb-3">
                               <div class="card-body">
-                                    <div>Resume</div>
+                                    <div class="fw-semibold mb-2">Skills</div>
+                                    <div class="d-flex gap-3 mb-1" style="font-size: 13px">
+                                          <div style="width: 60px">Softskills</div>
+                                          <div>:</div>
+                                          <div>Critical Thinking, Communication, </div>
+                                    </div>
+                                    <div class="d-flex gap-3" style="font-size: 13px">
+                                          <div style="width: 60px">Hardskills</div>
+                                          <div>:</div>
+                                          <div>UI/UX, JavaScript, VueJS, Kotlin, Adobe Illustration, Mc Office</div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="card mb-2">
+                              <div class="card-body">
+                                    <div class="fw-semibold">Resume</div>
+                              </div>
+                        </div>
+                        <div class="card mb-2">
+                              <div class="card-body">
+                                    <div class="fw-semibold">Portfolio</div>
                               </div>
                         </div>
                   </div>

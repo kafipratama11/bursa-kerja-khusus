@@ -71,11 +71,20 @@ class HomeController extends Controller
     {
         $employeId = Auth::id();
         $employE = Employe::where('id', $employeId)->first();
-        $applies = Apply::select('users.name as user_name', 'lokers.id', 'lokers.nama_pekerjaan', 'apply.created_at')
+        
+
+$applies = Apply::select('users.name as user_name', 'lokers.id', 'lokers.nama_pekerjaan', 'apply.created_at')
                 ->join('users', 'apply.user_id', '=', 'users.id')
                 ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+                ->where('lokers.employe_id', $employeId) // Menambahkan kriteria pencarian berdasarkan ID perusahaan
                 ->get();
-    
+
+        // $applies = Apply::select('users.name as user_name', 'lokers.id', 'lokers.nama_pekerjaan', 'apply.created_at')
+        //         ->join('users', 'apply.user_id', '=', 'users.id')
+        //         ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+        //         ->get();
+                // $lokerId = Loker::find($id);
+                // $jumlahPelamarLoker = Apply::where('loker_id', $lokerId)->count();
         // Tampilkan view untuk mengedit profil
         return view('employer.employer-dashboard', compact('employE','applies'));
     }

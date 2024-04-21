@@ -59,7 +59,7 @@
                   </div>
                   @else
                   <div class="card d-flex mb-2">
-                        <div class="d-flex" style="min-height: 170px">
+                        <div class="card-company-list d-flex" style="min-height: 170px">
                               <div class="d-flex align-items-center justify-content-center p-2">
                                     <div style="width: 130px">
                                           @if ($item->image)

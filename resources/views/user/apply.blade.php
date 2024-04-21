@@ -24,12 +24,18 @@
                                           </div>
                                     </div>
                                     <div>
+                                          @if (now()->toDateString() > $loker->expired)
+                                          <div class="d-flex gap-3">
+                                                <button type="button" disabled class="btn btn-secondary rounded-pill d-flex gap-1 align-items-center justify-content-center fw-medium" style="width: 120px">Ditutup</button>
+                                          </div>
+                                          @else
                                           @if ($existingApplication)
                                           <div class="d-flex gap-3">
                                                 <button type="button" disabled class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center fw-medium" style="width: 120px">Applied<i class="bi bi-check-lg"></i></button>
                                           </div>
                                           @else
                                           <button type="button" class="btn btn-dark rounded-pill d-flex gap-1 align-items-center justify-content-center fw-medium" data-bs-toggle="modal" data-bs-target="#modalapply1" style="width: 120px">Apply<i class="bi bi-box-arrow-in-up-right"></i></button>
+                                          @endif
                                           @endif
                                           <div class="modal fade" id="modalapply1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">

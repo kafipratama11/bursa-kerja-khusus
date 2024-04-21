@@ -115,7 +115,14 @@
                         <div class="card card-loker mb-3">
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
-                                          <div class="position fw-medium fs-4">{{$item->nama_pekerjaan}}</div>
+                                          <div class="d-flex gap-2">
+                                                <div class="position fw-medium fs-4">{{$item->nama_pekerjaan}}</div>
+                                                @if (now()->toDateString() > $item->expired)
+                                                <div class="text-danger fw-medium" style="font-size: 13px;">Ditutup</div>
+                                                @else
+                                                <div class="text-success fw-medium" style="font-size: 13px;">Dibuka</div>
+                                                @endif
+                                          </div>
                                           <div class="nama-perusahaan">{{$item->nama_perusahaan}}</div>
                                     </div>
                                     <div class="row">
@@ -125,7 +132,7 @@
                                           <div class="col">
                                                 <div class="mb-2" style="font-size: 12px">
                                                       <div class="where d-flex gap-1 align-items-center">
-                                                            <div id="myText">{{$item->kota_kabupaten}},</div>
+                                                            <div id="myText">{{$item->kota_kabupaten}}, </div>
                                                             <div>{{$item->provinsi}}</div>
                                                       </div>
                                                       <div class="salary">
@@ -145,11 +152,6 @@
                                     </div>
                                     <div class="deskription text-secondary text-truncate" style="font-size: 14px">
                                           {{$item->deskripsi}}
-                                    </div>
-                              </div>
-                              <div class="card-footer bg-white">
-                                    <div class="loker-post-day text-center fw-light">
-                                          <small>Dibuka sampai tanggal {{$item->expired}}</small>
                                     </div>
                               </div>
                         </div>

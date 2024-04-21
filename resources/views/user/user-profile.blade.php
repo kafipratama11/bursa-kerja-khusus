@@ -255,9 +255,14 @@
                                     </div>
                                     @foreach ($dataU->education as $item)
                                     <div class="mb-2">
-                                          <div class="d-flex gap-2">
+                                          <div class="d-flex align-items-center gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
-                                                <a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
+                                                <a href="" class="profile-action-button ms-auto" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
+                                                <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
+                                                      @csrf
+                                                      @method("DELETE")
+                                                      <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
                                           </div>
                                           <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
                                           <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
