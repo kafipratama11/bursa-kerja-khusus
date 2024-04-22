@@ -150,6 +150,11 @@
                                                                   <div class="mb-1">
                                                                         <label for="formFile2" class="form-label">Surat Interview</label>
                                                                         <input class="form-control" name="surat_interview" type="file" id="formFile2" style="font-size: 14px">
+                                                                        <input class="form-control" hidden name="status" type="text" id="formFile2" style="font-size: 14px" value="2">
+                                                                        <input class="form-control" hidden name="loker_id" type="text" id="formFile2" style="font-size: 14px" value="{{ $item->loker_id }}">
+                                                                        <input class="form-control" hidden name="employe_id" type="text" id="formFile2" style="font-size: 14px" value="{{ $item->employe_id }}">
+                                                                        <input class="form-control" hidden name="apply_id" type="text" id="formFile2" style="font-size: 14px" value="{{ $item->id }}">
+                                                                        <input class="form-control" hidden name="user_id" type="text" id="formFile2" style="font-size: 14px" value="{{ $item->user_id }}">
                                                                   </div>
                                                             </div>
                                                             <div class="modal-footer">

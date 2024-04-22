@@ -8,6 +8,7 @@ use App\Models\Jurusan;
 use App\Models\loker;
 use App\Models\User;
 use App\Models\profileUser;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -130,13 +131,22 @@ class EmployeController extends Controller
 
     public function interview(Request $request,$id){
         $surat      = $request->file('surat_interview');
-        dd($surat);
         $filename   = date('y-m-d').$surat->getClientOriginalName();
-        $path       ='photo-employe/'.$filename;
+        $path       ='surat-interview/'.$filename;
 
         Storage::disk('public')->put($path,file_get_contents($surat));
 
-        $data['image'] = $filename;
+        $data = [
+            'apply_id'            => $request->apply_id,
+            'user_id'             => $request->user_id,
+            'employe_id'          => $request->employe_id,
+            'loker_id'            => $request->loker_id,
+            'surat_interview'     => $filename,
+            'status'              => $request->status,
+        ];
+
+        Status::where('id', $id)->create($data);
+        return redirect()->back();
     }
 
     public function download_cv($id){

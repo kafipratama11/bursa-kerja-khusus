@@ -71,7 +71,7 @@ class HomeController extends Controller
     {
         $employeId = Auth::id();
         $employE = Employe::where('id', $employeId)->first();
-        $applies = Apply::select('users.name as user_name', 'lokers.bagian', 'lokers.nama_pekerjaan', 'applies.created_at', 'applies.id as id', 'applies.cv as cv', 'applies.portofolio as portofolio', 'applies.portofolio_online as porto')
+        $applies = Apply::select('users.name as user_name', 'lokers.bagian', 'lokers.nama_pekerjaan', 'applies.created_at', 'applies.id as id', 'applies.loker_id as loker_id', 'applies.employe_id as employe_id', 'applies.user_id as user_id', 'applies.cv as cv', 'applies.portofolio as portofolio', 'applies.portofolio_online as porto')
                 ->join('users', 'applies.user_id', '=', 'users.id')
                 ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
                 ->where('applies.employe_id',$employeId)
