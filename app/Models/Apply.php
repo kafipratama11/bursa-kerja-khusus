@@ -20,7 +20,7 @@ class Apply extends Model
         'portofolio_online',
     ];
     
-    protected $table = 'apply';
+    protected $table = 'applies';
 
     public function loker()
     {

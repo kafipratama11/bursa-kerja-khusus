@@ -584,7 +584,7 @@
                                                       @include('svg.ilustration-history')
                                                       @else
                                                       @foreach ($history as $item)
-                                                            <a href="{{route('user.user-apply',['id' => $item->loker->id])}}" class="w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
+                                                            <a href="{{route('user.user-apply',['id' => $item->id])}}" class="w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                                   <div class="card-history rounded pt-1 border-bottom">
                                                                         <div class="p-2">
                                                                               <div class="d-flex gap-3">
@@ -609,7 +609,7 @@
                                                                                           <div style="font-size: 12px">{{$item->nama_loker}}</div>
                                                                                     </div>
                                                                               </div>
-                                                                              <div class="text-secondary fw-light text-end" style="font-size: 10px">{{$item->waktu}}</div>
+                                                                              <div class="text-secondary fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
                                                                         </div>
                                                                   </div>
                                                             </a>
@@ -622,7 +622,7 @@
                         </div>
                   </div>
             </div>
-            <div id="copy-feedback">No telp berhasil disalin!</div>
+            <div id="copy-feedback">No telephone berhasil disalin!</div>
             <div id="copy-feedback-email">Email berhasil disalin!</div>
       </div>
       <div class="modal fade" id="detailphoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

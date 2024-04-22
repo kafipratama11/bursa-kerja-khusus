@@ -171,8 +171,8 @@
                         </a>                  
                         @endforeach
                         </a>
-                        @endforeach
                         @endif
+                        @endforeach
                   </div>
             </div>
       </div>

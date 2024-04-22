@@ -40,7 +40,7 @@
                                           <div class="modal fade" id="modalapply1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                                                       <div class="modal-content">
-                                                            <form action="{{route('user.apply-loker',['id' => $loker->id])}}" method="POST" class="needs-validation" novalidate>
+                                                            <form action="{{route('user.apply-loker',['id' => $loker->id])}}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                                                                   @csrf
                                                                   <div class="modal-header px-5">
                                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Apply at {{$loker->nama_perusahaan}}</h1>
@@ -120,7 +120,7 @@
                                                                                     <div class="mb-3">
                                                                                           <div class="input-group flex-nowrap">
                                                                                                 <span class="input-group-text" id="addon-wrapping">url</span>
-                                                                                                <input type="url" name="portofolio_online" class="form-control" aria-label="portfolio" aria-describedby="addon-wrapping" style="font-size: 14px">
+                                                                                                <input type="url" name="porto" class="form-control" aria-label="portfolio" aria-describedby="addon-wrapping" style="font-size: 14px">
                                                                                           </div>
                                                                                     </div>
                                                                               </div>
@@ -179,7 +179,7 @@
                                                       </div>
                                                 </div>
                                                 <div class="mt-4 d-flex gap-2 align-items-center">
-                                                      <div class="text-secondary fw-light" style="font-size: 12px">Di buat pada {{$item->created_at}}</div>
+                                                      <div class="text-secondary fw-light" style="font-size: 12px">Di buat pada {{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</div>
                                                 </div>
                                           </div>
                                     </div>

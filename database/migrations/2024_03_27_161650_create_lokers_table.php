@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('provinsi',25);
             $table->string('kota_kabupaten',35);
             $table->string('waktu',25);
-            $table->string('gaji',25);
+            $table->float('gaji');
             $table->string('email',25);
             $table->string('deskripsi',100);
             $table->string('requirement',100);

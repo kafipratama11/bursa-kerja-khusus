@@ -43,6 +43,8 @@ class UserController extends Controller
 
         return view('index',compact('data','loker','user','employe','dataU','jurusan'));
     }
+
+
     
     public function about(){
         $profile = Auth::id();
@@ -119,21 +121,27 @@ class UserController extends Controller
     }
 
     public function user_profile(Request $request, $id){
-        $data = Loker::find($id);
-        $dataU = User::find($id);
+        $data = loker::find($id);
         $loker = loker::find($id);
+        $dataU = User::find($id);
         $dataU->load('profile_user');
         $dataU->load('education');
         $dataU->load('experiences');
         $dataU->load('softskill');
         $dataU->load('hardskill');
         $dataU->load('apply');
-        $history = Apply::select('apply.id as apply_id', 'employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as loker_id')
-    ->join('users', 'apply.user_id', '=', 'users.id')
-    ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
-    ->join('employes', 'lokers.employe_id', '=', 'employes.id')
-    ->where('users.nisn', $dataU->nisn)
-    ->get();
+        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'applies.created_at as waktu', 'lokers.id as id', 'applies.id as apply_id')
+        ->join('users', 'applies.user_id', '=', 'users.id')
+        ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
+        ->join('employes', 'lokers.employe_id', '=', 'employes.id')
+        ->where('users.nisn', $dataU->nisn)
+        ->get();
+    //     $history = Apply::select('apply.id as apply_id', 'employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as loker_id')
+    // ->join('users', 'apply.user_id', '=', 'users.id')
+    // ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+    // ->join('employes', 'lokers.employe_id', '=', 'employes.id')
+    // ->where('users.nisn', $dataU->nisn)
+    // ->get();
 
     
         $user = User::role('user')->count();
@@ -185,9 +193,9 @@ class UserController extends Controller
         $applyId = Apply::find($id);
 
         $candidat = User::select('users.name', 'profile_user.*')
-        ->join('apply', 'users.id', '=', 'apply.user_id')
+        ->join('applies', 'users.id', '=', 'applies.user_id')
         ->join('profile_user', 'users.id', '=', 'profile_user.user_id')
-        ->where('apply.loker_id', $applyId)
+        ->where('applies.loker_id', $applyId)
         ->distinct()
         ->get();
 
