@@ -77,8 +77,8 @@
                   </div>
             </form>
             <div class="row d-flex justify-content-center mt-5">
-                  <div class="col-xl-4 col-md-4 col-sm-12">
-                        <div class="card pt-2 px-3 fw-bold">
+                  <div class="col-xl-4 col-md-4 col-sm-12 mb-2 ">
+                        <div class="card pt-2 px-3 fw-bold card-sum">
                               <div class="d-flex gap-2 justify-content-center">
                                     {{-- <i class="bi bi-journal-text"></i> --}}
                                     <p>LOWONGAN</p>
@@ -90,8 +90,8 @@
                               <hr/>
                         </div>
                   </div>
-                  <div class="col-xl-4 col-md-4 col-sm-12">
-                        <div class="card pt-2 px-3 fw-bold">
+                  <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
+                        <div class="card pt-2 px-3 fw-bold  card-sum">
                               <div class="d-flex gap-2 justify-content-center">
                                     {{-- <i class="bi bi-person-fill"></i> --}}
                                     <p>ALUMNI</p>
@@ -103,8 +103,8 @@
                               <hr />
                         </div>
                   </div>
-                  <div class="col-xl-4 col-md-4 col-sm-12">
-                        <div class="card pt-2 px-3 fw-bold">
+                  <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
+                        <div class="card pt-2 px-3 fw-bold  card-sum">
                               <div class="d-flex gap-2 justify-content-center">
                                     {{-- <i class="bi bi-buildings-fill"></i> --}}
                                     <p>PERUSAHAAN</p>
@@ -124,7 +124,9 @@
       <div class="row mt-5" style="padding-bottom: 100px;">
             @if($data->isEmpty())
             <div class="d-flex align-items-center justify-content-center">
-                  <img src="../assets/images/no_data_found2.png" style="width: 500px" alt="">
+                  <div style="width: 400px">
+                        @include('svg.ilustration-nodatafound')
+                  </div>
             </div>
             @else
             {{-- Tampilkan data yang ada --}}
@@ -135,14 +137,14 @@
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
-                                                <div class="position fw-medium fs-5">{{$item->nama_pekerjaan}}</div>
+                                                <div class="position fw-medium" style="font-size: 14px">{{$item->nama_pekerjaan}}</div>
                                                 @if (now()->toDateString() > $item->expired)
                                                 <div class="text-danger fw-medium" style="font-size: 13px;">Ditutup</div>
                                                 @else
                                                 <div class="text-success fw-medium" style="font-size: 13px;">Dibuka</div>
                                                 @endif
                                           </div>
-                                          <div class="nama-perusahaan">{{$item->nama_perusahaan}}</div>
+                                          <div class="nama-perusahaan text-secondary" style="font-size: 14px">{{$item->nama_perusahaan}}</div>
                                     </div>
                                     <div class="row">
                                           <div class="col-1 text-end">
@@ -151,7 +153,7 @@
                                           <div class="col">
                                                 <div class="mb-2" style="font-size: 12px">
                                                       <div class="where d-flex gap-1 align-items-center">
-                                                            <div id="myText">{{$item->kota_kabupaten}}, </div>
+                                                            <div>{{$item->kota_kabupaten}}, </div>
                                                             <div>{{$item->provinsi}}</div>
                                                       </div>
                                                       <div class="salary">

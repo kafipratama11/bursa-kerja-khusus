@@ -1,7 +1,5 @@
 @extends('layouts.dashboard-employer')
 
-@include('partials.navbar-dashboard-admin')
-
 @section('nav-link-employer')
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-light"></span>
@@ -9,14 +7,16 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
             </li>
       </ul>
 </div>
 @endsection
+@include('partials.navbar-dashboard-admin')
+
 
 @section('content-admin')
 
@@ -49,7 +49,7 @@
                                                       <div class="fw-semibold text-black fs-5">{{$dataU->name}}</div>
                                                       <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                 </div>
-                                                <div class="text-secondary">{{$dataU->profile_user->provinsi}},{{$dataU->profile_user->kota}}</div>
+                                                <div class="text-secondary" id="myText"> {{$dataU->profile_user->kota}}, {{$dataU->profile_user->provinsi}}</div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="mt-2 text-secondary" style="font-size: 13px">
                                                             <div class="d-flex gap-3 align-items-center">
@@ -79,7 +79,7 @@
                                           <div class="fw-semibold mb-3">About</div>
                                     </div>
                                     <div style="font-size: 14px">
-                                          <p>{{$dataU->profile_user->about}}</p>
+                                          <p>{!! nl2br(e($dataU->profile_user->about)) !!}</p>
                                     </div>
                               </div>
                         </div>
@@ -89,11 +89,11 @@
                                           <div class="fw-semibold">Education</div>
                                     </div>
                                     @foreach ($dataU->education as $item)
-                                          <div class="mb-2">
-                                                <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
-                                                <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
-                                                <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>                                               
-                                          </div>
+                                    <div class="mb-2">
+                                          <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
+                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
+                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
+                                    </div>
                                     @endforeach
                               </div>
                         </div>
@@ -120,24 +120,32 @@
                   <div class="col-xl-4 col-md-12 col-sm-12">
                         <div class="card mb-3">
                               <div class="card-body">
-                                    <div>Skills</div>
-                                    <div>
-                                          Softskills :
-                                          @foreach ($dataU->softskill as $key => $item)
-                                          {{$item->skill}}
-                                          @if (!$loop->last)
-                                          ,
-                                          @endif
-                                          @endforeach
-                                    </div>
-                                    <div>
-                                          Hardskills :
-                                          @foreach ($dataU->hardskill as $key => $item)
-                                          {{$item->skill}}
-                                          @if (!$loop->last)
-                                          ,
-                                          @endif
-                                          @endforeach
+                                    <div class="fw-semibold mb-3">Skills</div>
+                                    <div style="font-size: 13px">
+                                          <div class="d-flex gap-2 mb-2">
+                                                <div class="fw-medium" style="width: 70px">Softskill</div>
+                                                <div>:</div>
+                                                <div class="text-secondary">
+                                                      @foreach ($dataU->softskill as $key => $item)
+                                                      {{$item->skill}}
+                                                      @if (!$loop->last)
+                                                      ,
+                                                      @endif
+                                                      @endforeach
+                                                </div>
+                                          </div>
+                                          <div class="d-flex gap-2">
+                                                <div class="fw-medium" style="width: 70px">Hardskills</div>
+                                                <div>:</div>
+                                                <div class="text-secondary">
+                                                      @foreach ($dataU->hardskill as $key => $item)
+                                                      {{$item->skill}}
+                                                      @if (!$loop->last)
+                                                      ,
+                                                      @endif
+                                                      @endforeach
+                                                </div>
+                                          </div>
                                     </div>
                               </div>
                         </div>

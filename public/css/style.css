@@ -408,6 +408,15 @@
                                         padding-top: 15px;
                                     }
 
+                                    .card-sum hr{
+                                        
+                                    }
+
+                                    .card-sum{
+                                        padding-bottom: 20px;
+                                        border: none;
+                                    }
+
                                     .card-company-list .vr{
                                         display: none!important;
                                     }
