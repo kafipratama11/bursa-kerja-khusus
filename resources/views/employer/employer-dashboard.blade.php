@@ -126,6 +126,9 @@
                                                                         Option
                                                                   </a>
                                                                   <ul class="dropdown-menu">
+                                                                        <button class="btn">
+                                                                              <li><a class="dropdown-item text-dark d-flex gap-3" href="{{route('employe.show-applicant',['id' => $item->user_id])}}"><i class="bi bi-eye"></i>Show Applicant</a></li>
+                                                                        </button>
                                                                         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#terima{{$item->id}}">
                                                                               <li><a class="dropdown-item text-dark d-flex gap-3" href="#"><i class="bi bi-check-lg"></i>Terima</a></li>
                                                                         </button>
@@ -170,11 +173,11 @@
                                                       <div class="modal-dialog">
                                                       <div class="modal-content">
                                                       <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $item->nama_pekerjaan }} title</h1>
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $item->user_name }}</h1>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                       </div>
                                                       <div class="modal-body">
-                                                            ...
+                                                            
                                                       </div>
                                                       <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

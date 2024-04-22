@@ -113,4 +113,30 @@ class ApplyController extends Controller
             return redirect()->back();
         }
     }
+
+    public function show_applicant($id){
+        $apply = Apply::find($id);
+
+        $data = loker::find($id);
+        $loker = loker::find($id);
+        $dataU = User::find($id);
+        $dataU->load('profile_user');
+        $dataU->load('education');
+        $dataU->load('experiences');
+        $dataU->load('softskill');
+        $dataU->load('hardskill');
+        $dataU->load('apply');
+        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'applies.created_at as waktu', 'lokers.id as id', 'applies.id as apply_id')
+        ->join('users', 'applies.user_id', '=', 'users.id')
+        ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
+        ->join('employes', 'lokers.employe_id', '=', 'employes.id')
+        ->where('users.nisn', $dataU->nisn)
+        ->get();
+    
+    
+
+        $user = Apply::where('user_id',$apply)->get();
+        return view('employer.employer-candidat',compact('user','dataU'));
+
+    }
 }

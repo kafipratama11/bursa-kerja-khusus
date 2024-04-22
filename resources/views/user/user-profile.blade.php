@@ -604,7 +604,7 @@
                                                                                           <div style="font-size: 12px">{{$item->nama_loker}}</div>
                                                                                     </div>
                                                                               </div>
-                                                                              <div class="text-secondary fw-light text-end" style="font-size: 10px">{{$item->waktu}}</div>
+                                                                              <div class="text-secondary fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
                                                                         </div>
                                                                   </div>
                                                             </a>

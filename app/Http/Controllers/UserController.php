@@ -193,9 +193,9 @@ class UserController extends Controller
         $applyId = Apply::find($id);
 
         $candidat = User::select('users.name', 'profile_user.*')
-        ->join('apply', 'users.id', '=', 'apply.user_id')
+        ->join('applies', 'users.id', '=', 'applies.user_id')
         ->join('profile_user', 'users.id', '=', 'profile_user.user_id')
-        ->where('apply.loker_id', $applyId)
+        ->where('applies.loker_id', $applyId)
         ->distinct()
         ->get();
 
