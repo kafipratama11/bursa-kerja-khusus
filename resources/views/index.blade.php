@@ -119,8 +119,8 @@
       </div>
 </div>
 
-<div class="container">
-      <div class="row mt-5">
+<div class="container" >
+      <div class="row mt-5" style="padding-bottom: 100px;">
             @if($data->isEmpty())
             <div class="d-flex align-items-center justify-content-center">
                   <div style="width: 400px">
@@ -136,7 +136,7 @@
                               <div class="card-body p-2 px-5 pt-3 pb-3">
                                     <div class="mb-2">
                                           <div class="d-flex gap-2">
-                                                <div class="position fw-medium fs-4">{{$item->nama_pekerjaan}}</div>
+                                                <div class="position fw-medium fs-5">{{$item->nama_pekerjaan}}</div>
                                                 @if (now()->toDateString() > $item->expired)
                                                 <div class="text-danger fw-medium" style="font-size: 13px;">Ditutup</div>
                                                 @else

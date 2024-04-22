@@ -23,7 +23,7 @@
 <body class="bg-body-tertiary">
       <div class="container pt-5">
             <div class="row">
-                  <div class="col-8">
+                  <div class="col-xl-8 col-md-12 col-sm-12">
                         <div class="card bg-white mb-3">
                               <div class="card-body ps-4">
                                     <div class="d-flex gap-4">
@@ -97,7 +97,7 @@
                               </div>
                         </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-xl-4 col-md-12 col-sm-12">
                         <div class="card mb-3">
                               <div class="card-body">
                                     <div class="fw-semibold mb-2">Skills</div>
