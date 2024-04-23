@@ -14,7 +14,8 @@
                                                 @if($data->image)
                                                 <img src="{{ asset('storage/photo-employe/'.$data->image)}}" alt="">
                                                 @else
-                                                <img src="{{ asset('../../assets/images/building.jpg') }}" alt="Default Image">
+                                                {{-- <img src="{{ asset('../../assets/images/building.jpg') }}" alt="Default Image"> --}}
+                                                <div class="d-flex align-items-center justify-content-center fw-semibold fs-1" style="">{{ $firstChar = str($data->name)->substr(0, 1); }}</div>
                                                 @endif
                                           </div>
                                     </div>

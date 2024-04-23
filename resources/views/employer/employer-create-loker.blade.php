@@ -141,5 +141,6 @@
                   </div>
             </form>
       </div>
+      @include('sweetalert::alert')
 </body>
 @endsection

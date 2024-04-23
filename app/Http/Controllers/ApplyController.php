@@ -70,7 +70,7 @@ class ApplyController extends Controller
                                     return redirect()->back()->with('error', 'Anda telah mengajukan lamaran untuk pekerjaan ini sebelumnya.');
                                 }else{
                                     Apply::where('id',$id)->create($data);
-                                    return redirect()->back();
+                                    return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
                                 }
     }
 

@@ -46,10 +46,10 @@
                                           </div>
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                      <div class="fw-semibold text-black fs-5">{{$dataU->name}}</div>
+                                                      <div class="fw-semibold text-black" style="font-size: 16px">{{$dataU->name}}</div>
                                                       <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                 </div>
-                                                <div class="text-secondary" id="myText"> {{$dataU->profile_user->kota}}, {{$dataU->profile_user->provinsi}}</div>
+                                                <div class="text-secondary" id="myText" style="font-size: 13px"> {{$dataU->profile_user->kota}}, {{$dataU->profile_user->provinsi}}</div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
                                                       <div class="mt-2 text-secondary" style="font-size: 13px">
                                                             <div class="d-flex gap-3 align-items-center">

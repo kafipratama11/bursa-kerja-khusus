@@ -70,7 +70,7 @@
                                                                         <ul class="dropdown-menu">
                                                                               <li><a class="dropdown-item d-flex gap-3" href="{{ route('employe.detail-loker', ['id' =>$item->id])}}"><i class="bi bi-eye"></i>Show</a></li>
                                                                               <li>
-                                                                                    <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST">
+                                                                                    <form action="{{ route('employe.delete',['id' => $item->id]) }}" method="POST" data-confirm-delete="true">
                                                                                           @csrf
                                                                                           @method('DELETE')
                                                                                           <button type="submit" class="dropdown-item d-flex gap-3"><i class="bi bi-trash"></i> Hapus</button>

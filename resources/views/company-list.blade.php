@@ -39,7 +39,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
                                           <div>:</div>
-                                          <div>{{$item->lokasi}}</div>
+                                          <div id="myText">{{$item->lokasi}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>
@@ -80,7 +80,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
                                           <div>:</div>
-                                          <div>{{$item->lokasi}}</div>
+                                          <div id="myText">{{$item->lokasi}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>

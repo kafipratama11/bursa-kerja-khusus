@@ -73,7 +73,8 @@ class EmployeController extends Controller
             $data['requirement']            = $request->requirement;
 
             Loker::create($data);
-            return redirect()->route('employe.employe')->with('success', 'Registrasi berhasil. Silakan masuk.');
+            return redirect()->route('employe.employe')->with('success', 'Loker berhasil dibuat!');
+            // return redirect()->route('employe.employe')->with('success', 'Registrasi berhasil. Silakan masuk.');
     }
 
     public function detail_loker(Request $request, $id){
@@ -95,10 +96,12 @@ class EmployeController extends Controller
 
     public function delete(Request $request, $id){
         $data = Loker::find($id);
-
+        $title = 'Delete User!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
         if($data){
             $data->delete();
-            return redirect()->route('employe.employe')->with('successdel' ,'oke');
+            return redirect()->route('employe.employe')->with('success' ,'loker berhasil dihapus!');
         }
     }
 

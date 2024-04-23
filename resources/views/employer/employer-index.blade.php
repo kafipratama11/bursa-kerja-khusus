@@ -99,6 +99,7 @@
       </div>
       
 </div>
+@include('sweetalert::alert')
 @if($message = Session::get('new_account'))
 <script>
       Swal.fire({
