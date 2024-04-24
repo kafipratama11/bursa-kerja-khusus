@@ -85,6 +85,7 @@
                                                                                           <input type="hidden" name="user_id" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->id}}" required>
                                                                                           <input type="hidden" name="employe_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->employe_id}}" required>
                                                                                           <input type="hidden" name="loker_id" class="form-control" id="validationCustom01" placeholder="" value="{{$loker->id}}" required>
+                                                                                          <input type="hidden" name="status" class="form-control" id="validationCustom01" placeholder="" value="0" required>
                                                                                           <label for="validationCustom01" class="form-label text-secondary">Email address</label>
                                                                                           <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="" value="{{$dataU->profile_user->email}}" style="font-size: 14px" required>
                                                                                           <div class="valid-feedback">

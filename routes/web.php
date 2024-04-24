@@ -95,12 +95,14 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/new-loker/{id}', [EmployeController::class, 'new_loker'])->name('new-loker');
     Route::get('/download-cv/{id}', [EmployeController::class, 'download_cv'])->name('download-cv');
     Route::get('/download-portofolio/{id}', [EmployeController::class, 'download_portofolio'])->name('download-portofolio');
-    Route::get('/dshow-applicant/{id}', [ApplyController::class, 'show_applicant'])->name('show-applicant');
+    Route::get('/show-applicant/{id}', [ApplyController::class, 'show_applicant'])->name('show-applicant');
     // Route::get('/view/{lokerId}/{applyId}', [EmployeController::class, 'candidat'])->name('candidat');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');
-    Route::post('interview/{id}',[EmployeController::class,'interview'])->name('interview');
+    Route::put('/interview/{id}',[EmployeController::class,'interview'])->name('interview');
     Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');
     Route::put('photo-profile/{id}',[EmployeController::class,'photo_profile'])->name('photo-profile');
+    Route::put('/update-candidat/{id}',[EmployeController::class,'update_candidat'])->name('update-candidat');
+    Route::put('/rejected/{id}',[EmployeController::class,'rejected'])->name('rejected');
     Route::delete('/delete/{id}',[EmployeController::class,'delete'])->name('delete');
 });
 

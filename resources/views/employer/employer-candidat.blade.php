@@ -1,10 +1,7 @@
 @extends('layouts.dashboard-employer')
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> f6102c9532b4cb2d7806dde8a9a69d1d28a28630
 @section('nav-link-employer')
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-light"></span>
@@ -23,7 +20,7 @@
 @include('partials.navbar-dashboard-admin')
 
 
-@include('partials.navbar-dashboard-admin')
+
 
 @section('content-admin')
 
@@ -104,42 +101,8 @@
                                     @endforeach
                               </div>
                         </div>
-<<<<<<< HEAD
                   </div>
-                  <div class="col-4">
-                        <div class="card mb-3">
-                              <div class="card-body">
-                                    <div class="mb-2">Skills</div>
-                                    <div>
-                                          Softskills :
-                                          @foreach ($dataU->softskill as $key => $item)
-                                          {{$item->skill}}
-                                          @if (!$loop->last)
-                                          ,
-                                          @endif
-                                          @endforeach
-=======
-                        <div class="card bg-white mb-3">
-                              <div class="card-body pt-4 ps-4">
-                                    <div class="d-flex gap-2 mb-3 align-items-center">
-                                          <div class="fw-semibold">Experience</div>
->>>>>>> f6102c9532b4cb2d7806dde8a9a69d1d28a28630
-                                    </div>
-                                    <div class="mb-2">
-                                          <div class="fw-semibold" style="font-size: 14px">SMKN 4 Tangerang</div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">Rekayasa Perangkat Lunak</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">2020 - 2025</div>
-                                    </div>
-                                    <div class="mb-2">
-                                          <div class="d-flex gap-2 align-items-center">
-                                                <div class="fw-semibold" style="font-size: 14px">Universitas Indonesia</div>
-                                          </div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">Ilmu Komunikasi</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">2025 - 2029</div>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
+                  
                   <div class="col-xl-4 col-md-12 col-sm-12">
                         <div class="card mb-3">
                               <div class="card-body">

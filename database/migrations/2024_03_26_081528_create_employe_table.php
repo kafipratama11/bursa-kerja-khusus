@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('name');
+            $table->string('industri',50);
             $table->string('password');
             $table->string('lokasi');
+            $table->string('alamat',50);
             $table->string('no_telp');
             $table->string('deskripsi');
             $table->string('image')->nullable();

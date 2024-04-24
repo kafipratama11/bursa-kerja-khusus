@@ -134,7 +134,7 @@ class UserController extends Controller
         $dataU->load('hardskill');
         $dataU->load('apply');
         
-        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'applies.created_at as waktu', 'lokers.id as id', 'applies.id as apply_id')
+        $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'applies.created_at as waktu', 'lokers.id as id', 'applies.id as apply_id','applies.status')
         ->join('users', 'applies.user_id', '=', 'users.id')
         ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
         ->join('employes', 'lokers.employe_id', '=', 'employes.id')

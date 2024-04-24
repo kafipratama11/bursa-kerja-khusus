@@ -18,6 +18,8 @@ class Apply extends Model
         'cv',
         'portofolio',
         'portofolio_online',
+        'surat_interview',
+        'status',
     ];
     
     protected $table = 'applies';

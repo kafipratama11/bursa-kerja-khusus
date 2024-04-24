@@ -74,35 +74,45 @@ class HomeController extends Controller
 
     public function dashboard_employe(Request $request)
     {
-        $employeId = Auth::id();
-        $employE = Employe::where('id', $employeId)->first();
+        $employeId      = Auth::id();
+        $employE        = Employe::where('id', $employeId)->first();
+        $verivikasi     = 0;
+        $tolak          = 1;
+        $terima         = 2;
         $applies = Apply::select('users.name as user_name', 'lokers.bagian', 'lokers.nama_pekerjaan', 'applies.created_at', 'applies.id as id', 'applies.loker_id as loker_id', 'applies.employe_id as employe_id', 'applies.user_id as user_id', 'applies.cv as cv', 'applies.portofolio as portofolio', 'applies.portofolio_online as porto')
                 ->join('users', 'applies.user_id', '=', 'users.id')
                 ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
                 ->where('applies.employe_id',$employeId)
+                ->where('applies.status',$verivikasi)
                 ->get();
 
-<<<<<<< HEAD
-        $candidat = Status::select('users.name as user_name','lokers.nama_pekerjaan as job_name','lokers.bagian as job_position','applies.created_at as created_at')
-                ->join('users', 'statuses.user_id', '=', 'users.id')
-                ->join('lokers', 'statuses.loker_id', '=', 'lokers.id')
-                ->join('applies', 'statuses.apply_id', '=', 'applies.id')
-                ->where('statuses.employe_id',$employeId)
+        $candidat = Apply::select('users.name as user_name', 'lokers.bagian', 'lokers.nama_pekerjaan', 'applies.created_at', 'applies.id as id', 'applies.loker_id as loker_id', 'lokers.nama_pekerjaan as job_name', 'lokers.bagian as job_position',)
+                ->join('users', 'applies.user_id', '=', 'users.id')
+                ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
+                ->where('applies.employe_id',$employeId)
+                ->where('applies.status',$terima)
                 ->get();
 
-                $existingApplicant = Status::where('apply_id', $candidat)
-                ->exists();
+        $rejected= Apply::select('users.name as user_name', 'lokers.bagian', 'lokers.nama_pekerjaan', 'applies.created_at', 'applies.id as id', 'applies.loker_id as loker_id', 'lokers.nama_pekerjaan as job_name', 'lokers.bagian as job_position',)
+                ->join('users', 'applies.user_id', '=', 'users.id')
+                ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
+                ->where('applies.employe_id',$employeId)
+                ->where('applies.status',$tolak)
+                ->get();
+
+
+
+
+
     
-=======
         // $applies = Apply::select('users.name as user_name', 'lokers.id', 'lokers.nama_pekerjaan', 'apply.created_at')
         //         ->join('users', 'apply.user_id', '=', 'users.id')
         //         ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
         //         ->get();
                 // $lokerId = Loker::find($id);
                 // $jumlahPelamarLoker = Apply::where('loker_id', $lokerId)->count();
->>>>>>> f6102c9532b4cb2d7806dde8a9a69d1d28a28630
         // Tampilkan view untuk mengedit profil
-        return view('employer.employer-dashboard', compact('employE','applies','candidat','existingApplicant'));
+        return view('employer.employer-dashboard', compact('employE','applies','candidat','rejected'));
     }
 
     public function update(Request $request, $id)

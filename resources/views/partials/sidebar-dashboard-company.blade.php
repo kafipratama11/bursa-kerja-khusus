@@ -27,11 +27,19 @@
                         </div>
                   </div>
             </a>
-            <a href="#list-candidat" id="list-candidat-list" data-bs-toggle="list" role="tab" aria-controls="list-candidat" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
+            <a href="#list-candidat{{ $employE->id }}" id="list-candidat-list" data-bs-toggle="list" role="tab" aria-controls="list-candidat" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="d-flex gap-3 menu-sidebar align-items-center">
                               <i class="bi bi-person-fill text-secondary"></i>
                               Candidat
+                        </div>
+                  </div>
+            </a>
+            <a href="#list-rejected{{ $employE->id }}" id="list-rejected-list" data-bs-toggle="list" role="tab" aria-controls="list-rejected" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
+                  <div class="p-2 ps-4">
+                        <div class="d-flex gap-3 menu-sidebar align-items-center">
+                              <i class="bi bi-person-fill text-secondary"></i>
+                              Rejected
                         </div>
                   </div>
             </a>

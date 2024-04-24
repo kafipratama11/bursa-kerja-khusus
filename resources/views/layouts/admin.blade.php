@@ -62,15 +62,9 @@
       <script>
             var ctx = document.getElementById("doughutChart");
             ctx.height = 150;
-            var user = {
-                  !!$user!!
-            };
-            var employer = {
-                  !!$employe!!
-            };
-            var loker = {
-                  !!$loker!!
-            };
+            var user = {!!$user!!};
+            var employer = {!!$employe!!};
+            var loker = {!!$loker!!};
             var total = user + employer + loker;
             var userPercen = (user / total) * 100;
             var employerPercen = (employer / total) * 100;

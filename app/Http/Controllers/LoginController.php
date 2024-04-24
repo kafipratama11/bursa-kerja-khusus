@@ -66,9 +66,11 @@ class LoginController extends Controller
     public function employe_register(Request $request){
         $request->validate([
             'name' => 'required',
+            'industri' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:6',
             'lokasi' => 'required',
+            'alamat' => 'required',
             'no_telp' => 'required',
             'deskripsi' => 'required',
         ]);
@@ -76,12 +78,14 @@ class LoginController extends Controller
         
 
             $data['name']       = $request->name;
+            $data['industri']   = $request->industri;
             $data['email']      = $request->email;
             $data['password']   = $request->password;
             $data['lokasi']     = $request->lokasi;
+            $data['alamat']     = $request->alamat;
             $data['no_telp']    = $request->no_telp;
             $data['deskripsi']  = $request->deskripsi;
-
+            
             $user = Employe::create($data);
 
             $user->syncRoles(['new_account']);

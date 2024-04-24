@@ -258,7 +258,7 @@
                                           <div class="d-flex align-items-center gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
                                                 <a href="" class="profile-action-button ms-auto" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
-                                                <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
+                                                <form action="{{ route('user.delete-education',['id' => $item->id])}}" method="POST">
                                                       @csrf
                                                       @method("DELETE")
                                                       <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
@@ -291,11 +291,6 @@
                                                             </div>
                                                       </div>
                                                       <div class="modal-footer">
-                                                            <form action="{{ route('user.delete-education',['id' => $item->id])}}" method="POST">
-                                                                  @csrf
-                                                                  @method('DELETE')
-                                                                  <button type="submit" class="btn btn-danger">Delete</button>
-                                                            </form>
                                                             <button type="submit" class="btn btn-primary">Save changes</button>
                                                       </div>
                                                 </div>
@@ -583,6 +578,20 @@
                                                       @if ($history->isEmpty())
                                                       @include('svg.ilustration-history')
                                                       @else
+                                                      <div class="d-flex gap-2 align-items-center justify-content-center mb-3">
+                                                            <div class="d-flex gap-2 align-items-center">
+                                                                  <div class="bg-success p-2 rounded-circle"></div>
+                                                                  <div>Diterima</div>
+                                                            </div>
+                                                            <div class="d-flex gap-2 align-items-center">
+                                                                  <div class="bg-danger p-2 rounded-circle"></div>
+                                                                  <div>Ditolak</div>
+                                                            </div>
+                                                            <div class="d-flex gap-2 align-items-center">
+                                                                  <div class="bg-secondary p-2 rounded-circle"></div>
+                                                                  <div>Menunggu</div>
+                                                            </div>
+                                                      </div>
                                                       @foreach ($history as $item)
                                                             <a href="{{route('user.user-apply',['id' => $item->id])}}" class="w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
                                                                   <div class="card-history rounded pt-1 border-bottom">
@@ -596,22 +605,15 @@
                                                                                           @endif
                                                                                     </div>
                                                                                     <div class="w-100">
-                                                                                          <div class="d-flex align-items-center" style="font-size: 14px">
+                                                                                          <div class="d-flex align-items-center gap-2" style="font-size: 14px">
+                                                                                                @if ($item->status === '2')
+                                                                                                <div class="bg-success p-2 rounded-circle"></div>
+                                                                                                @elseif($item->status === '1')
+                                                                                                <div class="bg-danger p-2 rounded-circle"></div>
+                                                                                                @else
+                                                                                                <div class="bg-secondary p-2 rounded-circle"></div>
+                                                                                                @endif
                                                                                                 <div class="fw-medium">{{$item->nama_loker}}</div>
-                                                                                                @if ($statuses)
-                                                                                                <div class="bg-secondary p-2"></div>
-                                                                                                @else
-                                                                                                <div class="bg-danger p-2"></div>
-                                                                                                @endif
-                                                                                                {{-- @if ($statuses->isEmpty())
-                                                                                                      <div class="bg-secondary p-2"></div>
-                                                                                                @else
-                                                                                                @if ($statuses === '2')
-                                                                                                <div class="bg-success p-2"></div>
-                                                                                                @elseif($statuses === '1')
-                                                                                                <div class="bg-danger p-2"></div>
-                                                                                                @endif
-                                                                                                @endif --}}
                                                                                                 <div class="ms-auto positon-absolute">
                                                                                                       <form action="{{route('user.delete-apply',['id' => $item->apply_id])}}" method="POST">
                                                                                                             @csrf

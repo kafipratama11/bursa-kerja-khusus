@@ -13,10 +13,16 @@
                                     <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
                                     <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="" maxlength="50" value="{{old('name')}}">
                               </div>
+                              @error('nama_perusahaan')
+                              <small>{{ $message }}</small>
+                              @enderror
                               <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Industri</label>
-                                    <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="" maxlength="50" value="{{old('name')}}">
+                                    <input type="text" name="industri" class="form-control" id="exampleFormControlInput1" placeholder="" maxlength="50" value="{{old('name')}}">
                               </div>
+                              @error('industri')
+                              <small>{{ $message }}</small>
+                              @enderror
                               <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Alamat Email</label>
                                     <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="" maxlength="100" value="{{old('email')}}">
@@ -29,7 +35,7 @@
                               @enderror
                               <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Password</label>
-                                    <input class="form-control" id="inputPassword" placeholder="">
+                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="">
                               </div>
                               @error('password')
                               <small>{{ $message }}</small>
@@ -42,11 +48,14 @@
                                           <option>Pilih Provinsi Anda</option>
                                     </select>
                               </div>
+                              @error('lokasi')
+                              <small>{{ $message }}</small>
+                              @enderror
                               <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Alamat</label>
-                                    <input type="text" class="form-control" id="inputPassword" maxlength="100" placeholder="">
+                                    <input type="text" name="alamat" class="form-control" id="inputPassword" maxlength="100" placeholder="">
                               </div>
-                              @error('lokasi')
+                              @error('alamat')
                               <small>{{ $message }}</small>
                               @enderror
                               <div class="mb-3">
