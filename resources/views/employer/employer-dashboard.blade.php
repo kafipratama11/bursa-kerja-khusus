@@ -194,51 +194,6 @@
                                           </table>
                                     </div>
                               </div>
-<<<<<<< HEAD
-                        </div>
-                        <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
-                              <div class="pe-5">
-                                    <table class="table table-striped border">
-                                          <thead>
-                                                <tr>
-                                                      <th scope="col">No</th>
-                                                      <th scope="col">Nama</th>
-                                                      <th scope="col">Job Name</th>
-                                                      <th scope="col">Job Position</th>
-                                                      <th scope="col">Tanggal Apply</th>
-                                                      <th scope="col">Action</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                @foreach ($candidat as $item)
-                                                <tr>
-                                                      <th>{{$loop->iteration}}</th>
-                                                      <td>{{$item->user_name}}</td>
-                                                      <td>{{$item->job_name}}</td>
-                                                      <td>{{$item->job_position}}</td>
-                                                      <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</td>
-                                                      @if ($existingApplicant)
-                                                      <div class=" text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            Option
-                                                      </div>
-                                                      @else
-                                                      <td>
-                                                            <div class="dropdown">
-                                                                  <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                        Option
-                                                                  </a>
-                                                                  <ul class="dropdown-menu">
-                                                                        <li><a class="dropdown-item d-flex gap-3" href="/view/loker-edit/kode-loker/kode-candidat"><i class="bi bi-eye"></i>Show</a></li>
-                                                                        <li><a class="dropdown-item text-danger d-flex gap-3" href="#"><i class="bi bi-trash"></i>Delete</a></li>
-                                                                  </ul>
-                                                            </div>
-                                                      </td>
-                                                      @endif                                    
-                                                </tr>    
-                                                @endforeach
-                                          </tbody>
-                                    </table>
-=======
                               <div class="tab-pane fade" id="list-candidat" role="tabpanel" aria-labelledby="list-candidat-list">
                                     <div class="pe-5">
                                           <table class="table table-striped border">
@@ -274,7 +229,6 @@
                                                 </tbody>
                                           </table>
                                     </div>
->>>>>>> f6102c9532b4cb2d7806dde8a9a69d1d28a28630
                               </div>
                         </div>
                   </div>

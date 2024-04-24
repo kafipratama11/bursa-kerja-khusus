@@ -596,13 +596,13 @@
                                                                                           @endif
                                                                                     </div>
                                                                                     <div class="w-100">
-                                                                                          <div class="d-flex align-items-center" style="font-size: 14px">
-                                                                                                <div class="fw-medium">{{$item->nama_loker}}</div>
+                                                                                          <div class="d-flex align-items-center gap-2" style="font-size: 14px">
                                                                                                 @if ($statuses)
-                                                                                                <div class="bg-secondary p-2"></div>
+                                                                                                <div class="bg-secondary p-2 rounded-circle"></div>
                                                                                                 @else
-                                                                                                <div class="bg-danger p-2"></div>
+                                                                                                <div class="bg-danger p-2 rounded-circle"></div>
                                                                                                 @endif
+                                                                                                <div class="fw-medium">{{$item->nama_loker}}</div>
                                                                                                 {{-- @if ($statuses->isEmpty())
                                                                                                       <div class="bg-secondary p-2"></div>
                                                                                                 @else
