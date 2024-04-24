@@ -32,7 +32,6 @@
                               <li><a class="dropdown-item text-danger fw-bold" href="{{ route('logout')}}">Logout</a></li>
                         </ul>
                   </div>
-
             </div>
       </nav>
       @yield('content')
@@ -44,5 +43,6 @@
 
       </script>
       <script src="../../js/script.js"></script>
+      @include('sweetalert::alert')
 </body>
 </html>

@@ -14,7 +14,7 @@
             <a href="#list-loker{{ $employE->id }}" id="list-loker-list" data-bs-toggle="list" role="tab" aria-controls="list-loker" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="d-flex gap-3 menu-sidebar align-items-center">
-                              <i class="bi bi-grid-1x2 text-dark"></i>
+                              <i class="bi bi-file-text-fill text-secondary"></i>
                               Loker
                         </div>
                   </div>
@@ -22,7 +22,7 @@
             <a href="#list-apply{{ $employE->id }}" id="list-apply-list" data-bs-toggle="list" role="tab" aria-controls="list-apply" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="d-flex gap-3 menu-sidebar align-items-center">
-                              <i class="bi bi-grid-1x2 text-dark"></i>
+                              <i class="bi bi-people-fill text-secondary"></i>
                               Job Applicant
                         </div>
                   </div>
@@ -30,7 +30,7 @@
             <a href="#list-candidat" id="list-candidat-list" data-bs-toggle="list" role="tab" aria-controls="list-candidat" class="list-group-item list-group-item-action link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink" data-page="page1">
                   <div class="p-2 ps-4">
                         <div class="d-flex gap-3 menu-sidebar align-items-center">
-                              <i class="bi bi-grid-1x2 text-dark"></i>
+                              <i class="bi bi-person-fill text-secondary"></i>
                               Candidat
                         </div>
                   </div>
@@ -43,7 +43,7 @@
       <a href="{{ route('employe.edit-employe')}}" class="link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink " data-page="page1" id="colorLink">
             <div class="p-2 ps-4">
                   <div class="d-flex gap-3 text-dark menu-sidebar align-items-center">
-                        <i class="bi bi-grid-1x2 text-dark"></i>
+                        <i class="bi bi-building-fill text-secondary"></i>
                         Edit Profile
                   </div>
             </div>
@@ -51,7 +51,7 @@
       <a href="{{ route('employe-logout')}}" class="link-underline link-underline-opacity-0 text-dark nav-link-sidebar initialColor colorLink sidebar-admin-logout" data-page="page1" id="colorLink">
             <div class="p-2 ps-4">
                   <div class="d-flex gap-3 text-danger menu-sidebar align-items-center">
-                        <i class="bi bi-grid-1x2 text-danger"></i>
+                        <i class="bi bi-box-arrow-right text-danger"></i>
                         Logout
                   </div>
             </div>

@@ -125,6 +125,10 @@ Route::get('/profile-perusahaan', function () {
     return view('employer/profile-perusahaan');
 });
 
+Route::get('view/kode-apply', function () {
+    return view('employer/employer-candidat');
+});
+
 Route::get('/perusahaan-list', function () {
     return view('company-list');
 });

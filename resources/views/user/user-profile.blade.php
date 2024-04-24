@@ -255,9 +255,14 @@
                                     </div>
                                     @foreach ($dataU->education as $item)
                                     <div class="mb-2">
-                                          <div class="d-flex gap-2">
+                                          <div class="d-flex align-items-center gap-2">
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
-                                                <a href="" class="profile-action-button" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
+                                                <a href="" class="profile-action-button ms-auto" data-bs-toggle="modal" data-bs-target="#editEducation{{$item->id}}"><i class="bi bi-pen text-dark"></i></a>
+                                                <form action="{{ route('user.delete-softskill',['id' => $item->id])}}" method="POST">
+                                                      @csrf
+                                                      @method("DELETE")
+                                                      <button class="text-danger bg-transparent border-0" type="submit" class=""><i class="bi bi-trash"></i></button>
+                                                </form>
                                           </div>
                                           <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
                                           <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
@@ -592,7 +597,21 @@
                                                                                     </div>
                                                                                     <div class="w-100">
                                                                                           <div class="d-flex align-items-center" style="font-size: 14px">
-                                                                                                <div class="fw-medium">{{$item->nama_perusahaan}}</div>
+                                                                                                <div class="fw-medium">{{$item->nama_loker}}</div>
+                                                                                                @if ($statuses)
+                                                                                                <div class="bg-secondary p-2"></div>
+                                                                                                @else
+                                                                                                <div class="bg-danger p-2"></div>
+                                                                                                @endif
+                                                                                                {{-- @if ($statuses->isEmpty())
+                                                                                                      <div class="bg-secondary p-2"></div>
+                                                                                                @else
+                                                                                                @if ($statuses === '2')
+                                                                                                <div class="bg-success p-2"></div>
+                                                                                                @elseif($statuses === '1')
+                                                                                                <div class="bg-danger p-2"></div>
+                                                                                                @endif
+                                                                                                @endif --}}
                                                                                                 <div class="ms-auto positon-absolute">
                                                                                                       <form action="{{route('user.delete-apply',['id' => $item->apply_id])}}" method="POST">
                                                                                                             @csrf
@@ -601,7 +620,7 @@
                                                                                                       </form>
                                                                                                 </div>
                                                                                           </div>
-                                                                                          <div style="font-size: 12px">{{$item->nama_loker}}</div>
+                                                                                          <div style="font-size: 12px">{{$item->nama_perusahaan}}</div>
                                                                                     </div>
                                                                               </div>
                                                                               <div class="text-secondary fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
@@ -644,6 +663,7 @@
                   </div>
             </div>
       </div>
+      @include('sweetalert::alert')
 </body>
 
 @endsection

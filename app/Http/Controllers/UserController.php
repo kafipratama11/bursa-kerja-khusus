@@ -12,12 +12,14 @@ use App\Models\loker;
 use App\Models\Profile;
 use App\Models\ProfileUser;
 use App\Models\SoftSkill;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
+// use Illuminate\Support\Facades\db_bkk;
 
 use function Laravel\Prompts\alert;
 
@@ -123,6 +125,7 @@ class UserController extends Controller
     public function user_profile(Request $request, $id){
         $data = loker::find($id);
         $loker = loker::find($id);
+        $apply = Apply::find($id);
         $dataU = User::find($id);
         $dataU->load('profile_user');
         $dataU->load('education');
@@ -130,12 +133,21 @@ class UserController extends Controller
         $dataU->load('softskill');
         $dataU->load('hardskill');
         $dataU->load('apply');
+        
         $history = Apply::select('employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'applies.created_at as waktu', 'lokers.id as id', 'applies.id as apply_id')
         ->join('users', 'applies.user_id', '=', 'users.id')
         ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
         ->join('employes', 'lokers.employe_id', '=', 'employes.id')
         ->where('users.nisn', $dataU->nisn)
         ->get();
+
+        $applyId = 78; // Ganti dengan ID apply tertentu yang Anda inginkan
+
+$statuses = Status::select('statuses.id', 'applies.id as apply_id')
+    ->join('applies', 'statuses.apply_id', '=', 'applies.id')
+    ->where('applies.id', $applyId)
+    ->get();
+
     //     $history = Apply::select('apply.id as apply_id', 'employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as loker_id')
     // ->join('users', 'apply.user_id', '=', 'users.id')
     // ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
@@ -151,7 +163,7 @@ class UserController extends Controller
         // Dapatkan riwayat lamaran pengguna
         $applyHistory = Apply::where('user_id', $userId)->get();
         
-        return view('user.user-profile',compact('dataU','user','data', 'applyHistory','history'));
+        return view('user.user-profile',compact('dataU','user','data', 'applyHistory','history', 'statuses'));
     }
 
     public function update_provinsi( Request $request, $id){
@@ -296,7 +308,7 @@ class UserController extends Controller
         $data['skill']    =$request->skill;
 
         SoftSkill::where('id',$id)->create($data);
-        return redirect()->back();
+        return redirect()->back()->with('Success', 'Softskill berhasil ditambahkan!');
     }
 
     public function delete_softskill($id){

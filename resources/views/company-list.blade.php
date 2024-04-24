@@ -18,7 +18,7 @@
             <div class="col-xl-6 col-md-8 col-sm-12 mb-3">
                   @guest
                   <div class="card d-flex mb-2">
-                        <div class="d-flex" style="min-height: 170px">
+                        <div class="card-company-list d-flex" style="min-height: 170px">
                               <div class="d-flex align-items-center justify-content-center p-2">
                                     <div style="width: 130px">
                                           @if ($item->image)
@@ -39,7 +39,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
                                           <div>:</div>
-                                          <div>{{$item->lokasi}}</div>
+                                          <div id="myText">{{$item->lokasi}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>
@@ -59,7 +59,7 @@
                   </div>
                   @else
                   <div class="card d-flex mb-2">
-                        <div class="d-flex" style="min-height: 170px">
+                        <div class="card-company-list d-flex" style="min-height: 170px">
                               <div class="d-flex align-items-center justify-content-center p-2">
                                     <div style="width: 130px">
                                           @if ($item->image)
@@ -80,7 +80,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
                                           <div>:</div>
-                                          <div>{{$item->lokasi}}</div>
+                                          <div id="myText">{{$item->lokasi}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>

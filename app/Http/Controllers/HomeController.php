@@ -30,6 +30,10 @@ class HomeController extends Controller
             $data = Loker::all();
             $dataU = User::role('user')->get();
 
+            $title = 'Delete User!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
             $role = Role::where('guard_name','employe')->get();
             return view('admin.dashboard-admin', compact('employE','employe','user','loker','data','dataU','dataE','role','chartUser'));
         }
@@ -78,6 +82,7 @@ class HomeController extends Controller
                 ->where('applies.employe_id',$employeId)
                 ->get();
 
+<<<<<<< HEAD
         $candidat = Status::select('users.name as user_name','lokers.nama_pekerjaan as job_name','lokers.bagian as job_position','applies.created_at as created_at')
                 ->join('users', 'statuses.user_id', '=', 'users.id')
                 ->join('lokers', 'statuses.loker_id', '=', 'lokers.id')
@@ -88,6 +93,14 @@ class HomeController extends Controller
                 $existingApplicant = Status::where('apply_id', $candidat)
                 ->exists();
     
+=======
+        // $applies = Apply::select('users.name as user_name', 'lokers.id', 'lokers.nama_pekerjaan', 'apply.created_at')
+        //         ->join('users', 'apply.user_id', '=', 'users.id')
+        //         ->join('lokers', 'apply.loker_id', '=', 'lokers.id')
+        //         ->get();
+                // $lokerId = Loker::find($id);
+                // $jumlahPelamarLoker = Apply::where('loker_id', $lokerId)->count();
+>>>>>>> f6102c9532b4cb2d7806dde8a9a69d1d28a28630
         // Tampilkan view untuk mengedit profil
         return view('employer.employer-dashboard', compact('employE','applies','candidat','existingApplicant'));
     }
