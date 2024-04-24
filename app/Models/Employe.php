@@ -22,9 +22,11 @@ class Employe extends Authenticatable
     protected $fillable = [
         'role_id',
         'name',
+        'industri',
         'email',
         'password',
         'lokasi',
+        'alamat',
         'no_telp',
         'deskripsi',
     ];

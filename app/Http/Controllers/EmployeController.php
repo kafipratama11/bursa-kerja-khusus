@@ -140,15 +140,11 @@ class EmployeController extends Controller
         Storage::disk('public')->put($path,file_get_contents($surat));
 
         $data = [
-            'apply_id'            => $request->apply_id,
-            'user_id'             => $request->user_id,
-            'employe_id'          => $request->employe_id,
-            'loker_id'            => $request->loker_id,
-            'surat_interview'     => $filename,
-            'status'              => $request->status,
+            'status'            => $request->status,
+            'surat_interview'    => $filename,
         ];
 
-        Status::where('id', $id)->create($data);
+        Apply::where('id', $id)->update($data);
         return redirect()->back();
     }
 
@@ -179,6 +175,23 @@ class EmployeController extends Controller
             // Jika file tidak ditemukan, kembalikan respons dengan pesan kesalahan
             return redirect()->back()->with('error', 'File Portofolio tidak ditemukan.');
         }
+    }
+
+    public function update_candidat(Request $request, $id){
+        $verivikasi     = 0;
+        $data['status'] = $verivikasi;
+
+        Apply::where('id', $id)->update($data);
+
+        return redirect()->back();
+    }
+
+    public function rejected(Request $request, $id){
+        $data['status'] = $request->status;
+
+        Apply::where('id', $id)->update($data);
+
+        return redirect()->back();
     }
     
     

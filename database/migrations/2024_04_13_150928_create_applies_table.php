@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('cv');
             $table->string('portofolio')->nullable();
             $table->string('portofolio_online',50)->nullable();
+            $table->string('status',3)->nullable();
+            $table->string('surat_interview')->nullable();
             $table->timestamps();
         });
     }

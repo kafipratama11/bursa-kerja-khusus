@@ -34,7 +34,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Industri</div>
                                           <div>:</div>
-                                          <div>Retail & Consumer Products</div>
+                                          <div>{{$item->industri}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
@@ -44,7 +44,7 @@
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>
                                           <div>:</div>
-                                          <div>Pacific Century Place Tower Lt. 26 SCBD (Sudirman Central Business District) Lot 10, Jl. Jend. Sudirman No.52-53, RT.5/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan</div>
+                                          <div>{{$item->alamat}}</div>
                                     </div>
                                     <div class="h-auto mt-2 pe-3">
                                           <div class="h-100 d-flex align-items-end justify-content-center">
@@ -75,7 +75,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Industri</div>
                                           <div>:</div>
-                                          <div>Retail & Consumer Products</div>
+                                          <div>{{$item->industri}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
@@ -85,7 +85,7 @@
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>
                                           <div>:</div>
-                                          <div>Pacific Century Place Tower Lt. 26 SCBD (Sudirman Central Business District) Lot 10, Jl. Jend. Sudirman No.52-53, RT.5/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan</div>
+                                          <div>{{$item->alamat}}</div>
                                     </div>
                                     <div class="h-auto mt-2 pe-3">
                                           <div class="h-100 d-flex align-items-end justify-content-center">

@@ -58,6 +58,7 @@ class ApplyController extends Controller
             'user_id'             => $request->user_id,
             'employe_id'          => $request->employe_id,
             'loker_id'            => $request->loker_id,
+            'status'              => $request->status,
             'cv'                  => $fileCv,
             'portofolio'          => $filePortofolio,
             'portofolio_online'   => $request->porto,
