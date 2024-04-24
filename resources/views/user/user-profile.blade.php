@@ -319,11 +319,11 @@
                                                                   <input type="hidden" name="user_id" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{$dataU->id}}">
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Nama Perusahaan</label>
-                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                        <input type="text" name="nama_perusahaan" class="form-control" id="exampleFormControlInput1" placeholder="Software Host">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Nama Pekerjaan</label>
-                                                                        <input type="text" name="nama_pekerjaan" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                                                        <input type="text" name="nama_pekerjaan" class="form-control" id="exampleFormControlInput1" placeholder="Developer">
                                                                   </div>
                                                                   <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Status</label>

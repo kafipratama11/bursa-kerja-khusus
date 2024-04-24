@@ -7,6 +7,7 @@ use App\Models\Jurusan;
 use App\Models\loker;
 use App\Models\Apply;
 use App\Models\Profile;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -76,9 +77,19 @@ class HomeController extends Controller
                 ->join('lokers', 'applies.loker_id', '=', 'lokers.id')
                 ->where('applies.employe_id',$employeId)
                 ->get();
+
+        $candidat = Status::select('users.name as user_name','lokers.nama_pekerjaan as job_name','lokers.bagian as job_position','applies.created_at as created_at')
+                ->join('users', 'statuses.user_id', '=', 'users.id')
+                ->join('lokers', 'statuses.loker_id', '=', 'lokers.id')
+                ->join('applies', 'statuses.apply_id', '=', 'applies.id')
+                ->where('statuses.employe_id',$employeId)
+                ->get();
+
+                $existingApplicant = Status::where('apply_id', $candidat)
+                ->exists();
     
         // Tampilkan view untuk mengedit profil
-        return view('employer.employer-dashboard', compact('employE','applies'));
+        return view('employer.employer-dashboard', compact('employE','applies','candidat','existingApplicant'));
     }
 
     public function update(Request $request, $id)

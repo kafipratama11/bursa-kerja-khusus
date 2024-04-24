@@ -1,6 +1,6 @@
 @extends('layouts.dashboard-employer')
 
-@include('partials.navbar-dashboard-admin')
+
 
 @section('nav-link-employer')
 <button class="navbar-toggler text-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,14 +9,16 @@
 <div class="collapse navbar-collapse w-full d-flex ms-5" id="navbarNav">
       <ul class="navbar-nav d-flex gap-3">
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/index">HOME</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.employe')}}">HOME</a>
             </li>
             <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="/employe/dashboard-employe">DASHBOARD</a>
+                  <a class="nav-link active text-light" aria-current="page" href="{{ route('employe.dashboard-employe')}}">DASHBOARD</a>
             </li>
       </ul>
 </div>
 @endsection
+
+@include('partials.navbar-dashboard-admin')
 
 @section('content-admin')
 
@@ -99,9 +101,9 @@
                         </div>
                   </div>
                   <div class="col-4">
-                        <div class="card">
+                        <div class="card mb-3">
                               <div class="card-body">
-                                    <div>Skills</div>
+                                    <div class="mb-2">Skills</div>
                                     <div>
                                           Softskills :
                                           @foreach ($dataU->softskill as $key => $item)
@@ -118,6 +120,26 @@
                                           @if (!$loop->last)
                                           ,
                                           @endif
+                                          @endforeach
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="card mb-3">
+                              <div class="card-body">
+                                    <div class="mb-2">Experience</div>
+                                    <div>
+                                          @foreach ($dataU->experiences as $exp)
+                                          <div class="mb-3">
+                                                <div class="d-flex gap-2 align-items-center">
+                                                      <div class="fw-semibold" style="font-size: 14px">{{$exp->nama_perusahaan}}</div>
+                                                </div>
+                                                <div class="d-flex gap-2 align-items-center">
+                                                      <div class="fw-normal text-secondary" style="font-size: 14px">{{$exp->nama_pekerjaan}}</div>
+                                                      <div class="fw-light text-secondary" style="font-size: 12px">{{$exp->status}}</div>
+                                                </div>
+                                                <div class="fw-light text-secondary" style="font-size: 12px">{{$exp->lama_bekerja}}</div>
+                                                <div class="fw-light text-secondary mt-3" style="font-size: 12px">{{$exp->deskripsi}}</div>
+                                          </div>
                                           @endforeach
                                     </div>
                               </div>

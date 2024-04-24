@@ -198,19 +198,25 @@
                                                 <tr>
                                                       <th scope="col">No</th>
                                                       <th scope="col">Nama</th>
-                                                      <th scope="col">Kode Loker</th>
+                                                      <th scope="col">Job Name</th>
                                                       <th scope="col">Job Position</th>
                                                       <th scope="col">Tanggal Apply</th>
                                                       <th scope="col">Action</th>
                                                 </tr>
                                           </thead>
                                           <tbody>
+                                                @foreach ($candidat as $item)
                                                 <tr>
-                                                      <th scope="row">1</th>
-                                                      <td>Muhammad Kafi Pratama</td>
-                                                      <td>LSHOPEE12132023001</td>
-                                                      <td>Akuntan</td>
-                                                      <td>30/09/2023</td>
+                                                      <th>{{$loop->iteration}}</th>
+                                                      <td>{{$item->user_name}}</td>
+                                                      <td>{{$item->job_name}}</td>
+                                                      <td>{{$item->job_position}}</td>
+                                                      <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}</td>
+                                                      @if ($existingApplicant)
+                                                      <div class=" text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Option
+                                                      </div>
+                                                      @else
                                                       <td>
                                                             <div class="dropdown">
                                                                   <a class="dropdown-toggle link-underline link-underline-opacity-0 text-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -222,7 +228,9 @@
                                                                   </ul>
                                                             </div>
                                                       </td>
-                                                </tr>
+                                                      @endif                                    
+                                                </tr>    
+                                                @endforeach
                                           </tbody>
                                     </table>
                               </div>

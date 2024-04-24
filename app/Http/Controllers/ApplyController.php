@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\loker;
 use App\Models\Apply;
 use App\Models\Employe;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -132,6 +133,8 @@ class ApplyController extends Controller
         ->join('employes', 'lokers.employe_id', '=', 'employes.id')
         ->where('users.nisn', $dataU->nisn)
         ->get();
+
+
     
     
 
