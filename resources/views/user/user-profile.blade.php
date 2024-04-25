@@ -563,7 +563,7 @@
                               </div>
                         </div>
                   </div>
-                  <div class="col-xl-4 col-md-12 col-sm-12">
+                  <div class="col-xl-4 col-md-12 col-sm-12 mb-3">
                         <div>
                               <div class="accordion w-100" id="accordionExample">
                                     <div class="accordion-item">
@@ -573,7 +573,7 @@
                                                 </button>
                                           </h2>
                                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body w-100 overflow-auto"  style="max-height: 550px">
+                                                <div class="accordion-body w-100 overflow-auto p-0 pt-3"  style="max-height: 550px">
                                                       @if ($history->isEmpty())
                                                       @include('svg.ilustration-history')
                                                       @else
@@ -595,8 +595,8 @@
                                                       </div>
                                                       @foreach ($history as $item)
                                                             <a href="{{route('user.user-apply',['id' => $item->id])}}" class="w-100 link-dark link-offset-1 link-underline link-underline-opacity-0">
-                                                                  <div class="card-history rounded pt-1 border-bottom">
-                                                                        <div class="p-2">
+                                                                  <div class="card-history rounded-0 pt-1 border-bottom">
+                                                                        <div class="p-2 ps-3">
                                                                               <div class="d-flex gap-3">
                                                                                     <div class="d-flex justify-content-center align-items-center">
                                                                                           @if ($item->image)
