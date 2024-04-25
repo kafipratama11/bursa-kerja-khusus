@@ -23,7 +23,6 @@
                                                 </a>
                                                 @endif
                                                 @endif
-
                                                 @if($user = 'user')
                                                 <div class="d-flex align-items-end z-3">
                                                       <div class="d-flex align-items-center justify-content-center bg-white rounded-pill" style="margin-left: -2.3rem; margin-bottom: 10px;">
@@ -62,7 +61,7 @@
                                           </div>
                                           <div>
                                                 <div class="d-flex gap-2 align-items-center">
-                                                      <div class="fw-semibold text-black fs-5">{{$dataU->name}}</div>
+                                                      <div class="fw-semibold text-black fs-5 text-capitalize">{{$dataU->name}}</div>
                                                       <div class="fw-light text-secondary" style="font-size: 12px">({{$dataU->profile_user->jk}})</div>
                                                 </div>
                                                 <div class="text-dark text-secondary" style="font-size: 13px">{{$dataU->nisn}}</div>
@@ -578,17 +577,19 @@
                                                       @if ($history->isEmpty())
                                                       @include('svg.ilustration-history')
                                                       @else
-                                                      <div class="d-flex gap-2 align-items-center justify-content-center mb-3">
+                                                      <div class="d-flex gap-2 align-items-center justify-content-center mb-3 text-secondary" style="font-size: 13px">
                                                             <div class="d-flex gap-2 align-items-center">
-                                                                  <div class="bg-success p-2 rounded-circle"></div>
+                                                                  <div class="bg-success p-1 rounded-circle"></div>
                                                                   <div>Diterima</div>
                                                             </div>
+                                                            <div class="vr"></div>
                                                             <div class="d-flex gap-2 align-items-center">
-                                                                  <div class="bg-danger p-2 rounded-circle"></div>
+                                                                  <div class="bg-danger p-1 rounded-circle"></div>
                                                                   <div>Ditolak</div>
                                                             </div>
+                                                            <div class="vr"></div>
                                                             <div class="d-flex gap-2 align-items-center">
-                                                                  <div class="bg-secondary p-2 rounded-circle"></div>
+                                                                  <div class="bg-secondary p-1 rounded-circle"></div>
                                                                   <div>Menunggu</div>
                                                             </div>
                                                       </div>
@@ -607,11 +608,11 @@
                                                                                     <div class="w-100">
                                                                                           <div class="d-flex align-items-center gap-2" style="font-size: 14px">
                                                                                                 @if ($item->status === '2')
-                                                                                                <div class="bg-success p-2 rounded-circle"></div>
+                                                                                                <div class="bg-success p-1 rounded-circle"></div>
                                                                                                 @elseif($item->status === '1')
-                                                                                                <div class="bg-danger p-2 rounded-circle"></div>
+                                                                                                <div class="bg-danger p-1 rounded-circle"></div>
                                                                                                 @else
-                                                                                                <div class="bg-secondary p-2 rounded-circle"></div>
+                                                                                                <div class="bg-secondary p-1 rounded-circle"></div>
                                                                                                 @endif
                                                                                                 <div class="fw-medium">{{$item->nama_loker}}</div>
                                                                                                 <div class="ms-auto positon-absolute">

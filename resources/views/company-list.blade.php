@@ -39,7 +39,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
                                           <div>:</div>
-                                          <div id="myText">{{$item->lokasi}}</div>
+                                          <div class="text-capitalized">{{$item->lokasi}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>
@@ -80,7 +80,7 @@
                                     <div class="text-secondary d-flex align-items-center gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Lokasi</div>
                                           <div>:</div>
-                                          <div id="myText">{{$item->lokasi}}</div>
+                                          <div class="text-capitalize">{{$item->lokasi}}</div>
                                     </div>
                                     <div class="text-secondary d-flex align-items-start gap-2" style="font-size: 12px">
                                           <div style="min-width: 45px">Alamat</div>
@@ -88,7 +88,7 @@
                                           <div>{{$item->alamat}}</div>
                                     </div>
                                     <div class="h-auto mt-2 pe-3">
-                                          <div class="h-100 d-flex align-items-end justify-content-center">
+                                          <div class="d-flex">
                                                 <a class="link-underline link-underline-opacity-0 icon-link icon-link-hover" href="{{ route('profile-employer',['id'=>$item->id])}}" style="font-size: 14px">
                                                       Lihat Profile
                                                       <i class="bi bi-arrow-right mb-1"></i>

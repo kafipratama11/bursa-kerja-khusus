@@ -20,8 +20,8 @@
                                     <input type="text" name="password" class="form-control" id="inputPassword">
                               </div>
                               <div class="mb-5">
-                                    <button type="submit" class="btn btn-signup w-100 fw-medium mb-2">Login</button>
-                                    <button type="button" class="btn btn-login-cancel w-100 fw-medium bg-light" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-signup w-100 fw-medium mb-2 rounded">Login</button>
+                                    <button type="button" class="btn btn-login-cancel w-100 fw-medium rounded" data-bs-dismiss="modal">Cancel</button>
                               </div>
                         </div>
                   </form>
