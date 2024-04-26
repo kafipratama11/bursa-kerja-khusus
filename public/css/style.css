@@ -42,6 +42,7 @@
                                    
                                    .box-rekrutment {
                                        height: 250px;
+                                       border-radius: 25px!important;
                                        background-color: var(--primary);
                                        color: white;
                                    }
@@ -91,13 +92,12 @@
                                    }
                                    
                                    .btn-login-cancel {
-                                       border: 1px solid var(--dark-blue);
+                                       /* border: 1px solid var(--dark-blue); */
+                                       background-color: #f1f1f1;
                                    }
                                    
                                    .btn-login-cancel:hover {
-                                       border: 1px solid var(--dark-blue);
-                                       background-color: var(--dark-blue)!important;
-                                       color: var(--smoke-white)!important;
+                                       background-color: #f2f2f2;
                                    }
                                    
                                    .card-profile-perusahaan {

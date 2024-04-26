@@ -1,4 +1,4 @@
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdropE" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                   <div class="modal-header">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="mb-5">
                               <button type="submit" class="btn btn-signup w-100 fw-medium mb-2">Login</button>
-                              <button type="button" class="btn btn-login-cancel w-100 fw-medium bg-light" data-bs-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-login-cancel w-100 fw-medium" data-bs-dismiss="modal" style="background-color: #f1f1f1">Cancel</button>
                         </div>
                         </div>
                   </form>
