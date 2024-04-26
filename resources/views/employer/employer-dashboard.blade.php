@@ -247,7 +247,7 @@
                                                             <div class="mb-1">
                                                                 <input class="form-control" hidden name="status"
                                                                     type="text" id="formFile2"
-                                                                    style="font-size: 14px" value="2">
+                                                                    style="font-size: 14px" value="1">
                                                                 <input class="form-control" hidden name="loker_id"
                                                                     type="text" id="formFile2"
                                                                     style="font-size: 14px"

@@ -578,7 +578,7 @@
                                                       @if ($history->isEmpty())
                                                       @include('svg.ilustration-history')
                                                       @else
-                                                      <div class="d-flex gap-2 align-items-center justify-content-center mb-3">
+                                                      <div class="d-flex gap-2 align-items-center justify-content-center mb-3 text-secondary" style="font-size: 13px">
                                                             <div class="d-flex gap-2 align-items-center">
                                                                   <div class="bg-success p-2 rounded-circle"></div>
                                                                   <div>Diterima</div>
@@ -625,7 +625,21 @@
                                                                                           <div style="font-size: 12px">{{$item->nama_perusahaan}}</div>
                                                                                     </div>
                                                                               </div>
-                                                                              <div class="text-secondary fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
+                                                                              <div class="d-flex mt-1 align-items-end">
+                                                                                    @if ($item->status === '2')
+                                                                                    <button class="btn btn-outline-dark d-flex justify-content-center align-items-center gap-2 px-3 rounded-pill text-center" style="font-size:13px; padding-top: 3px; padding-bottom:3px;">
+                                                                                          <div>Download</div>
+                                                                                          <i class="bi bi-download"></i>
+                                                                                    </button>
+                                                                                    {{-- <a href="" class="link-underline link-underline-opacity-0" style="font-size: 13px;">
+                                                                                          <div class=" d-flex justify-content-center align-items-center gap-2 p-1 border border-dark text-black rounded-pill text-center" style="width: 130px;">
+                                                                                                <div>Download</div>
+                                                                                                <i class="bi bi-download"></i>
+                                                                                          </div>
+                                                                                    </a> --}}
+                                                                                    @endif
+                                                                                    <div class="text-secondary ms-auto fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
+                                                                              </div>
                                                                         </div>
                                                                   </div>
                                                             </a>
@@ -647,13 +661,6 @@
                         <div class="d-flex">
                               @if ($dataU->profile_user->image)
                               <img src="{{ asset('storage/photo-user/'.$dataU->profile_user->image)}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
-                              <div class="d-flex align-items-end z-3">
-                                    <div class="d-flex align-items-center justify-content-center bg-danger rounded-pill" style="margin-left: -4.3rem; margin-bottom: 10px;">
-                                          <div class="d-flex align-items-center justify-content-center m-1 border bg-danger rounded-pill" style="width: 35px; height: 35px;">
-                                                <button id="submitBtn" type="submit" class="text-white z-4" style="font-size: 20px;"><i class="bi bi-trash3"></i></button>
-                                          </div>
-                                    </div>
-                              </div>
                               @else
                               @if ($dataU->profile_user->jk === 'she/her')
                               <img src="{{ asset('../../img/person-default-female.jpg')}}" alt="" class="rounded-pill ratio ratio-1x1 img-profile-user" style="width: 300px; height:300px;">
