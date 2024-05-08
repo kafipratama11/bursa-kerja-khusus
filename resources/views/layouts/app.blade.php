@@ -51,11 +51,11 @@
                         @endguest
                         @guest
                         <form class="ms-auto d-flex justify-content-end" role="search">
-                              <button class="btn btn-outline-warning me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              <button class="btn btn-login-navbar me-2 px-5 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     Login
                               </button>
-                              <a href="{{ route('employer-site')}}" class="btn btn-light me-2 fw-bolder" type="button">
-                                    Employer Site
+                              <a href="{{ route('employer-site')}}" class="btn me-2 fw-semibold" style="color: #0E46A3; background-color:#E1F7F5;" type="button">
+                                    Employer Page
                               </a>
                         </form>
                         @else

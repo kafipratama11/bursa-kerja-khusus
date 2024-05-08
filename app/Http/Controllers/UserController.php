@@ -332,12 +332,12 @@ $statuses = Status::select('statuses.id', 'applies.id as apply_id')
         $data['skill']    =$request->skill;
 
         HardSkill::where('id',$id)->create($data);
-        return redirect()->back();
+        return redirect()->back()->with('Berhasil!', 'Hardskill berhasil ditambahkan');
     }
 
     public function delete_hardskill($id){
         $data = HardSkill::find($id);
-
+        
         if($data){
             $data->delete();
             return redirect()->back();
