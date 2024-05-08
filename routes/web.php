@@ -96,7 +96,7 @@ Route::group(['prefix' => 'view','middleware' => ['auth:employe'], 'as' => 'empl
     Route::get('/download-cv/{id}', [EmployeController::class, 'download_cv'])->name('download-cv');
     Route::get('/download-portofolio/{id}', [EmployeController::class, 'download_portofolio'])->name('download-portofolio');
     Route::get('/show-applicant/{id}', [ApplyController::class, 'show_applicant'])->name('show-applicant');
-    // Route::get('/view/{lokerId}/{applyId}', [EmployeController::class, 'candidat'])->name('candidat');
+    // Route::get('/view/{lokerId}/{applyId}', [EmployeController::cla  ss, 'candidat'])->name('candidat');
     Route::post('/create-new-loker', [EmployeController::class, 'create_loker'])->name('create-new-loker');
     Route::put('/interview/{id}',[EmployeController::class,'interview'])->name('interview');
     Route::put('/update/{id}',[HomeController::class,'update'])->name('update-profile');

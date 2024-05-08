@@ -223,18 +223,19 @@ class UserController extends Controller
 
     public function photo_profile(Request $request, $id)
     {
-    // Validasi request
     $request->validate([
         'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // sesuaikan dengan kebutuhan
     ]);
 
-    // Mendapatkan file foto dari request
+    $user = ProfileUser::where('user_id',$id)->first();
+    if($user->image){
+        Storage::disk('public')->delete($user,('photo-user/' . $user->image));
+    }
+
     $photo = $request->file('photo');
 
-    // Membuat nama file unik dengan menambahkan timestamp
     $filename = date('y-m-d_H-i-s') . '_' . uniqid() . '.' . $photo->getClientOriginalExtension();
 
-    // Menyimpan file foto ke dalam direktori storage
     $path = 'photo-user/' . $filename;
     Storage::disk('public')->put($path, file_get_contents($photo));
 

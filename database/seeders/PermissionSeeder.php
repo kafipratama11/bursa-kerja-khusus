@@ -34,7 +34,7 @@ class PermissionSeeder extends Seeder
                 'name' => 'view_dashboard',
             ],
             ['name' => 'view_dashboard']
-        );
+        );  
         $permission2 = Permission::updateOrCreate(
             [
                 'name' => 'view_index',
