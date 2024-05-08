@@ -59,7 +59,11 @@
                   <div class="ps-4">
                         <div class="fw-semibold lh-1" style="font-size: 32px; color: #0E46A3;">Lorem ipsum dolor sit amet consectetur.</div>
                         <div style="font-size: 16px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab totam sequi expedita laboriosam numquam quod deserunt quaerat culpa, ut ipsam, minus obcaecati nisi odio quis molestiae itaque ad enim error?</div>
-                        <a href="{{ route('employe-signup')}}" class="btn px-4 mt-3" style="background-color: #0E46A3; color: #E1F7F5;">Register now</a>
+                        <div class="d-flex gap-3 align-items-center">
+                              <a href="{{ route('employe-signup')}}" class="btn px-4 mt-3" style="background-color: #0E46A3; color: #E1F7F5;">Register now</a>
+                              <div class="vr"></div>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdropE">Login</a>
+                        </div>
                   </div>
             </div>
             <div class="col justify-content-center d-flex">
@@ -105,20 +109,22 @@
             <div class="row justify-content-center">
                   <div class="col-6">
                         <div style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius: 20px;" class="p-3 px-5 py-5 shadow">
-                              <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label text-light">Email address</label>
-                                    <input type="email" class="form-control login-company-input bg-transparent text-light" id="exampleFormControlInput1" placeholder="Email">
-                              </div>
-                              <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label text-light">Password</label>
-                                    <input type="password" class="form-control login-company-input bg-transparent text-light" id="exampleFormControlInput1" placeholder="Enter password">
-                              </div>
-                              <div class="mt-5">
-                                    <button class="btn w-100 fw-semibold mb-3" style="background-color: #E1F7F5; color:#0E46A3;">Login</button>
-                                    <div class="w-100 text-center">
-                                          <a class="fw-semibold text-center link-underline link-underline-opacity-0" href="" style="color:#E1F7F5;">Register</a>
+                              <form action="{{ route('employe-login')}}" method="POST">
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label text-light">Email address</label>
+                                          <input type="email" name="email" class="form-control login-company-input bg-transparent text-light" id="exampleFormControlInput1" placeholder="Email">
                                     </div>
-                              </div>
+                                    <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label text-light">Password</label>
+                                          <input type="password" name="password" class="form-control login-company-input bg-transparent text-light" id="exampleFormControlInput1" placeholder="Enter password">
+                                    </div>
+                                    <div class="mt-5">
+                                          <button class="btn w-100 fw-semibold mb-3" type="submit" style="background-color: #E1F7F5; color:#0E46A3;">Login</button>
+                                          <div class="w-100 text-center">
+                                                <a class="fw-semibold text-center link-underline link-underline-opacity-0" href="" style="color:#E1F7F5;">Register</a>
+                                          </div>
+                                    </div>
+                              </form>
                         </div>
                   </div>
             </div>
