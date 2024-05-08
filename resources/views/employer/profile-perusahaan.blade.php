@@ -1,98 +1,96 @@
 @extends('layouts.app')
 @section('content')
+@include('partials.modal-login-user')
 
-<div class="container">
-      @include('partials.modal-login-user')
-      <div class="row mt-5 pb-5">
-            <div class="col-xl-6 col-md-6 col-sm-12">
-                  <div class="">
-                        <div class="mb-5">
-                              <div class="nama-perusahaan fs-4 text-secondary mb-3 fw-bolder">{{$data->name}}</div>
-                              <div class="row d-flex align-items-center">
-                                    <div class="col-xl-3 col-md-3 col-sm-12 mt-2 me-5">
-                                          <div class="card-profile-perusahaan">
-                                                @if($data->image)
-                                                <img src="{{ asset('storage/photo-employe/'.$data->image)}}" alt="">
-                                                @else
-                                                {{-- <img src="{{ asset('../../assets/images/building.jpg') }}" alt="Default Image"> --}}
-                                                <div class="d-flex align-items-center justify-content-center fw-semibold fs-1" style="">{{ $firstChar = str($data->name)->substr(0, 1); }}</div>
-                                                @endif
-                                          </div>
-                                    </div>
-                                    <div class="col-xl-7 col-md-7 col-sm-12">
-                                          <div class="">
-                                                <div style="font-size: 15px">
-                                                      <div class="d-flex gap-3 mb-2">
-                                                            <i class="bi bi-geo-alt"></i>
-                                                            {{$data->lokasi}}
-                                                      </div>
-                                                      <div class="d-flex gap-3 mb-2">
-                                                            <i class="bi bi-envelope"></i>
-                                                            {{$data->email}}
-                                                      </div>
-                                                      <div class="d-flex gap-3 mb-2">
-                                                            <i class="bi bi-telephone"></i>
-                                                            {{$data->no_telp}}
-                                                      </div>
-                                                      <small class="mb-2 fw-medium text-secondary">
-                                                            Bergabung pada tanggal {{$data->created_at->format('d/m/Y')}}
-                                                      </small>
-                                                </div>
-                                          </div>
+<div class="container pb-5">
+      <div class="row mt-5 justify-content-center">
+            <div class="col-4">
+                  <div class="d-flex justify-content-center mb-4">
+                        <div class="card d-flex justify-content-center align-items-center rounded-pill border border-primary shadow" style="width: 270px; height: 270px;">
+                              <div class="p-2">
+                                    <div class="logo d-flex justify-content-center">
+                                          @if ($data->image)
+                                          <img class="w-100" src="{{ asset('storage/photo-employe/'.$data->image)}}" alt="">
+                                          @else
+                                          <div class="d-flex align-items-center justify-content-center fw-semibold" style="font-size: 54px">{{ $firstChar = str($data->name)->substr(0, 1); }}</div>
+                                          @endif
+                                          
                                     </div>
                               </div>
                         </div>
                   </div>
-            </div>
-            <div class="col-xl-6 col-md-6 col-sm-12">
-                  <div>
-                        <div class="mb-5">
-                              <div class="fw-bolder mb-4 text-center text-secondary rounded p-2">TENTANG PERUSAHAAN</div>
-                              <div class="row">
-                                    <p class="deskripsi-perusahaan fw-light">
-                                          {{$data->deskripsi}}
-                                    </p>
+                  <div class="mt-3 p-3 rounded" style="background-color: #E1F7F5;">
+                        <div class="fw-semibold mb-2" style="color: #0E46A3;">{{$data->name}}</div>
+                        <div class="ps-2" style="font-size: 14px">
+                              <div class="d-flex gap-3 mb-2 align-items-center">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <div id="myText">{{$data->lokasi}}</div>
+                              </div>
+                              <div class="d-flex gap-3 mb-2">
+                                    <i class="bi bi-envelope"></i>
+                                    <div>{{$data->email}}</div>
+                              </div>
+                              <div class="d-flex gap-3 mb-2">
+                                    <i class="bi bi-telephone"></i>
+                                    <div>{{$data->no_telp}}</div>
                               </div>
                         </div>
                   </div>
+                  <div class="mt-3 p-3 rounded" style="background-color: #E1F7F5;">
+                        <div class="fw-semibold mb-1" style="color: #0E46A3;">About {{$data->name}}</div>
+                        <div class="ps-2" style="font-size: 12px">
+                              {{$data->deskripsi}}
+                        </div>
+                  </div>
             </div>
-            <div>
-                  <div class="fw-bolder mb-4 mt-5 text-center text-secondary rounded p-2">LOKER PERUSAHAAN</div>
+            <div class="col">
                   <div class="row justify-content-center">
-                        @if($data->loker->isEmpty())
-                        <div class="d-flex align-items-center justify-content-center">
-                              <img src="../../../assets/images/no_data_found2.png" style="width: 260px" alt="">
-                        </div>
+                        @if ($data->loker->isEmpty())
+                        <img src="../../../img/no-data-grey.png" alt="" style="width: 350px">
+                        <div class="mt-2 text-center text-secondary">Tidak ada loker</div>
                         @else
                         @foreach ($data->loker as $item)
-                        <div class="col-xl-6 col-md-6 col-sm-12 mb-3">
-                              <a href="" class="card ps-4 p-3 pe-3 link-underline link-underline-opacity-0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
-                                    <div class="pt-2">
-                                          <div class="d-flex gap-2">
-                                                <div class="position fw-bolder mb-3">{{$item->nama_pekerjaan}}</div>
-                                                @if (now()->toDateString() > $item->expired)
-                                                <div class="text-danger fw-medium" style="font-size: 13px;">Ditutup</div>
-                                                @else
-                                                <div class="text-success fw-medium" style="font-size: 13px;">Dibuka</div>
-                                                @endif
-                                                <small class="ms-auto text-secondary">{{$item->created_at->format('d/m/Y')}}</small>
+                        <div class="col-xl-6 my-3">
+                              <a href="" class="link-underline link-underline-opacity-0 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
+                                    <div class="bg-white shadow-sm" style="border-radius: 18px">
+                                          <div class="d-flex px-3 py-2 text-light align-items-center" style="border-radius: 18px 18px 0 0; background-color: #0E46A3;">
+                                                <div style="font-size: 14px">{{$item->bagian}}</div>
+                                                <div class="ms-auto" style="font-size: 12px">
+                                                      @if (now()->toDateString() > $item->expired)
+                                                      <div class="">Closed</div>
+                                                      @else
+                                                      <div class="">Opened</div>
+                                                      @endif
+                                                </div>
                                           </div>
-                                          <div class="ps-4" style="font-size: 13px">
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-geo-alt"></i>
-                                                      {{$item->provinsi}}, {{$item->kota_kabupaten}}
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1 pt-3">
+                                                      <i class="bi bi-geo-alt-fill"></i>
                                                 </div>
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-building"></i>
-                                                      Rp.{{$item->gaji}}
+                                                <div class="p-2 fw-light pb-1 pt-3" style="font-size: 14px">{{ $item->kota_kabupaten }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
+                                                      <i class="bi bi-building-fill"></i>
                                                 </div>
-                                                <div class="d-flex gap-3 mb-2">
-                                                      <i class="bi bi-clock"></i>
-                                                      {{$item->waktu}}
+                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->nama_perusahaan }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
+                                                      <i class="bi bi-clock-fill"></i>
                                                 </div>
-                                                <small class="mb-2 mt-3 fw-medium text-body-tertiary">
-                                                      Dibuka sampai tanggal {{$item->expired}}
-                                                </small>
+                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->waktu }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center" style="border-radius: 0 0 18px 18px">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3; border-radius: 0 0 0 18px;" class="p-2 pb-3">
+                                                      <i class="bi bi-cash-stack"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-3" style="font-size: 14px">
+                                                      @php
+                                                      $gajiF = $item->gaji;
+                                                      @endphp
+                                                      Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
+                                                </div>
                                           </div>
                                     </div>
                               </a>
@@ -104,7 +102,7 @@
                   </div>
             </div>
       </div>
-      @include('partials.footer')
+
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

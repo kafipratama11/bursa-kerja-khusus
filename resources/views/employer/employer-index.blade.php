@@ -18,16 +18,11 @@
 
 @section('nav')
 <div class="dropdown">
-      <a class="dropdown-toggle text-light link-underline link-underline-opacity-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="text-light link-underline link-underline-opacity-0">
             @auth
             {{ Auth::user()->name }}
             @endauth
-      </a>
-
-      <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-dark menu-sidebar" href="/employe/edit-profile">Profile</a></li>
-            <li><a class="dropdown-item text-danger menu-sidebar" href="{{ route('employe-logout')}}">Logout</a></li>
-      </ul>
+      </div>
 </div>
 @endsection
 
@@ -35,47 +30,57 @@
 
 @include('partials.navbar-dashboard-admin')
 
-<div class="container">
-      <div class="row mt-5">
+<div class="container pb-5">
+      <div class="row mt-5 justify-content-center">
             <div class="col-4">
-                  <div class="">
-                        <div class="card-body">
-                              <div class="logo d-flex justify-content-center">
-                                    <img src="{{ asset('storage/photo-employe/'.$dataE->image)}}" style="width: 100%" alt="">
+                  <div class="d-flex justify-content-center mb-4">
+                        <div class="card d-flex justify-content-center align-items-center rounded-pill border border-primary shadow" style="width: 270px; height: 270px;">
+                              <div class="p-2">
+                                    <div class="logo d-flex justify-content-center">
+                                          <img src="{{ asset('storage/photo-employe/'.$dataE->image)}}" style="width: 100%" alt="">
+                                    </div>
                               </div>
                         </div>
                   </div>
-                  <div class="fw-bolder mt-3 fs-4 mb-4 lh-sm">{{$dataE->name}}</div>
-                  <div style="font-size: 14px">
-                        <div class="d-flex gap-3 mb-2 align-items-center">
-                              <i class="bi bi-geo-alt"></i>
-                              <div>{{$dataE->lokasi}}</div>
-                        </div>
-                        <div class="d-flex gap-3 mb-2">
-                              <i class="bi bi-envelope"></i>
-                              <div>{{$dataE->email}}</div>
-                        </div>
-                        <div class="d-flex gap-3 mb-2">
-                              <i class="bi bi-telephone"></i>
-                              <div>{{$dataE->no_telp}}</div>
+                  <div class="mt-3 p-3 rounded" style="background-color: #E1F7F5;">
+                        <div class="fw-semibold mb-2" style="color: #0E46A3;">{{$dataE->name}}</div>
+                        <div class="ps-2" style="font-size: 14px">
+                              <div class="d-flex gap-3 mb-2 align-items-center">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <div id="myText">{{$dataE->lokasi}}</div>
+                              </div>
+                              <div class="d-flex gap-3 mb-2">
+                                    <i class="bi bi-envelope"></i>
+                                    <div>{{$dataE->email}}</div>
+                              </div>
+                              <div class="d-flex gap-3 mb-2">
+                                    <i class="bi bi-telephone"></i>
+                                    <div>{{$dataE->no_telp}}</div>
+                              </div>
                         </div>
                   </div>
-                  <hr class="mt-4 mb-4">
-                  <div style="font-size: 14px">
-                        {{$dataE->deskripsi}}
+                  <div class="mt-3 p-3 rounded" style="background-color: #E1F7F5;">
+                        <div class="fw-semibold mb-1" style="color: #0E46A3;">About {{$dataE->name}}</div>
+                        <div class="ps-2" style="font-size: 12px">
+                              {{$dataE->deskripsi}}
+                        </div>
                   </div>
             </div>
             <div class="col">
                   <div class="row mb-3">
                         <div class="col d-flex justify-content-start">
                               <div>
-                                    <a class="btn btn-dark px-5 fw-semibold" href="{{ route('employe.new-loker', ['id' => $dataE->id]) }}" style="font-size: 12px" role="button">BUAT LOKER</a>
+                                    <a class="btn px-5 text-light rounded-0 shadow fw-semibold" href="{{ route('employe.new-loker', ['id' => $dataE->id]) }}" style="font-size: 12px; background-color: #0E46A3;" role="button">BUAT LOKER</a>
                               </div>
                         </div>
                   </div>
-                  <div class="row">
+                  <div class="row justify-content-center">
+                        @if ($dataE->loker->isEmpty())
+                              <img src="../../../img/no-data-grey.png" alt="" style="width: 350px">
+                              <div class="mt-2 text-center text-secondary">Tidak ada loker</div>
+                        @else
                         @foreach ($dataE->loker as $item)
-                        <div class="col-6 mb-3">
+                        {{-- <div class="col-6 mb-3">
                               <div class="card w-full" style="font-size: 14px">
                                     <div class="card-body">
                                           <div class="row">
@@ -92,8 +97,54 @@
                                           12 Kandidat
                                     </div>
                               </div>
+                        </div> --}}
+                        <div class="col-xl-6 my-3">
+                              <a href="{{ route('employe.detail-loker', ['id' =>$item->id])}}" class="link-underline link-underline-opacity-0 text-secondary">
+                                    <div class="bg-white shadow-sm" style="border-radius: 18px">
+                                          <div class="d-flex px-3 py-2 text-light align-items-center" style="border-radius: 18px 18px 0 0; background-color: #0E46A3;">
+                                                <div style="font-size: 14px">{{$item->bagian}}</div>
+                                                <div class="ms-auto" style="font-size: 12px">
+                                                      @if (now()->toDateString() > $item->expired)
+                                                      <div class="">Closed</div>
+                                                      @else
+                                                      <div class="">Opened</div>
+                                                      @endif
+                                                </div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1 pt-3">
+                                                      <i class="bi bi-geo-alt-fill"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-1 pt-3" style="font-size: 14px">{{ $item->kota_kabupaten }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
+                                                      <i class="bi bi-building-fill"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->nama_perusahaan }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
+                                                      <i class="bi bi-clock-fill"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->waktu }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center" style="border-radius: 0 0 18px 18px">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3; border-radius: 0 0 0 18px;" class="p-2 pb-3">
+                                                      <i class="bi bi-cash-stack"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-3" style="font-size: 14px">
+                                                      @php
+                                                      $gajiF = $item->gaji;
+                                                      @endphp
+                                                      Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
+                                                </div>
+                                          </div>
+                                    </div>
+                              </a>
                         </div>
                         @endforeach
+                        @endif
                   </div>
             </div>
       </div>

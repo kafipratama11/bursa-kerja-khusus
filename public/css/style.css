@@ -13,15 +13,37 @@
                                    }
                                    
                                    nav {
-                                       background-color: var(--primary);
-                                   }
-                                   
-                                   .btn-search {
-                                       background-color: var(--primary);
+                                       background-color: #0E46A3;
                                    }
 
+                                   .navbar-brand, .btn-login-navbar{
+                                    color: #E1F7F5!important;
+                                   }
+
+                                   nav .nav-link{
+                                    color: #ffffff;
+                                   }
+
+                                   .btn-login-navbar{
+                                    outline: #E1F7F5;
+                                    border: solid 1px #E1F7F5;
+                                   }
+                                   .btn-login-navbar:hover{
+                                    outline: #E1F7F5;
+                                    border: solid 1px #E1F7F5;
+                                   }
+
+                                   .btn-search {
+                                       background-color: #0E46A3;
+                                   }
+
+                                   .login-company-input::placeholder {
+                                    color: #a9adad; /* Ubah warna sesuai keinginan Anda */
+                                    font-weight: 400;
+                                  }
+
                                    .btn-search:hover {
-                                       background-color: #0e183b;
+                                       background-color: #0E46A3;
                                    }
                                    
                                    .box-icon {
@@ -121,11 +143,11 @@
                                        position: fixed;
                                    }
                                    
-                                   nav ul li a,
+                                   /* nav ul li a,
                                    nav ul li a:after,
                                    nav ul li a:before {
                                        transition: all .5s;
-                                   }
+                                   } */
                                    
                                    nav ul li a:hover {
                                        color: #555;
@@ -144,9 +166,8 @@
                                    td #role {
                                        font-size: 13px;
                                    }
-                                   /* stroke */
                                    
-                                   nav.stroke ul li a,
+                                   /* nav.stroke ul li a,
                                    nav.fill ul li a {
                                        position: relative;
                                    }
@@ -171,7 +192,7 @@
                                    
                                    nav.fill ul li a {
                                        transition: all 2s;
-                                   }
+                                   } */
                                    
                                    nav.stroke ul li a {
                                        font-size: 12px;
@@ -364,7 +385,7 @@
                                    .profile-action-button:hover{
                                     border-radius: 50%;
                                     background-color: #f1f1f1;
-                                   }
+                                   };
 
                                    #submitBtn {
                                     background-color: transparent;

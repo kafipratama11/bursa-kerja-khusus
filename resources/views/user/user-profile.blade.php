@@ -121,11 +121,19 @@
                                                                         </div>
                                                                         <div class="mb-2">
                                                                               <div class="fw-semibold text-secondary">Email</div>
+                                                                              @if ($dataU->profile_user->email)
                                                                               <small><a href="mailto:{{$dataU->profile_user->email}}" class="link-underline link-underline-opacity-0">{{$dataU->profile_user->email}}</a></small>
+                                                                              @else
+                                                                              <small>tidak ada email</small>
+                                                                              @endif
                                                                         </div>
                                                                         <div class="mb-2">
-                                                                              <div class="fw-semibold text-secondary">No Telephone</div>
+                                                                              <div class="fw-semibold text-secondary">No. Telephone</div>
+                                                                              @if ($dataU->profile_user->no_telp)
                                                                               <small>{{$dataU->profile_user->no_telp}}</small>
+                                                                              @else
+                                                                              <small>tidak ada no. telp</small>
+                                                                              @endif
                                                                         </div>
                                                                   </div>
                                                             </div>
@@ -148,7 +156,7 @@
                                                                               </div>
                                                                               <div class="mb-3">
                                                                                     <label for="exampleFormControlInput2" class="form-label">No Telp</label>
-                                                                                    <input type="text" name="no_telp" class="form-control" id="exampleFormControlInput2" value="{{$dataU->profile_user->no_telp}}">
+                                                                                    <input type="text" maxlength="12" name="no_telp" class="form-control" id="exampleFormControlInput2" value="{{$dataU->profile_user->no_telp}}">
                                                                               </div>
                                                                         </div>
                                                                         <div class="modal-footer d-flex gap-2" style="font-size: 12px">
@@ -160,6 +168,7 @@
                                                       </div>
                                                 </div>
                                                 <div class="mt-2 text-secondary" style="font-size: 13px">
+                                                      @if ($dataU->profile_user->email)
                                                       <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-envelope"></i>
                                                             <div class="d-flex gap-1 align-items-center">
@@ -167,6 +176,8 @@
                                                                   <a id="copy-link-email" class="email text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>
+                                                      @endif
+                                                      @if ($dataU->profile_user->no_telp)
                                                       <div class="d-flex gap-3 align-items-center">
                                                             <i class="bi bi-telephone"></i>
                                                             <div class="d-flex gap-1 align-items-center">
@@ -175,6 +186,7 @@
                                                                   <a id="copy-link" class="text-secondary" href="#"><i class="bi bi-clipboard"></i></a>
                                                             </div>
                                                       </div>
+                                                      @endif
                                                 </div>
                                           </div>
                                     </div>
@@ -517,7 +529,7 @@
                                                 <div class="fw-semibold" style="font-size: 14px">{{$item->skill}}</div>
                                                 <div class="ms-auto gap-2 align-items-center d-flex">
                                                       <a href="" class="profile-action-button text-secondary" data-bs-toggle="modal" data-bs-target="#editHardskill{{$item->id}}"><i class="bi bi-pen"></i></a>
-                                                      <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST">
+                                                      <form action="{{ route('user.delete-hardskill',['id' => $item->id])}}" method="POST" data-confirm-delete="true">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button class="text-danger bg-transparent border-0 profile-action-button" type="submit" class=""><i class="bi bi-trash"></i></button>
