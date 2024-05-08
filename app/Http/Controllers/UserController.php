@@ -143,10 +143,7 @@ class UserController extends Controller
 
         $applyId = 78; // Ganti dengan ID apply tertentu yang Anda inginkan
 
-$statuses = Status::select('statuses.id', 'applies.id as apply_id')
-    ->join('applies', 'statuses.apply_id', '=', 'applies.id')
-    ->where('applies.id', $applyId)
-    ->get();
+
 
     //     $history = Apply::select('apply.id as apply_id', 'employes.name as nama_perusahaan', 'employes.image as image', 'lokers.nama_pekerjaan as nama_loker', 'apply.created_at as waktu', 'lokers.id as loker_id')
     // ->join('users', 'apply.user_id', '=', 'users.id')
@@ -163,7 +160,7 @@ $statuses = Status::select('statuses.id', 'applies.id as apply_id')
         // Dapatkan riwayat lamaran pengguna
         $applyHistory = Apply::where('user_id', $userId)->get();
         
-        return view('user.user-profile',compact('dataU','user','data', 'applyHistory','history', 'statuses'));
+        return view('user.user-profile',compact('dataU','user','data', 'applyHistory','history'));
     }
 
     public function update_provinsi( Request $request, $id){

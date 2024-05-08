@@ -638,7 +638,21 @@
                                                                                           <div style="font-size: 12px">{{$item->nama_perusahaan}}</div>
                                                                                     </div>
                                                                               </div>
-                                                                              <div class="text-secondary fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
+                                                                              <div class="d-flex mt-1 align-items-end">
+                                                                                    @if ($item->status === '2')
+                                                                                    <button class="btn btn-outline-dark d-flex justify-content-center align-items-center gap-2 px-3 rounded-pill text-center" style="font-size:13px; padding-top: 3px; padding-bottom:3px;">
+                                                                                          <div>Download</div>
+                                                                                          <i class="bi bi-download"></i>
+                                                                                    </button>
+                                                                                    {{-- <a href="" class="link-underline link-underline-opacity-0" style="font-size: 13px;">
+                                                                                          <div class=" d-flex justify-content-center align-items-center gap-2 p-1 border border-dark text-black rounded-pill text-center" style="width: 130px;">
+                                                                                                <div>Download</div>
+                                                                                                <i class="bi bi-download"></i>
+                                                                                          </div>
+                                                                                    </a> --}}
+                                                                                    @endif
+                                                                                    <div class="text-secondary ms-auto fw-light text-end" style="font-size: 10px">{{ \Carbon\Carbon::parse($item->waktu)->format('d/m/Y') }}</div>
+                                                                              </div>
                                                                         </div>
                                                                   </div>
                                                             </a>
