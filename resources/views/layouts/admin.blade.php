@@ -76,14 +76,14 @@
                         datasets: [{
                               data: [user, employer, loker]
                               , backgroundColor: [
-                                    "#070f2b"
-                                    , "#1b1a55"
-                                    , "#ffee00"
+                                    "#1E0342"
+                                    , "#0E46A3"
+                                    , "#9AC8CD"
                               ]
                               , hoverBackgroundColor: [
-                                    "#070f2b"
-                                    , "#1b1a55"
-                                    , "#ffee00"
+                                    "#1E0342"
+                                    , "#0E46A3  "
+                                    , "#9AC8CD"
                               ]
                         }]
                         , labels: [

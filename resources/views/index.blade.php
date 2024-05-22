@@ -140,7 +140,52 @@
                                     </div>
                               </div>
                         </form>
+<<<<<<< HEAD
+                        <div class="row d-flex justify-content-center mt-5">
+                              
+                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
+                                    <div class="card pt-2 px-3 fw-bold  card-sum">
+                                          <div class="d-flex gap-2 justify-content-center">
+                                                {{-- <i class="bi bi-person-fill"></i> --}}
+                                                <p>LOUKER</p>
+                                          </div>
+                                          <div class="text-center d-flex justify-content-center align-items-center">
+                                                <h2 class="z-3">{{$loker}}</h2>
+                                                <i class="bi bi-person-fill position-absolute" style="font-size: 60px; color: #f1f1f1;"></i>
+                                          </div>
+                                          <hr />
+                                    </div>
+                              </div>
+                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
+                                    <div class="card pt-2 px-3 fw-bold  card-sum">
+                                          <div class="d-flex gap-2 justify-content-center">
+                                                {{-- <i class="bi bi-person-fill"></i> --}}
+                                                <p>ALUMNI</p>
+                                          </div>
+                                          <div class="text-center d-flex justify-content-center align-items-center">
+                                                <h2 class="z-3">{{$user}}</h2>
+                                                <i class="bi bi-person-fill position-absolute" style="font-size: 60px; color: #f1f1f1;"></i>
+                                          </div>
+                                          <hr />
+                                    </div>
+                              </div>
+                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
+                                    <div class="card pt-2 px-3 fw-bold  card-sum">
+                                          <div class="d-flex gap-2 justify-content-center">
+                                                {{-- <i class="bi bi-buildings-fill"></i> --}}
+                                                <p>PERUSAHAAN</p>
+                                          </div>
+                                          <div class="text-center d-flex justify-content-center align-items-center">
+                                                <h2 class="z-3">{{$employe}}</h2>
+                                                <i class="bi bi-buildings-fill position-absolute" style="font-size: 50px; color: #f1f1f1;"></i>
+                                          </div>
+                                          <hr />
+                                    </div>
+                              </div>
+                        </div>
+=======
 
+>>>>>>> 4697fd8628123488b75e90b650d43d41c69754bd
                   </div>
       </div>
 
