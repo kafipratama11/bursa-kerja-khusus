@@ -26,11 +26,11 @@
 
 <body class="bg-body-tertiary">
       <div class="container pt-5">
-            <div class="row">
-                  <div class="col-xl-8 col-md-12 col-sm-12">
+            <div class="row justify-content-center">
+                  <div class="col-xl-7 col-md-10 col-sm-12">
                         <div class="card bg-white mb-3">
                               <div class="card-body ps-4">
-                                    <div class="d-flex gap-4">
+                                    <div class="d-flex gap-4 align-items-center">
                                           <div>
                                                 @if ($dataU->profile_user->image)
                                                 <a href="" data-bs-toggle="modal" data-bs-target="#detailphoto">
@@ -92,18 +92,27 @@
                                     <div class="d-flex gap-2 mb-3 align-items-center">
                                           <div class="fw-semibold">Education</div>
                                     </div>
-                                    @foreach ($dataU->education as $item)
-                                    <div class="mb-2">
-                                          <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
-                                          <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
-                                          <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
+                                    @foreach ($dataU->education as $index => $item)
+                                    <div class="d-flex pb-2 mb-2 gap-2">
+                                          <div class="text-center pt-1">
+                                                <div class="rounded-circle" style="height: 15px; width:15px; background-color:#0E46A3;"></div>
+                                                @if ($index < count($dataU->education) - 1)
+                                                      <div class="vr h-100" style="color: #0E46A3;"></div>
+                                                      @endif
+                                          </div>
+                                          <div class="">
+                                                <div class="fw-semibold" style="font-size: 14px">{{$item->nama_sekolah}}</div>
+                                                <div class="fw-normal text-secondary" style="font-size: 14px">{{$item->jurusan}}</div>
+                                                <div class="fw-light text-secondary" style="font-size: 12px">{{$item->tahun}}</div>
+                                          </div>
                                     </div>
                                     @endforeach
+
                               </div>
                         </div>
                   </div>
-                  
-                  <div class="col-xl-4 col-md-12 col-sm-12">
+
+                  <div class="col-xl-5 col-md-10 col-sm-12">
                         <div class="card mb-3">
                               <div class="card-body">
                                     <div class="fw-semibold mb-3">Skills</div>
@@ -137,7 +146,7 @@
                         </div>
                         <div class="card mb-3">
                               <div class="card-body">
-                                    <div class="mb-2">Experience</div>
+                                    <div class="mb-2 fw-semibold">Experience</div>
                                     <div>
                                           @foreach ($dataU->experiences as $exp)
                                           <div class="mb-3">

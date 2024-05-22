@@ -32,7 +32,7 @@
 
 <div class="container pb-5">
       <div class="row mt-5 justify-content-center">
-            <div class="col-4">
+            <div class="col-xl-4 col-md-6 col-sm-12">
                   <div class="d-flex justify-content-center mb-4">
                         <div class="card d-flex justify-content-center align-items-center rounded-pill border border-primary shadow" style="width: 270px; height: 270px;">
                               <div class="p-2">
@@ -59,7 +59,7 @@
                               </div>
                         </div>
                   </div>
-                  <div class="mt-3 p-3 rounded" style="background-color: #E1F7F5;">
+                  <div class="mt-3 p-3 rounded mb-3" style="background-color: #E1F7F5;">
                         <div class="fw-semibold mb-1" style="color: #0E46A3;">About {{$dataE->name}}</div>
                         <div class="ps-2" style="font-size: 12px">
                               {{$dataE->deskripsi}}

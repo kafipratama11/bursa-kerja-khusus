@@ -108,7 +108,7 @@
                                                                         <div class="row" style="font-size: 13px">
                                                                               <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-3">
-                                                                                          <label for="validationCustom03" class="form-label">Resume</label>
+                                                                                          <label for="validationCustom03" class="form-label text-secondary">Resume</label>
                                                                                           <input class="form-control" name="cv" type="file" id="validationCustom03" style="font-size: 14px" required>
                                                                                           <div class="invalid-feedback">
                                                                                                 Please provide a valid city.
@@ -117,7 +117,7 @@
                                                                               </div>
                                                                               <div class="col-xl-6 col-md-6 col-sm-12">
                                                                                     <div class="mb-1">
-                                                                                          <label for="formFile2" class="form-label">Portfolio</label>
+                                                                                          <label for="formFile2" class="form-label text-secondary">Portfolio</label>
                                                                                           <input class="form-control" name="portofolio" type="file" id="formFile2" style="font-size: 14px">
                                                                                     </div>
                                                                                     <div class="mb-3">
@@ -131,7 +131,7 @@
                                                                   </div>
                                                                   <div class="modal-footer px-5">
                                                                         <a class="link-underline link-underline-opacity-0 link-secondary" href="" data-bs-dismiss="modal" style="font-size: 14px">Cancel</a>
-                                                                        <button type="submit" class="btn btn-dark rounded-pill px-4 fw-medium ms-3" style="font-size: 14px">Submit</button>
+                                                                        <button type="submit" class="btn btn-dark rounded-pill px-4 fw-medium ms-3" style="font-size: 14px;">Submit</button>
                                                                   </div>
                                                             </form>
                                                       </div>
