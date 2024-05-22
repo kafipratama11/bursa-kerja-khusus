@@ -77,9 +77,10 @@
       <div class="text-center fw-light text-secondary mt-4" style="font-size: 14px">Trusted By Top Companies</div>
       <marquee behavior="" direction="left">
             <div class="d-flex gap-3">
-                  <img src="../../img/bca.png" alt="" style="width: 160px">
-                  <img src="../../img/bca.png" alt="" style="width: 160px">
-                  <img src="../../img/bca.png" alt="" style="width: 160px">
+                  <img src="../../img/tawi.png" alt="" style="width: 200px">
+                  <img src="../../img/jabsek.png" alt="" style="width: 230px">
+                  <img src="../../img/tawi.png" alt="" style="width: 200px">
+                  <img src="../../img/jabsek.png" alt="" style="width: 230px">
             </div>
       </marquee>
 </div>
@@ -110,6 +111,7 @@
                   <div class="col-6">
                         <div style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius: 20px;" class="p-3 px-5 py-5 shadow">
                               <form action="{{ route('employe-login')}}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                           <label for="exampleFormControlInput1" class="form-label text-light">Email address</label>
                                           <input type="email" name="email" class="form-control login-company-input bg-transparent text-light" id="exampleFormControlInput1" placeholder="Email">

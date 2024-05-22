@@ -65,7 +65,7 @@
                                             <td>{{ $item->waktu }}</td>
                                             <td>{{ $item->gaji }}</td>
                                             <td>{{ $item->email }}</td>
-                                            <td>{{ $item->email }}</td>
+                                            <td>1</td>
                                             <td>{{ $item->expired }}</td>
                                             <td>
                                                 <div class="dropdown">

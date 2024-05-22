@@ -187,10 +187,12 @@ class UserController extends Controller
     }
 
     public function add_education( Request $request,$id){
-        $education['user_id']      = $request->user_id;
-        $education['nama_sekolah'] = $request->nama_sekolah;
-        $education['jurusan']      = $request->jurusan;
-        $education['tahun']        = $request->tahun;
+        $education = ([
+            'user_id'       => $request->user_id,
+            'nama_sekolah'  => $request->nama_sekolah,
+            'jurusan'       => $request->jurusan,
+            'tahun'         => $request->tahun,
+        ]);
         Education::where('user_id', $id)->create($education);
         return redirect()->back();
 

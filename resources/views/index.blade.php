@@ -80,20 +80,18 @@
                               </div>
                         </form>
                         <div class="row d-flex justify-content-center mt-5">
-                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2 ">
-                                    <div class="text-light card border-0 pb-5 pt-2 px-3 fw-bold card-sum" style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius:12px;">
-                                          <div class="d-flex gap-2 justify-content-center mt-1 text-align-end align-items-end">
-                                                {{-- <i class="bi bi-journal-text"></i> --}}
-                                                <p>LOWONGAN</p>
+                              
+                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
+                                    <div class="card pt-2 px-3 fw-bold  card-sum">
+                                          <div class="d-flex gap-2 justify-content-center">
+                                                {{-- <i class="bi bi-person-fill"></i> --}}
+                                                <p>LOUKER</p>
                                           </div>
-                                          <div class="text-end">
+                                          <div class="text-center d-flex justify-content-center align-items-center">
                                                 <h2 class="z-3">{{$loker}}</h2>
-                                                
+                                                <i class="bi bi-person-fill position-absolute" style="font-size: 60px; color: #f1f1f1;"></i>
                                           </div>
-                                          <div class="text-center d-flex justify-content-center align-items-center p-0 m-0">
-                                                
-                                                <i class="bi bi-journal-text position-absolute" style="font-size: 50px; color: #E1F7F5;"></i>
-                                          </div>
+                                          <hr />
                                     </div>
                               </div>
                               <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
