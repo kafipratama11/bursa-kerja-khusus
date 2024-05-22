@@ -21,7 +21,7 @@
                   <div class="col-xl-6 col-md-8 col-sm-12 mb-3">
                         @guest
                         <div class="card shadow-sm border-0 border-start d-flex mb-2" style="border-radius: 15px" style="background-color: #0E46A3">
-                              <div class="card-company-list d-flex" style="min-height: 170px">
+                              <div class="card-company-list d-flex h-100 w-100" style="min-height: 170px">
                                     <div class="d-flex align-items-center justify-content-center p-2">
                                           <div style="width: 130px">
                                                 @if ($item->image)
@@ -31,7 +31,7 @@
                                                 @endif
                                           </div>
                                     </div>
-                                    <div class="p-2 ps-3 shadow" style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius: 15px;">
+                                    <div class="p-2 ps-3 shadow w-100" style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius: 15px;">
                                           <div class="fw-bolder text-light mb-2" style="font-size: 16px">{{$item->name}}</div>
                                           <div class="text-light d-flex align-items-center gap-2" style="font-size: 12px">
                                                 <div style="min-width: 45px">Industri</div>
@@ -61,8 +61,8 @@
                         </div>
                         @else
                         <div class="card shadow-sm border-0 border-start d-flex mb-2" style="border-radius: 15px" style="background-color: #0E46A3">
-                              <div class="card-company-list d-flex" style="min-height: 170px">
-                                    <div class="d-flex align-items-center justify-content-center p-2">
+                              <div class="card-company-list d-flex h-100 w-100" style="min-height: 170px">
+                                    <div class="d-flex align-items-center justify-content-center p-2 h-100 w-100">
                                           <div style="width: 130px">
                                                 @if ($item->image)
                                                 <img class="w-100" src="{{ asset('storage/photo-employe/'.$item->image)}}" alt="">
@@ -71,7 +71,7 @@
                                                 @endif
                                           </div>
                                     </div>
-                                    <div class="p-2 ps-3 shadow" style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius: 15px;">
+                                    <div class="p-2 ps-3 shadow h-100 w-100" style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius: 15px;">
                                           <div class="fw-bolder text-light mb-2" style="font-size: 16px">{{$item->name}}</div>
                                           <div class="text-light d-flex align-items-center gap-2" style="font-size: 12px">
                                                 <div style="min-width: 45px">Industri</div>
