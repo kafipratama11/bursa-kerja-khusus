@@ -7,6 +7,67 @@
 <div class="">
       <div class="position-absolute">
             <img src="../../img/Frame_11.png" alt="" style="max-width: 100%">
+            <div class="container">
+                  <div class="row mt-5 " style="padding-bottom: 100px;">
+                        @if($data->isEmpty())
+                        <div class="d-flex align-items-center justify-content-center">
+                              <div style="width: 400px">
+                                    @include('svg.ilustration-nodatafound')
+                              </div>
+                        </div>
+                        @else
+                        {{-- Tampilkan data yang ada --}}
+                        @foreach ($data as $item)
+                        <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                              <a href="" class="link-underline link-underline-opacity-0 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
+                                    <div class="bg-white shadow-sm" style="border-radius: 18px">
+                                          <div class="d-flex px-3 py-2 text-light align-items-center" style="border-radius: 18px 18px 0 0; background-color: #0E46A3;">
+                                                <div style="font-size: 14px">{{$item->bagian}}</div>
+                                                <div class="ms-auto" style="font-size: 12px">
+                                                      @if (now()->toDateString() > $item->expired)
+                                                      <div class="">Closed</div>
+                                                      @else
+                                                      <div class="">Opened</div>
+                                                      @endif
+                                                </div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1 pt-3">
+                                                      <i class="bi bi-geo-alt-fill"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-1 pt-3" style="font-size: 14px">{{ $item->kota_kabupaten }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
+                                                      <i class="bi bi-building-fill"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->nama_perusahaan }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
+                                                      <i class="bi bi-clock-fill"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->waktu }}</div>
+                                          </div>
+                                          <div class="d-flex align-items-center" style="border-radius: 0 0 18px 18px">
+                                                <div style="background-color: #E1F7F5; color:#0E46A3; border-radius: 0 0 0 18px;" class="p-2 pb-3">
+                                                      <i class="bi bi-cash-stack"></i>
+                                                </div>
+                                                <div class="p-2 fw-light pb-3" style="font-size: 14px">
+                                                      @php
+                                                      $gajiF = $item->gaji;
+                                                      @endphp
+                                                      Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
+                                                </div>
+                                          </div>
+                                    </div>
+                              </a>
+                        </div>
+                        @include('partials.modal-loker')
+                        @endforeach
+                        @endif
+                  </div>
+            </div>
       </div>
       <div class="container pt-5">
             @include('partials.modal-login-user')
@@ -79,114 +140,13 @@
                                     </div>
                               </div>
                         </form>
-                        <div class="row d-flex justify-content-center mt-5">
-                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2 ">
-                                    <div class="text-light card border-0 pb-5 pt-2 px-3 fw-bold card-sum" style="background-image: linear-gradient(to bottom right, #0E46A3, #1E3D71); border-radius:12px;">
-                                          <div class="d-flex gap-2 justify-content-center mt-1 text-align-end align-items-end">
-                                                {{-- <i class="bi bi-journal-text"></i> --}}
-                                                <p>LOWONGAN</p>
-                                          </div>
-                                          <div class="text-end">
-                                                <h2 class="z-3">{{$loker}}</h2>
-                                                
-                                          </div>
-                                          <div class="text-center d-flex justify-content-center align-items-center p-0 m-0">
-                                                
-                                                <i class="bi bi-journal-text position-absolute" style="font-size: 50px; color: #E1F7F5;"></i>
-                                          </div>
-                                    </div>
-                              </div>
-                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
-                                    <div class="card pt-2 px-3 fw-bold  card-sum">
-                                          <div class="d-flex gap-2 justify-content-center">
-                                                {{-- <i class="bi bi-person-fill"></i> --}}
-                                                <p>ALUMNI</p>
-                                          </div>
-                                          <div class="text-center d-flex justify-content-center align-items-center">
-                                                <h2 class="z-3">{{$user}}</h2>
-                                                <i class="bi bi-person-fill position-absolute" style="font-size: 60px; color: #f1f1f1;"></i>
-                                          </div>
-                                          <hr />
-                                    </div>
-                              </div>
-                              <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
-                                    <div class="card pt-2 px-3 fw-bold  card-sum">
-                                          <div class="d-flex gap-2 justify-content-center">
-                                                {{-- <i class="bi bi-buildings-fill"></i> --}}
-                                                <p>PERUSAHAAN</p>
-                                          </div>
-                                          <div class="text-center d-flex justify-content-center align-items-center">
-                                                <h2 class="z-3">{{$employe}}</h2>
-                                                <i class="bi bi-buildings-fill position-absolute" style="font-size: 50px; color: #f1f1f1;"></i>
-                                          </div>
-                                          <hr />
-                                    </div>
-                              </div>
-                        </div>
+
                   </div>
       </div>
 
       <body class="" style="background-color: #fbfbfb;">
             <div class="container">
-                  <div class="row mt-5 " style="padding-bottom: 100px;">
-                        @if($data->isEmpty())
-                        <div class="d-flex align-items-center justify-content-center">
-                              <div style="width: 400px">
-                                    @include('svg.ilustration-nodatafound')
-                              </div>
-                        </div>
-                        @else
-                        {{-- Tampilkan data yang ada --}}
-                        @foreach ($data as $item)
-                        <div class="col-xl-4 col-md-6 col-sm-12 my-3">
-                              <a href="" class="link-underline link-underline-opacity-0 text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}">
-                                    <div class="bg-white shadow-sm" style="border-radius: 18px">
-                                          <div class="d-flex px-3 py-2 text-light align-items-center" style="border-radius: 18px 18px 0 0; background-color: #0E46A3;">
-                                                <div style="font-size: 14px">{{$item->bagian}}</div>
-                                                <div class="ms-auto" style="font-size: 12px">
-                                                      @if (now()->toDateString() > $item->expired)
-                                                      <div class="">Closed</div>
-                                                      @else
-                                                      <div class="">Opened</div>
-                                                      @endif
-                                                </div>
-                                          </div>
-                                          <div class="d-flex align-items-center">
-                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1 pt-3">
-                                                      <i class="bi bi-geo-alt-fill"></i>
-                                                </div>
-                                                <div class="p-2 fw-light pb-1 pt-3" style="font-size: 14px">{{ $item->kota_kabupaten }}</div>
-                                          </div>
-                                          <div class="d-flex align-items-center">
-                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
-                                                      <i class="bi bi-building-fill"></i>
-                                                </div>
-                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->nama_perusahaan }}</div>
-                                          </div>
-                                          <div class="d-flex align-items-center">
-                                                <div style="background-color: #E1F7F5; color:#0E46A3;" class="p-2 pb-1">
-                                                      <i class="bi bi-clock-fill"></i>
-                                                </div>
-                                                <div class="p-2 fw-light pb-1" style="font-size: 14px">{{ $item->waktu }}</div>
-                                          </div>
-                                          <div class="d-flex align-items-center" style="border-radius: 0 0 18px 18px">
-                                                <div style="background-color: #E1F7F5; color:#0E46A3; border-radius: 0 0 0 18px;" class="p-2 pb-3">
-                                                      <i class="bi bi-cash-stack"></i>
-                                                </div>
-                                                <div class="p-2 fw-light pb-3" style="font-size: 14px">
-                                                      @php
-                                                      $gajiF = $item->gaji;
-                                                      @endphp
-                                                      Rp. {{$gaji_terformat = number_format($gajiF, 0, ',', '.')}}
-                                                </div>
-                                          </div>
-                                    </div>
-                              </a>
-                        </div>
-                        @include('partials.modal-loker')
-                        @endforeach
-                        @endif
-                  </div>
+
             </div>
       </body>
       @endsection

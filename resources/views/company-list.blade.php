@@ -6,7 +6,9 @@
 @endsection
 @include('partials.modal-login-user')
 <body class="" style="background-color: #fbfbfb;">
-      <div class="container">
+      <div class="position-absolute">
+            <img src="../../img/Frame_11.png" alt="" style="max-width: 100%">
+            <div class="container">
             <div class="row justify-content-center mt-5" style="min-height: 400px">
                   @if($data->isEmpty())
                   <div class="d-flex align-items-center justify-content-center">
@@ -102,6 +104,10 @@
                   @endforeach
                   @endif
             </div>
+      </div>
+      </div>
+      <div class="container">
+            
       </div>
 </body>
 
