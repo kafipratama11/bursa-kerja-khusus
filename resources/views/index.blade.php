@@ -140,7 +140,7 @@
                                     </div>
                               </div>
                         </form>
-<<<<<<< HEAD
+
                         <div class="row d-flex justify-content-center mt-5">
                               
                               <div class="col-xl-4 col-md-4 col-sm-12 mb-2">
@@ -183,9 +183,6 @@
                                     </div>
                               </div>
                         </div>
-=======
-
->>>>>>> 4697fd8628123488b75e90b650d43d41c69754bd
                   </div>
       </div>
 
